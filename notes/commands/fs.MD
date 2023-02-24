@@ -159,4 +159,51 @@ $umount -f -v<br /></td>
 <td>$dstat<br /></td>
 </tr>
 
+<tr>
+<th>lspci </th>
+<td>See general information about host bridge, VGA controller, ethernet controller, USB controller, SATA controller, etc.<br /></td>
+<td>$lspci<br /></td>
+</tr>
+
+<tr>
+<th>cat /proc/cpuinfo </th>
+<td>Retrieve processor type, socket, speed, configured flags, etc.<br /></td>
+<td>$cat /proc/cpuinfo<br /></td>
+</tr>
+
+<tr>
+<th>cat /proc/meminfo </th>
+<td>See detailed information about system RAM<br /></td>
+<td>$cat /proc/meminfo<br /></td>
+</tr>
+
+<tr>
+<th>lshw </th>
+<td>List all hardware components and see their configuration details<br /></td>
+<td>$lshw -C memory -short (detect number of RAM slots used, speed, and size)<br /></td>
+</tr>
+
+<tr>
+<th>hwinfo </th>
+<td>List details for all hardware, including their device files and configuration options<br /></td>
+<td>$hwinfo<br /></td>
+</tr>
+
+<tr>
+<th>ls -la /dev/disk/by-id/usb-*</th>
+<td>Retrieve a list of USB device files<br /></td>
+<td>$ls -la /dev/disk/by-id/usb-*<br /></td>
+</tr>
+
+<tr>
+<th>hdparm -I /dev/sdx </th>
+<td>Get information about your hard drive’s make, model, serial number, firmware version, and configuration<br /></td>
+<td>$hdparm -I /dev/sdx<br /></td>
+</tr>
+
+<tr>
+<th>hdparm -tT /dev/sdx </th>
+<td>Show the speed of an installed hard drive – including cached reads and buffered disk reads<br /></td>
+<td>$hdparm -tT /dev/sdx<br /></td>
+</tr>
 </table>
