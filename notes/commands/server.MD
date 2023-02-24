@@ -195,14 +195,32 @@ $hostname -i (Show the IP address of the system)<br />
 </tr>
 
 <tr>
-<th>dig [domain] </th>
-<td>Show DNS information about a domain using the dig command<br /></td>
-<td>$dig [domain] <br /></td>
+<th>rsync </th>
+<td>Synchronize /home to /backups/home<br /></td>
+<td>$rsync -a /home /backups/ <br /></td>
 </tr>
 
 <tr>
-<th>dig [domain] </th>
-<td>Show DNS information about a domain using the dig command<br /></td>
-<td>$dig [domain] <br /></td>
+<th>visudo </th>
+<td>Edit the sudoers configuration file.<br /></td>
+<td>$visudo <br /></td>
+</tr>
+
+<tr>
+<th>sudo -i </th>
+<td>Switch to the root account with root's environment. (Login shell.)<br /></td>
+<td>$sudo -i<br /></td>
+</tr>
+
+<tr>
+<th>sudo -s </th>
+<td>Execute your current shell as root. (Non-login shell.)<br /></td>
+<td>$sudo -s <br /></td>
+</tr>
+
+<tr>
+<th>sudo -l </th>
+<td>List sudo privileges for the current user.<br /></td>
+<td>$sudo -l<br /></td>
 </tr>
 </table>
