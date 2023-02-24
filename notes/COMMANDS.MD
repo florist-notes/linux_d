@@ -411,10 +411,10 @@ $j .config <br /></td>
 
 <table style="width:100%" >
 <tr>
-<th>FILESYSTEM <a href="notes/commands/fs.MD">NOTES</a> 🔗</th>
-<th>DEVOPS <a href="notes/commands/devops.MD">NOTES</a> 🔗</th>
-<th>SERVER <a href="notes/commands/server.MD">NOTES</a> 🔗</th>
-<th>SECURITY <a href="notes/commands/security.MD">NOTES</a> 🔗</th>
+<th>FILESYSTEM <a href="commands/fs.MD">NOTES</a> 🔗</th>
+<th>DEVOPS <a href="commands/devops.MD">NOTES</a> 🔗</th>
+<th>SERVER <a href="commands/server.MD">NOTES</a> 🔗</th>
+<th>SECURITY <a href="commands/security.MD">NOTES</a> 🔗</th>
 </tr>
 
 
