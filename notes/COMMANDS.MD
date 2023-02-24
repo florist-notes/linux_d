@@ -439,7 +439,6 @@ $j .config <br /></td>
 <table style="width:100%" >
 <tr>
 <th>FILESYSTEM <a href="commands/fs.MD">NOTES</a> 🔗</th>
-<th>DEVOPS <a href="commands/devops.MD">NOTES</a> 🔗</th>
 <th>SERVER <a href="commands/server.MD">NOTES</a> 🔗</th>
 <th>NETWORKING <a href="commands/net.MD">NOTES</a> 🔗</th>
 <th>csheet.pdf <a href="csheet.pdf">NOTES</a> 🔗</th>
