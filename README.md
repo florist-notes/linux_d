@@ -1,1 +1,6 @@
-# linux_d
+# 
+
+# linux :
+- LINUX COMMAND PALLETE
+- LINUX DISTROS [NOTES](notes/DISTROS.MD) 
+- LINUX ADMINISTRATION
