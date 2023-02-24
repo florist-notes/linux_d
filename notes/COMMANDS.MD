@@ -339,7 +339,8 @@ grep -i "hELLo" text.txt // Hello John <br />
 <td>
 $sudo ufw enable <br />
 $sudo ufw status <br />
-$sudo ufw allow 80 (allow port 80) <br /></td>
+$sudo ufw allow 80 (allow port 80) <br />
+$sudo ufw disable <br /></td>
 </tr>
 
 <tr>
