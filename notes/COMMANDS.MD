@@ -23,7 +23,8 @@ Linux Command Pallette:
 <tr>
 <th>ls</th>
 <td>lists everything in current directory<br /></td>
-<td>$ ls -la : show all files <br /></td>
+<td>$ ls -la : show all files <br />
+$ ls *.txt <br /></td>
 </tr>
 
 <tr>
@@ -40,7 +41,7 @@ $echo "Hi!" > test.txt <br />
 $touch test.txt <br />
 $cp test.txt Downloads/ <br />
 $rm Downloads/text.txt <br />
-$rm -r Downloads/ <br />
+$rm -rf Downloads/ <br />
 $mv test.txt Downloads/ <br />
 $locate golaghat.py <br />
 
@@ -60,9 +61,10 @@ $locate golaghat.py <br />
 </tr>
 
 <tr>
-<th>man / whatis</th>
+<th>man / whatis / tldr</th>
 <td>$man ls : manual of ls <br /></td>
-<td>$whatis ls (faster man) <br /></td>
+<td>$whatis ls (faster man) <br />
+$tldr tar <br /></td>
 </tr>
 
 <tr>
@@ -196,9 +198,9 @@ $vim newfile.txt <br /></td>
 </tr>
 
 <tr>
-<th>whoami</th>
+<th>whoami / uname -a / neofetch</th>
 <td>get username <br /></td>
-<td>- <br /></td>
+<td>$neofetch <br /></td>
 </tr>
 
 <tr>
@@ -229,7 +231,7 @@ $whereis finger <br /></td>
 </tr>
 
 <tr>
-<th>zip</th>
+<th>zip / tar</th>
 <td>zip files <br /></td>
 <td>$zip filename.zip allfiles.txt <br />
 $unzip filename.zip<br /></td>
@@ -264,63 +266,102 @@ $sudo find . perm /a=x   (executible files) <br />
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
+<th>chown username filename</th>
+<td>change ownership of file <br /></td>
 <td>- <br /></td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
+<th>grep</th>
+<td>grab particular info <br /></td>
+<td>$ip address | grep eth0 <br />
+$ip address | grep eth0 | inet <br /></td>
+</tr>
+
+<tr>
+<th>cmatrix -a</th>
+<td>code matrix -a (asynchronous) <br /></td>
 <td>- <br /></td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
+<th>trash-list / trash-restore</th>
+<td>find all files in trash can <br /></td>
+<td>$sudo apt install trash-cli <br /></td>
+</tr>
+
+<tr>
+<th>awk</th>
+<td>filter for output commands using '{}'  <br /></td>
+<td>$who | awk '{print $1,$4}' <br /></td>
+</tr>
+
+<tr>
+<th>cat /etc/resolv.conf</th>
+<td>DNS info <br /></td>
+<td>$resolvectl status <br /></td>
+</tr>
+
+<tr>
+<th>traceroute google.co.in</th>
+<td>trace route to destination ip <br /></td>
 <td>- <br /></td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
+<th>ufw</th>
+<td>firewall <br /></td>
+<td>
+$sudo ufw enable <br />
+$sudo ufw status <br />
+$sudo ufw allow 80 (allow port 80) <br /></td>
+</tr>
+
+<tr>
+<th>cal>
+<td>system calendar <br /></td>
 <td>- <br /></td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
+<th>free</th>
+<td>free memory <br /></td>
 <td>- <br /></td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
-<td>- <br /></td>
+<th>ps</th>
+<td>processes running<br /></td>
+<td>$ps -aux<br />
+$ps -aux | grep processname <br /></td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
-<td>- <br /></td>
+<th>kill / pkill</th>
+<td>kill process with pid <br /></td>
+<td>$kill pid <br />
+$kill -9 pid (-9 is force kill)<br />
+$pkill -f nameofprocess<br />  </td>
 </tr>
 
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
-<td>- <br /></td>
+<th>systemctl</th>
+<td>systemctl <br /></td>
+<td>$sudo systemctl start apache2 <br />
+$sudo systemctl status apache2 <br />
+$sudo systemctl restart apache2 <br />
+$sudo systemctl stop apache2 <br /></td>
 </tr>
 
+</table>
+
+<table style="width:100%" >
 <tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
-<td>- <br /></td>
+<th>FILESYSTEM <a href="./notes/commands/fs.MD">NOTES</a> 🔗</th>
+<th>DEVOPS <a href="./notes/commands/devops.MD">NOTES</a> 🔗</th>
+<th>SERVER <a href=".notes/commands/server.MD">NOTES</a> 🔗</th>
+<th>SECURITY <a href="./notes/commands/security.MD">NOTES</a> 🔗</th>
 </tr>
 
-<tr>
-<th>ssh user@ip</th>
-<td>remote access <br /></td>
-<td>- <br /></td>
-</tr>
 
 </table>
