@@ -40,6 +40,7 @@ $echo "Hi!" > test.txt <br />
 $touch test.txt <br />
 $cp test.txt Downloads/ <br />
 $rm Downloads/text.txt <br />
+$rm -r Downloads/ <br />
 $mv test.txt Downloads/ <br />
 $locate golaghat.py <br />
 
@@ -59,9 +60,9 @@ $locate golaghat.py <br />
 </tr>
 
 <tr>
-<th>man</th>
+<th>man / whatis</th>
 <td>$man ls : manual of ls <br /></td>
-<td>- <br /></td>
+<td>$whatis ls (faster man) <br /></td>
 </tr>
 
 <tr>
@@ -144,9 +145,10 @@ $echo "hey" > hey.txt  (to append)<br />
 </tr>
 
 <tr>
-<th>cat</th>
-<td>prints out what's in a file <br /></td>
-<td>$cat hey.txt <br /></td>
+<th>cat / shred</th>
+<td>prints out what's in a file or block/shred <br /></td>
+<td>$cat hey.txt <br />
+$shred hey.txt <br /></td>
 </tr>
 
 <tr>
@@ -163,9 +165,10 @@ $echo "hey again" >> hey.txt <br /></td>
 </tr>
 
 <tr>
-<th>nano</th>
+<th>nano / vim</th>
 <td>text editor built in terminal <br /></td>
-<td>$nano newfile.txt <br /></td>
+<td>$nano newfile.txt <br />
+$vim newfile.txt <br /></td>
 </tr>
 
 <tr>
@@ -180,5 +183,66 @@ $echo "hey again" >> hey.txt <br /></td>
 <td>- <br /></td>
 </tr>
 
+<tr>
+<th>ln -s</th>
+<td>create soft links <br /></td>
+<td>$ln -s abc.txt xyz.txt <br /></td>
+</tr>
+
+<tr>
+<th>clear</th>
+<td>clear the terminal <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>whoami</th>
+<td>get username <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>sudo apt update <br />
+sudo apt install packagename</th>
+<td>apt is the package manager <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>finger</th>
+<td>inspect a user <br /></td>
+<td>$sudo apt install finger <br />
+$finger username <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
 
 </table>
