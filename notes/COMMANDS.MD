@@ -1,6 +1,6 @@
 ## Linux Command Pallette: $ cmd
 
-<img src="../img/term.png" width=100%>
+<img src="../img/termkali.png" width=100%>
 
 <table style="width:100%" >
 
