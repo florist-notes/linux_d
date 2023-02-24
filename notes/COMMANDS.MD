@@ -267,7 +267,7 @@ $unzip filename.zip<br /></td>
 
 <tr>
 <th>find</th>
-<td>find patterns in files with regrex <br /></td>
+<td>find patterns in files with regex <br /></td>
 <td>$sudo find / -name "thebible*" <br />
 $sudo find . -type f -name "*.*"   (find all hidden files) <br />
 $sudo find . -type f -empty   (empty directories) <br />
