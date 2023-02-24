@@ -158,8 +158,8 @@ $echo "hey" > hey.txt  <br />
 </tr>
 
 <tr>
-<th>cat / shred</th>
-<td>prints out what's in a file or block/shred <br /></td>
+<th>cat / tac / shred</th>
+<td>prints out what's in a file /in reverse or block/shred <br /></td>
 <td>$cat hey.txt <br />
 $shred hey.txt <br /></td>
 </tr>
@@ -441,7 +441,7 @@ $j .config <br /></td>
 <th>FILESYSTEM <a href="commands/fs.MD">NOTES</a> 🔗</th>
 <th>DEVOPS <a href="commands/devops.MD">NOTES</a> 🔗</th>
 <th>SERVER <a href="commands/server.MD">NOTES</a> 🔗</th>
-<th>SECURITY <a href="commands/security.MD">NOTES</a> 🔗</th>
+<th>NETWORKING <a href="commands/net.MD">NOTES</a> 🔗</th>
 </tr>
 
 

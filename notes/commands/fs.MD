@@ -153,5 +153,10 @@ $umount -f -v<br /></td>
 <td>$hdparm -tT /dev/[device]<br /></td>
 </tr>
 
+<tr>
+<th>dstat</th>
+<td>view processes, memory, paging, I/O, CPU, etc., in real-time. All-in-one for vmstat, iostat, netstat, and ifstat.<br /></td>
+<td>$dstat<br /></td>
+</tr>
 
 </table>

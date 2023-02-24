@@ -223,4 +223,10 @@ $hostname -i (Show the IP address of the system)<br />
 <td>List sudo privileges for the current user.<br /></td>
 <td>$sudo -l<br /></td>
 </tr>
+
+<tr>
+<th>sar </th>
+<td>check server memory and swap usage.<br /></td>
+<td>$sar<br /></td>
+</tr>
 </table>
