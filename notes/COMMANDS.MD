@@ -15,6 +15,12 @@ Linux Command Pallette:
 </tr>
 
 <tr>
+<th>bc</th>
+<td>high precision calculator <br /></td>
+<td>$bc <br /></td>
+</tr>
+
+<tr>
 <th>cd</th>
 <td>change directory <br /></td>
 <td>$cd - (return to previous directory) <br />
@@ -405,10 +411,10 @@ $j .config <br /></td>
 
 <table style="width:100%" >
 <tr>
-<th>FILESYSTEM <a href="./notes/commands/fs.MD">NOTES</a> 🔗</th>
-<th>DEVOPS <a href="./notes/commands/devops.MD">NOTES</a> 🔗</th>
-<th>SERVER <a href=".notes/commands/server.MD">NOTES</a> 🔗</th>
-<th>SECURITY <a href="./notes/commands/security.MD">NOTES</a> 🔗</th>
+<th>FILESYSTEM <a href="notes/commands/fs.MD">NOTES</a> 🔗</th>
+<th>DEVOPS <a href="notes/commands/devops.MD">NOTES</a> 🔗</th>
+<th>SERVER <a href="notes/commands/server.MD">NOTES</a> 🔗</th>
+<th>SECURITY <a href="notes/commands/security.MD">NOTES</a> 🔗</th>
 </tr>
 
 
