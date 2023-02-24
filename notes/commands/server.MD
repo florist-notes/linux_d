@@ -138,15 +138,34 @@ $hostname -i (Show the IP address of the system)<br />
 </tr>
 
 <tr>
-<th>nice</th>
-<td>Starts a process with a given priority<br /></td>
-<td>$nice<br /></td>
+<th>mpstat 1 / vmstat 1 / iostat 1</th>
+<td>Display processor, virtual memory and I/O related statistics<br /></td>
+<td>-<br /></td>
 </tr>
 
 <tr>
-<th>nice</th>
-<td>Starts a process with a given priority<br /></td>
-<td>$nice<br /></td>
+<th>tcpdump -i eth0</th>
+<td>Capture and display all packets on interface eth0<br /></td>
+<td>$tcpdump -i eth0<br /></td>
 </tr>
+
+<tr>
+<th>tcpdump -i eth0 'port 80'</th>
+<td>Monitor all traffic on port 80 ( HTTP )<br /></td>
+<td>$tcpdump -i eth0 'port 80'<br /></td>
+</tr>
+
+<tr>
+<th>lsof</th>
+<td>List all open files on the system<br /></td>
+<td>$lsof -u user (List files opened by user)<br /></td>
+</tr>
+
+<tr>
+<th>last</th>
+<td>Display the last users who have logged onto the system.<br /></td>
+<td>$last<br /></td>
+</tr>
+
 
 </table>
