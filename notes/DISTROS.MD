@@ -3,7 +3,7 @@
 <p align="justify">
 
 There are three main branches of Linux distros - Debian (deb), Red Hat (rpm), and Slackware (slp). There are also some smaller branches and some individual distros that have their own structure and setup. Some of these branches of Linux have large subgroups. For instance, Ubuntu is a large family of Linux distros within the Debian group. Some distros may stray far from their original group. For instance, OpenSUSE came from SUSE which came from Slackware. So, OpenSUSE is a descendant of Slackware, although OpenSUSE now uses RPM packages like RedHat-based Linux systems. So, that would make OpenSUSE a RedHat-based system. Some new major branches are forming. The Arch branch is starting to become as large as the three main branches of Linux distros.
-Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compare linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions) ; [svg](https://upload.wikimedia.org/wikipedia/commons/5/58/Linux_Distribution_Timeline_with_Android.svg) and here are my choices:
+Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compare linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions) ; [svg](https://upload.wikimedia.org/wikipedia/commons/5/58/Linux_Distribution_Timeline_with_Android.svg) and here are my distro choices:
 </p>
 
 <table style="width:100%" >
@@ -22,7 +22,9 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 
 <tr>
 <th>Kali Linux</th>
-<td>Developed and maintained by offensive security, Kali Linux is a Debian-based Linux distro designed for penetration testing and conducting digital forensics. It ships with out-of-the-box tools meant for penetration testing such as Nmap, Metasploit Framework, Maltego, and Aircrack-ng to mention a few.<br /></td>
+<td>Developed and maintained by offensive security, Kali Linux is a Debian-based Linux distro designed for penetration testing and conducting digital forensics. It ships with out-of-the-box tools meant for penetration testing such as Nmap, Metasploit Framework, Maltego, and Aircrack-ng to mention a few.<br />
+<img src="../img/kali1.png" width=49%><a> </a><img src="../img/kali2.png" width=49%>
+</td>
 <td>-<br /></td>
 </tr>
 
