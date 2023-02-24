@@ -353,6 +353,25 @@ $sudo systemctl restart apache2 <br />
 $sudo systemctl stop apache2 <br /></td>
 </tr>
 
+<tr>
+<th>history, reboot, shutdown</th>
+<td>basic commands <br /></td>
+<td> - <br /></td>
+</tr>
+
+<tr>
+<th>progress</th>
+<td>check progress of processes <br /></td>
+<td>$sudo progress<br /></td>
+</tr>
+
+<tr>
+<th>autojump</th>
+<td>jump to directories on the fly <br /></td>
+<td>$j github <br />
+$j .config <br /></td>
+</tr>
+
 </table>
 
 <table style="width:100%" >
