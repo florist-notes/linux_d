@@ -283,7 +283,7 @@ $sudo find . perm /a=x   (executible files) <br />
 
 <tr>
 <th>grep</th>
-<td>grab particular info <br /></td>
+<td>grab particular info : grep [pattern] [file_name]<br /></td>
 <td>$ip address | grep eth0 <br />
 $ip address | grep eth0 | inet <br /></td>
 </tr>
@@ -405,6 +405,18 @@ $j .config <br /></td>
 <th>alias / unalias wr</th>
 <td>Create custom shortcuts for your regularly used commands <br /></td>
 <td>$ alias wr=”cd /var/www/html”<br /></td>
+</tr>
+
+<tr>
+<th>gpg</th>
+<td>Encrypt a file <br /></td>
+<td>$ gpg -c [file_name]<br /></td>
+</tr>
+
+<tr>
+<th>source</th>
+<td>Read and execute the file content in the current shell <br /></td>
+<td>$ source [filename]<br /></td>
 </tr>
 
 </table>

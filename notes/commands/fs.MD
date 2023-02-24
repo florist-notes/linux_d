@@ -99,4 +99,47 @@ $umount -f -v<br /></td>
 <td>-<br /></td>
 </tr>
 
+<tr>
+<th>cat /proc/cpuinfo</th>
+<td>see CPU information<br /></td>
+<td>$cat /proc/cpuinfo<br /></td>
+</tr>
+
+<tr>
+<th>lshw</th>
+<td>list hardware configuration information<br /></td>
+<td>$lshw<br /></td>
+</tr>
+
+<tr>
+<th>lspci -tv</th>
+<td>show PCI devices in a tree like diagram<br /></td>
+<td>$lspci -tv<br /></td>
+</tr>
+
+<tr>
+<th>lsusb -tv</th>
+<td>display USB devices in a tree like diagram<br /></td>
+<td>$lsusb -tvbr /></td>
+</tr>
+
+<tr>
+<th>dmidecode</th>
+<td>display hardware information from the BIOS<br /></td>
+<td>$dmidecode<br /></td>
+</tr>
+
+<tr>
+<th>hdparm -i /dev/disk</th>
+<td>display disk data information<br /></td>
+<td>$hdparm -i /dev/disk<br /></td>
+</tr>
+
+<tr>
+<th>hdparm </th>
+<td>Conduct a read-speed test on device/disk:<br /></td>
+<td>$hdparm -tT /dev/[device]<br /></td>
+</tr>
+
+
 </table>
