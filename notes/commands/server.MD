@@ -9,9 +9,48 @@ Linux Command Pallette:
 </tr>
 
 <tr>
+<th>uname -r</th>
+<td>Show system information via uname command<br /></td>
+<td>$uname -r<br /></td>
+</tr>
+
+<tr>
+<th>uname -a</th>
+<td>See kernel release information<br /></td>
+<td>$uname -a<br /></td>
+</tr>
+
+<tr>
+<th>uptime</th>
+<td>Display how long the system has been running, including load average<br /></td>
+<td>$uptime<br /></td>
+</tr>
+
+<tr>
+<th>hostname</th>
+<td>See system hostname<br /></td>
+<td>$hostname<br />
+$hostname -i (Show the IP address of the system)<br />
+
+</td>
+</tr>
+
+<tr>
+<th>last reboot </th>
+<td>List system reboot history<br /></td>
+<td>$last reboot<br /></td>
+</tr>
+
+<tr>
 <th>scp</th>
 <td>Copy a file to a server directory securely<br /></td>
 <td>$scp [file_name.txt] [server/tmp]<br /></td>
+</tr>
+
+<tr>
+<th>ulimit</th>
+<td>View or limit system resource amounts<br /></td>
+<td>$ulimit [flags] [limit]<br /></td>
 </tr>
 
 <tr>

@@ -9,6 +9,18 @@ Linux Command Pallette:
 </tr>
 
 <tr>
+<th>bg</th>
+<td>List and resume stopped jobs in the background <br /></td>
+<td>$bg <br /></td>
+</tr>
+
+<tr>
+<th>fg</th>
+<td>Bring the most recently suspended job to the foreground <br /></td>
+<td>$fg<br /></td>
+</tr>
+
+<tr>
 <th>nohup skk.py</th>
 <td>run skk.py immune to hangup signal <br /></td>
 <td>$sudo nohup ./mn.sh > myscipt.sh & <br /></td>
