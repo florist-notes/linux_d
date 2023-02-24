@@ -9,15 +9,12 @@ Linux Command Pallette:
 </tr>
 
 <tr>
-<th>uname -r</th>
-<td>Show system information via uname command<br /></td>
-<td>$uname -r<br /></td>
-</tr>
-
-<tr>
 <th>uname -a</th>
-<td>See kernel release information<br /></td>
-<td>$uname -a<br /></td>
+<td>Show system information via uname command<br /></td>
+<td>$uname -r (system information)<br />
+$uname -s (kernel release)<br />
+$uname -m (architecture)<br />
+$uname -o (operating system)<br /></td>
 </tr>
 
 <tr>
@@ -191,4 +188,21 @@ $hostname -i (Show the IP address of the system)<br />
 <td>$dig -x [ip_address]<br /></td>
 </tr>
 
+<tr>
+<th>lastlog </th>
+<td> The lastlog command is used to find the details of a recent login of all users or of a given user.<br /></td>
+<td>$lastlog <br /></td>
+</tr>
+
+<tr>
+<th>dig [domain] </th>
+<td>Show DNS information about a domain using the dig command<br /></td>
+<td>$dig [domain] <br /></td>
+</tr>
+
+<tr>
+<th>dig [domain] </th>
+<td>Show DNS information about a domain using the dig command<br /></td>
+<td>$dig [domain] <br /></td>
+</tr>
 </table>

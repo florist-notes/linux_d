@@ -290,7 +290,17 @@ $sudo find . perm /a=x   (executible files) <br />
 <th>grep</th>
 <td>grab particular info : grep [pattern] [file_name]<br /></td>
 <td>$ip address | grep eth0 <br />
-$ip address | grep eth0 | inet <br /></td>
+$ip address | grep eth0 | inet <br />
+grep pattern files <br />
+grep -i // Case sensitive <br />
+grep -r // Recursive <br />
+grep -v // Inverted search <br /><br />
+
+Example: <br />
+grep "^hello" test.txt // Hello John <br />
+grep -i "hELLo" text.txt // Hello John <br />
+
+</td>
 </tr>
 
 <tr>
