@@ -17,14 +17,18 @@ Linux Command Pallette:
 <tr>
 <th>cd</th>
 <td>change directory <br /></td>
-<td>- <br /></td>
+<td>$cd - (return to previous directory) <br />
+$cd ~ (Navigate to HOME directory) <br />
+$cd .. (Move one level up) <br />
+$cd / (Move to the root directory) <br /></td>
 </tr>
 
 <tr>
 <th>ls</th>
 <td>lists everything in current directory<br /></td>
 <td>$ ls -la : show all files <br />
-$ ls *.txt <br /></td>
+$ ls *.txt <br />
+$ ls -R (Lists files in sub-directories as well)<br /></td>
 </tr>
 
 <tr>
@@ -70,7 +74,7 @@ $tldr tar <br /></td>
 <tr>
 <th>chmod</th>
 <td>change mode - change permission of files and directory <br /></td>
-<td>- is file, d is directory, rwx is read, write & execute. 3 groups - 1 (owner), 2 (group) and 3 (users).<br />
+<td>- is file, d is directory, rwx is read, write & execute, -= is no permission. 3 groups - 1 (owner), 2 (group) and 3 (users).<br />
 $ chmod +x (give execute permission).<br />
 $ chmod 777 hello.txt (all group rwx access).<br /></td>
 </tr>
@@ -207,7 +211,7 @@ $vim newfile.txt <br /></td>
 <th>sudo apt update <br />
 sudo apt install packagename</th>
 <td>apt is the package manager <br /></td>
-<td>- <br /></td>
+<td>apt-get <br /></td>
 </tr>
 
 <tr>
@@ -330,7 +334,7 @@ $sudo ufw allow 80 (allow port 80) <br /></td>
 </tr>
 
 <tr>
-<th>ps</th>
+<th>ps / service</th>
 <td>processes running<br /></td>
 <td>$ps -aux<br />
 $ps -aux | grep processname <br /></td>
@@ -370,6 +374,31 @@ $sudo systemctl stop apache2 <br /></td>
 <td>jump to directories on the fly <br /></td>
 <td>$j github <br />
 $j .config <br /></td>
+</tr>
+
+<tr>
+<th>sudo !!</th>
+<td>reruns the previous command with a sudo prefix <br /></td>
+<td>$sudo !!<br /></td>
+</tr>
+
+
+<tr>
+<th>dd</th>
+<td>Majorly used for creating bootable USB sticks <br /></td>
+<td>-<br /></td>
+</tr>
+
+<tr>
+<th>wc</th>
+<td>Word count <br /></td>
+<td>$wc file.txt<br /></td>
+</tr>
+
+<tr>
+<th>alias / unalias wr</th>
+<td>Create custom shortcuts for your regularly used commands <br /></td>
+<td>$ alias wr=”cd /var/www/html”<br /></td>
 </tr>
 
 </table>
