@@ -34,8 +34,26 @@ Linux Command Pallette:
 
 <tr>
 <th>ss -t -a</th>
-<td> ss command with -t and -a flags to list all TCP sockets. This displays both listening and non-listening sockets.<br /></td>
+<td> ss command with -t and -a flags to list all TCP sockets. This displays both listening and non-listening sockets. ss gets details about network sockets.<br /></td>
 <td>$ ss -t -a<br /></td>
+</tr>
+
+<tr>
+<th>iftop</th>
+<td>Monitors stats related to bandwidth.<br /></td>
+<td>$ iftop<br /></td>
+</tr>
+
+<tr>
+<th>firewalld</th>
+<td>CLI tool to configure rules of Firewall.<br /></td>
+<td>$ firewalld<br /></td>
+</tr>
+
+<tr>
+<th>tcpdump</th>
+<td>Packet sniffing and analyzing utility used to capture, analyze and filter network traffic.<br /></td>
+<td>$ tcpdump<br /></td>
 </tr>
 
 </table>
