@@ -152,7 +152,7 @@ $cat /etc/shadow <br />
 <th>echo</th>
 <td>echoes in terminal <br /></td>
 <td>$echo "hello" <br />
-$echo "hey" > hey.txt  (to append)<br />
+$echo "hey" > hey.txt  <br />
 </td>
 </tr>
 
@@ -167,7 +167,7 @@ $shred hey.txt <br /></td>
 <th>replacing vs appending (> vs >>)</th>
 <td>- <br /></td>
 <td>
-$echo "hey again" >> hey.txt <br /></td>
+$echo "hey again" >> hey.txt (to append) <br /></td>
 </tr>
 
 <tr>
