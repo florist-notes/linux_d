@@ -83,4 +83,40 @@ $hostname -i (Show the IP address of the system)<br />
 <td>$pmap<br /></td>
 </tr>
 
+<tr>
+<th>pidof</th>
+<td>Gives the Process ID (PID) of a process<br /></td>
+<td>$pidof<br /></td>
+</tr>
+
+<tr>
+<th>nice</th>
+<td>Starts a process with a given priority<br /></td>
+<td>$nice<br /></td>
+</tr>
+
+<tr>
+<th>renice</th>
+<td>Changes priority of an already running process<br /></td>
+<td>$renice<br /></td>
+</tr>
+
+<tr>
+<th>sudo passwd -l 'username'</th>
+<td>To change the password of a user<br /></td>
+<td>$sudo passwd -l 'username'<br /></td>
+</tr>
+
+<tr>
+<th>sudo userdel -r 'username'</th>
+<td>To remove a newly created user<br /></td>
+<td>$sudo userdel -r 'username'<br /></td>
+</tr>
+
+<tr>
+<th>sudo usermod -a -G GROUPNAME USERNAME</th>
+<td>To add a user to a group<br /></td>
+<td>$sudo usermod -a -G GROUPNAME USERNAME<br /></td>
+</tr>
+
 </table>
