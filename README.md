@@ -23,6 +23,7 @@ $ chmod +x linux.sh
 - CUDA and py in arch - [experiments]()
 
 ## /securitywith_kali :
+<img src="img/kali.png" width=100%> </br>
 - Wirepacket sniffing with wireshark - [experiments]()
 - Network analysis with nmap - [experiments]()
 - Exploits with metasploit - [experiments]()
