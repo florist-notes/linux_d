@@ -216,6 +216,84 @@ $finger username <br /></td>
 </tr>
 
 <tr>
+<th>which / whereis</th>
+<td>finds address or location of package <br /></td>
+<td>$which finger <br />
+$whereis finger <br /></td>
+</tr>
+
+<tr>
+<th>wget/ curl addresslink</th>
+<td>download content from internet <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>zip</th>
+<td>zip files <br /></td>
+<td>$zip filename.zip allfiles.txt <br />
+$unzip filename.zip<br /></td>
+</tr>
+
+<tr>
+<th>less, head, tail</th>
+<td>check sections of a file <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>cmp/ diff file1 file2</th>
+<td>compare or find differences in two files <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>cat file.txt | sort</th>
+<td>the whole text file sorted <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>find</th>
+<td>find patterns in files with regrex <br /></td>
+<td>$sudo find / -name "thebible*" <br />
+$sudo find . -type f -name "*.*"   (find all hidden files) <br />
+$sudo find . -type f -empty   (empty directories) <br />
+$sudo find . perm /a=x   (executible files) <br />
+</td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
+<th>ssh user@ip</th>
+<td>remote access <br /></td>
+<td>- <br /></td>
+</tr>
+
+<tr>
 <th>ssh user@ip</th>
 <td>remote access <br /></td>
 <td>- <br /></td>
