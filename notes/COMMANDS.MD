@@ -442,7 +442,7 @@ $j .config <br /></td>
 <th>FILESYSTEM <a href="commands/fs.MD">NOTES</a> 🔗</th>
 <th>SERVER <a href="commands/server.MD">NOTES</a> 🔗</th>
 <th>NETWORKING <a href="commands/net.MD">NOTES</a> 🔗</th>
-<th>csheet.pdf <a href="csheet.pdf">NOTES</a> 🔗</th>
+<td>csheet - <a href="csheet.pdf">sheet.pdf</a> 🔗</td>
 </tr>
 
 
