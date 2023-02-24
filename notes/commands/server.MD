@@ -167,5 +167,28 @@ $hostname -i (Show the IP address of the system)<br />
 <td>$last<br /></td>
 </tr>
 
+<tr>
+<th>netstat -pnltu</th>
+<td>See active (listening) ports with the netstat command<br /></td>
+<td>$netstat -pnltu<br /></td>
+</tr>
+
+<tr>
+<th>netstat -nutlp</th>
+<td>Show tcp and udp ports and their programs<br /></td>
+<td>$netstat -nutlp<br /></td>
+</tr>
+
+<tr>
+<th>dig [domain] </th>
+<td>Show DNS information about a domain using the dig command<br /></td>
+<td>$dig [domain] <br /></td>
+</tr>
+
+<tr>
+<th>dig -x [ip_address]</th>
+<td>Do reverse lookup of an IP address<br /></td>
+<td>$dig -x [ip_address]<br /></td>
+</tr>
 
 </table>

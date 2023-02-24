@@ -193,7 +193,8 @@ $vim newfile.txt <br /></td>
 <tr>
 <th>ssh user@ip</th>
 <td>remote access <br /></td>
-<td>- <br /></td>
+<td>$ssh -p [port] user@host <br />
+$ssh user@host <br /></td>
 </tr>
 
 <tr>
