@@ -442,7 +442,76 @@ $j .config <br /></td>
 <th>DEVOPS <a href="commands/devops.MD">NOTES</a> 🔗</th>
 <th>SERVER <a href="commands/server.MD">NOTES</a> 🔗</th>
 <th>NETWORKING <a href="commands/net.MD">NOTES</a> 🔗</th>
+<th>csheet.pdf <a href="csheet.pdf">NOTES</a> 🔗</th>
 </tr>
 
 
+</table>
+
+<table style="width:100%" >
+<tr>
+<th>COMMAND 🔗</th>
+<td>Description </td>
+</tr>
+
+
+<th>Ctrl + C</th>
+<td>Kill current process running in the terminal </td>
+</tr>
+
+
+<th>Ctrl + Z</th>
+<td>Stop current process </td>
+</tr>
+
+<th>Ctrl + A</th>
+<td>Go to start of a line </td>
+</tr>
+
+<th>Ctrl + E</th>
+<td>Go to end of a line </td>
+</tr>
+
+
+<th>Ctrl + W</th>
+<td>Cut one word before the cursor and add it to clipboard</td>
+</tr>
+
+
+<th>Ctrl + U</th>
+<td>Cut part of the line before the cursor and add it to clipboard</td>
+</tr>
+
+
+<th>Ctrl + K</th>
+<td>Cut part of the line after the cursor and add it to clipboard</td>
+</tr>
+
+
+<th>Ctrl + Y</th>
+<td>Paste from clipboard </td>
+</tr>
+
+
+<th>Ctrl + R</th>
+<td>Recall last command that matches the provided characters </td>
+</tr>
+
+
+<th>Ctrl + O</th>
+<td>Run the previously recalled command </td>
+</tr>
+
+
+<th>Ctrl + G</th>
+<td>Exit command history without running a command</td>
+</tr>
+
+<th>!!</th>
+<td>Run the last command again</td>
+</tr>
+
+<th>exit</th>
+<td>Log out of current session</td>
+</tr>
 </table>
