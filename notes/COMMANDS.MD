@@ -82,7 +82,8 @@ $tldr tar <br /></td>
 <td>change mode - change permission of files and directory <br /></td>
 <td>- is file, d is directory, rwx is read, write & execute, -= is no permission. 3 groups - 1 (owner), 2 (group) and 3 (users).<br />
 $ chmod +x (give execute permission).<br />
-$ chmod 777 hello.txt (all group rwx access).<br /></td>
+$ chmod 777 hello.txt (all group rwx access).<br />
+$ chmod 766 filename (Assign full permission to the owner, and read and write permission to group and others).<br /></td>
 </tr>
 
 <tr>
@@ -244,7 +245,10 @@ $whereis finger <br /></td>
 <th>zip / tar</th>
 <td>zip files <br /></td>
 <td>$zip filename.zip allfiles.txt <br />
-$unzip filename.zip<br /></td>
+$unzip filename.zip<br />
+$tar -cvf filename.tar filename (compress)<br />
+$tar -xvf filename.tar (uncompress)<br />
+</td>
 </tr>
 
 <tr>

@@ -119,4 +119,34 @@ $hostname -i (Show the IP address of the system)<br />
 <td>$sudo usermod -a -G GROUPNAME USERNAME<br /></td>
 </tr>
 
+<tr>
+<th>dmesg</th>
+<td>Display messages in kernel ring buffer<br /></td>
+<td>$dmesg<br /></td>
+</tr>
+
+<tr>
+<th>cat /proc/cpuinfo</th>
+<td>Display CPU information<br /></td>
+<td>$cat /proc/cpuinfo<br /></td>
+</tr>
+
+<tr>
+<th>cat /proc/meminfo</th>
+<td>Display memory information<br /></td>
+<td>$cat /proc/meminfo<br /></td>
+</tr>
+
+<tr>
+<th>nice</th>
+<td>Starts a process with a given priority<br /></td>
+<td>$nice<br /></td>
+</tr>
+
+<tr>
+<th>nice</th>
+<td>Starts a process with a given priority<br /></td>
+<td>$nice<br /></td>
+</tr>
+
 </table>
