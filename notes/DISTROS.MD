@@ -74,7 +74,7 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 
 <tr>
 <th>Alma Linux</th>
-<td>AlmaLinux is a free and open source Linux distribution, created originally by CloudLinux to provide a community-supported, production-grade enterprise operating system that is binary-compatible with Red Hat Enterprise Linux (RHEL). The name of the distribution comes from the word "alma", meaning "soul" in Spanish and other Latin languages. It was chosen to be an homage to the Linux community.<br /><br />
+<td>AlmaLinux is a free and open source Linux distribution, created originally by CloudLinux to provide a community-supported, production-grade enterprise operating system that is binary-compatible with Red Hat Enterprise Linux (RHEL). The name of the distribution comes from the word "alma", meaning "soul" in Spanish and other Latin languages. It was chosen to be an homage to the Linux community. Do an $ifconfig and cockpit (dashboard) available at ip:9090 (port 9090).<br /><br />
 
 <img src="../img/alma.png" width=46%><a> </a><img src="../img/cockpit.png" width=52%>
 </td>
