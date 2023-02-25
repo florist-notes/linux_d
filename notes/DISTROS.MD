@@ -64,7 +64,8 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 
 <tr>
 <th>Debian</th>
-<td>-<br /></td>
+<td><br />
+<img src="../img/deb1.png" width=77%><a> </a><img src="../img/deb.png" width=21%><br /></td>
 <td>
 
 [Debian](https://www.debian.org/)
