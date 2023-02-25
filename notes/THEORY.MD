@@ -11,7 +11,7 @@
 <img src="../img/fs2.png" width=100%>
 
 
-resources : [Linux Directories Explained in 100 Seconds](https://youtu.be/42iQKuQodW4), [Navigating the Linux Filesystem](https://youtu.be/BNL3qBN9pP0), [the Linux File System explained in 1,233 seconds](https://youtu.be/A3G-3hp88mo), [Linux File System/Structure Explained!](https://youtu.be/HbgzrKJvDRw), [Introduction to Linux – Full Course for Beginners](https://youtu.be/sWbUDq4S6Y8)
+resources : [Linux Directories Explained in 100 Seconds](https://youtu.be/42iQKuQodW4), [Navigating the Linux Filesystem](https://youtu.be/BNL3qBN9pP0), [the Linux File System explained in 1,233 seconds](https://youtu.be/A3G-3hp88mo), [Linux File System/Structure Explained!](https://youtu.be/HbgzrKJvDRw), [Introduction to Linux – Full Course for Beginners](https://youtu.be/sWbUDq4S6Y8), [Linux for Hackers //](https://www.youtube.com/watch?v=VbEx7B_PTOE&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL)
 
 Everything in linux is a "file" - "On a UNIX system, everything is a file; if something is not a file, it is a process.".
 
@@ -22,6 +22,16 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <tr>
 <th>distro</th>
 <th>description <br /></th>
+</tr>
+
+<tr>
+<th>/</th>
+<td>root directory.<br /></td>
+</tr>
+
+<tr>
+<th>~</th>
+<td>home directory.<br /></td>
 </tr>
 
 <tr>
@@ -121,6 +131,11 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <tr>
 <th>/initrd</th>
 <td>(on some distributions) Information for booting. Do not remove!<br /></td>
+</tr>
+
+<tr>
+<th>/srv</th>
+<td>server related files are stored.<br /></td>
 </tr>
 
 <tr>
