@@ -17,46 +17,67 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 <tr>
 <th>Arch Linux</th>
 <td>Arch Linux is a lightweight and flexible geeky Linux distro designed for advanced users or Linux experts who care much about what is installed and the services running. It gives users the freedom to custom or configures the system, to their preference. In a nutshell, Arch is meant for users who really know the ins and outs of working with Linux.<br /></td>
-<td>-<br /></td>
+<td>
+
+[Arch Linux](https://archlinux.org/)
+<br /></td>
 </tr>
 
 <tr>
 <th>Kali Linux</th>
-<td>Developed and maintained by offensive security, Kali Linux is a Debian-based Linux distro designed for penetration testing and conducting digital forensics. It ships with out-of-the-box tools meant for penetration testing such as Nmap, Metasploit Framework, Maltego, and Aircrack-ng to mention a few.<br />
+<td>Developed and maintained by offensive security, Kali Linux is a Debian-based Linux distro designed for penetration testing and conducting digital forensics. It ships with out-of-the-box tools meant for penetration testing such as Nmap, Metasploit Framework, Maltego, and Aircrack-ng to mention a few.<br /><br />
 <img src="../img/kali1.png" width=49%><a> </a><img src="../img/kali2.png" width=49%>
 </td>
-<td>-<br /></td>
+<td>
+
+[Kali Linux](https://www.kali.org/)
+<br /></td>
 </tr>
 
 
 <tr>
 <th>Red Hat Enterprise Linux (RHEL)</th>
 <td>Red Hat is usually a top choice for server environments given its stability and regular security patches which boost its overall security.<br /></td>
-<td>-<br /></td>
+<td>
+
+[RHEL](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux)
+<br /></td>
 </tr>
 
 <tr>
 <th>Fedora</th>
 <td>It’s a powerful and flexible operating system that’s tailored for desktops & laptops, servers, and even for IoT ecosystems. Fedora, just like CentOS, is based on Red Hat and is in fact, a testing environment for Red Hat before transitioning to the Enterprise phase.<br /></td>
-<td>-<br /></td>
+<td>
+
+[Fedora](https://getfedora.org/)
+<br /></td>
 </tr>
 
 <tr>
 <th>Ubuntu</th>
 <td>-<br /></td>
-<td>-<br /></td>
+<td>
+
+[Ubuntu](https://ubuntu.com/)
+<br /></td>
 </tr>
 
 <tr>
 <th>Debian</th>
 <td>-<br /></td>
-<td>-<br /></td>
+<td>
+
+[Debian](https://www.debian.org/)
+<br /></td>
 </tr>
 
 <tr>
 <th>Alma Linux</th>
 <td>AlmaLinux is a free and open source Linux distribution, created originally by CloudLinux to provide a community-supported, production-grade enterprise operating system that is binary-compatible with Red Hat Enterprise Linux (RHEL). The name of the distribution comes from the word "alma", meaning "soul" in Spanish and other Latin languages. It was chosen to be an homage to the Linux community.<br /></td>
-<td>-<br /></td>
+<td>
+
+[Alma Linux](https://almalinux.org/)
+<br /></td>
 </tr>
 
 <tr>
@@ -64,7 +85,11 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 <td>Parrot OS is a wonderful penetration testing and vulnerability assessment distro that can do a lot more than some of its more popular peers like Kali Linux.
 
 If you boot Parrot from a USB disk, you can choose to create a persistent partition to save your changes. Very thoughtfully the developers also allow you to encrypt this persistent partition for maximum security.<br /></td>
-<td>-<br /></td>
+<td>
+
+[Parrot OS](https://www.parrotsec.org/)
+
+<br /></td>
 </tr>
 
 </table>
