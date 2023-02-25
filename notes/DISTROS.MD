@@ -55,7 +55,7 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 
 <tr>
 <th>Ubuntu</th>
-<td>-<br /></td>
+<td>Ubuntu is beautiful and home.<br /></td>
 <td>
 
 [Ubuntu](https://ubuntu.com/)
