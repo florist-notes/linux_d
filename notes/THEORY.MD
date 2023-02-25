@@ -128,3 +128,6 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <td>Every partition has a lost+found in its upper directory. Files that were saved during failures are here.<br /></td>
 </tr>
 </table>
+
+
+<img src="../img/lin.jpg" width=49%><a> </a><img src="../img/lin2.jpg" width=49%>
