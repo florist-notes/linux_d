@@ -556,7 +556,18 @@ Daemons are system services/ processes in linux. All daemons have a 'd' at the e
 ```
 
 ### Webserver
-
+127.0.0.1 = localhost (no place like 127.0.0.1)
 ```
-     $  
+     $ python -m http.server 7600 (launches a web server from dir)
+     $ php -S 127.0.0.1
+     $ npx http-server -p 8086
+     $ sudo nano /etc/apache2/ports.conf (to change port)
+     $ systemctl start apache2
+
+     $ curl localhost:8086
+     $ curl -o dirfoldername localhost:8086 (download website to dirfoldername)
+     $ cat dirfoldername (to check the downloaded website)
+     $ curl -I localhost:8086 (getting response header)
+     $ curl -v localhost:8086 (verbose - chatty req)
+     $ wget localhost:8086
 ```
