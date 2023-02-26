@@ -412,16 +412,21 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 
 <tr>
 <th>/version</th>
-<td>It stores user last login info.<br /></td>
+<td>It displays the Linux version information.<br /></td>
 </tr>
 
 <tr>
 <th>/var/log/lastlog</th>
-<td>It has all the global system messages.<br /></td>
+<td>It stores user last login info.<br /></td>
 </tr>
 
 <tr>
 <th>/var/log/messages</th>
+<td>It has all the global system messages.<br /></td>
+</tr>
+
+<tr>
+<th>/var/log/wtmp</th>
 <td>It keeps a history of login and logout information.<br /></td>
 </tr>
 
