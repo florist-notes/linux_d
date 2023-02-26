@@ -20,7 +20,7 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <table style="width:100%" >
 
 <tr>
-<th>distro</th>
+<th>directory</th>
 <th>description <br /></th>
 </tr>
 
@@ -142,7 +142,61 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <th>/lost+found</th>
 <td>Every partition has a lost+found in its upper directory. Files that were saved during failures are here.<br /></td>
 </tr>
+
+<tr>
+<th>/sys</th>
+<td> It is a virtual filesystem for modern Linux distributions to store and allows modification of the devices connected to the system.<br /></td>
+</tr>
 </table>
 
 
 <img src="../img/lin.jpg" width=49%><a> </a><img src="../img/lin2.jpg" width=49%>
+
+<table style="width:100%" >
+
+<tr>
+<th>location</th>
+<th>description <br /></th>
+</tr>
+
+<tr>
+<th>/boot/vmlinux</th>
+<td>The Linux kernel file.<br /></td>
+</tr>
+
+<tr>
+<th>Device Files:</th>
+<td><br /></td>
+</tr>
+
+<tr>
+<th>/dev/hda</th>
+<td> Device file for the first IDE HDD.<br /></td>
+</tr>
+
+<tr>
+<th>/dev/hdc</th>
+<td>A pseudo-device that output garbage output is redirected to /dev/null.<br /></td>
+</tr>
+
+<tr>
+<th>/lost+found</th>
+<td>Every partition has a lost+found in its upper directory. Files that were saved during failures are here.<br /></td>
+</tr>
+
+<tr>
+<th>System Configuration Files:</th>
+<td><br /></td>
+</tr>
+
+<tr>
+<th>/etc/bashrc</th>
+<td>It is used by bash shell that contains system defaults and aliases.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/crontab</th>
+<td> A shell script to run specified commands on a predefined time interval.<br /></td>
+</tr>
+
+</table>
