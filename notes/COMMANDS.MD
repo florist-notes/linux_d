@@ -163,7 +163,9 @@ $echo "hey" > hey.txt  <br />
 <th>cat / tac / shred</th>
 <td>prints out what's in a file /in reverse or block/shred <br /></td>
 <td>$cat hey.txt <br />
-$shred hey.txt <br /></td>
+$shred hey.txt <br />
+$ cat << EOF > hey.txt  ( type 'EOF' to exit)<br />
+</td>
 </tr>
 
 <tr>
