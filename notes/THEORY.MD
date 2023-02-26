@@ -431,3 +431,9 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 </tr>
 
 </table>
+
+ Linux uses a two-part software implementation as a way to improve both system and programmer efficiency.
+
+ <img src="../img/lin.webp" width=51%><a> </a> <img src="../img/linux.png" width=47%>
+
+ The first part of this two-part implementation is the Linux virtual filesystem. This virtual filesystem provides a single set of commands for the kernel, and developers, to access all types of filesystems. The virtual filesystem software calls the specific device driver required to interface to the various types of filesystems. The filesystem-specific device drivers are the second part of the implementation. The device driver interprets the standard set of filesystem commands to ones specific to the type of filesystem on the partition or logical volume.
