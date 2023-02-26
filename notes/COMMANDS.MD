@@ -453,6 +453,7 @@ $j .config <br /></td>
 <th>SERVER <a href="commands/server.MD">NOTES</a> 🔗</th>
 <th>NETWORKING <a href="commands/net.MD">NOTES</a> 🔗</th>
 <td>csheet - <a href="csheet.pdf">sheet.pdf</a> 🔗</td>
+<td>🐞</td>
 </tr>
 
 
