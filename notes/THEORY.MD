@@ -627,7 +627,7 @@ $ egrep '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}'
 $ egrep "v{2}" filename (match a character “v” two times)
 $ egrep 'co{1,2}l' filename (match both “col” and “cool” words)
 $ egrep 'c{3,}' filename ( match any row of at least three letters ‘c’)
-$ grep "[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}" filename (match mobile number which is in the following format 91-1234567890 (i.e TwoDigit-TenDigit))
+$ grep "[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}" filename (match mobile number format 91-1234567890 (i.e TwoDigit-TenDigit))
 $ cat file.txt | grep -E e\{2} (sequence of character “e” coming two times in the string. e.g - three)
 $ cat file.txt | grep "n\+e" (the string from starting character as “n” and adjacent character as “e” - eg : one, nine)
 $ grep '\bfive\b' file.txt (find the exact matching string from the input file)
