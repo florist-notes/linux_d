@@ -532,3 +532,9 @@ Daemons are system services/ processes in linux. All daemons have a 'd' at the e
 
 ```
 ### Manage processes in linux:
+
+
+```
+    $ ps -u username (check all processes for a particular user)
+
+```
