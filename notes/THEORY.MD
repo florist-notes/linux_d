@@ -573,7 +573,21 @@ Daemons are system services/ processes in linux. All daemons have a 'd' at the e
 ```
 
 ### Regular Expression (regex)
-Regular Expressions is nothing but a pattern to match for each input line. A pattern is a sequence of characters. You can use ^ and $ to force a regex to match only at the start or end of a line, respectively. You can match specific characters and character ranges using [..] syntax.
+Regular Expressions is nothing but a pattern to match for each input line. A pattern is a sequence of characters. You can use ^ and $ to force a regex to match only at the start or end of a line, respectively. You can match specific characters and character ranges using [..] syntax. We need to use the “-E” option with the character/string interval value.
+
+- . = Matches any single character.
+- ? = The preceding item is optional and will be matched, at most, once. may or may not be present.
+- \* = The preceding item will be matched zero or more times.
+- \+ = The preceding item will be matched one or more times.
+- {N} = The preceding item is matched exactly N times.
+- {N,} = The preceding item is matched N or more times.
+- {N,M} = The preceding item is matched at least N times, but not more than M times.
+- ^ = Matches the empty string at the beginning of a line; also represents the characters not in the range of a list.
+- $ = Matches the empty string at the end of a line.
+- \< = Match the empty string at the beginning of word.
+- \> = Match the empty string at the end of word.
+- /b = It will match the empty character or string at the edge.
+- /B = It will match the empty character or string at the non-edge.
 
 ```
 
@@ -582,6 +596,7 @@ s grep -i -w 'saikia' /etc/passwd (case insensitive search)
 $ grep -E -i -w 'skk|ranjan' /etc/passwd (extended reg exp to find 'skk' or 'ranjan')
 $ egrep -i '^(linux|unix)' filename
 $ grep -E -i '^(linux|unix)' filename (same as above egrep with -E)
+$ grep 'word1\|word2' filename
 
 $ grep 'purchase' demo.txt ( find all filenames starting with purchase )
 $ grep 'purchase.db' demo.txt (  find all filenames starting with purchase and followed by another character )
@@ -602,6 +617,19 @@ $ grep '[:upper:]' filename
 
 [[:alnum:]] , [[:alpha:]], [[:blank:]], [[:digit:]], [[:lower:]], [[:space:]], [[:upper:]]
 
-$ rep '[sS]aikia[^0-9]' test (The ^ negates all ranges in a set)
+$ grep '[sS]aikia[^0-9]' test (The ^ negates all ranges in a set)
+
+$ grep '^..$' filename (Print all lines with exactly two characters)
+$ grep '^\.[0-9]' filename (Display any lines starting with a dot and digit)
+
+$ egrep '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' file (will only match an IP address)
+
+$ egrep "v{2}" filename (match a character “v” two times)
+$ egrep 'co{1,2}l' filename (match both “col” and “cool” words)
+$ egrep 'c{3,}' filename ( match any row of at least three letters ‘c’)
+$ grep "[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}" filename (match mobile number which is in the following format 91-1234567890 (i.e TwoDigit-TenDigit))
+$ cat file.txt | grep -E e\{2} (sequence of character “e” coming two times in the string. e.g - three)
+$ cat file.txt | grep "n\+e" (the string from starting character as “n” and adjacent character as “e” - eg : one, nine)
+$ grep '\bfive\b' file.txt (find the exact matching string from the input file)
 
 ```
