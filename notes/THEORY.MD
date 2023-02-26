@@ -1,9 +1,10 @@
 
+# Linux Fundamentals:
 
+```
+ $ cat /var/log/lastlog
 
-
-
-
+ ```
 
 
 
