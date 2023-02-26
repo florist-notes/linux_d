@@ -352,7 +352,7 @@ $sudo ufw disable <br /></td>
 </tr>
 
 <tr>
-<th>cal>
+<th>cal</th>
 <td>system calendar <br /></td>
 <td>- <br /></td>
 </tr>

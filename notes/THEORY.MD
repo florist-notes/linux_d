@@ -504,3 +504,31 @@ $sudo snap install --classic code (install vscode with snap)
   ```
 
   ## Daemons : start, stop, restart Linux services
+
+Daemons are system services/ processes in linux. All daemons have a 'd' at the end. Master Daemon - 'systemd' with PID 1 and systemctl is used to control daemons. systemd refers other daemons as units.
+
+```
+    $ ps -aux
+    $ ps -aux | grep nano (check processes for nano)
+    $ pstree
+
+    $ sudo systemctl stop sshd
+    $ sudo systemctl status sshd
+    $ sudo systemctl start sshd
+    $ sudo systemctl restart sshd
+    $ sudo systemctl reload-or-restart sshd (restart if not reload)
+    $ sudo systemctl disable ntp
+    $ sudo systemctl enable ntp
+    $ sudo systemctl is-active ntp
+    $ sudo systemctl is-enabled ntp
+    $ sudo systemctl list-units (list all daemons that systemd knows)
+    $ sudo systemctl list-units --all
+    $ sudo systemctl list-units -t service (active services)
+
+    $ sudo systemctl list-unit-files | grep nginx
+    $ sudo systemctl list-units | grep journal
+    $ sudo systemctl restart systemd-journald
+    $ sudo journalctl -xe (systemd log)
+
+```
+### Manage processes in linux:
