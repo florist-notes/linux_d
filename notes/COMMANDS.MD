@@ -212,6 +212,12 @@ $ssh user@host <br /></td>
 </tr>
 
 <tr>
+<th>apropos</th>
+<td>get hints for linux commands<br /></td>
+<td>$ apropos email<br /></td>
+</tr>
+
+<tr>
 <th>whoami / uname -a / neofetch</th>
 <td>get username <br /></td>
 <td>$neofetch <br /></td>
