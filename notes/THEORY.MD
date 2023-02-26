@@ -571,3 +571,37 @@ Daemons are system services/ processes in linux. All daemons have a 'd' at the e
      $ curl -v localhost:8086 (verbose - chatty req)
      $ wget localhost:8086
 ```
+
+### Regular Expression (regex)
+Regular Expressions is nothing but a pattern to match for each input line. A pattern is a sequence of characters. You can use ^ and $ to force a regex to match only at the start or end of a line, respectively. You can match specific characters and character ranges using [..] syntax.
+
+```
+
+s grep 'saikia' /etc/passwd
+s grep -i -w 'saikia' /etc/passwd (case insensitive search)
+$ grep -E -i -w 'skk|ranjan' /etc/passwd (extended reg exp to find 'skk' or 'ranjan')
+$ egrep -i '^(linux|unix)' filename
+$ grep -E -i '^(linux|unix)' filename (same as above egrep with -E)
+
+$ grep 'purchase' demo.txt ( find all filenames starting with purchase )
+$ grep 'purchase.db' demo.txt (  find all filenames starting with purchase and followed by another character )
+$ grep 'purchase..db' demo.txt ( find all filenames starting with purchase but ending with db )
+
+$ grep ^saikia /etc/passwd
+$ grep -w ^saikia /etc/passwd (only saikia and no followup characters)
+
+$ grep 'foo$' filename (find lines ending with word foo)
+$ grep '^foo$' filename (Match line only containing foo)
+$ grep '^$' filename (search for blank lines)
+
+$ grep '[sS][aA][iI][kK][iI][aA]' filename (match both saikia or Saikia)
+$ grep -w '[sS]aiikia[0-9]' filename (match saikia1, Saikia2 ...)
+$ grep '[A-Za-z]' filename (match at least one letter)
+$ grep [wn] filename (Display all the lines containing either a “w” or “n” character)
+$ grep '[:upper:]' filename 
+
+[[:alnum:]] , [[:alpha:]], [[:blank:]], [[:digit:]], [[:lower:]], [[:space:]], [[:upper:]]
+
+$ rep '[sS]aikia[^0-9]' test (The ^ negates all ranges in a set)
+
+```
