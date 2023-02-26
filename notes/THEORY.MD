@@ -180,11 +180,6 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 </tr>
 
 <tr>
-<th>/lost+found</th>
-<td>Every partition has a lost+found in its upper directory. Files that were saved during failures are here.<br /></td>
-</tr>
-
-<tr>
 <th>System Configuration Files:</th>
 <td><br /></td>
 </tr>
@@ -199,4 +194,129 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <td> A shell script to run specified commands on a predefined time interval.<br /></td>
 </tr>
 
+<tr>
+<th>/etc/exports</th>
+<td>It contains information on the file system available on the network.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/fstab</th>
+<td>  Information of the Disk Drive and their mount point.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/group</th>
+<td>  It is a text file to define Information of Security Group.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/grub.conf</th>
+<td> It is the grub bootloader configuration file.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/init.d</th>
+<td> Service startup Script.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/lilo.conf</th>
+<td>It contains lilo bootloader configuration file.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/hosts</th>
+<td>Information of IP and corresponding hostnames.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/hosts.allow</th>
+<td>It contains a list of hosts allowed accessing services on the local machine.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/host.deny</th>
+<td>List of hosts denied to access services on the local machine.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/inittab</th>
+<td>INIT process and their interaction at the various run level.<br /></td>
+</tr>
+
+
+<tr>
+<th>/etc/issue</th>
+<td> Allows editing the pre-login message.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/modules.conf </th>
+<td>It contains the configuration files for the system modules.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/motd</th>
+<td>It contains the message of the day.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/mtab</th>
+<td>Currently mounted blocks information.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/passwd</th>
+<td>It contains username, password of the system, users in a shadow file.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/printcap</th>
+<td>It contains printer Information.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/profile</th>
+<td>Bash shell defaults.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/profile.d</th>
+<td>It contains other scripts like application scripts, executed after login.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/rc.d</th>
+<td>It avoids script duplication.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/rc.d/init.d</th>
+<td>Run Level Initialisation Script.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/resolv.conf</th>
+<td> DNS being used by System.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/security</th>
+<td>It contains the name of terminals where root login is possible.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/skel</th>
+<td> Script that initiates new user home directory.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/termcap</th>
+<td>An ASCII file that defines the behavior of different types of the terminal.<br /></td>
+</tr>
+
+<tr>
+<th>/etc/X11</th>
+<td>Directory tree contains all the conf files for the X-window System.<br /></td>
+</tr>
 </table>
