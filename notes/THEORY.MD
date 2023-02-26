@@ -319,4 +319,110 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 <th>/etc/X11</th>
 <td>Directory tree contains all the conf files for the X-window System.<br /></td>
 </tr>
+
+<tr>
+<th>User Related Files:</th>
+<td><br /></td>
+</tr>
+
+<tr>
+<th>/usr/bin</th>
+<td>It contains most of the executable files.<br /></td>
+</tr>
+
+<tr>
+<th>/usr/bin/X11</th>
+<td>Symbolic link of /usr/bin.<br /></td>
+</tr>
+
+<tr>
+<th>/usr/include</th>
+<td>It contains standard include files used by C program.<br /></td>
+</tr>
+
+<tr>
+<th>/usr/share</th>
+<td>It contains architecture independent shareable text files.<br /></td>
+</tr>
+
+<tr>
+<th>/usr/lib</th>
+<td>It contains object files and libraries.<br /></td>
+</tr>
+
+<tr>
+<th>/usr/sbin</th>
+<td>It contains commands for Super User, for System Administration.<br /></td>
+</tr>
+
+<tr>
+<th>Virtual and Pseudo Process Related Files:</th>
+<td><br /></td>
+</tr>
+
+<tr>
+<th>/proc/cpuinfo</th>
+<td>CPU Information<br /></td>
+</tr>
+
+<tr>
+<th>/proc/filesystems</th>
+<td>It keeps the useful info about the processes that are running currently.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/interrupts</th>
+<td>it keeps the information about the number of interrupts per IRQ.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/ioports</th>
+<td>Contains all the Input and Output addresses used by devices on the server.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/meminfo</th>
+<td>It reports the memory usage information.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/modules</th>
+<td>Currently using kernel module.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/mount</th>
+<td>Mounted File-system Information.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/stat</th>
+<td>It displays the detailed statistics of the current system.<br /></td>
+</tr>
+
+<tr>
+<th>/proc/swaps</th>
+<td>It contains swap file information.<br /></td>
+</tr>
+
+<tr>
+<th>Version and Log Files:</th>
+<td><br /></td>
+</tr>
+
+<tr>
+<th>/version</th>
+<td>It stores user last login info.<br /></td>
+</tr>
+
+<tr>
+<th>/var/log/lastlog</th>
+<td>It has all the global system messages.<br /></td>
+</tr>
+
+<tr>
+<th>/var/log/messages</th>
+<td>It keeps a history of login and logout information.<br /></td>
+</tr>
+
 </table>
