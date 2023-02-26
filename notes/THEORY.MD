@@ -536,5 +536,27 @@ Daemons are system services/ processes in linux. All daemons have a 'd' at the e
 
 ```
     $ ps -u username (check all processes for a particular user)
+    $ ps -u username | grep firefox
+    $ pgrep firefox (returns PID of firefox)
+    $ kill PID
+    $ ps --help simple
+    $ top (running processes on linux)
+    $ htop (cooler top)
+    $ jobs
+    $ bg 1 (make job 1 a bg process)
+    $ fg 1 (make job 1 a fg process)
+    $ kill -l (list kill signals, SIGTERM is default kill signal)
+    $ kill -9 ((9)SIGKILL is ultimate boss)
 
+    $ sleep 900 & (sleep and send to bg)
+    $ kill -9 PID (kill no matter what)
+    $ pkill -9 ping (pkill kills multiple processes by name)
+
+
+```
+
+### Webserver
+
+```
+     $  
 ```
