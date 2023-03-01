@@ -186,10 +186,111 @@ $ sudo reboot (server is invisible to pings now)<br />
 </tr>
 
 <tr>
+<th>Twitter OSINT</th>
+<td>twint (twitter intelligence)<br /></td>
+<td>
+$ apt install git <br />
+$ apt install python3 <br />
+$ apt install python3-pip <br />
+$ git clone --depth=1 https://github.com/twintproject/twint.git <br />
+$ cd twint (twint can also be imported in python)<br />
+$ pip3 install . -r requirements.txt<br />
+$ twint -u florist_notes<br />
+$ twint -h (list all switches you can use)<br />
+$ twint -u florist_notes --limit 20 (last 20 tweets)<br />
+$ twint -u florist_notes -s "anime" (search through tweets)<br />
+$ twint -u florist_notes -s "book" -o book.json --json (output to a file)<br />
+$ twint -u 3blue1brown --min-likes 100 <br />
+$ twint -u 3blue1brown --since 2021-04-28 <br />
+$ twint -u 3blue1brown --year 2018 <br />
+$ twint -u 3blue1brown --year 2018 --images <br />
+$ twint -s coffee --near hamburg --Since 2021-04-21 --min-likes 15 (search tweets with switches)<br />
+$ twint -s "sun" --since 2021-04-28 -g="53.5488, 9.9872, 20km" (lat lon radius) <br />
+In Python:<br />
+
+```python
+import twint
+
+search = input("What are you searching for?")
+city = input("Where ?")
+
+c = twint.Config()
+c.Search = search
+c.Near = city
+c.Limit = 20
+c.Populer_tweets = True
+
+twint.run.Search(c)
+```
+
+```python
+import twint
+from datetime import datetime
+today = datetime.now().strftime('%Y-%m-%d')
+c = twint.Config()
+c.To = "florist_notes"
+c.Since = today
+c.Hide_output = True
+c.Store_object = True
+
+twint.run.Search(c)
+
+tweets = twint.output.tweets_list
+
+mypeople = []
+
+for tweet in tweets:
+    mypeople.append(('{}'.format(tweet.username)))
+
+print(mypeople)
+
+for user in mypeople:
+    c = twint.Config()
+    c.Username = user
+    c.Limit = 20
+    twint.run.Search(c)
+
+```
+<br /></td>
+</tr>
+
+<tr>
 <th>x</th>
 <td>x<br /></td>
 <td>x<br /></td>
 </tr>
+
+<tr>
+<th>x</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>x</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>x</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>x</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>x</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+
 </table>
 
 ### Hacking with Linux:
