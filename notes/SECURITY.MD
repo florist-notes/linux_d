@@ -343,6 +343,8 @@ $ proxychains nmap -sT -p 80,443 217.160.0.69 <br />
 > site:starbucks.com filetype:pdf <br /><br />
 
 Google Hacking Database : [GHD](https://www.exploit-db.com/google-hacking-database) <br />
+$ theHarvester -d starbucks.com -b google (find emails and respective ip addresses)<br />
+$ theHarvester -d starbucks.com -b netcraft (lot more information)<br />
 
 
 <br /></td>
