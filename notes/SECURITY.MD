@@ -283,20 +283,39 @@ $ addrs (get all registered addresses for target photos) <br />
 
 <tr>
 <th>NMap for network vulnerabilities</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<td>network vulnerabilities with nmap and nmap scripting engine - 
+
+[NSE](https://nmap.org/book/man-nse.html). Can change speed of scanning to avoid detection.<br /></td>
+<td>
+$ nmap -sP 10.7.1.0/24 (number of hosts are up)<br />
+$ sudo nmap -sT -p 80, 443 10.7.1.0/24  (check for open ports, usually 80 or 443 ports are oprn in web server, T = TCP Connect, <ids in firewall can detect this 3 way handshake>) <br />
+$ sudo nmap -sS -p 80, 443 10.7.1.0/24 (S = stealthy, to avoid intrusion detection (IDS), no complete 3 way handshake) <br />
+$ man nmap <br />
+$ sudo nmap -O 10.7.1.226 (OS detection)<br />
+$ sudo nmap -A 10.7.1.226 (detailed) <br />
+$ sudo nmap -sS -D  10.7.1.80 10.7.1.226 (will put a decoy ip address - cover your tracks) <br />
+$ sudo nmap --script vuln 10.7.1.226 (find vulnerabilities)
+<br /></td>
 </tr>
 
 <tr>
-<th>x</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<th>find info on phone numbers with PhoneInfoga</th>
+<td>Find info on phone numbers<br /></td>
+<td>
+$ docker pull sundowndev/phoneinfoga:latest <br />
+$ docker run -it sundowndev/phoneinfoga scan -n 13526006900 <br />
+$ docker run -it -p 8080:8080 sundowndev/phoneinfoga serve -p 8080 (to serve web UI at port 8080) <br />
+<br /></td>
 </tr>
 
 <tr>
-<th>x</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<th>find social media accounts with Sherlock</th>
+<td>sherlock<br /></td>
+<td>
+$ git clone https://github.com/sherlock-project/sherlock.git <br />
+$ cd sherlock <br />
+$ python3 -m pip install -r requirements.txt <br />
+<br /></td>
 </tr>
 
 <tr>
