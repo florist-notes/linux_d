@@ -257,13 +257,32 @@ for user in mypeople:
 </tr>
 
 <tr>
-<th>x</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<th>Instagram OS!NT</th>
+<td>OS!NT on Instagram account<br /></td>
+<td>
+$ git clone https://github.com/Datalux/Osintgram <br />
+$ cd Osintgram <br />
+$ pip3 install -r requirements.txt<br />
+$ mkdir config <br />
+$ cd config <br />
+$ echo "username" > username.conf (dummy username acc)<br />
+$ echo "supersecretpassword" > pw.conf<br />
+$ echo "{}" > settings.json <br />
+In Osintgram$ :<br />
+$ python3 main.py medialab <br />
+
+We will be in Osintgram console : <br />
+
+$ list <br />
+$ stories (download stories)<br />
+$ xdg-open sample.jpg (image viewer) <br />
+$ fwingsemail (get emails for users followed by the target) <br />
+$ addrs (get all registered addresses for target photos) <br />
+<br /></td>
 </tr>
 
 <tr>
-<th>x</th>
+<th>NMap for network vulnerabilities</th>
 <td>x<br /></td>
 <td>x<br /></td>
 </tr>
