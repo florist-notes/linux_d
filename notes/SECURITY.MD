@@ -315,19 +315,37 @@ $ docker run -it -p 8080:8080 sundowndev/phoneinfoga serve -p 8080 (to serve web
 $ git clone https://github.com/sherlock-project/sherlock.git <br />
 $ cd sherlock <br />
 $ python3 -m pip install -r requirements.txt <br />
+$ python3 sherlock --help <br />
+$ python3 sherlock 3blue1brown <br />
+$ python3 sherlock --timeout 1 3blue1brown (creates a text file of results in dir) <br />
 <br /></td>
 </tr>
 
 <tr>
-<th>x</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<th>Hide yourself</th>
+<td>hide yourself with ProxyChains<br /></td>
+<td>
+$ locate proxychains <br />
+$ sudo vi /etc/proxychains.conf (uncomment 'dynamic_chain' for dynamic proxies, change socks4 ip port or https ip port) <br />
+$ proxychains firefox google.com <br />
+$ proxychains nmap -sT -p 80,443 217.160.0.69 <br />
+<br /></td>
 </tr>
 
 <tr>
-<th>x</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<th>hacking with gsearch</th>
+<td>Hacking with Google Search - dorking<br /></td>
+<td>
+> frenchpress site: starbucks.com <br />
+> site:starbucks.com inurl:admin <br />
+> site:starbucks.com intext:admin <br />
+> site:starbucks intitle: login <br />
+> site:starbucks.com filetype:pdf <br /><br />
+
+Google Hacking Database : [GHD](https://www.exploit-db.com/google-hacking-database) <br />
+
+
+<br /></td>
 </tr>
 
 
