@@ -383,14 +383,32 @@ $ sudo cat crackpass.txt (output / result)<br />
 
 <tr>
 <th>Hide files on target machines</th>
-<td>hide files in windows and linux systems<br /></td>
-<td>x<br /></td>
+<td>Steganography - hide files in windows and linux systems<br /></td>
+<td>
+Alternate Data Streams to hide file inside another file:<br />
+$ mkdir myhiddenstuff<br />
+$ cd  myhiddenstuff<br />
+$ notepad supersecretfile.txt<br />
+$ notepad nothingtoseehere.txt <br />
+$ type supersecretfile.txt > nothingtoseehere.txt:supersecretfile.txt (this will hide supersecretfile.txt inside of nothingtoseehere.txt  with ADS)<br />
+$ notepad nothingtoseehere.txt:supersecretfile.txt <br />
+$ dir /r <br />
+$ attrib +h filename.txt (make files hidden) <br />
+<br />
+$ sudo apt install steghide -y <br />
+$ steghide embed -cf image.jpg -ef file.txt (to hide .txt inside .jpg)<br />
+$ steghide extract -sf image.jpg <br />
+
+<br /></td>
 </tr>
 
 <tr>
 <th>DDoS from dark web</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<td>Distributed Denial of service<br /></td>
+<td>
+
+
+<br /></td>
 </tr>
 
 <tr>
@@ -410,7 +428,7 @@ $ sudo cat crackpass.txt (output / result)<br />
 > Modify network settings <br />
 > DHCP server <br />
 > cd /Program Files/Oracle/VirtualBox (In windoows)<br />
->  >vboxmanage dhcpserver add --network=malfoy --server-ip=10.38.1.1 --lower-ip=10.38.1.110 --upper-ip=10.38.1.120 --netmask=255.255.255.0 --enable<br />
+>  >vboxmanage dhcpserver add --network=networkname --server-ip=10.38.1.1 --lower-ip=10.38.1.110 --upper-ip=10.38.1.120 --netmask=255.255.255.0 --enable<br />
 <br /></td>
 </tr>
 </table>
