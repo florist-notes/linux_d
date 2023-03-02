@@ -410,7 +410,7 @@ $ steghide extract -sf image.jpg <br />
 [tor browser](https://www.torproject.org/download/) <br />
 [saphyra](https://securityintelligence.com/dissecting-hacktivists-ddos-tool-saphyra-revealed/) : http flood attack : HTTP get<br />
 [low orbit ion cannon](https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon)<br />
-All the DDoS scripts from [H1R0GH057/Anonymous](https://github.com/H1R0GH057/Anonymous) are also in scripts/security/[ddos](./scripts/security/ddos/)<br />
+All the DDoS scripts from [H1R0GH057/Anonymous](https://github.com/H1R0GH057/Anonymous) are also in scripts/security/[ddos](../scripts/security/ddos/)<br />
 
 $ sudo hping3 -1 --flood 10.7.1.50 (ping as dos)<br />
 
