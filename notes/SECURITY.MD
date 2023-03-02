@@ -1,6 +1,6 @@
 ## Linux Security :
 
- Maintain remote access / backdoor to remote systems: 
+ ### Maintain remote access / backdoor to remote systems: 
 <table style="width:100%" >
 
 
@@ -364,7 +364,7 @@ $ theHarvester -d starbucks.com -b netcraft (lot more information)<br />
 
 <tr>
 <th>Hacking password with Hashcat</th>
-<td>Crack with hydra aand hashcat<br /></td>
+<td>crack with hydra and hashcat<br /></td>
 <td>
 $ cd /usr/share/wordlists <br />
 $ sudo gzip -d rockyou.txt.gz (14 mil passwords) <br />
@@ -401,7 +401,16 @@ $ sudo cat crackpass.txt (output / result)<br />
 
 <tr>
 <th>Build a Hacking Lab</th>
-<td>x<br /></td>
-<td>x<br /></td>
+<td>Safe and secure environment<br /></td>
+<td>
+> Hacking Machine - Kali <br />
+> Vulnerable Webapp machine - VULNHUB :
+ 
+ [Mr Robot VULNHUB OVA](https://www.vulnhub.com/entry/mr-robot-1,151/) <br />
+> Modify network settings <br />
+> DHCP server <br />
+> cd /Program Files/Oracle/VirtualBox (In windoows)<br />
+>  >vboxmanage dhcpserver add --network=malfoy --server-ip=10.38.1.1 --lower-ip=10.38.1.110 --upper-ip=10.38.1.120 --netmask=255.255.255.0 --enable<br />
+<br /></td>
 </tr>
 </table>
