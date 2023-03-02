@@ -42,6 +42,9 @@ $ ifconfig (check network adapter name <interface> and Cloudflare DNS 1.1.1.1)
 $ sudo ufw allow out on <interface> to 1.1.1.1 proto udp port 53 comment 'allow DNS on <interface>'
 $ sudo ufw allow out on <interface> to any proto tcp port 80 comment 'allow HTTP on <interface>'
 $ sudo ufw allow out on <interface> to any proto tcp port 443 comment 'allow HTTPS on <interface>'
+set default DNS to 1.1.1.1
+$ sudo ufw default allow outgoing (default firewall rules)
+$ tail -f /var/log/ufw.log
 ```
 
 
