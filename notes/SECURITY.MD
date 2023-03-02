@@ -1,5 +1,48 @@
 ## Linux Security :
 
+Linux servers are secure but desktops are vulnerable but some good rules for linux security hardening is essential. <br />
+Install a firewall $ sudo install ufw <br />
+```
+ $ sudo ufw limit 22/tcp 
+ $ sudo ufw allow 80/tcp 
+ $ sudo ufw allow 443/tcp
+ $ sudo ufw fefault deny incoming 
+ $ sudo ufw default allow outgoing 
+ $ sudo ufw enable 
+ $ sudo ufw status
+```
+Install Fail2ban (IDS): <br />
+` $ sudo apt install fail2ban` and all config files are in `/etc/fai2ban`<br />
+Main files: `/etc/fail2ban/fail2ban.conf` and `/etc/fail2ban/jail.conf` <br />
+Config : `/etc/fail2ban/jail.local`
+
+```
+[DEFAULT]
+ignoreip = 127.0.0.1/8 ::1
+bantime = 3600
+findtime = 600
+maxretry = 5
+
+[sshd]
+enabled = true
+
+```
+### Defend Your Ubuntu System Against Network Attacks :
+
+Goal is to minimize the number of attack surface. ref - [blog](https://null-byte.wonderhowto.com/how-to/locking-down-linux-using-ubuntu-as-your-primary-os-part-2-network-attack-defense-0185709/)
+
+```
+$ sudo systemctl disable cups-browsed (cut down port listening)
+$ sudo systemctl disable avahi-daemon (disable apple device daemons)
+$ sudo ufw enable ( and apply the rules)
+$ sudo ufw default deny incoming 
+$ sudo ufw default deny forwarding 
+$ sudo ufw default deny outgoing
+$ ifconfig (check network adapter name and Cloudflare DNS 1.1.1.1)
+$ sudo ufw allow out on <interface> to 1.1.1.1 proto udp port 53 comment 'allow DNS on <interface>'
+```
+
+
  ### Maintain remote access / backdoor to remote systems: 
 <table style="width:100%" >
 
@@ -515,4 +558,29 @@ $ sudo service nginx restart <br />
 
 <br /></td>
 </tr>
+
+<tr>
+<th>Hack Web Browser</th>
+<td>d<br /></td>
+<td>
+
+<br /></td>
+</tr>
+
+<tr>
+<th>SQL Injections</th>
+<td>d<br /></td>
+<td>
+
+<br /></td>
+</tr>
+
+<tr>
+<th>create malware</th>
+<td>d<br /></td>
+<td>
+
+<br /></td>
+</tr>
+
 </table>
