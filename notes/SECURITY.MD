@@ -38,8 +38,10 @@ $ sudo ufw enable ( and apply the rules)
 $ sudo ufw default deny incoming 
 $ sudo ufw default deny forwarding 
 $ sudo ufw default deny outgoing
-$ ifconfig (check network adapter name and Cloudflare DNS 1.1.1.1)
+$ ifconfig (check network adapter name <interface> and Cloudflare DNS 1.1.1.1)
 $ sudo ufw allow out on <interface> to 1.1.1.1 proto udp port 53 comment 'allow DNS on <interface>'
+$ sudo ufw allow out on <interface> to any proto tcp port 80 comment 'allow HTTP on <interface>'
+$ sudo ufw allow out on <interface> to any proto tcp port 443 comment 'allow HTTPS on <interface>'
 ```
 
 
