@@ -472,7 +472,9 @@ In windows: using [PayloadsAllTheThings](https://github.com/swisskyrepo/Payloads
 
 <tr>
 <th>Phishing attacks</th>
-<td>phishing website and emails with [blackeye](https://github.com/An0nUD4Y/blackeye)<br /></td>
+<td>
+
+phishing website and emails with [blackeye](https://github.com/An0nUD4Y/blackeye)<br /></td>
 <td>
 
 $ git clone https://github.com/An0nUD4Y/blackeye <br />
@@ -488,7 +490,28 @@ Spear Phishing Attack: use SET (Social Engineering Toolkit):<br />
 <th>put a DARK WEB website on a Raspberry Pi!!</th>
 <td>host a dark web website<br /></td>
 <td>
-
+overlay tor onion relays & routing helps keep anonymity to get to your dark web website, we meet in the middle. <br />
+Brave Browser : New Private Window with Tor <br />
+Install nginx, tor: <br />
+$ sudo apt install tor <br />
+$ sudo nano /etc/tor/torrc <br />
+Uncomment HiddenServiceDir and HiddenServicePort <br />
+$ sudo service tor stop <br />
+$ sudo service tor start <br />
+$ sudo service tor status <br />
+$ sudo cat /var/lib/tor/hidden_service/hostname (this is my dark web address) <br />
+$ sudo apt install nginx <br />
+$ sudo service nginx start <br />
+$ sudo nano /etc/nginx/nginx.conf <br />
+Uncomment : server_tokens off; server_name_in_redirect off; <br />
+just under server_tokens off: write : port_in_redirect off; <br />
+$ sudo service nginx restart <br />
+$ cd /var/www <br />
+$ cd html <br />
+$ ls <br />
+$ sudo nano index.html (remove the original html) <br />
+edit the html <br />
+$ sudo service nginx restart <br />
 
 <br /></td>
 </tr>
