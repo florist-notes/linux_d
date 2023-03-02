@@ -27,6 +27,22 @@ maxretry = 5
 enabled = true
 
 ```
+
+### Uncover illegal access in linux systems:
+
+```
+    $ who
+    $ w
+    $ netstat -natu | grep 'ESTABLISHED'
+    $ netstat -natu | grep 'LISTEN' (anything listening to my computer or vice versa)
+    $ last (all connections)
+    $ users
+    $ nano /etc/passwd
+    $ history ( $su username )
+    $ less /home/username/.bash_history
+    $ iftop -i wlan0 ( $ip a )
+    $ btop
+```
 ### Defend Your Ubuntu System Against Network Attacks :
 
 Goal is to minimize the number of attack surface. ref - [blog](https://null-byte.wonderhowto.com/how-to/locking-down-linux-using-ubuntu-as-your-primary-os-part-2-network-attack-defense-0185709/)
