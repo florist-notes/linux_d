@@ -604,6 +604,42 @@ Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
 <br /></td>
 </tr>
 
+
+<tr>
+<th>Haunt a Computer Using SSH</th>
+<td>s<br /></td>
+<td>
+$ export DISPLAY=:0.0 (let DISPLAY of remote be open)<br />
+$ xterm <br />
+$ sudo modprobe pcspkrc (play sound in speaker) <br />
+$ say "404 : hacked !" <br />
+$ espeak "time is running :)" <br />
+$ sudo apt install beep <br />
+$ beep -f 4000 -D 500 -l 100 -r 10 (beep warning) <br />
+$ crontab -l <br />
+$ crontab -e <br />
+ uncomment  * * * * * beep .... <br />
+$ sudo xterm -maximize -e sudo tcpdump <br />
+$ for i in {1..10}; do sudo xterm -maximize -e sudo tcpdump; done <br />
+(create a `$tcpdump` window reappearing 10 times on being closed.)
+<br /></td>
+</tr>
+
+<tr>
+<th>Haunt a Computer Using SSH</th>
+<td>s<br /></td>
+<td>s
+<br /></td>
+</tr>
+
+<tr>
+<th>Haunt a Computer Using SSH</th>
+<td>s<br /></td>
+<td>s
+<br /></td>
+</tr>
+
+
 <tr>
 <th>reverse shells with netcat</th>
 <td>how to get remote access to your hacking targets<br /></td>
