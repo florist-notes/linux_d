@@ -52,14 +52,24 @@ read name
 echo "hello $name!! good to see you."
 
 ```
-`$1` is the first argument: `$ ./file4.sh saikia`
+`$1` is the first argument: `$ ./file4.sh saikia moinmoin`
 
 file4.sh:
 ```bash
 #!/bin/bash
 
 name=$1
+compliment=$2
+
+user=$(whoami)
+date2=$(date)
+whereami=$(pwd)
 
 echo "hello $name!! good to see you."
+echo "message foor you: $compliment."
+
+sleep 2
+
+echo "You are currently logged in as $user and you are in the $whereami. Today: $date2"
 
 ```
