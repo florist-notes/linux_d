@@ -1,7 +1,7 @@
 ## Linux Security :
 
 Linux servers are secure but desktops are vulnerable but some good rules for linux security hardening is essential. <br />
-Install a firewall $ sudo install ufw <br />
+Install a firewall `$ sudo install ufw` <br />
 ```
  $ sudo ufw limit 22/tcp 
  $ sudo ufw allow 80/tcp 
