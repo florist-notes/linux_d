@@ -609,7 +609,9 @@ SELECT * FROM users WHERE username ='admin'-- 'AND password='password123' <br />
 
 <tr>
 <th>create malware</th>
-<td>ransomware, worms, trojan, adware, spyware<br /></td>
+<td>
+
+ransomware, worms, trojan, adware, spyware with [malware showcase](https://github.com/PatrikH0lop/malware_showcase), [MalwareSourceCode](https://github.com/vxunderground/MalwareSourceCode), [theZoo - A Live Malware Repository](https://github.com/ytisf/theZoo), [Malware Database](https://github.com/Endermanch/MalwareDatabase)<br /></td>
 <td>
 $ mkdir ransomware <br />
 $ cd ransomware (encrypt the following files)<br />
@@ -678,6 +680,10 @@ else:
     print("sorry, wrong secret phrase. you have 17:00 hrs left.")
 
 ```
+
+$ git clone https://github.com/PatrikH0lop/malware_showcase <br />
+$ pip3 install .r requirements.txt  <br />
+
 
 <br /></td>
 </tr>
