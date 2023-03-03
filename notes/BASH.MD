@@ -73,3 +73,5 @@ sleep 2
 echo "You are currently logged in as $user and you are in the $whereami. Today: $date2"
 
 ```
+
+[bash cheatsheet](https://devhints.io/bash)
