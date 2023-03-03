@@ -120,7 +120,12 @@ enabled = true
 ### Anonymize Your Traffic With Proxychains & Tor
 
 ```
-
+$ sudo apt install proxychains
+$ sudo apt install tor (9050 port for tor service - not the browser but tor service)
+$ sudo vim /etc/proxychains.conf
+$ sudo systemctl enable tor.service
+$ sudo systemctl start tor.service
+$ proxychains firefox dnsleak.com
 ```
 
 ### Defend Your Ubuntu System Against Network Attacks :
