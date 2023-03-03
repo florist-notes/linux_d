@@ -6,7 +6,7 @@ Install a firewall `$ sudo install ufw` <br />
  $ sudo ufw limit 22/tcp 
  $ sudo ufw allow 80/tcp 
  $ sudo ufw allow 443/tcp
- $ sudo ufw fefault deny incoming 
+ $ sudo ufw default deny incoming 
  $ sudo ufw default allow outgoing 
  $ sudo ufw enable 
  $ sudo ufw status
@@ -28,6 +28,76 @@ enabled = true
 
 ```
 
+<table style="width:100%" >
+
+<tr>
+<th>topic</th>
+<th>description <br /></th>
+<th>command <br /></th>
+</tr>
+
+<tr>
+<th> SSH Security Essentials</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Configuring SUDO Access</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Securing Apache2</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Securing Nginx</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>UFW firewall</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Secure phpMyAdmin</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Apache2 WAF</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Nginx WAF</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>Docker Security Essentials</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+
+<tr>
+<th>(Log4Shell) - Exploitation & Mitigation</th>
+<td>y <br /></td>
+<td>y <br /></td>
+</tr>
+</table>
+
+
 ### Uncover illegal access in linux systems:
 
 ```
@@ -46,6 +116,13 @@ enabled = true
     $ apt install chkrootkit (rootkit analyzer)
     $ chkrootkit
 ```
+
+### Anonymize Your Traffic With Proxychains & Tor
+
+```
+
+```
+
 ### Defend Your Ubuntu System Against Network Attacks :
 
 Goal is to minimize the number of attack surface with ref - [blog](https://null-byte.wonderhowto.com/how-to/locking-down-linux-using-ubuntu-as-your-primary-os-part-2-network-attack-defense-0185709/)

@@ -1,6 +1,6 @@
 <table style="width:100%" >
 
-Security :
+## Linux Administration :
 
 <tr>
 <th>command</th>
@@ -9,9 +9,9 @@ Security :
 </tr>
 
 <tr>
-<th>maintain access</th>
-<td>generate ssh key <br /></td>
-<td>$ ssh-keygen -t rsa <br /></td>
+<th>y</th>
+<td>y <br /></td>
+<td>y <br /></td>
 </tr>
 
 </table>
