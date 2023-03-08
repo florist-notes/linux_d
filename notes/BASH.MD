@@ -151,12 +151,28 @@ echo "You are currently logged in as $user and you are in the $whereami. Today: 
 
 If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. The > notation is used to redirect stdout to a file. On the other hand, we can use  2> notation to redirect stderr, and &>  to redirect both stdout and stderr. 
 
-resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org/LDP/abs/html/)
+resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org/LDP/abs/html/), [utility-bash-script](https://github.com/aviaryan/utility-bash-scripts), [Packt Publishing](https://github.com/PacktPublishing/Complete-Bash-Shell-Scripting-), [awesome-bash](https://github.com/awesome-lists/awesome-bash), [simple-bash-scripts](https://github.com/ruanyf/simple-bash-scripts)
 
 
+Counting lines of code in a project : `$ alias sloc="git ls-files \"*.js*\" \"*.scss\" | xargs wc -l"`
 
+View list of aliases in your source file : ` $ alias lsalias="grep -in --color -e '^alias\s+*' ~/mymacrc | sed 's/alias //' | grep --color -e ':[a-z][a-z0-9]*'"`
 
+Remove Dangling Docker images : `$ alias dcdangling="docker rmi \$(docker images -f \"dangling=true\" -q)" `
 
+Currency - Currency Converter : ` $ currency INR USD 10`
+
+Stocks - Display stock price details : ` $ stocks Intel`
+
+Check weather : `$ weather moon` or `$ weather hamburg`
+
+Shorten given URL : `$ short <URL>`
+
+Check which ciphers are enabled / disabled for a given https site : `$ siteciphers google.com`
+
+Lyrics of a song : `$ lyrics -a michael jackson -s who is it`
+
+YouTube from terminal : `$ ytview Ed Sheeran`
 
 
 <table style="width:100%" >
@@ -399,11 +415,44 @@ If you need to include the output of a complex command in your script, you can w
     echo $var
 
 ```
+Some useful bash scripts:
 
+Search for Files Recursively To Find an Expression : `$ find . -type f -exec grep -l "nltk" {} \;`
+
+Print the Elapsed Time of Code Execution :
+
+```bash
+
+#!/bin/bash
+
+start_time=$(date +%s)
+
+# your code here
+
+end_time=$(date +%s)
+
+echo "Time elapsed: $(($end_time - $start_time)) seconds"
+
+```
+
+Execute Command on Each File if a Condition Is Met :
+
+```bash
+
+for file in *; do
+    if [[ $file =~ ^[a-zA-Z] ]]; then
+        # execute command on the file
+        echo $file
+    fi
+done
+
+```
+
+Weather : `weather(){ curl -s "wttr.in/$1?m1"} `
 
 ## How to Automate Scripts by Scheduling via cron Jobs
 
-Cron is a job scheduling utility present in Unix like systems. You can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs.
+Cron is a job scheduling utility present in Unix like systems. You can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs. For individual users, the cron service checks the following file: `/var/spool/cron/crontabs`.
 
 Below is the syntax to schedule crons:
 
