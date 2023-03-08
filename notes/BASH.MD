@@ -112,25 +112,41 @@ resources : [bash cheatsheet](https://devhints.io/bash)
         myfun #calling function
 
 
+        Name="Saikia"
+        if [ "$Name" = "Saikia" ]; then
+        echo "His name is Saikia. It is true."
+        fi
+
 ```
 <br /></td>
 <td>
 
 ```bash
 
-echo "Enter filename"
-read filename
+    echo "Enter filename"
+    read filename
 
-if [ -e $filename ]
-then
-echo "$filename is exits on the directory"
-cat $filename
+    if [ -e $filename ]
+    then
+    echo "$filename is exits on the directory"
+    cat $filename
 
-else
-    cat > $filename
-    echo "File created"
-fi
+    else
+        cat > $filename
+        echo "File created"
+    fi
 
+
+    if [ 10 -eq 10 ];then
+    echo "Equal"
+    fi
+
+    if [ 'Geeks' == 'Geeks' ];
+    then
+        echo "same" #output
+    else
+        echo "not same"
+    fi
 ```
 <br /></td>
 
@@ -138,10 +154,17 @@ fi
 
 ```bash
 
-Name="Satyajit"
-if [ "$Name" = "Satyajit" ]; then
-  echo "His name is Satyajit. It is true."
-fi
+Name="Saikia"
+case "$Name" in
+    #case 1
+    "Saikia") echo "Profession : Software Engineer" ;;
+    
+    #case 2
+    "skk") echo "Profession : Web Developer" ;;
+    
+    #case 3
+    "florist_notes") echo "Profession : Technical Content Writer" ;;
+esac
 
 ```
 <br /></td>
@@ -149,3 +172,95 @@ fi
 
 </table>
 
+#### String and Numeric Comparisons :
+
+
+<table style="width:100%" >
+
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Operator</th>
+<th>Description</th><br />
+</tr>
+
+<tr>
+<td>
+==
+<br /></td>
+<td>
+ Returns true if the strings are equal
+<br /></td>
+
+<td>
+!=
+<br /></td>
+<td>
+ Returns true if the strings are not equal
+<br /></td>
+</tr>
+
+
+<tr>
+<td>
+-n
+<br /></td>
+<td>
+Returns true if the string to be tested is not null
+<br /></td>
+<td>
+-z
+<br /></td>
+<td>
+Returns true if the string to be tested is null
+<br /></td>
+</tr>
+
+<tr>
+<td>
+-eq
+<br /></td>
+<td>
+Equal
+<br /></td>
+
+<td>
+-ge
+<br /></td>
+<td>
+Greater Than or Equal
+<br /></td>
+</tr>
+
+<tr>
+<td>
+-gt
+<br /></td>
+<td>
+Greater Than
+<br /></td>
+
+<td>
+-le
+<br /></td>
+<td>
+Less Than or Equal
+<br /></td>
+</tr>
+<tr>
+<td>
+-lt
+<br /></td>
+<td>
+Less Than
+<br /></td>
+
+<td>
+-ne
+<br /></td>
+<td>
+Not Equal
+<br /></td>
+</tr>
+
+</table>
