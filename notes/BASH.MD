@@ -505,4 +505,62 @@ Min(0-59)
 
 Here, * represent represents minute(s) hour(s) day(s) month(s) weekday(s), respectively. Below are some examples of scheduling cron jobs.
 
-Example : `5 0 * 8 *` for `At 00:05 in August.` , `5 4 * * 6` for `At 04:05 on Sunday.` and `0 22 * * 1-5` for `At 22:00 on every day-of-week from Monday through Friday`. The command `crontab -l` lists the already scheduled scripts for a particular user. To find scripts : `$ find . -type f -name "*.sh"`.
+If, for example, you want to set up a cron job to run root/backup.sh every Friday at 5:37 pm, here’s what your cron command should look like: ` $ 37 17 * * 5 root/backup.sh`.
+
+<b>Example </b>: `5 0 * 8 *` for `At 00:05 in August.` , `5 4 * * 6` for `At 04:05 on Sunday.` and `0 22 * * 1-5` for `At 22:00 on every day-of-week from Monday through Friday`. The command `crontab -l` lists the already scheduled scripts for a particular user. To find scripts : `$ find . -type f -name "*.sh"`.
+
+<b> L </b>: writing 3<b>L</b> in the day-of-week field means the last Wednesday of a month. (#hash) For example, 1#2 means the second Monday of the month.
+
+Keep in mind that the cron output will be automatically sent to your local email account. If you want to stop receiving emails, you can add `>/dev/null 2>&1` to a command as in the following example: `$ 0 5 * * * /root/backup.sh >/dev/null 2>&1`.
+
+If you want to send the output to a specific email account, add MAILTO followed by an email address. Here is an example: 
+
+```bash
+MAILTO="inbox@domain.tld"
+0 3 * * * /root/backup.sh >/dev/null 2>&1
+```
+
+Here are some useful special strings that you can use in commands:<br /><br />
+
+<b>@hourly.</b> The job will run once an hour. <br />
+<b>@daily</b> or <b>@midnight.</b> These strings will run the task every day at midnight.<br />
+<b>@weekly.</b> Use this to run jobs once a week at midnight on Sunday.<br />
+<b>@monthly.</b> This special string runs a command once on the first day of every month.<br />
+<b>@yearly.</b> Use this to run a task once a year at midnight on January 1st.<br />
+<b>@reboot.</b> With this string, the job will run only once at startup.<br />
+
+`@reboot /root/clearcache.sh` :	Clear cache every time you turn on the system.
+
+`@hourly /scripts/monitor.sh` :	Perform monitoring every hour.
+
+`0 0 * * 0 /root/backup.sh` :	Perform a backup every Sunday at midnight.
+
+`0 * * * 1 /root/clearcache.sh` :	Clear the cache every hour on Mondays.
+
+`0 6,18 * * * /root/backup.sh` :	Backup data twice a day at 6am and 6pm.
+
+`*/10 * * * * /scripts/monitor.sh` :	Perform monitoring every 10 minutes.
+
+`* * 20 7 * /root/backup.sh` :	Perform a backup every minute on July 20.
+
+`0 22 * * 1-5 /root/clearcache.sh` :	Clear the cache every weekday (Monday to Friday) at 10pm.
+
+`* * * 1,2,5 * /scripts/monitor.sh` :	Perform monitoring every minute during January, February, and May.
+
+`10-59/10 5 * * * /root/clearcache.sh` :	Clear the cache every 10 minutes at 5am, starting from 5:10am.
+
+`0 8 1 */3 * /home/user/script.sh` :	Make the task run quarterly on the first day of the month at 8am.
+
+`0 * * * * /root/backup.sh` :	Create a backup every hour.
+
+`* * * * * /scripts/script.sh; /scripts/scrit2.sh` :	Include multiple tasks on a single cron job. Useful for scheduling multiple tasks to run at the same time.
+
+`@reboot /root/clearcache.sh` :	Clear cache every time you turn on the system.
+
+`0 8 1-7 * 1 /scripts/script.sh` :	Run a script on the first Monday of each month, at 8 am.
+
+`15 9 1,20 * * /scripts/monitor.sh` :	Perform monitoring at 9:15 pm on the 1st and 20th of every month.
+
+`0 0 1,15 * 3 /scripts/script.sh` :	Run a script at midnight every Wednesday between the 1st and 15th of every month.
+
+`00 08-17 * * 1-5 bin/check-db-status` :	Check database status every day from Monday to Friday every hour from 8 to 5 pm.
