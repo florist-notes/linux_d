@@ -151,7 +151,7 @@ echo "You are currently logged in as $user and you are in the $whereami. Today: 
 
 If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. The > notation is used to redirect stdout to a file. On the other hand, we can use  2> notation to redirect stderr, and &>  to redirect both stdout and stderr. 
 
-resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org/LDP/abs/html/), [utility-bash-script](https://github.com/aviaryan/utility-bash-scripts), [Packt Publishing](https://github.com/PacktPublishing/Complete-Bash-Shell-Scripting-), [awesome-bash](https://github.com/awesome-lists/awesome-bash), [simple-bash-scripts](https://github.com/ruanyf/simple-bash-scripts)
+resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org/LDP/abs/html/), [utility-bash-script](https://github.com/aviaryan/utility-bash-scripts), [Packt Publishing](https://github.com/PacktPublishing/Complete-Bash-Shell-Scripting-), [awesome-bash](https://github.com/awesome-lists/awesome-bash), [simple-bash-scripts](https://github.com/ruanyf/simple-bash-scripts), [crontab.guru](https://crontab.guru/#*_*_*_*_*)
 
 
 Counting lines of code in a project : `$ alias sloc="git ls-files \"*.js*\" \"*.scss\" | xargs wc -l"`
@@ -564,3 +564,44 @@ Here are some useful special strings that you can use in commands:<br /><br />
 `0 0 1,15 * 3 /scripts/script.sh` :	Run a script at midnight every Wednesday between the 1st and 15th of every month.
 
 `00 08-17 * * 1-5 bin/check-db-status` :	Check database status every day from Monday to Friday every hour from 8 to 5 pm.
+
+## How to schedule a Python script using cron job
+
+<b>Scheduling a cron job when you have root or sudo privileges</b> :
+
+With administrator-level access to a linux instance, the best practice for scheduling a cron job for your scripts is to create an application-specific crontab file in the server's `cron.d` directory, usually located at `/etc/cron.d/`. This "drop in" directory is scanned every minute by cron and all you need to do is copy a crontab file into place and wait for the scheduled time for your jobs to run.
+
+The crontab file itself has a very simple format. It may include comments, environment variables, and the jobs to be run. Each job must fit on a single line that begins with a valid cron schedule expression, the user the job should run as, and finally the command string to be run
+
+```bash
+
+# Run the data archiver once a day as the skk user
+5 4 * * * skk /etc/scripts/run_archiver.py
+
+```
+
+<b>Scheduling a cron job without root privileges</b>
+If your system administrator allows it, cron jobs can also be scheduled by users in a private user crontab file. These user crontabs can only run commands as yourself. To interact with your user crontab, use the crontab command.
+
+View your crontab file:
+
+`$ crontab -l`
+Open your crontab in a text editor to make updates:
+
+`$ crontab -e`
+From the text editor, add your new cron entry:
+
+```bash
+# Run the data archiver once a day
+5 4 * * * /etc/scripts/run_archiver.py
+```
+
+Even though cron runs your cron jobs using a real user account, it does not trigger an interactive session, so any environment variables you may be loading in `.bash_profile` or `.bashrc` will not be available. If your script expects certain environment variables, you can either set them within the crontab file itself, or have each line of your crontab source your `.bash_profile` before invoking your script. 
+
+
+`$ 5 4 * * * source ~/.bash_profile ; python /etc/scripts/run_archiver.py`
+
+
+If you are using a tool like virtualenv to isolate your Python dependencies, you will need to activate that virtual environment when invoking your script. The easiest way to do this is to use the python binary symlinked in the environment:
+
+`$ 5 4 * * * /etc/virtualenvs/example/bin/python /etc/scripts/run_archiver.py`
