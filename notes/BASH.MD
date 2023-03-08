@@ -1,8 +1,9 @@
 # Bash Scripting:
 
-Bourne Again Shell - wraps around the linux kernel.
+Bourne Again Shell - wraps around the linux kernel. Bash is a command-line interpreter or Unix Shell and it is widely used in GNU/Linux Operating System.  It is written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
 
-
+`#!/bin/bash` tells the system to use Bash for execution. 
+ 
 ```bash
  :~# which $SHELL (/bin/bash/)
  :~# echo "Hi 2_2" ( #! is called shebang )
@@ -27,6 +28,13 @@ echo "oh wow"
 sleep 3
 
 echo "bye"
+     
+Age=17
+if [ "$Age" -ge 18 ]; then
+    echo "You can vote"
+else
+    echo "You cannot vote"    
+fi
 
  :~# 
 
@@ -74,4 +82,56 @@ echo "You are currently logged in as $user and you are in the $whereami. Today: 
 
 ```
 
-[bash cheatsheet](https://devhints.io/bash)
+If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. resources : [bash cheatsheet](https://devhints.io/bash)
+
+
+<table style="width:100%" >
+
+<tr>
+<th>bash script 1</th>
+<th>bash script 2 <br /></th>
+</tr>
+
+<tr>
+<td>
+
+```bash
+
+        #!/bin/bash
+
+        var1="Apple" #global variable
+        myfun(){
+            local var2="Banana" #local variable
+            var3="Cherry" #global variable
+            echo "The name of first fruit is $var1"
+            echo "The name of second fruit is $var2"
+        }
+        myfun #calling function
+
+
+```
+<br /></td>
+<td>
+
+```bash
+
+echo "Enter filename"
+read filename
+
+if [ -e $filename ]
+then
+echo "$filename is exits on the directory"
+cat $filename
+
+else
+    cat > $filename
+    echo "File created"
+fi
+
+```
+<br /></td>
+</tr>
+
+
+</table>
+
