@@ -605,3 +605,48 @@ Even though cron runs your cron jobs using a real user account, it does not trig
 If you are using a tool like virtualenv to isolate your Python dependencies, you will need to activate that virtual environment when invoking your script. The easiest way to do this is to use the python binary symlinked in the environment:
 
 `$ 5 4 * * * /etc/virtualenvs/example/bin/python /etc/scripts/run_archiver.py`
+
+
+## Running a cron job using Celery with the beat scheduler.
+
+Celery is a popular Python library for running background tasks with asynchronous task queues that trigger commands in a separate worker process. The most common use case is to add jobs to a celery task queue from your application code when a user does things like ask for a password reset email. When you use the celery-beat package, you can also add scheduled jobs alongside these event-driven tasks. Note: This guide assumes that you are already running Celery in your app.
+
+First, locate your Celery initialization code and add a task for your new cron job. This is usually in a file called `tasks.py`:
+
+
+```python
+
+from celery import Celery
+from celery.schedules import crontab
+app = Celery()
+
+# ... existing celery tasks here
+
+@app.task
+def run_archiver():
+    from application import archiver
+    archiver.run()
+
+```
+
+Define a beat schedule that will be read by Celery on start-up:
+
+```json
+app.conf.beat_schedule = {
+    'run-archiver': {
+        'task': 'tasks.run_archiver',
+        'schedule': '5 4 * * *'
+    },
+}
+app.conf.timezone = 'UTC'
+```
+
+Bonus: Automatically monitor your Celery cron jobs with Cronitor
+
+```python
+
+import cronitor.celery
+# Discover all of your celery tasks and automatically add monitoring.
+cronitor.celery.initialize(app, api_key="<cronitor api key here>")
+
+```
