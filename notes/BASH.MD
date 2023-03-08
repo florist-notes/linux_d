@@ -102,9 +102,10 @@ resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org
 
 ### Basic Conditional Statements & Loops :
 
+<table style="width:100%" >
 <tr>
 <th>if else</th>
-<th>loop</th><br /></th>
+<th>loop<br /></th>
 </tr>
 
 <tr>
@@ -143,6 +144,7 @@ resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org
 </tr>
 </table>
 
+Some bash scripting examples:
 
 <table style="width:100%" >
 
