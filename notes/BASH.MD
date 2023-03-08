@@ -1,20 +1,12 @@
 # Bash Scripting:
 
-Bourne Again Shell - wraps around the linux kernel. Bash is a command-line interpreter or Unix Shell and it is widely used in GNU/Linux Operating System.  It is written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
+<center><img src="../img/tux.png" width=20%></center>
 
-`#!/bin/bash` tells the system to use Bash for execution. 
+The Bourne Again Shell - wraps around the linux kernel and is a command-line interpreter or Unix Shell widely used in GNU/Linux Operating System written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
+
+`#!/bin/bash` tells the system to use Bash for execution. You can also check with : `$ which $SHELL (/bin/bash/)` and to write a bash script : ` $ nano file.sh`. To run the script after writing the script : ` $ bash file.sh` ( run the bash script) or  `$ chmod +x file.sh` and  `$ ./file.sh`:
  
 ```bash
- :~# which $SHELL (/bin/bash/)
- :~# echo "Hi 2_2" ( #! is called shebang )
- :~# nano file.sh
-
-#!/bin/bash
-
-echo "hi 2_2"
-
- :~# bash file.sh ( run the bash script) or  :~# chmod +x file.sh and  :~# ./file.sh
- :~# nano file.sh
 
 #!/bin/bash
 
@@ -36,7 +28,8 @@ else
     echo "You cannot vote"    
 fi
 
- :~# 
+var=$((3+9))
+echo $var
 
 ```
 
@@ -105,15 +98,58 @@ echo "You are currently logged in as $user and you are in the $whereami. Today: 
 
 If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. The > notation is used to redirect stdout to a file. On the other hand, we can use  2> notation to redirect stderr, and &>  to redirect both stdout and stderr. 
 
-resources : [bash cheatsheet](https://devhints.io/bash)
+resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org/LDP/abs/html/)
+
+### Basic Conditional Statements & Loops :
+
+<tr>
+<th>if else</th>
+<th>loop</th><br /></th>
+</tr>
+
+<tr>
+<td>
+
+```bash
+
+    if [[ condition ]]
+    then
+        statement
+    elif [[ condition ]]; then
+        statement 
+    else
+        do this by default
+    fi
+
+```
+
+<br /></td>
+
+<td>
+
+```bash
+
+    #!/bin/bash
+
+    for X in cyan magenta yellow  
+    do
+        echo $X
+    done
+
+```
+
+<br /></td>
+
+</tr>
+</table>
 
 
 <table style="width:100%" >
 
 <tr>
-<th>bash script 1</th>
-<th>bash script 2 </th>
-<th>bash script 3 <br /></th>
+<th>file5.sh</th>
+<th>file6.sh</th>
+<th>file7.sh<br /></th>
 </tr>
 
 <tr>
@@ -284,4 +320,42 @@ Not Equal
 <br /></td>
 </tr>
 
+
+<tr>
+<td>
+-a
+<br /></td>
+<td>
+AND statement
+<br /></td>
+
+<td>
+-o
+<br /></td>
+<td>
+OR statement
+<br /></td>
+</tr>
+
 </table>
+
+### .bashrc
+The .bashrc file is a hidden script file containing various terminal session configurations. The file executes automatically in both interactive and non-interactive non-login shells.
+
+When running a non-login shell (subshell), the primary read configuration file is the `/etc/bash.bashrc`. The file contains system-wide configurations for non-login shells.
+
+### .bash_profile
+The .bash_profile file is a hidden script file with custom configurations for a user terminal session. The file automatically executes in Bash interactive login shells.
+
+When running an interactive login shell, the system reads the following configuration file first:
+
+`/etc/profile` - Stores global configurations for login shells. The configurations apply to all users.
+Next, the Bash shell searches for specific user configuration files in the following order:
+
+`~/.bash_profile` <br />
+`~/.bash_login` <br />
+`~/.profile` <br />
+
+<b>.bashrc</b> defines the settings for a user when running a <b>subshell</b>. Add custom configurations to this file to make parameters available in subshells for a specific user. <br />
+
+<b>.bash_profile</b> defines the settings for a user when running a <b>login shell</b>. Add custom configurations to this file to make parameters available to a specific user when running a login shell.
