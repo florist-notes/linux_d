@@ -470,7 +470,10 @@ Cron is a job scheduling utility present in Unix like systems. You can schedule 
 
 To allow skk to use crons, include his name in `/etc/cron.allow`. This will allow skk to create and edit cron jobs. Users can also be denied access to cron job access by entering their usernames in the file `/etc/cron.d/cron.deny`.
 
+
+
 To add cron Jobs in Linux : `$ sudo systemctl status cron.service` ( check running cron services ). Further cron commands :
+
 
 ` $ crontab -e` : edits crontab entries to add, delete, or edit cron jobs.
 
@@ -533,6 +536,7 @@ If you want to send the output to a specific email account, add MAILTO followed 
 MAILTO="inbox@domain.tld"
 0 3 * * * /root/backup.sh >/dev/null 2>&1
 ```
+` * * * * *` : runs every minute
 
 Here are some useful special strings that you can use in commands:<br /><br />
 
