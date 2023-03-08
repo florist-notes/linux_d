@@ -82,14 +82,17 @@ echo "You are currently logged in as $user and you are in the $whereami. Today: 
 
 ```
 
-If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. resources : [bash cheatsheet](https://devhints.io/bash)
+If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. The > notation is used to redirect stdout to a file. On the other hand, we can use  2> notation to redirect stderr, and &>  to redirect both stdout and stderr. 
+
+resources : [bash cheatsheet](https://devhints.io/bash)
 
 
 <table style="width:100%" >
 
 <tr>
 <th>bash script 1</th>
-<th>bash script 2 <br /></th>
+<th>bash script 2 </th>
+<th>bash script 3 <br /></th>
 </tr>
 
 <tr>
@@ -130,8 +133,19 @@ fi
 
 ```
 <br /></td>
-</tr>
 
+<td>
+
+```bash
+
+Name="Satyajit"
+if [ "$Name" = "Satyajit" ]; then
+  echo "His name is Satyajit. It is true."
+fi
+
+```
+<br /></td>
+</tr>
 
 </table>
 
