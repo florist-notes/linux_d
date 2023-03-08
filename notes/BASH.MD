@@ -415,4 +415,4 @@ Below is the syntax to schedule crons:
 
 Here, * represent represents minute(s) hour(s) day(s) month(s) weekday(s), respectively. Below are some examples of scheduling cron jobs.
 
-Example : `5 0 * 8 *` for `At 00:05 in August.` , `5 4 * * 6` for `At 04:05 on Sunday.` and `0 22 * * 1-5` for `At 22:00 on every day-of-week from Monday through Friday`. The command `crontab -l` lists the already scheduled scripts for a particular user.
+Example : `5 0 * 8 *` for `At 00:05 in August.` , `5 4 * * 6` for `At 04:05 on Sunday.` and `0 22 * * 1-5` for `At 22:00 on every day-of-week from Monday through Friday`. The command `crontab -l` lists the already scheduled scripts for a particular user. To find scripts : `$ find . -type f -name "*.sh"`.
