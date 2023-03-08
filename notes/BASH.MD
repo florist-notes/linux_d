@@ -2,9 +2,9 @@
 
 <center><img src="../img/tux.png" width=20%></center>
 
-The Bourne Again Shell - wraps around the linux kernel and is a command-line interpreter or Unix Shell widely used in GNU/Linux Operating System written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
+The Bourne Again Shell - wraps around the linux kernel and is a command-line interpreter or unix shell widely used in GNU/Linux Operating System written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
 
-`#!/bin/bash` tells the system to use Bash for execution. You can also check with : `$ which $SHELL (/bin/bash/)` and to write a bash script : ` $ nano file.sh`. To run the script after writing the script : ` $ bash file.sh` ( run the bash script) or  `$ chmod +x file.sh` and  `$ ./file.sh`:
+`#!/bin/bash` tells the system to use Bash for execution. You can also check with : `$ which $SHELL` (/bin/bash/) and to write a bash script, start with : ` $ nano file.sh`. To run the script after writing the script : ` $ bash file.sh` ( run the bash script) or  `$ chmod +x file.sh` and  `$ ./file.sh`:
  
 ```bash
 
@@ -32,6 +32,67 @@ var=$((3+9))
 echo $var
 
 ```
+
+
+### Conditional statements & loops :
+
+<table style="width:100%" >
+<tr>
+<th>if else</th>
+<th>for loop</th>
+<th>while loop<br /></th>
+</tr>
+
+<tr>
+<td>
+
+```bash
+
+    if [[ condition ]]
+    then
+        statement
+    elif [[ condition ]]; then
+        statement 
+    else
+        do this by default
+    fi
+
+```
+
+<br /></td>
+
+<td>
+
+```bash
+
+    #!/bin/bash
+
+    for X in cyan magenta yellow  
+    do
+        echo $X
+    done
+
+```
+
+<br /></td>
+
+<td>
+
+```bash
+    #!/bin/bash
+    i=1
+    while [[ $i -le 10 ]] ; do
+    echo "$i"
+    (( i += 1 ))
+    done
+```
+<br />
+</td>
+
+</tr>
+</table>
+
+Some bash scripting examples:
 
 
 <table style="width:100%" >
@@ -93,6 +154,10 @@ echo "You are currently logged in as $user and you are in the $whereami. Today: 
 
 ```
 <br /></td>
+</tr>
+</table>
+
+
 `$1` is the first argument: `$ ./file4.sh saikia moinmoin`
 
 
@@ -100,51 +165,11 @@ If a variable, is declared inside a function then it is generally a local variab
 
 resources : [bash cheatsheet](https://devhints.io/bash), [tldp](https://tldp.org/LDP/abs/html/)
 
-### Basic Conditional Statements & Loops :
 
-<table style="width:100%" >
-<tr>
-<th>if else</th>
-<th>loop<br /></th>
-</tr>
 
-<tr>
-<td>
 
-```bash
 
-    if [[ condition ]]
-    then
-        statement
-    elif [[ condition ]]; then
-        statement 
-    else
-        do this by default
-    fi
 
-```
-
-<br /></td>
-
-<td>
-
-```bash
-
-    #!/bin/bash
-
-    for X in cyan magenta yellow  
-    do
-        echo $X
-    done
-
-```
-
-<br /></td>
-
-</tr>
-</table>
-
-Some bash scripting examples:
 
 <table style="width:100%" >
 
