@@ -399,3 +399,20 @@ If you need to include the output of a complex command in your script, you can w
     echo $var
 
 ```
+
+
+## How to Automate Scripts by Scheduling via cron Jobs
+
+Cron is a job scheduling utility present in Unix like systems. You can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs.
+
+Below is the syntax to schedule crons:
+
+```bash
+
+# Cron job example
+* * * * * sh /path/to/script.sh
+```
+
+Here, * represent represents minute(s) hour(s) day(s) month(s) weekday(s), respectively. Below are some examples of scheduling cron jobs.
+
+Example : `5 0 * 8 *` for `At 00:05 in August.` , `5 4 * * 6` for `At 04:05 on Sunday.` and `0 22 * * 1-5` for `At 22:00 on every day-of-week from Monday through Friday`. The command `crontab -l` lists the already scheduled scripts for a particular user.
