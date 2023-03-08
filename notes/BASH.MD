@@ -369,13 +369,14 @@ OR statement
 </tr>
 
 </table>
+
 ## .bashrc , .bash_profile, .bash_history
 
-`.bash_profile is read and executed when Bash is invoked as an interactive login shell, while .bashrc is executed for an interactive non-login shell.
+`.bash_profile` is read and executed when Bash is invoked as an interactive login shell, while .bashrc is executed for an interactive non-login shell.
 
 Use .bash_profile to run commands that should run only once, such as customizing the $PATH environment variable .
 Put the commands that should run every time you launch a new shell in the .bashrc file. This include your aliases and functions , custom prompts, history customizations , and so on.
-Typically, ~/.bash_profile contains lines like below that source the .bashrc file. This means each time you log in to the terminal, both files are read and executed.
+Typically, `~/.bash_profile` contains lines like below that source the `.bashrc` file. This means each time you log in to the terminal, both files are read and executed.
 
 ```bash
 if [ -f ~/.bashrc ]; then
