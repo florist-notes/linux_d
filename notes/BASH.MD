@@ -452,14 +452,55 @@ Weather : `weather(){ curl -s "wttr.in/$1?m1"} `
 
 ## How to Automate Scripts by Scheduling via cron Jobs
 
-Cron is a job scheduling utility present in Unix like systems. You can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs. For individual users, the cron service checks the following file: `/var/spool/cron/crontabs`.
+Cron is a job scheduling utility present in Unix like systems. You can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs. For individual users, the cron service checks the following file: `/var/spool/cron/crontabs`. In order to use cron jobs, an admin needs to allow cron jobs to be added for users in the `/etc/cron.allow` file.
+
+To allow skk to use crons, include his name in `/etc/cron.allow`. This will allow skk to create and edit cron jobs. Users can also be denied access to cron job access by entering their usernames in the file `/etc/cron.d/cron.deny`.
+
+To add cron Jobs in Linux : `$ sudo systemctl status cron.service` ( check running cron services ). Further cron commands :
+
+` $ crontab -e` : edits crontab entries to add, delete, or edit cron jobs.
+
+` $ crontab -l` : list all the cron jobs for the current user.
+
+` $ crontab -u username -l` : list another user's crons.
+
+` $ crontab -u username -e` : edit another user's crons.
+
+` $ crontab -r ` : delete all scheduled tasks.
+
+Alternatively, a root user can move their scripts into the following directories to schedule their execution:
+
+`/etc/cron.hourly/` – Run all scripts once an hour
+
+`/etc/cron.daily/` – Run once a day.
+
+`/etc/cron.weekly/` – Run once a week.
+
+`/etc/cron.monthly/` – Run once a month.
+
 
 Below is the syntax to schedule crons:
 
 ```bash
 
 # Cron job example
-* * * * * sh /path/to/script.sh
+
+
+*   *   *   *   *  sh /path/to/script/script.sh
+|   |   |   |   |              |
+|   |   |   |   |      Command or Script to Execute        
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   | Day of the Week(0-6)
+|   |   |   |
+|   |   | Month of the Year(1-12)
+|   |   |
+|   | Day of the Month(1-31)  
+|   |
+| Hour(0-23)  
+|
+Min(0-59)
 ```
 
 Here, * represent represents minute(s) hour(s) day(s) month(s) weekday(s), respectively. Below are some examples of scheduling cron jobs.
