@@ -31,6 +31,11 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 </tr>
 
 <tr>
+<th>#</th>
+<td>root user.<br /></td>
+</tr>
+
+<tr>
 <th>~</th>
 <td>home directory.<br /></td>
 </tr>
@@ -443,63 +448,62 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 
 sudo = superuser do
 
-```
- $ adduser saikia (ain't gonna work without sudo access)
- $ sudo adduser saikia
- $ cat /etc/passwd (find all users)
+  ```bash
+  $ adduser saikia (ain't gonna work without sudo access)
+  $ sudo adduser saikia
+  $ cat /etc/passwd (find all users)
 
- $ sudo useradd skk (useradd is lazy - no bash & no home)
+  $ sudo useradd skk (useradd is lazy - no bash & no home)
 
- $ sudo passwd skk  (add password)
- $ cd /home
- $ ls               (skk doesn't has a /home but skk does)
+  $ sudo passwd skk  (add password)
+  $ cd /home
+  $ ls               (skk doesn't has a /home but skk does)
 
- $ usermod -h
- $ sudo usermod skk --shell /bin/bash (now skk has a bash shell)
+  $ usermod -h
+  $ sudo usermod skk --shell /bin/bash (now skk has a bash shell)
 
- $ sudo usermod -l ranjan skk (ranjan is the new name for skk)
- $ sudo useradd amartya -m (-m will create a home directory)
+  $ sudo usermod -l ranjan skk (ranjan is the new name for skk)
+  $ sudo useradd amartya -m (-m will create a home directory)
 
- $ su saikia
- $ su - (switch to root user)
- $ sudo su -
+  $ su saikia
+  $ su - (switch to root user)
+  $ sudo su -
 
 
-sudoers file
- $ sudo visudo 
+  sudoers file
+  $ sudo visudo 
 
- $ sudo userdel ranjan
+  $ sudo userdel ranjan
 
- $ sudo group add digi55
- $ cat /etc/group
- $ groups
+  $ sudo group add digi55
+  $ cat /etc/group
+  $ groups
 
- $ sudo usermod -aG digi55 amartya (add user to group, -a equals append)
- $ sudo gpasswd -d amartya digi55 (remove user from group)
- $ sudo groupdel digi55 
+  $ sudo usermod -aG digi55 amartya (add user to group, -a equals append)
+  $ sudo gpasswd -d amartya digi55 (remove user from group)
+  $ sudo groupdel digi55 
 
  ```
 ### Package Managers in Linux
 dpkg doesn't install dependencies but apt (advanced package tool) does :) snap is another package store.
 
- ```
- $ sudo apt update
- $ sudo apt install packagename
- $ sudo apt edit-sources (list of sources to pull packages from)
- $ sudo apt -h
- $ sudp apt list
- $ apt list --installed (find installed packages)
- $ apt list --installed > grep ^nmap
- $ sudo apt show nmap
- $ sudo apt search nmap
- $ sudo apt remove packagename (config files remains)
- $ sudo apt purge packagename (removes everything)
- $ sudo apt upgrade (update packages)
- $ sudo apt update && full-upgrade (removes old files and does fresh updates)
-$ sudo aptitude
+ ```bash
+  $ sudo apt update
+  $ sudo apt install packagename
+  $ sudo apt edit-sources (list of sources to pull packages from)
+  $ sudo apt -h
+  $ sudp apt list
+  $ apt list --installed (find installed packages)
+  $ apt list --installed > grep ^nmap
+  $ sudo apt show nmap
+  $ sudo apt search nmap
+  $ sudo apt remove packagename (config files remains)
+  $ sudo apt purge packagename (removes everything)
+  $ sudo apt upgrade (update packages)
+  $ sudo apt update && full-upgrade (removes old files and does fresh updates)
+  $ sudo aptitude
 
-
-$sudo snap install --classic code (install vscode with snap)
+  $ sudo snap install --classic code (install vscode with snap)
 
   ```
 

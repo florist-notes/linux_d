@@ -39,17 +39,32 @@ fi
  :~# 
 
 ```
-file2.sh :
+
+
+<table style="width:100%" >
+
+<tr>
+<th>file2sh</th>
+<th>file3.sh</th>
+<th>file4.sh<br /></th>
+</tr>
+
+<tr>
+<td>
 
 ```bash
-#!/bin/bash
 
-name="skk"
+    #!/bin/bash
 
-echo "hi $name"
-echo "lets take on this challenge $name"
+    name="skk"
+
+    echo "hi $name"
+    echo "lets take on this challenge $name"
+
 ```
-file3.sh :
+<br /></td>
+<td>
+
 
 ```bash
 #!/bin/bash
@@ -60,9 +75,12 @@ read name
 echo "hello $name!! good to see you."
 
 ```
-`$1` is the first argument: `$ ./file4.sh saikia moinmoin`
+<br /></td>
 
-file4.sh:
+
+<td>
+
+
 ```bash
 #!/bin/bash
 
@@ -81,6 +99,9 @@ sleep 2
 echo "You are currently logged in as $user and you are in the $whereami. Today: $date2"
 
 ```
+<br /></td>
+`$1` is the first argument: `$ ./file4.sh saikia moinmoin`
+
 
 If a variable, is declared inside a function then it is generally a local variable and if it is declared outside then it is a global variable. The > notation is used to redirect stdout to a file. On the other hand, we can use  2> notation to redirect stderr, and &>  to redirect both stdout and stderr. 
 
