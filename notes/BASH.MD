@@ -13,10 +13,11 @@ The Bourne Again Shell - wraps around the linux kernel and is a command-line int
 echo "hi 2_2"
 sleep 3
 
+name = "skk"
 echo "uh uh"
 sleep 3
 
-echo "oh wow"
+echo "oh wow $name!"
 sleep 3
 
 echo "bye"
@@ -98,25 +99,12 @@ Some bash scripting examples:
 <table style="width:100%" >
 
 <tr>
-<th>file2sh</th>
 <th>file3.sh</th>
 <th>file4.sh<br /></th>
 </tr>
 
 <tr>
-<td>
 
-```bash
-
-    #!/bin/bash
-
-    name="skk"
-
-    echo "hi $name"
-    echo "lets take on this challenge $name"
-
-```
-<br /></td>
 <td>
 
 
@@ -386,3 +374,28 @@ Next, the Bash shell searches for specific user configuration files in the follo
 <b>.bashrc</b> defines the settings for a user when running a <b>subshell</b>. Add custom configurations to this file to make parameters available in subshells for a specific user. <br />
 
 <b>.bash_profile</b> defines the settings for a user when running a <b>login shell</b>. Add custom configurations to this file to make parameters available to a specific user when running a login shell.
+
+To read from a file `sample_file.txt` :
+
+```bash
+#!/bin/bash
+
+    LINE=1
+
+    while read -r CURRENT_LINE
+        do
+            echo "$LINE: $CURRENT_LINE"
+        ((LINE++))
+    done < "sample_file.txt"
+```
+
+If you need to include the output of a complex command in your script, you can write the statement inside back ticks.
+
+```bash
+
+    #!/bin/bash
+
+    var = `df -h | grep tmpfs`
+    echo $var
+
+```
