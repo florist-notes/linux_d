@@ -1,4 +1,4 @@
-## Linux Command Pallette: $ cmd
+## Linux Command Pallette: $ 🌸
 
 <img src="../img/termkali.png" width=100%>
 

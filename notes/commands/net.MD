@@ -1,4 +1,4 @@
-Linux Command Pallette:
+Linux Networking Command Pallette🌸:
 
 <table style="width:100%" >
 
@@ -42,6 +42,24 @@ Linux Command Pallette:
 <th>iftop</th>
 <td>Monitors stats related to bandwidth.<br /></td>
 <td>$ iftop<br /></td>
+</tr>
+
+<tr>
+<th>dig [domain] </th>
+<td>Show DNS information about a domain using the dig command<br /></td>
+<td>$dig [domain] <br /></td>
+</tr>
+
+<tr>
+<th>dig -x [ip_address]</th>
+<td>Do reverse lookup of an IP address<br /></td>
+<td>$dig -x [ip_address]<br /></td>
+</tr>
+
+<tr>
+<th>lastlog </th>
+<td> The lastlog command is used to find the details of a recent login of all users or of a given user.<br /></td>
+<td>$lastlog <br /></td>
 </tr>
 
 <tr>

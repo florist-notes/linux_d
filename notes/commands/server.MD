@@ -1,4 +1,4 @@
-Linux Command Pallette:
+Linux Server Command Pallette🌸:
 
 <table style="width:100%" >
 

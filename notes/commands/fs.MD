@@ -1,4 +1,4 @@
-Linux Command Pallette:
+Linux File System Command Pallette 🌸:
 
 <table style="width:100%" >
 
