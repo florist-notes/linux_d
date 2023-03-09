@@ -46,11 +46,22 @@ $ ls -R (Lists files in sub-directories as well)<br /></td>
 </tr>
 
 <tr>
+<th>sed</th>
+<td>sed is a stream editor. A stream editor is used to perform basic text transformations on an input stream (a file or input from a pipeline)<br /></td>
+<td>
+To replace all occurrences of ‘hello’ to ‘world’ in the file input.txt:
+`$ sed 's/hello/world/' input.txt > output.txt`
+<br /></td>
+</tr>
+
+
+<tr>
 <th>echo, cp, rm, mv, touch, locate</th>
 <td>basic commands <br /></td>
 <td>
 $echo "Hi!" > test.txt <br />
 $touch test.txt <br />
+$touch test_{1..1000}}_ <br />
 $cp test.txt Downloads/ <br />
 $rm Downloads/text.txt <br />
 $rm -rf Downloads/ <br />
@@ -69,6 +80,15 @@ $locate golaghat.py <br />
 <tr>
 <th>passwd</th>
 <td>change system password <br /></td>
+<td>$ awk '{print}' employee.txt (prints every line of data from the specified file.) <br />
+$ awk '/manager/ {print}' employee.txt (print the lines which match the given pattern)
+<br />
+</td>
+</tr>
+
+<tr>
+<th>awk</th>
+<td> It searches one or more files to see if they contain lines that matches with the specified patterns and then perform the associated actions. <br /></td>
 <td>- <br /></td>
 </tr>
 
