@@ -464,6 +464,8 @@ done
 
 Weather : `weather(){ curl -s "wttr.in/$1?m1"} `
 
+`.bashrc` is read only once, when bash starts. It is just so by design (and has always been). If you make any subsequent changes to `.bashrc`, they won't be applied until `.bashrc` is re-read. By running `source .bashrc`, you make exactly this - you tell bash to re-read that file.
+
 ## How to Automate Scripts by Scheduling via cron Jobs
 
 Cron is a job scheduling utility present in Unix like systems. You can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs. For individual users, the cron service checks the following file: `/var/spool/cron/crontabs`. In order to use cron jobs, an admin needs to allow cron jobs to be added for users in the `/etc/cron.allow` file.
