@@ -405,6 +405,19 @@ Next, the Bash shell searches for specific user configuration files in the follo
 
 <b>.bash_profile</b> defines the settings for a user when running a <b>login shell</b>. Add custom configurations to this file to make parameters available to a specific user when running a login shell.
 
+## VARIABLES in linux :
+
+$SHELL, $USER, $PWD, $HOSTNAME, $RANDOM
+
+`$RANDOM`  variable  `$ echo $RANDOM` returns a random number.
+
+We can create our own system variables: `$ twitter="florist_notes"` and ` $ echo twitter` to print variable value. Tomake it an environment variable : `$ export twitter`. To make it permanent : `$ nano .bashrc`
+
+export twitter = "florist_notes"
+
+save `.bashrc` and the variable will stay. For arithmetic : `$(())`, so `$ echo $(( 2 * 3 ))`
+
+
 To read from a file `sample_file.txt` :
 
 ```bash
@@ -465,6 +478,34 @@ done
 Weather : `weather(){ curl -s "wttr.in/$1?m1"} `
 
 `.bashrc` is read only once, when bash starts. It is just so by design (and has always been). If you make any subsequent changes to `.bashrc`, they won't be applied until `.bashrc` is re-read. By running `source .bashrc`, you make exactly this - you tell bash to re-read that file.
+
+```bash
+
+
+    $ echo " # # #             🌸  # #  "
+    $ echo " * * * *                    "
+    $ echo " * * * * *                  "
+    $ echo " * * * * * *                "
+    $ echo " * * * * * * *              "
+    $ echo " * * * * * * * *            "
+    $ echo " * * * * * * * * *          "
+    $ echo " * * * * * * * * * *        "
+    $ echo " * * * s k k * * * * *      "
+    $ echo " * * * * * @ * * * * * *    "
+    $ echo " * * * / b i n / b a s h /  "
+    $ echo " * * * * * * * * * * * * *  "
+    $ echo " * * * * * * * * * * * *    "
+    $ echo " * * * * * * * * * * *      "
+    $ echo " # * * * * * * * * *        "
+    $ echo " * * * * * * * * *          "
+    $ echo " * * * * * * * *            "
+    $ echo " * * * * * * *              "
+    $ echo " * * * * * *                "
+    $ echo " * * * * *                  "
+    $ echo " * * * *                    "
+    $ echo " # # #             🌸  # #  "
+
+```
 
 ## How to Automate Scripts by Scheduling via cron Jobs
 
