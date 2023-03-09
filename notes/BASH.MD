@@ -1,6 +1,6 @@
 # Bash Scripting:
 
-<center><img src="../img/tux.png" width=20%></center>
+<center><img src="../img/bash.png" width=50%></center>
 
 The Bourne Again Shell - wraps around the linux kernel and is a command-line interpreter or unix shell widely used in GNU/Linux Operating System written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
 
