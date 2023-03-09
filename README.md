@@ -1,7 +1,21 @@
 # Linux_d : Linux and little notes here and there :))
 
+<center><img src="img/tux.png" width=20%></center>
+
+`$ chmod +x linux.sh `
+
 ```
-$ chmod +x linux.sh 
+$ echo " * 🌸 * * * * * * * * * * * * * * * * *     "
+$ echo " * * * * * * 🌸 * * * * * * * * * * * *     "
+$ echo " * * * * * * * * * * * * * * * * * * * *     "
+$ echo " * * * * * * 🌸 * * * 🌸 * * * * * * *      "
+$ echo " * * * * * * * * * * * * * * * * * * * *     "
+$ echo " * * * * * * * * * * * * * * * 🌸 * * *      "
+$ echo " * * * * * * * * * * * * * * * * * * * *     "
+$ echo " * * * * * * * * * * * * * * * * * * * *     "
+$ echo " * * * * * * * * * * * * * * * * * 🌸 * *    "
+$ echo " * * * * * * * * * * * * * * * * * * * 🌸    "
+
 ```
 ## /linux :
 - LINUX THEORY & REGEX [NOTES](notes/THEORY.MD) 
