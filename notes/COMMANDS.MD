@@ -80,8 +80,7 @@ $locate golaghat.py <br />
 <tr>
 <th>passwd</th>
 <td>change system password <br /></td>
-<td>$ awk '{print}' employee.txt (prints every line of data from the specified file.) <br />
-$ awk '/manager/ {print}' employee.txt (print the lines which match the given pattern)
+<td>$ passwd
 <br />
 </td>
 </tr>
@@ -89,7 +88,8 @@ $ awk '/manager/ {print}' employee.txt (print the lines which match the given pa
 <tr>
 <th>awk</th>
 <td> It searches one or more files to see if they contain lines that matches with the specified patterns and then perform the associated actions. <br /></td>
-<td>- <br /></td>
+<td>$ awk '{print}' employee.txt (prints every line of data from the specified file.) <br />
+$ awk '/manager/ {print}' employee.txt (print the lines which match the given pattern) <br /></td>
 </tr>
 
 <tr>

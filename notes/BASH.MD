@@ -370,6 +370,7 @@ OR statement
 
 </table>
 
+`$ echo $?` returns 0/1 if previous statement within [[ ]] is false / true.
 ## .bashrc , .bash_profile, .bash_history
 
 `.bash_profile` is read and executed when Bash is invoked as an interactive login shell, while .bashrc is executed for an interactive non-login shell.
