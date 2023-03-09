@@ -14,7 +14,7 @@
 
 resources : [Linux Directories Explained in 100 Seconds](https://youtu.be/42iQKuQodW4), [Navigating the Linux Filesystem](https://youtu.be/BNL3qBN9pP0), [the Linux File System explained in 1,233 seconds](https://youtu.be/A3G-3hp88mo), [Linux File System/Structure Explained!](https://youtu.be/HbgzrKJvDRw), [Introduction to Linux – Full Course for Beginners](https://youtu.be/sWbUDq4S6Y8), [Linux for Hackers //](https://www.youtube.com/watch?v=VbEx7B_PTOE&list=PLIhvC56v63IJIujb5cyE13oLuyORZpdkL)
 
-Everything in linux is a "file" - "On a UNIX system, everything is a file; if something is not a file, it is a process.". A detailed view is  [here](../img/lfs.png>).
+Everything in linux is a "file" - "On a UNIX system, everything is a file; if something is not a file, it is a process.". A detailed view is  [here](../img/fs2.png).
 
 ### Linux Filesystem
 
