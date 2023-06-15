@@ -858,3 +858,15 @@ $ pip3 install .r requirements.txt  <br />
 </tr>
 
 </table>
+
+## /securitywith_kali :
+<img src="../img/kali.png" width=100%> </br>
+- Wirepacket sniffing with wireshark - [experiments]()
+- Network analysis with nmap - [experiments]()
+- Exploits with metasploit - [experiments]()
+- Network wifi with aircrack-ng and netcat - [experiments]()
+- Analysis with lynis - [experiments]()
+- Browser exploitation with BeEF - [experiments]()
+- Layer 2 with Yersinia - [experiments]()
+- Crack with John-the-Ripper - [experiments]()
+- Forensics with autopsy - [experiments]()
