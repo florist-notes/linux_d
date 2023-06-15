@@ -1,5 +1,4 @@
-# Git, Docker and Kubernetes
-
+# Git and Github
 ### Git Version Control
 <br />
 
