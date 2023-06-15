@@ -64,4 +64,4 @@ Check the [hiddden-wiki](https://thehiddenwiki.org/)
 
 ## PayLoads & V!RU$3$
 
-<img src="../img/v.gif" height=153px><a> </a><img src="../img/v2.gif" height=153px><a> </a><img src="../img/v3.webp" height=153px><a> </a><img src="../img/v4.gif" height=153px><a> </a><img src="../img/v5.png" height=153px>
+<img src="../img/v.gif" height=153px><a> </a><img src="../img/v2.gif" height=153px><a> </a><img src="../img/v4.gif" height=153px><a> </a><img src="../img/v5.png" height=153px>
