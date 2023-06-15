@@ -33,7 +33,7 @@ $ echo " * * * * * * * * * * * * * * * * * * * 🌸    "
 - Build a NAS and file server [project]()
 
 ## /system design and architecture:
-- Git, Docker and Kubernetes - [git](sysdesign/GDK.MD) , [docker]() & [kubernetes]().
-- Microservices, API and Flask - [microservices](), [API]() & [flask]().
+- Git, Docker and Kubernetes - [git](sysdesign/GDK.MD) , [docker](sysdesign/DKR.MD) & [kubernetes](sysdesign/KBNTS.MD).
+- Microservices, API and Flask - [microservices](), [flask & API]().
 - System Design and Architecture - [sysdesign experiments](sysdesign/README.MD). 
 
