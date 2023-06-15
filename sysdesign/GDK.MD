@@ -140,7 +140,7 @@ same as git branch <name>; git checkout <name>
 ```
 To merge these branches:
 
-<img src="./img/git_merge.PNG" width=52%><a> </a><img src="./img/merged.PNG" width=47%>
+<img src="./img/git_merge.png" width=52%><a> </a><img src="./img/merged.png" width=47%>
 
 ```
 - git merge cat
