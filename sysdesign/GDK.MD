@@ -2,10 +2,10 @@
 ### Git Version Control
 <br />
 
-<img src="./img/github.png" height=150px><a> </a><img src="./img/git.png" height=140px>
+<img src="./img/github.png" height=150px><a> </a><img src="./img/git2.png" height=140px>
 
 
-1. [Git & Github slide](gitngithub.pdf)
+x. [Git & Github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf)
 
 
 ### Internals of Git
