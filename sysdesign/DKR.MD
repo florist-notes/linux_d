@@ -1,6 +1,7 @@
 # DOCKER
 
-<img src="img/dckr.webp" width=100%>
+<center><img src="img/dckr.webp" width=70%></center><br /><br />
+
 
 Container is an isolated environment for running an application. To learn about docker in detail, here is a [docker blog](https://docker-curriculum.com/). Docker works in a CLIENT - SERVER (DOCKER ENGINE) architecture using REST API and shares OS kernel resources.
 
@@ -9,6 +10,32 @@ Install docker from : @[docs.docker.com](https://docs.docker.com/engine/install/
 
     $ docker run IMAGE
     $ docker version (make sure both Client & Server Docker Engine is running)
+    $ touch Dockerfile
+```
+
+In `Dockerfile` (all docker hub [images](https://hub.docker.com/search?q=)):
+
+```docker
+    FROM node:alpine              (alpine is the linux distro)
+    COPY . /app                   (copy all files to docker fs /app)
+    CMD node /app/app.js
+```
+
+or 
+
+```docker
+    FROM node:alpine              (alpine is the linux distro)
+    COPY . /app                   (copy all files to docker fs /app)
+    WORKDIR /app
+    CMD node app.js
+```
+To build docker image:
+
+```docker
+    $ docker build -t image-name .
+    $ docker image ls   
+    $ docker run image-name
+    $ docker pull username/image-name                  
 ```
 
 To dockerize an application, we just add a `DOCKERFILE` to it and we get an `IMAGE`.
