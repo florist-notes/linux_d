@@ -37,8 +37,54 @@ To build docker image:
     $ docker run image-name
     $ docker pull username/image-name                  
 ```
+Docker Containers:
+
+```docker
+    $ sudo apt install docker.io docker-compose -y
+    $ docker pull centos
+    $ docker run -d -t --name skk centos
+    $ docker ps
+    $ docker exec -it skk bash
+    $ ls > $ exit          
+    $ docker pull alpine
+    $ docker run -t -d  --name saikia alpine
+    $ docker pull username/imagename:tag
+    $ docker run -t -d -p 80:80 --name skk username/imagename:tag (-p is for port mapping)
+    $ sudo docker run --name web -itd -p 8080:80 nginx
+    $ nano docker-compose.yaml
+```
+
+In `docker-compose.yaml` :
+
+```docker
+    version: "3"
+    services: 
+        website:
+            image: nginx
+            ports: 
+                - "8081:80"
+            restart: always
+            networks:
+                netname:
+                    ipv4_address: 192.168.92.21
+    networks:
+        netname:
+            ipam:
+                driver: default
+                config:
+                    - subnet: "192.168.92.0/24"
+
+
+    $ sudo docker-compose up -d 
+    $ sudo docker-compose ps
+    $ sudo docker-compose stop
+    $ sudo docker-compose down
+```
+
 
 To dockerize an application, we just add a `DOCKERFILE` to it and we get an `IMAGE`.
+
+<img src="img/ddd.png" width=100%>
 
 <img src="img/dc.png" width=100%>
 
