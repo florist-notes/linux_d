@@ -40,7 +40,7 @@ type commit = struct {
 ```
 An “object” is a blob, tree, or commit:
 
-```
+```python
 type object = blob | tree | commit
 
 objects = map<string, object>
@@ -55,7 +55,7 @@ def load(id):
 
 References:
 
-```
+```python
 references = map<string, string>
 
 def update_reference(name, id):
