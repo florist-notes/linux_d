@@ -29,8 +29,8 @@ $ echo " * * * * * * * * * * * * * * * * * * * 🌸    "
 
 ## /projects_experiments :
 - Setting up a web and DNS server [project]()
-- Running a virtual mail server [project]()
 - Build a NAS and file server [project]()
+- Data pipeline engineering with AirFlow and Kafka [project]()
 
 ## /system design and architecture:
 - Git, Docker and Kubernetes - [git](sysdesign/GDK.MD) , [docker](sysdesign/DKR.MD) & [kubernetes](sysdesign/KBNTS.MD).

@@ -54,7 +54,7 @@ Docker Containers:
     $ nano docker-compose.yaml
 ```
 
-In `docker-compose.yaml` :
+DOCKER COMPOSE : In `docker-compose.yaml` :
 
 ```docker
     version: "3"
@@ -79,12 +79,24 @@ In `docker-compose.yaml` :
     $ sudo docker-compose ps
     $ sudo docker-compose stop
     $ sudo docker-compose down
+
+To get a clean workspace:
+    $ docker image rm imageid
+    $ docker image ls
+    $ docker image ls -q
+    $ docker container rm -f $(docker container ls -aq)
+    $ docker image rm -f $(docker image ls -aq)
+
+DOCKER Networking:
+    $ sudo docker network ls
+    $ sudo docker inspect networkname
+    $ sudo docker exec -it imagename sh
+    $ sudo docker network create skkk
 ```
 
+To dockerize an application, we just add a `DOCKERFILE` to it and we get an `IMAGE`. Resources : [How to dockerize your Flask application](https://medium.com/geekculture/how-to-dockerize-your-flask-application-2d0487ecefb8), [Dockerizing Flask with Postgres, Gunicorn, and Nginx](https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/)
 
-To dockerize an application, we just add a `DOCKERFILE` to it and we get an `IMAGE`.
-
-<img src="img/ddd.png" width=100%>
+<img src="img/ddd.png" width=50%><a> </a><img src="img/dcc.jpeg" width=47.5%>
 
 <img src="img/dc.png" width=100%>
 
