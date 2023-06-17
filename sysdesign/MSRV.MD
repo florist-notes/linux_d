@@ -20,8 +20,7 @@ code : @[microservices](microservices)
 
 ```
 
-AUTH SERVICE CODE:
-
+AUTH SERVICE with JSON WEB TOKEN (JWT) → MongoDB & GridFs → Architecture Overview (RabbitMQ) → Synchronous Interservice Communication → Asynchronous Interservice Communication →  
 
 
 
