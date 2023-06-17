@@ -178,4 +178,95 @@ Example of complete tree:
                             
 ```
 
+# SYSTEM DESIGN EXAMPLES
+
+<b>Design the algoexpert website? Worry about the core userflow</b>
+
+Ans : Visit the website, Type & Run code on the website. We don't need to shoot the highest availability, we can have 2-3 nines of availability (3 days of downtime atmost a year). Latency and Throughput will be important for code execution. We are shooting for:
+* 2-3 nines availability
+* 1-3 s run code
+* 10k+ users at any point of time
+* Global users but optimize for US and India (most customers)
+
+We are gonna need a robust API and db to back the website. For the UI static content (home page, JS bundle, images, icons) we can store static content on a blob store (Google Cloud Storage or Amazon S3). CDN like Google Cloud CDN or CloudFlare to serve static content will be good. We use load balancing, DNS loadbalancer - wherever a user is and his request is coming from, we reroute the request to spcific servers in different regions. We should have another layer of load balancing based on the types of requests- payment, code execution (path based load balancing) on the regional level. For payment done vs not done, viewing content can be done via access control, this is an internal API call. We have a blob store holding the static questions list, if a user requests the questions list, and parse content out of the blob store. The questions list can be cached as it will be used a lot, maybe 2 layers of caching.
+
+<b>Q :</b> If we update data (Q list), can we make a better solution?
+
+<b>A :</b> To calculate the coding solution data, 5000 bytes of data and multiply it by 10 (for 10 diff languages), that is 50,000 bytes of data. 50k * 100 = 5 Million bytes so 5 MB is reasonable for caching. Assuming worst case, Someone would write in all languages. For updating Q_list, we can have cache eviction policy (maybe say 30 min cache eviction policy).
+For storing user_metadata we will use relational db (postgres) to store user_id, q_id, q_completion_status (this will be an enum); we can use an index for u_id to make it fast. Second table will be for solution - id, u_id, q_id, language (85 * 7 rows per user, since 7 languages), sol, we add index to make things faster. We use postgres servers for both India and USA, we need some asynchronous representations between them, maybe 6 hours, since USA and India are hours apart.
+
+<img src="algorithms/sys/algoexpert.JPG" width=100%>
+
+<b>Code Execution Platform </b>: We need to rate limit here. Once every sec / 0.5 sec would be fine, but more than that would be abuse. We can use Key Value store Reddis to implement the rate limiting. Application server will be sending requests to the workers for running code. We need a way to know, when workers are running, rebooting etc. We may have 10-100 code run requests per sec and we will have eqv no of worker machines. We also want pretty robust logging and monitoring system to autoscale number of workers.
+
+<b>Design a global and fast code deployment system?</b>
+
+<b>Ans :</b> From past experience of code deployment system, can have few diff things going on, first of all code deployment system might involve buidling code, into binary data compiled code, it might involve testing code. Are we building both building and testing, can you please specify? Q : I want you to build a system that compiles the code to binary and deploys the code globally in an efficient way and that is also scalable, also don't worry about testing, we assume its already covered.
+
+<b>A :</b> Just to clarify again, What part of the Software Development Lifecycle is this happening at, code has been merged into the central codebase.
+
+<b>Q :</b> Yes, once the code has been merged into a master branch or trunk, the repository, we want the engineers to have UI, cli, trigger built and have a deployment for theat built, the code you can assume is already being reviewed and is ready for production but so to clarify, you are not designing, system that handles, submitting the code or reviewing the code.
+
+<b>A :</b> Okay, so basically, we are taking code that is presumably shippable and we are trying to ship it to production, by sending it to all of our application servers around the world.
+
+We are:
+1) Building Code
+2) Deploying Code
+
+5-10 regions globally spread out across the world, 100-1000 s of machines that we are deploying. This is an internal system for the company. Are you looking for 2-3 nines or more availability? Ok 2-3 nines availability. 30 mins for the entire deployment. Final build ~ 10 Gigs per binary. 1000s of deploys per day.
+
+<b>A :</b> We are going to design the system in two parts, first, for commits, we kind of use a queing mechanisms for commits that come in as engineerings are pushing and merging code into master branch. We have to have set of workers that are gonna take these jobs out of the queue - FIFO. Once the binary is built with the workers, store in a blob store like blob store. Since binary is a blob of data and we want for longer time, maybe in Google Cloud Storage. Implementing the Queue as a DS that stores the jobs in memory (shorten time) / SQL db if we want the data to persist. The job queue table: id, name blob, commit SHA, create time, status if code successfully built or not. We need ACID transactions, sequential and persistent. The way workers dequeue from the table is with transactions, single worker perform transactionswitha SQL command something like, my SQL knowledge is a bit rusty, hope you dont mind:
+
+BEGIN TRNSACTION;
+SELECT * FROM jobs WHERE status = "QUEUED";
+ORDER BY created_at ASC LIMIT 1;
+ROLLBACK;
+UPDATE jobs SET status = "running" where id = our_id;
+COMMIT;
+
+We create idx (index) to make search fast in the table. Lets say we have 100 workers and every 5 sec they go to the table and perform the transactions. So per sec there will be 20 reads from the table, that is very handleable by SQL.
+
+<b>Q :</b> What if worker is currently building code and something fails, network partition/server fails, the building code status didn't get changed to 'failed'. What would you do?
+
+<b>A :</b> We need a health check, a fully auxiliary/separate service that checks. What if workers continuosly sends their health status, like a heart beat. We can expand the table with one more column for last_h (last heartbeat). The workers dequeu a job, they start sending heartbeat every 3-5 mins or seconds, then our auxiliary service monitor the table - last_h. Sp in SQL we add another line, if last_h has a time diff from the current time, we put it back in the table.
+
+<img src="algorithms/sys/code_deploy.JPG" width=100%>
+
+For 5000 builds per day, worker takes roughly 15 mins for a build, so a single worker can do 100 builds ~ 100 builds day/p w/p day. So 5000 / 100 = 50, so we need 50 workers on average. We can scale this vertically, horizontal scalability is the key thing. So we have binary now. You said, We don't care about how to build the binary or compile the code right? We store our binary GCS blob store and we are done with that.
+
+<b>Q :</b> We takled about 5 regions right, but we are storing only in a single bucket, so does that story change when we are eventually deploying worldwide?
+
+<b>A :</b> It will be suboptimal for a single blob store to serve every region. If we have regional clusters, we can have regional GCS buckets and we replicate to 10 regions which will serve thier own requests. We don't want one blob storage to get blocked while replicating for other blob storage. So we do an asynchronous update between the main blob store and all regional blob stores.
+
+<b>Q : </b>We want deployments of builds only when they have been replicated everywhere. How would you enforce that? Which build has replicated and which has not?
+
+<b>A :</b> So we have a separate service, which calls the main blob store, finds out the status. We create a db here, with column names: build_N, replication_status. If replication status = success, then we can build. Now lets move on to how things get deployed:
+Engineer presses a button, that build which is a 10 Gigs file, which needs to be downloaded to millions of machines of 10 regions. We can put a p2p network , which all the millions of machines can download the binary instead of downloading one by one, unreasonable to download the 10 GB file one by one. When engineer presses, deploy build "B1", : For each region, we got lot of machines, one machine (engineer) deploys and all other peers (machines) know to download the binary. Our systems will have config files, as key value pairs (ZooKeeper etc), we keep the goal state and have key value store in regional level. KVS, so every region has a KVS and every KVS is pulling every 5 sec from goal state.
+
+
+<b>Q :</b> How would you design Google Drive? Storage aspect.
+
+<b>A :</b> There are lot of features in Google Drive, like last viewed files, activity, shared docs, shared company drives etc.
+
+<b>Q :</b> Focus on only your personal drive, mainly storage of files and folders, downloading etc.
+
+<b>A :</b> So we are focusing on:
++ files and folders (CRUD) - Create, Read, Update & Delete
++ just web application
++ 10s update between different users (no conflict)
++ handle 15 GB per person and 1 Billion global users
++ data loss is not tolerated at all
++ highly available system
+
+We need to Create Folder, Upload/Download File, Move Delete Rename Get File and Folder. We need to store metadata, who owns the file, name of file etc, then the actual data. We will be using GCS for storing files, for metadata we can use key-value store such as Zookeeper, ETCD (scalable and highly available KV stores). To create a folder, we are creating information in the KV store. Highly available KV stores, we will want to shard our KV stores either on file_id. The sharding key will be owner_id and we will hash on this. We need bunch of proxies from the Load Balancer and Hashing owner_id to KVS. To create a folder, we hash the owner_id and input it to load balancers, which will inturn go to proxies then to K-V stores.
+
+<img src="algorithms/sys/gdrive.JPG" width=100%>
+
+We would probably store - pointer to childrens (folder and files within folder) and call it 'children', 'id', 'name', 'owner_id'. We can use the same schema for folders and files and use a boolena for a folder, say, is boolean. So we have KV {id:, name:, owner_id:, children, isfolder:}. To store data, we need upload operation. We said we have 1000^3 ~ 15k PB of storage and no data loss == duplication, so data stored in multiple availability zones. So we need a min of 15 * 3k PB ~ 50k PB. One way to optimize, if two users upload the same file. If we have 2 images from 2 users and half of image are similar, we transform the images into small blobs and store it only once. To upload file, we start with load balancing which splits up our requests to our API servers, and these API servers splits up data into small blobs. We would synchronously store them into multiple blob stores (min 3). Before storing, How would we check if one blob is already stored? We could hash the contents of the blob and compare. After we hash the blob and get say 'x', if 'x' is already in our blob store, then we can throw it away. That's actually called content addressable storage. If blob is immutable, we need caching. Round Robin Load Balancing, Blob Splitters (API servers) then we go to our blob storage. If we need some services, such as compression etc, we need another load balance (we would load balance based on blob hash) and proxies, then to 3 blob storage solutions for redundancy. We need these blob storage in different geographical regions. We have an async controller, which will go to all the blob stores and will asynchronously sync. Then store it in KV store. For files we will have another field { , blod_address:}
+
+<img src="algorithms/sys/gdrive3.JPG" width=100%>
+
+Download file would be to read the KV, find the blobs and download it. IF we are moving a file from one folder to another, we have to update the parent folder KVS. Deleting would ne find the thing, remove in KVS and update parents. For deletion, it will be wise to have an auxiliary service between KV store and Blob store to watch them and delete blobs if there is no record in KV store. We need a garbage collection system, where we count how many times a blob is referenced (GC will reference a db), once the blob count goes to 0, we can be ready to remove it from blob store. For 10s update, get file or folder, we can pull every 10 s. Instead of pulling, we can check the last modified time and if the time has changed, we can get the rest of the info.
+
+
 </div>
