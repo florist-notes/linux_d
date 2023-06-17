@@ -76,3 +76,32 @@ I have some experience with Flask. I recently gave a workshop at AI-Makerspace, 
   </a></th>
 </tr>
 </table>
+
+```python
+
+from flask import Flask
+from flask import Blueprint, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
+
+post_pages = Blueprint("posts", __name__)
+
+
+@post_pages.get("/post/<string:title>")
+def display_post(title: str):
+    return "Display post page."
+
+
+@post_pages.route("/post/", methods=["GET", "POST"])
+def create_post():
+    if request.method == "POST":
+        pass
+    return "Create post page."
+```
+
+Resources: [Flask Mega Tutrial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world), [Build a blog platform with Flask: writing and showing posts](https://blog.teclado.com/build-own-blog-platform-flask-python-part-1/), [Flask documentation : a minimal application](https://flask.palletsprojects.com/en/2.3.x/quickstart/#a-minimal-application), [The Ultimate Flask Course](https://www.udemy.com/course/the-ultimate-flask-course/), [REST APIs with Flask and Python](https://www.udemy.com/course/rest-api-flask-and-python/).
