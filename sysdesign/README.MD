@@ -2,7 +2,6 @@
 
 
 <div style="text-align: justify"> 
-<p align="justify">
 Coding tests assess problem solving but theoretical knowledge is important and Systems Design interviews assess on theoretical knowledge. How to build robust, functional and scalable systems.
 
 <b>System Design Fundamentals </b>: System Design interviews are very intentionally vague. Say design "uber". It's your job to make the interviewer understand your solution, design choices and defend your solution.
@@ -75,11 +74,9 @@ Coding tests assess problem solving but theoretical knowledge is important and S
 <b>API Design </b>: Stripe's actual product is it's API. So we focus on API Design, it is a very rigorous review and analysis process as it affects a wide spectrum of users.
 
 
-</p>
 
 # DATA STRUCTURES
 
-<p align="justify">
 
 
 Data Structures: Manipulating Data = Structuring Data , Every Engineer moves data around on a day to day basis. Data Structures are ways to organize and manage data. e.g 1→2→4→5. or
