@@ -1,0 +1,9 @@
+The 4.6 solution has a security issue. 
+
+access-list 100 deny tcp 172.22.3.52 0.0.0.3 host 172.22.3.90 eq 23
+
+Using this line only denies 3 IP addresses from telnet access. One could simply change their IP address and get telnet access. This should be translated into 2 separate lines. These should work:
+
+access-list 100 deny tcp any host 172.22.3.90 eq 23
+
+access-list 100 permit tcp host 172.22.3.50 host 172.22.3.90 eq 23
