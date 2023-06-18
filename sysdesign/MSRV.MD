@@ -20,7 +20,7 @@ code : @[microservices](microservices)
 
 ```
 
-AUTH SERVICE with JSON WEB TOKEN (JWT) → ( [code](linux_d\sysdesign\microservices\auth\server.py) ) & ([mysql_db](https://github.com/florist-notes/linux_d/blob/main/sysdesign/microservices/auth/init.sql)) : ` $ mysql -uroot < init.sql`
+AUTH SERVICE with JSON WEB TOKEN (JWT) → ( [code](microservices/auth/server.py) ) & ([mysql_db](https://github.com/florist-notes/linux_d/blob/main/sysdesign/microservices/auth/init.sql)) : ` $ mysql -uroot < init.sql`
 
 ```python
 import jwt, datetime, os
@@ -41,9 +41,9 @@ def login():
 
 ```
 
-` $ docker build . ` > ` $ k9s` to deploy our [infrastructure code](sysdesign/microservices/auth/manifests) for auth deployment. Do `$ kubectl apply -f -/`
+` $ docker build . ` > ` $ k9s` to deploy our [infrastructure code](microservices/auth/manifests) for auth deployment. Do `$ kubectl apply -f -/`
 
-MongoDB & GridFs → [code](sysdesign/microservices/gateway/server.py). GridFs helps us store large files in mongodb.
+MongoDB & GridFs → [code](microservices/gateway/server.py). GridFs helps us store large files in mongodb.
 
 ```python
 
@@ -66,7 +66,7 @@ fs_mp3s = gridfs.GridFS(mongo_mp3.db)
 
 ```
 
-Architecture Overview (RabbitMQ) → [ [code](sysdesign/microservices/rabbit/manifests) ]   Synchronous & Asynchronous Interservice Communication.
+Architecture Overview (RabbitMQ) → [ [code](microservices/rabbit/manifests) ]   Synchronous & Asynchronous Interservice Communication.
 
 
 
