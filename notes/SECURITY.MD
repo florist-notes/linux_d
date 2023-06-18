@@ -28,76 +28,6 @@ enabled = true
 
 ```
 
-<table style="width:100%" >
-
-<tr>
-<th>topic</th>
-<th>description <br /></th>
-<th>command <br /></th>
-</tr>
-
-<tr>
-<th> SSH Security Essentials</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Configuring SUDO Access</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Securing Apache2</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Securing Nginx</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>UFW firewall</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Secure phpMyAdmin</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Apache2 WAF</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Nginx WAF</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>Docker Security Essentials</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-
-<tr>
-<th>(Log4Shell) - Exploitation & Mitigation</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
-</table>
-
-
 ### Uncover illegal access in linux systems:
 
 ```
@@ -859,14 +789,101 @@ $ pip3 install .r requirements.txt  <br />
 
 </table>
 
+
+<table style="width:100%" >
+
+<tr>
+<th>topic</th>
+<th>video_guide <br /></th>
+</tr>
+
+<tr>
+<th> SSH Security Essentials</th>
+<td>
+
+[reference](https://youtu.be/Ryu3SDPYNb8)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Configuring SUDO Access</th>
+<td>
+
+[reference](https://youtu.be/FGRtNvKdtbk)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Securing Apache2</th>
+<td>
+
+[reference](https://youtu.be/M1GpRWWRdC8)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Securing Nginx</th>
+<td>
+
+[reference](https://youtu.be/-lrSPJTeGhQ)
+ <br /></td>
+</tr>
+
+<tr>
+<th>UFW firewall</th>
+<td>
+
+[reference](https://youtu.be/-CzvPjZ9hp8)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Secure phpMyAdmin</th>
+<td>
+
+[reference](https://youtu.be/fiWcdtfpSQA)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Apache2 WAF</th>
+<td>
+
+[reference](https://youtu.be/MB7nQrlP5Yc)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Nginx WAF</th>
+<td>
+
+[reference](https://youtu.be/5eRxOYbaIEI)
+ <br /></td>
+</tr>
+
+<tr>
+<th>Docker Security Essentials</th>
+<td>
+
+[reference](https://youtu.be/KINjI1tlo2w)
+ <br /></td>
+</tr>
+
+<tr>
+<th>(Log4Shell) - Exploitation & Mitigation</th>
+<td>
+
+[reference](https://youtu.be/lJeAgQQaDEw)
+ <br /></td>
+</tr>
+</table>
+
+
 ## /securitywith_kali :
 <img src="../img/kali.png" width=100%> </br>
-- Wirepacket sniffing with wireshark - [experiments]()
-- Network analysis with nmap - [experiments]()
-- Exploits with metasploit - [experiments]()
-- Network wifi with aircrack-ng and netcat - [experiments]()
-- Analysis with lynis - [experiments]()
-- Browser exploitation with BeEF - [experiments]()
-- Layer 2 with Yersinia - [experiments]()
-- Crack with John-the-Ripper - [experiments]()
-- Forensics with autopsy - [experiments]()
+- Wirepacket sniffing with wireshark - [experiments](https://www.udemy.com/course/wireshark-ultimate-hands-on-course/)
+- Network analysis with nmap - [experiments](https://www.udemy.com/course/nmap-scan/)
+- Exploits with metasploit - [experiments](https://www.udemy.com/course/metasploit-framework-penetration-testing-with-metasploit/)
+- Network wifi with aircrack-ng and netcat - [experiments](https://www.udemy.com/course/complete-ethical-hacking-bootcamp-zero-to-mastery/)
+- Analysis with lynis - [experiments](https://youtu.be/FYnrfkkVKD8)
+- Browser exploitation with BeEF, Layer 2 with Yersinia, Crack with John-the-Ripper, Forensics with autopsy etc.

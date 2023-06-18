@@ -2,16 +2,10 @@
 
 ## Linux Administration :
 
-<tr>
-<th>command</th>
-<th>description <br /></th>
-<th>reference <br /></th>
-</tr>
+```bash
+  $ sudo adduser saikia
+  $ cat /etc/passwd 
 
-<tr>
-<th>y</th>
-<td>y <br /></td>
-<td>y <br /></td>
-</tr>
+```
 
-</table>
+resources: [linux administration notes](./THEORY.MD) - daemons & processes, [Linux System Administration](https://youtu.be/UCr04qIB7uc)
