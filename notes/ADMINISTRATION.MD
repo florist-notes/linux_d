@@ -15,5 +15,3 @@
 </tr>
 
 </table>
-
-google cloud console.
