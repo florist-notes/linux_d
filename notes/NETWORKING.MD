@@ -4,7 +4,7 @@
 
 I studied networking (CCNA syllabus) (2015-2016) and did lot of packet tracking with GNS3 (CISCO IOS).
 
-<center><img src="net/img/hat.jpg" width=40%><a></a><img src="net/img/lab1.PNG" width=54%></center>
+<center><img src="net/img/hat.jpg" width=38%><a></a><img src="net/img/lab1.PNG" width=51%></center>
 
 Linux Networking Command Pallette🌸:
 
