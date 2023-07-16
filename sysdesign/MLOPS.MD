@@ -27,7 +27,7 @@ Cloud Build to build and test machine learning pipelines
 
 
 
-## MLOPs tools : [Project Jupyter](https://jupyter.org/), [Nbdev](https://github.com/fastai/nbdev), [Airflow](https://airflow.apache.org/), [Kubeflow](https://www.kubeflow.org/), [MLflow](https://mlflow.org/), [Optuna](https://optuna.org/), [Cortex](https://www.cortex.dev/).
+## MLOPs tools : [Project Jupyter](https://jupyter.org/), [Nbdev](https://github.com/fastai/nbdev), [Airflow](https://airflow.apache.org/), [Kubeflow](https://www.kubeflow.org/), [MLflow](https://mlflow.org/), [Optuna](https://optuna.org/).
 
 Continuous Integration (CI) is no longer only about testing and validating code and components, but also testing and validating data, data schemas, and models.
 
