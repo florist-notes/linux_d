@@ -31,4 +31,51 @@ LOAD BALANCER based on label:
     $ kubectl apply -f skk-service.yaml
 
 ```
+
+## k9s : Kubernetes CLI To Manage Your Clusters In Style! [web](https://k9scli.io/) | [github](https://github.com/derailed/k9s/tree/master)
+
+<img src="img/k9s.png" width=100%>
+
+
+## The Command Line
+
+```shell
+# List all available CLI options
+k9s help
+# To get info about K9s runtime (logs, configs, etc..)
+k9s info
+# To run K9s in a given namespace
+k9s -n mycoolns
+# Start K9s in an existing KubeConfig context
+k9s --context coolCtx
+# Start K9s in readonly mode - with all cluster modification commands disabled
+k9s --readonly
+```
+
+## Logs
+
+Given the nature of the ui k9s does produce logs to a specific location. To view the logs and turn on debug mode, use the following commands:
+
+```shell
+k9s info
+# Will produces something like this
+#  ____  __.________
+# |    |/ _/   __   \______
+# |      < \____    /  ___/
+# |    |  \   /    /\___ \
+# |____|__ \ /____//____  >
+#         \/            \/
+#
+# Configuration:   ~/Library/Preferences/k9s/config.yml
+# Logs:            /var/folders/8c/hh6rqbgs5nx_c_8k9_17ghfh0000gn/T/k9s-fernand.log
+# Screen Dumps:    /var/folders/8c/hh6rqbgs5nx_c_8k9_17ghfh0000gn/T/k9s-screens-fernand
+
+# To view k9s logs
+tail -f /var/folders/8c/hh6rqbgs5nx_c_8k9_17ghfh0000gn/T/k9s-fernand.log
+
+# Start K9s in debug mode
+k9s -l debug
+```
+
+
 Videos : [Kubernetes Explained in 100 Seconds](https://youtu.be/PziYflu8cB8), [Kubernetes Course - Full Beginners Tutorial (Containerize Your Apps!)](https://youtu.be/d6WC5n9G_sM), [Kubernetes Design Principles: Understand the Why - Saad Ali, Google](https://youtu.be/ZuIQurh_kDk), [you should be using PODMAN](https://youtu.be/0jhdCcAc8nM)

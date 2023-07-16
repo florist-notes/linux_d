@@ -98,7 +98,6 @@ To dockerize an application, we just add a `DOCKERFILE` to it and we get an `IMA
 
 <img src="img/ddd.png" width=50%><a> </a><img src="img/dcc.jpeg" width=47.5%>
 
-<img src="img/dc.png" width=100%>
 
 
 Udemy Classes : [Docker & Kubernetes: The Practical Guide [2023 Edition]](https://www.udemy.com/course/docker-kubernetes-the-practical-guide/), [Docker Mastery: with Kubernetes +Swarm from a Docker Captain](https://www.udemy.com/course/docker-mastery/)

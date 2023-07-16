@@ -5,7 +5,7 @@
 
 Microservices are an application architecture style where independent, self-contained programs with a single purpose each can communicate with each other over a network. Typically, these microservices are able to be deployed independently because they have strong separation of responsibilities via a well-defined specification with significant backwards compatibility to avoid sudden dependency breakage. [[source](https://www.fullstackpython.com/microservices.html)]
 
-We develop a video to mp3 conversion flask web application and learn microservices along the waya.
+We develop a video to mp3 conversion flask web application and learn microservices along the way.
 
 Tech stack: [ Python, Flask, MongoDB, RabbitMQ, MySQL, Docker, Kubernetes (kubectl, minikube, [k9](https://k9scli.io/) ) ]
 
