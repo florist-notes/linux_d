@@ -5,6 +5,109 @@ MLOps stands for Machine Learning Operations. MLOps is a core function of Machin
 
 <img src="./img/mlp.png" width=100%>
 
+
+<table style="width:100%" >
+<tr>
+<th>Service Category</th>
+
+<th>Service Description</th>
+
+<th>Available Implementations
+</th>
+</tr
+
+<tr>
+<th>ML Platform</th>
+<td>Provisioned as our opinionated preference for ML workflows running on a highly scalable software infrastructure.</td>
+<td>Kubeflow, Kubernetes</td>
+</tr>
+
+<tr>
+<th>ML Frameworks</th>
+<td>Select your machine learning and deep learning framework, toolkit, and libraries.</td>
+<td>TensorFlow, PyTorch, Cafee, Keras</td>
+</tr>
+
+<tr>
+<th>Storage Volumne Management</th>
+<td>Choose from software and tools for storage to meet your high performance ML needs.</td>
+<td>Local FS, AWS EFS, AWS EBS, Ceph (block and object), Minio, NFS, HDFS</td>
+</tr>
+
+<tr>
+<th>Container Image Governance</th>
+<td>Choose from software and tools that register, secure, and manage the distribution of container images.</td>
+<td>AWS ECR, Harbor, GitLab</td>
+</tr>
+
+<tr>
+<th>Workflow Engine</th>
+<td>Provisioned by default to govern scheduling and coordination of jobs.</td>
+<td>Argo</td>
+</tr>
+
+<tr>
+<th>Model Training</th>
+<td>Include collaboration tooling and interative model training as part of your template.</td>
+<td>JupyterHub, TensorBoard, Argo workflow templates</td>
+</tr>
+
+<tr>
+<th>Model Serving</th>
+<td>Pick the tool to expose trained models to business applications.</td>
+<td>Seldon, tf-serving</td>
+</tr>
+
+<tr>
+<th>Model Validation</th>
+<td>Set by default, models will be evaluated against test data as part of your ML pipeline.</td>
+<td>Argo workflow templates</td>
+</tr>
+
+<tr>
+<th>Data Storage Services</th>
+<td>Choose from storage options befitting the performance of other ML services.</td>
+<td>Mini, AWS S3, MongoDB, Cassandra, HDFS</td>
+</tr>
+
+<tr>
+<th>Data Preparation and Processing</th>
+<td>Select your tooling to manage the data processing ovent of your ML pipeline.</td>
+<td>x</td>
+</tr>
+
+<tr>
+<th>Infrastructure Monitoring</th>
+<td>Elect which reporting and dashboarding tool gives you the better optics into your stack performance.</td>
+<td>Argo, NATS, workflow application templates</td>
+</tr>
+
+<tr>
+<th>Model Monitoring</th>
+<td>Find and choose the appropriate tool to watch model accuracy over time.</td>
+<td>Prometheus, Grafana</td>
+</tr>
+
+<tr>
+<th>Load Balancing & Ingress</th>
+<td>Determine the appropriate tool to expose cluster services broadly to other application services.</td>
+<td>Prometheus, Grafana, lsto</td>
+</tr>
+
+<tr>
+<th>Security</th>
+<td>Find the right tooling for you to manage certificates, passwords and secret tuned for RBAC across all hybrid-cloud environments.</td>
+<td>ELB,Traefik, Ambassador</td>
+</tr>
+<tr>
+<th>Log Management</th>
+<td>Make logging easier by choosing pre-integrated tools for ingest, analysis and reporting.</td>
+<td>Okta, Hashicorp Vault, AWS Certificate</td>
+</tr>
+
+
+</table>
+
 <img src="./img/mlops.svg" width=100%>
 
 
