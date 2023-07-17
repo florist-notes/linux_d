@@ -19,90 +19,120 @@ MLOps stands for Machine Learning Operations. MLOps is a core function of Machin
 <tr>
 <th>ML Platform</th>
 <td>Provisioned as our opinionated preference for ML workflows running on a highly scalable software infrastructure.</td>
-<td>Kubeflow, Kubernetes</td>
+<td>
+
+[Kubeflow](https://www.kubeflow.org/), [Kubernetes](https://kubernetes.io/)</td>
 </tr>
 
 <tr>
 <th>ML Frameworks</th>
 <td>Select your machine learning and deep learning framework, toolkit, and libraries.</td>
-<td>TensorFlow, PyTorch, Cafee, Keras</td>
+<td>
+
+[TensorFlow](https://www.tensorflow.org/), [PyTorch](https://pytorch.org/), [Caffe](https://caffe.berkeleyvision.org/), [Keras](https://keras.io/)</td>
 </tr>
 
 <tr>
 <th>Storage Volumne Management</th>
 <td>Choose from software and tools for storage to meet your high performance ML needs.</td>
-<td>Local FS, AWS EFS, AWS EBS, Ceph (block and object), Minio, NFS, HDFS</td>
+<td>
+
+[Local FS](https://docs.streamsets.com/platform-datacollector/latest/datacollector/UserGuide/Destinations/LocalFS.html), [AWS EFS](https://aws.amazon.com/efs/), [AWS EBS](https://aws.amazon.com/ebs/), [Ceph](https://ceph.io/en/discover/technology/) (block and object), [Minio](https://min.io/), [NFS](https://www.techtarget.com/searchenterprisedesktop/definition/Network-File-System), [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)</td>
 </tr>
 
 <tr>
 <th>Container Image Governance</th>
 <td>Choose from software and tools that register, secure, and manage the distribution of container images.</td>
-<td>AWS ECR, Harbor, GitLab</td>
+<td>
+
+[AWS ECR](https://aws.amazon.com/ecr/), [[Harbor]((https://goharbor.io/))], [GitLab](https://about.gitlab.com/)</td>
 </tr>
 
 <tr>
 <th>Workflow Engine</th>
 <td>Provisioned by default to govern scheduling and coordination of jobs.</td>
-<td>Argo</td>
+<td>
+
+[Argo](https://argoproj.github.io/argo-workflows/use-cases/machine-learning/)</td>
 </tr>
 
 <tr>
 <th>Model Training</th>
 <td>Include collaboration tooling and interative model training as part of your template.</td>
-<td>JupyterHub, TensorBoard, Argo workflow templates</td>
+<td>
+
+[JupyterHub](https://jupyter.org/hub), [TensorBoard](https://www.tensorflow.org/tensorboard), [Argo workflow templates](https://argoproj.github.io/argo-workflows/use-cases/machine-learning/)</td>
 </tr>
 
 <tr>
 <th>Model Serving</th>
 <td>Pick the tool to expose trained models to business applications.</td>
-<td>Seldon, tf-serving</td>
+<td>
+
+[Seldon](https://www.seldon.io/), [TFX : tf-serving](https://www.tensorflow.org/tfx/guide/serving)</td>
 </tr>
 
 <tr>
 <th>Model Validation</th>
 <td>Set by default, models will be evaluated against test data as part of your ML pipeline.</td>
-<td>Argo workflow templates</td>
+<td>
+
+[Argo workflow templates](https://argoproj.github.io/argo-workflows/use-cases/machine-learning/)</td>
 </tr>
 
 <tr>
 <th>Data Storage Services</th>
 <td>Choose from storage options befitting the performance of other ML services.</td>
-<td>Mini, AWS S3, MongoDB, Cassandra, HDFS</td>
+<td>
+
+[Mini](https://min.io/), [AWS S3](https://aws.amazon.com/s3/), [MongoDB](https://www.mongodb.com/), [Cassandra](https://cassandra.apache.org/_/index.html), [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)</td>
 </tr>
 
 <tr>
 <th>Data Preparation and Processing</th>
 <td>Select your tooling to manage the data processing ovent of your ML pipeline.</td>
-<td>x</td>
+<td>
+
+[Argo](https://argoproj.github.io/argo-workflows/use-cases/machine-learning/), [NATS](https://nats.io/), workflow application templates.</td>
 </tr>
 
 <tr>
 <th>Infrastructure Monitoring</th>
 <td>Elect which reporting and dashboarding tool gives you the better optics into your stack performance.</td>
-<td>Argo, NATS, workflow application templates</td>
+<td>
+
+[Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/)</td>
 </tr>
 
 <tr>
 <th>Model Monitoring</th>
 <td>Find and choose the appropriate tool to watch model accuracy over time.</td>
-<td>Prometheus, Grafana</td>
+<td>
+
+[Prometheus](https://prometheus.io/), [Grafana](https://grafana.com/), [lsto](https://istio.io/latest/about/service-mesh/)</td>
 </tr>
 
 <tr>
 <th>Load Balancing & Ingress</th>
 <td>Determine the appropriate tool to expose cluster services broadly to other application services.</td>
-<td>Prometheus, Grafana, lsto</td>
+<td>
+
+[ELB](https://aws.amazon.com/elasticloadbalancing/), [Traefik](https://doc.traefik.io/traefik/routing/services/), [Ambassador](https://docs.traceable.ai/docs/ambassador)</td>
 </tr>
 
 <tr>
 <th>Security</th>
 <td>Find the right tooling for you to manage certificates, passwords and secret tuned for RBAC across all hybrid-cloud environments.</td>
-<td>ELB,Traefik, Ambassador</td>
+<td>
+
+[Okta](https://www.okta.com/), [Hashicorp Vault](https://www.vaultproject.io/), [AWS Certificate](https://aws.amazon.com/certification/)</td>
 </tr>
 <tr>
 <th>Log Management</th>
 <td>Make logging easier by choosing pre-integrated tools for ingest, analysis and reporting.</td>
-<td>Okta, Hashicorp Vault, AWS Certificate</td>
+<td>
+
+[Elastic Search](https://www.elastic.co/), [Fluentd](https://www.fluentd.org/), [Kibana](https://www.elastic.co/kibana/)</td>
 </tr>
 
 
