@@ -45,7 +45,7 @@ MLOps stands for Machine Learning Operations. MLOps is a core function of Machin
 <td>Choose from software and tools that register, secure, and manage the distribution of container images.</td>
 <td>
 
-[AWS ECR](https://aws.amazon.com/ecr/), [[Harbor]((https://goharbor.io/))], [GitLab](https://about.gitlab.com/)</td>
+[AWS ECR](https://aws.amazon.com/ecr/), [Harbor](https://goharbor.io/), [GitLab](https://about.gitlab.com/)</td>
 </tr>
 
 <tr>
