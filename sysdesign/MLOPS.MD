@@ -387,7 +387,7 @@ Model Packaging - The process of exporting the final ML model into a specific fo
 
 
 <tr>
-<td>"almagination"
+<td>Apple .mlmodel
 </td>
 <td>✘
 </td>
