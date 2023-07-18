@@ -431,6 +431,16 @@ Cloud Build to build and test machine learning pipelines
 
 <img src="./img/mls.jpg" width=100%>
 
+## Model Serving Patterns and Model Deployment Strategies
+
+Five patterns to put the ML model in production: <b>Model-as-Service</b>, <b>Model-as-Dependency</b>, <b>Precompute</b>, <b>Model-on-Demand</b>, and <b>Hybrid-Serving</b>.
+
+<img src="./img/mas.jpg" width=59%><img src="./img/pc.jpg" width=40%>
+
+Hybrid-Serving (Federated Learning)
+Federated Learning, also known as hybrid-serving, is another way of serving a model to the users. It is unique in the way it does, there is not only one model that predicts the outcome, but there are also lots of it. Exactly spoken there are as many models as users exist, in addition to the one that’s held on a server.
+
+The big benefit of this is that the data used for training and testing, which is highly personal, never leaves the devices while still capturing all data that is available. This way it is possible to train highly accurate models while not having to store tons of (probably personal) data in the cloud. Tool : TensorFlow Federated ([TFF](https://medium.com/tensorflow/introducing-tensorflow-federated-a4147aa20041)).
 
 ## MLOPs tools : [Project Jupyter](https://jupyter.org/), [Nbdev](https://github.com/fastai/nbdev), [Airflow](https://airflow.apache.org/), [Kubeflow](https://www.kubeflow.org/), [MLflow](https://mlflow.org/), [Optuna](https://optuna.org/), [AutoML tools](https://www.automl.org/automl/).
 
