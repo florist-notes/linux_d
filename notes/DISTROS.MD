@@ -19,7 +19,7 @@ Follow [distrowatch](https://distrowatch.com/) for latest distro updates, [compa
 <td>Arch Linux is a lightweight and flexible geeky Linux distro designed for advanced users or Linux experts who care much about what is installed and the services running. It gives users the freedom to custom or configures the system, to their preference. In a nutshell, Arch is meant for users who really know the ins and outs of working with Linux.<br /></td>
 <td>
 
-[Arch Linux](https://archlinux.org/)
+[Arch Linux](https://archlinux.org/) | [docker image](https://hub.docker.com/_/archlinux)
 <br /></td>
 </tr>
 

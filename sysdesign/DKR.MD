@@ -69,7 +69,18 @@ TensorFlow Serving [[image](https://hub.docker.com/r/bitnami/tensorflow-serving)
 
 PyTorch : [[image](https://hub.docker.com/r/bitnami/pytorch)]
 </td>
-</tr
+
+<td>
+
+intel/dlstreamer : [[image](https://hub.docker.com/r/intel/dlstreamer)]
+</td>
+
+<td>
+
+mongo-express : [[image](https://hub.docker.com/_/mongo-express)]
+</td>
+
+</tr>
 
 <tr>
 <td>
@@ -82,6 +93,17 @@ NGINX [[image](https://hub.docker.com/r/ubuntu/nginx)]
 <td>
 
 Ubuntu : [[image](https://hub.docker.com/_/ubuntu)]</td>
+
+<td>
+
+kibana : [[image](https://hub.docker.com/_/kibana)]
+</td>
+
+<td>
+
+ros 2 : [[image](https://hub.docker.com/_/ros)]
+</td>
+
 </tr>
 
 
