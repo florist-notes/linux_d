@@ -167,7 +167,7 @@ GPU Cloud vendors have also exploded in popularity in 2023. The vendor offerings
 <td>Vector databases are a new category of a database management system designed to search across images, video, text, audio, and other forms of unstructured data via their content rather than human-generated labels or tags.</td>
 <td>
 
-[Pinecone](https://www.pinecone.io/), [Chroma](https://github.com/chroma-core/chroma) : [LangChain](https://langchain.com/) : [LlamaIndex](https://github.com/jerryjliu/llama_index), [Weviate](https://weaviate.io/), [Qdrant](https://github.com/qdrant/qdrant), [Milvus](https://github.com/milvus-io/milvus), [Activeloop](https://github.com/activeloopai/deeplake)</td>
+[Pinecone](https://www.pinecone.io/), [Chroma](https://github.com/chroma-core/chroma), [Weviate](https://weaviate.io/), [Qdrant](https://github.com/qdrant/qdrant), [Milvus](https://github.com/milvus-io/milvus), [Activeloop](https://github.com/activeloopai/deeplake)</td>
 </tr>
 
 <tr>
