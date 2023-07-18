@@ -87,85 +87,95 @@ Data Ingestion - Collecting data by using various systems, frameworks and format
 </tr>
 
 <tr>
-<th>Model quality testing</th>
-<td>x.</td>
+<th>Hyperparameter Optimization</th>
+<td>Hyperparameter optimization tooling</td>
 <td>
 
-[x](), [x]()</td>
+[Optuna](https://optuna.org/), [Hyperopt](http://hyperopt.github.io/hyperopt/), [SigOpt](https://sigopt.com/)</td>
+</tr>
+
+<tr>
+<th>Model quality testing</th>
+<td>Model quality testing tools provide features to ensure the reliability, robustness, and accuracy of ML models.</td>
+<td>
+
+[Deepchecks](https://deepchecks.com/), [Truera](https://truera.com/), [Kolena](https://docs.kolena.io/)</td>
 </tr>
 
 <tr>
 <th>Workflow orchestration and pipelining tools</th>
-<td>x.</td>
-<td>[x](), [x]()</td>
+<td>Workflow orchestration and pipelining tools are essential components for streamlining and automating complex ML workflows. </td>
+<td>
+
+[ZenML](https://zenml.io/), [Kedro](https://kedro.org/), [Flyte](https://flyte.org/), [Prefect](https://www.prefect.io/), [Mage AI](https://www.mage.ai/)</td>
 </tr>
 
 <tr>
 <th>Model deployment and serving</th>
-<td>x.</td>
+<td>Model deployment and serving tools enable you to deploy trained models into production environments and serve predictions to end-users or downstream systems.</td>
 <td>
 
-[x](), [x]()</td>
+[BentoML](https://github.com/bentoml/BentoML), [OctoML](https://octoml.ai/), [NVIDIA TensorRT](https://developer.nvidia.com/tensorrt), [NVIDIA Triton Inference  Server](https://developer.nvidia.com/nvidia-triton-inference-server), [Seldon Core](https://www.seldon.io/solutions/open-source-projects/core)</td>
 </tr>
 
 
 <tr>
 <th>Model observability</th>
-<td>x.</td>
+<td>Model observability tools can allow you to gain insights into the behavior, performance, and health of your deployed ML models. </td>
 <td>
 
-[x](), [x]()</td>
+[Aporia](https://www.aporia.com/product/ml-monitoring/), [WhyLabs](https://whylabs.ai/), [Arize AI](https://arize.com/), [Mona](https://www.monalabs.io/platform), [Superwise](https://superwise.ai/), [Evidently AI](https://github.com/evidentlyai/evidently)</td>
 </tr>
 
 
 <tr>
 <th>Responsible AI</th>
-<td>x.</td>
+<td>You can use responsible AI tools to deploy ML models through ethical, fair, and accountable techniques.</td>
 <td>
 
-[x](), [x]()</td>
+[Arthur AI](https://www.arthur.ai/explainability), [Fiddler AI](https://www.fiddler.ai/ml-model-monitoring)</td>
 </tr>
 
 
 <tr>
 <th>Compute and infrastructure</th>
-<td>x.</td>
+<td>The compute and infrastructure component is a vital aspect of machine learning (ML) systems, providing the necessary resources and environment to train, deploy, and run ML models at scale. </td>
 <td>
 
-[x](), [x]()</td>
+[Ray](https://github.com/ray-project/ray), [Run:ai](https://www.run.ai/), [Nuclio](https://github.com/nuclio/nuclio), [Mosaic ML](https://www.mosaicml.com/training)</td>
 </tr>
 
 
 <tr>
-<th>GPU Cloud Servers</th>
-<td>x.</td>
+<th>GPU Cloud Servers and Serverless GPUs</th>
 <td>
 
-[x](), [x]()</td>
-</tr>
+GPU Cloud vendors have also exploded in popularity in 2023. The vendor offerings are divided into two classes:
 
++ GPU Cloud Servers are long-running (but possibly pre-emptible) machines.
++ Severless GPUs are machines that scale-to-zero in the absence of traffic.
 
-<tr>
-<th>Serverless GPUs</th>
-<td>x.</td>
+</td>
 <td>
 
-[x](), [x]()</td>
+[Paperspace](https://www.paperspace.com/), [Baseten](https://docs.baseten.co/), [Lambda](https://lambdalabs.com/service/gpu-cloud), [Modal](https://modal.com/)</td>
 </tr>
 
 
 <tr>
 <th>Vector databases and data retrieval</th>
-<td>x.</td>
-<td>x</td>
+<td>Vector databases are a new category of a database management system designed to search across images, video, text, audio, and other forms of unstructured data via their content rather than human-generated labels or tags.</td>
+<td>
+
+[Pinecone](https://www.pinecone.io/), [Chroma](https://github.com/chroma-core/chroma) : [LangChain](https://langchain.com/) : [LlamaIndex](https://github.com/jerryjliu/llama_index), [Weviate](https://weaviate.io/), [Qdrant](https://github.com/qdrant/qdrant), [Milvus](https://github.com/milvus-io/milvus), [Activeloop](https://github.com/activeloopai/deeplake)</td>
 </tr>
 
 <tr>
-<th>Foundation model training frameworks</th>
-<td>x.</td>
+<th>LLMOps and foundation model training frameworks </th>
+<td>Foundation model training frameworks</td>
 <td>
 
-[x](), [x]()</td>
+[LLamaIndex](https://github.com/jerryjliu/llama_index), [LangChain](https://github.com/hwchase17/langchain), [Guardrails](https://shreyar.github.io/guardrails/#rail-spec), [DUST](https://github.com/dust-tt/dust)</td>
 </tr>
 
 
