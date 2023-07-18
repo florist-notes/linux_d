@@ -33,8 +33,9 @@ $ echo " * * * * * * * * * * * * * * * * * * * 🌸    "
 - Data pipeline engineering with AirFlow and Kafka [project](proj/airkafka.MD)
 
 ## /system design and architecture:
-- Git, Docker and Kubernetes - [git](sysdesign/GDK.MD) , [docker](sysdesign/DKR.MD) & [kubernetes](sysdesign/KBNTS.MD).
-- Microservices, API and Flask - [microservices](sysdesign/MSRV.MD), [flask & API](sysdesign/FLASK.MD).
+- Git, Docker and Kubernetes - [Git](sysdesign/GDK.MD) , [Docker](sysdesign/DKR.MD) & [Kubernetes](sysdesign/KBNTS.MD).
+- Microservices, API and Flask - [Microservices](sysdesign/MSRV.MD), [flask & API](sysdesign/FLASK.MD).
 - Machine Learning Operations : [MLOps and ML services](sysdesign/MLOPS.MD).
-- System Design and Architecture - [sysdesign experiments](sysdesign/README.MD). 
+- MLOps with Google Vertex AI : [MLOps - GCloud Vertex AI](sysdesign/VERTEXAI.MD)
+- System Design and Architecture - [Sysdesign Experiments](sysdesign/README.MD). 
 
