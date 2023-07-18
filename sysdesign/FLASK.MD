@@ -77,6 +77,8 @@ I have some experience with Flask. I recently gave a workshop at AI-Makerspace, 
 </tr>
 </table>
 
+Deployment of Flask server : [python anywhere](https://help.pythonanywhere.com/pages/Flask/), [heroku](https://devcenter.heroku.com/articles/getting-started-with-python), [Digital Ocean](https://docs.digitalocean.com/tutorials/app-deploy-flask-app/), Virtual Machine from Google Cloud : [Google App Engine](https://cloud.google.com/appengine/docs/standard/python3/runtime), [Google Cloud Run](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service), AWS : [Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html), Azure [IIS](https://learn.microsoft.com/en-us/azure/app-service/configure-language-python)etc. 
+
 ```python
 
 from flask import Flask

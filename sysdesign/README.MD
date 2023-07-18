@@ -180,7 +180,7 @@ Example of complete tree:
 
 # SYSTEM DESIGN EXAMPLES
 
-<b>Design the algoexpert website? Worry about the core userflow</b>
+### <b>Design the algoexpert website? Worry about the core userflow</b>
 
 Ans : Visit the website, Type & Run code on the website. We don't need to shoot the highest availability, we can have 2-3 nines of availability (3 days of downtime atmost a year). Latency and Throughput will be important for code execution. We are shooting for:
 * 2-3 nines availability
@@ -199,7 +199,7 @@ For storing user_metadata we will use relational db (postgres) to store user_id,
 
 <b>Code Execution Platform </b>: We need to rate limit here. Once every sec / 0.5 sec would be fine, but more than that would be abuse. We can use Key Value store Reddis to implement the rate limiting. Application server will be sending requests to the workers for running code. We need a way to know, when workers are running, rebooting etc. We may have 10-100 code run requests per sec and we will have eqv no of worker machines. We also want pretty robust logging and monitoring system to autoscale number of workers.
 
-<b>Design a global and fast code deployment system?</b>
+### <b>Design a global and fast code deployment system?</b>
 
 <b>Ans :</b> From past experience of code deployment system, can have few diff things going on, first of all code deployment system might involve buidling code, into binary data compiled code, it might involve testing code. Are we building both building and testing, can you please specify? Q : I want you to build a system that compiles the code to binary and deploys the code globally in an efficient way and that is also scalable, also don't worry about testing, we assume its already covered.
 
@@ -244,7 +244,7 @@ For 5000 builds per day, worker takes roughly 15 mins for a build, so a single w
 Engineer presses a button, that build which is a 10 Gigs file, which needs to be downloaded to millions of machines of 10 regions. We can put a p2p network , which all the millions of machines can download the binary instead of downloading one by one, unreasonable to download the 10 GB file one by one. When engineer presses, deploy build "B1", : For each region, we got lot of machines, one machine (engineer) deploys and all other peers (machines) know to download the binary. Our systems will have config files, as key value pairs (ZooKeeper etc), we keep the goal state and have key value store in regional level. KVS, so every region has a KVS and every KVS is pulling every 5 sec from goal state.
 
 
-<b>Q :</b> How would you design Google Drive? Storage aspect.
+### <b>Q :</b> How would you design Google Drive? Storage aspect.
 
 <b>A :</b> There are lot of features in Google Drive, like last viewed files, activity, shared docs, shared company drives etc.
 
