@@ -158,7 +158,253 @@ also check @github/[[awesome-production-ml](https://github.com/EthicalML/awesome
 
 <img src="./img/mlops.svg" width=100%>
 
-Model Packaging - The process of exporting the final ML model into a specific format (e.g. PMML, PFA, or ONNX), which describes the model to be consumed by the business application. 
+Model Packaging - The process of exporting the final ML model into a specific format (e.g. PMML, PFA, or ONNX), which describes the model to be consumed by the business application. PyTorch serves models by using their proprietary Torch Script as a .pt file. Their model format can be served from a C– application.
+
+<table style="width:100%" >
+<tr>
+<th>
+</th>
+<th>Open Format
+</th>
+<th>Vendor
+</th>
+<th>File Extension
+</th>
+<th>License
+</th>
+<th>ML Tools & Platforms Support
+</th>
+<th>Human-readable
+</th>
+<th>Compression
+</th>
+</tr>
+
+
+<tr>
+<td>
+
+"almagination" <br /> [SKompiler](https://pypi.org/project/SKompiler/)
+</td>
+<td>−
+</td>
+<td>−
+</td>
+<td>−
+</td>
+<td>−
+</td>
+<td>−
+</td>
+<td>−
+</td>
+<td>✓
+</td>
+</tr>
+
+
+<tr>
+<td>PMML
+</td>
+<td>✓
+</td>
+<td>
+
+[DMG](https://dmg.org/pmml/pmml_examples/)
+</td>
+<td>.pmml
+</td>
+<td>AGPL
+</td>
+<td>R, Python, Spark
+</td>
+<td>✓ (XML)
+</td>
+<td>✘
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+[PFA](https://dmg.org/pfa/docs/motivation/)
+</td>
+<td>✓
+</td>
+<td>DMG
+</td>
+<td>JSON
+</td>
+<td>
+</td>
+<td>PFA-enabled runtime
+</td>
+<td>✓ (JSON)
+</td>
+<td>✘
+</td>
+</tr>
+
+
+<tr>
+<td>
+
+[ONNX](https://github.com/onnx/tutorials#scoring-onnx-models)
+</td>
+<td>✓
+</td>
+<td>SIG, LFAI
+</td>
+<td>.onnx
+</td>
+<td>
+</td>
+<td>TF, CNTK, Core ML, MXNet, ML.NET
+</td>
+<td>−
+</td>
+<td>✓
+</td>
+</tr>
+
+
+<tr>
+<td>TF Serving Format
+</td>
+<td>✓
+</td>
+<td>Google
+</td>
+<td>.pf
+</td>
+<td>
+</td>
+<td>Tensor Flow
+</td>
+<td>✘
+</td>
+<td>g-zip
+</td>
+</tr>
+
+
+<tr>
+<td>Pickle Format
+</td>
+<td>✓
+</td>
+<td>
+</td>
+<td>.pkl
+</td>
+<td>
+</td>
+<td>scikit-learn
+</td>
+<td>✘
+</td>
+<td>g-zip
+</td>
+</tr>
+
+
+<tr>
+<td>JAR/ POJO
+</td>
+<td>✓
+</td>
+<td>
+</td>
+<td>.jar
+</td>
+<td>
+</td>
+<td>H2O
+</td>
+<td>✘
+</td>
+<td>✓
+</td>
+</tr>
+
+<tr>
+<td>HDF
+</td>
+<td>✓
+</td>
+<td>
+</td>
+<td>.h5
+</td>
+<td>
+</td>
+<td>Keras
+</td>
+<td>✘
+</td>
+<td>✓
+</td>
+</tr>
+
+<tr>
+<td>MLEAP
+</td>
+<td>✓
+</td>
+<td>
+</td>
+<td>.jar/ .zip
+</td>
+<td>
+</td>
+<td>Spark, TF, scikit-learn	
+</td>
+<td>✘
+</td>
+<td>✓
+</td>
+</tr>
+
+<tr>
+<td>Torch Script
+</td>
+<td>✘
+</td>
+<td>
+</td>
+<td>.pt
+</td>
+<td>
+</td>
+<td>PyTorch
+</td>
+<td>✘
+</td>
+<td>✓
+</td>
+</tr>
+
+
+<tr>
+<td>"almagination"
+</td>
+<td>✘
+</td>
+<td>Apple
+</td>
+<td>.mlmodel
+</td>
+<td>
+</td>
+<td>TensorFlow, scikit-learn, Core ML
+</td>
+<td>−
+</td>
+<td>✓
+</td>
+</tr>
+</table>
 
 There are two ways how we perform ML Model Training:
 
