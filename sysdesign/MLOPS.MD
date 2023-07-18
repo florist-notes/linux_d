@@ -28,7 +28,147 @@ Data Ingestion - Collecting data by using various systems, frameworks and format
 
 <th>Available Implementations
 </th>
-</tr
+</tr>
+
+<tr>
+<th>End-to-end Machine Learning Operations (MLOps) platforms</th>
+<td>End-to-end MLOps platforms provide a unified ecosystem that streamlines the entire ML workflow, from data preparation and model development to deployment and monitoring. </td>
+<td>
+
+[DataRobot](https://www.datarobot.com/platform/mlops/), [Azure ML](https://azure.microsoft.com/en-au/products/machine-learning), [Databricks](https://www.databricks.com/), [Domino](https://www.dominodatalab.com/product/domino-enterprise-mlops-platform), [Amazon Sagemaker](https://aws.amazon.com/sagemaker/), [Metaflow](https://docs.metaflow.org/introduction/what-is-metaflow), [Vertex AI](https://cloud.google.com/vertex-ai), [Weights & Biases](https://wandb.ai/site), [Qwak](https://www.qwak.com/), [Kubeflow](https://www.kubeflow.org/), [Valohai](https://valohai.com/product/)</td>
+</tr>
+
+<tr>
+<th>Experiment tracking, model metadata storage and management</th>
+<td>Experiment tracking and model metadata management tools provide you with the ability to track experiment parameters, metrics, and visualizations, ensuring reproducibility and facilitating collaboration. </td>
+<td>
+
+[AimStack](https://aimstack.io/), [neptune.ai](https://neptune.ai/), [MLflow](https://github.com/mlflow/mlflow), [Comet ML](https://www.comet.com/site/)</td>
+</tr>
+
+<tr>
+<th>Dataset labeling and annotation</th>
+<td>Dataset labeling and annotation tools form a critical component of machine learning (ML) systems, enabling you to prepare high-quality training data for their models. These tools provide a streamlined workflow for annotating data, ensuring accurate and consistent labeling that fuels model training and evaluation. </td>
+<td>
+
+[Labelbox](https://labelbox.com/), [Scale AI](https://scale.com/), [Snorkel Flow](https://snorkel.ai/snorkel-flow/), [AWS SageMaker Ground Truth](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html), [Kili](https://kili-technology.com/), [Super Annotate](https://www.superannotate.com/), [Encord Annotate](https://encord.com/automate/)</td>
+</tr>
+
+<tr>
+<th>Data storage and versioning</th>
+<td>You need data storage and versioning tools to maintain data integrity, enable collaboration, facilitate the reproducibility of experiments and analyses, and ensure accurate ML model development and deployment. Versioning allows you to trace and compare different iterations of datasets.</td>
+<td>
+
+[DVC](https://dvc.org/), [Dolt](https://www.dolthub.com/), [Delta Lake](https://delta.io/), [Pachyderm](https://github.com/pachyderm/pachyderm), [LakeFS](https://github.com/treeverse/lakeFS)</td>
+</tr>
+
+<tr>
+<th>Data quality monitoring and management</th>
+<td>You may want to continuously observe data quality, consistency, and distribution to identify anomalies or shifts that may impact model performance.</td>
+<td>
+
+[Monte Carlo](https://www.montecarlodata.com/), [Metaplane](https://www.metaplane.dev/), [Talend Data Quality](https://www.talend.com/products/data-quality/), [Great Expectations](https://greatexpectations.io/), [Databand](https://databand.ai/), [Soda Core](https://github.com/sodadata/soda-core)</td>
+</tr>
+
+<tr>
+<th>Feature stores</th>
+<td>Feature stores provide a centralized repository for storing, managing, and serving ML features, enabling you to find and share feature values for both model training and serving.</td>
+<td>
+
+[Feast](https://github.com/feast-dev/feast), [DataBricks](https://docs.databricks.com/machine-learning/feature-store/index.html), [Tecton](https://www.tecton.ai/feature-store/), [Vertex AI](https://cloud.google.com/vertex-ai/docs/featurestore), [Hopsworks](https://www.hopsworks.ai/the-python-centric-feature-store), [Featureform](https://github.com/featureform/featureform)</td>
+</tr>
+
+<tr>
+<th>Model hubs</th>
+<td>Model hubs provide a centralized platform for managing, sharing, and deploying ML models. They empower you to streamline model management, foster collaboration, and accelerate the deployment of ML models.</td>
+<td>
+
+[Hugging Face Model Hub](https://huggingface.co/models), [Kaggle](https://www.kaggle.com/models), [TensorFlow HUb](https://www.tensorflow.org/hub)</td>
+</tr>
+
+<tr>
+<th>Model quality testing</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+<tr>
+<th>Workflow orchestration and pipelining tools</th>
+<td>x.</td>
+<td>[x](), [x]()</td>
+</tr>
+
+<tr>
+<th>Model deployment and serving</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
+<tr>
+<th>Model observability</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
+<tr>
+<th>Responsible AI</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
+<tr>
+<th>Compute and infrastructure</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
+<tr>
+<th>GPU Cloud Servers</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
+<tr>
+<th>Serverless GPUs</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
+<tr>
+<th>Vector databases and data retrieval</th>
+<td>x.</td>
+<td>x</td>
+</tr>
+
+<tr>
+<th>Foundation model training frameworks</th>
+<td>x.</td>
+<td>
+
+[x](), [x]()</td>
+</tr>
+
+
 
 <tr>
 <th>ML Platform</th>
