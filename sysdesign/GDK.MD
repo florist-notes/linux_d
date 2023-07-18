@@ -1,11 +1,10 @@
-# Git and Github
-### Git Version Control
+# Git and Github :  Version Control
 <br />
 
-<img src="./img/github.png" height=150px><a> </a><img src="./img/git2.png" height=140px>
+<img src="./img/github.png" height=150px><a> </a><img src="./img/git2.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
 
-x. [Git & Github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf)
+ [Git & Github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf), Github Actions : CI/CD - [example](https://youtu.be/J4EhgEskSZA) ('.yaml' config file in repository).
 
 
 ### Internals of Git
@@ -167,14 +166,6 @@ To merge these branches:
 ```
 
 ## Lessons:
-[MIT Lecture 6: Version Control (git) (2020)](https://youtu.be/2sjqTHE0zok) | [git assignments](https://missing.csail.mit.edu/2020/version-control/)
+[MIT Lecture 6: Version Control (git) (2020)](https://youtu.be/2sjqTHE0zok) | [git assignments](https://missing.csail.mit.edu/2020/version-control/), [Complete Git Guide: Understand and master Git and GitHub](https://www.udemy.com/course/git-and-github-complete-guide/),  [The Git & Github Bootcamp](https://www.udemy.com/course/git-and-github-bootcamp/)
 
-Udemy: [Complete Git Guide: Understand and master Git and GitHub](https://www.udemy.com/course/git-and-github-complete-guide/)
-
-Udemy: [The Git & Github Bootcamp](https://www.udemy.com/course/git-and-github-bootcamp/)
-
-[ProGit Book](https://git-scm.com/book/en/v2) | [cli/cli](https://github.com/cli/cli) | [cli.github](https://cli.github.com/manual/) | [git merge vs git rebase](https://youtu.be/KWAZl2QHC44)
-
-[Removing sensitive data from a repository](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/removing-sensitive-data-from-a-repository) | [GitHub Actions - Now with built-in CI/CD! Live from GitHub HQ](https://youtu.be/E1OunoCyuhY) | [Contributing to Open Source for the first time](https://youtu.be/c6b6B9oN4Vg)
-
-[Github Workflow](https://www.youtube.com/watch?v=MnUd31TvBoU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=11&ab_channel=TheNetNinja) | [Github Workflow 2](https://youtu.be/oFYyTZwMyAg) | [Github Actions](https://youtu.be/J4EhgEskSZA) | [Github Actions 2](https://youtu.be/eB0nUzAI7M8) | [Git and GitHub for Beginners Tutorial](https://youtu.be/tRZGeaHPoaw) | [Git Branches Tutorial](https://youtu.be/e2IbNHi4uCI) | [Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git](https://youtu.be/Uszj_k0DGsg) | [Advanced Git Tutorial - Interactive Rebase, Cherry-Picking, Reflog, Submodules and more](https://youtu.be/qsTthZi23VE) | [Complete Guide to Open Source - How to Contribute](https://youtu.be/yzeVMecydCE) | [Contributing to Open Source for the first time](https://youtu.be/c6b6B9oN4Vg)
+resources : [ProGit Book](https://git-scm.com/book/en/v2) | [cli/cli](https://github.com/cli/cli) | [cli.github](https://cli.github.com/manual/) | [git merge vs git rebase](https://youtu.be/KWAZl2QHC44), [Removing sensitive data from a repository](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/removing-sensitive-data-from-a-repository) | [GitHub Actions - Now with built-in CI/CD! Live from GitHub HQ](https://youtu.be/E1OunoCyuhY) | [Contributing to Open Source for the first time](https://youtu.be/c6b6B9oN4Vg), [Github Workflow](https://www.youtube.com/watch?v=MnUd31TvBoU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=11&ab_channel=TheNetNinja) | [Github Workflow 2](https://youtu.be/oFYyTZwMyAg) | [Github Actions](https://youtu.be/J4EhgEskSZA) | [Github Actions 2](https://youtu.be/eB0nUzAI7M8) | [Git and GitHub for Beginners Tutorial](https://youtu.be/tRZGeaHPoaw) | [Git Branches Tutorial](https://youtu.be/e2IbNHi4uCI) | [Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git](https://youtu.be/Uszj_k0DGsg) | [Advanced Git Tutorial - Interactive Rebase, Cherry-Picking, Reflog, Submodules and more](https://youtu.be/qsTthZi23VE) | [Complete Guide to Open Source - How to Contribute](https://youtu.be/yzeVMecydCE) | [Contributing to Open Source for the first time](https://youtu.be/c6b6B9oN4Vg)

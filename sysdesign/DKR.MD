@@ -54,6 +54,44 @@ Docker Containers:
     $ nano docker-compose.yaml
 ```
 
+## DOCKER HUB:
+
+<center><img src="img/dh.webp" width=40%></center><br /><br />
+
+<table style="width:100%" >
+<tr>
+<th>Docker Hub Images :</th>
+<td>
+
+TensorFlow Serving [[image](https://hub.docker.com/r/bitnami/tensorflow-serving)]
+</td>
+<td>
+
+PyTorch : [[image](https://hub.docker.com/r/bitnami/pytorch)]
+</td>
+</tr
+
+<tr>
+<td>
+
+MLflow [[image](https://hub.docker.com/r/ubuntu/mlflow)]</td>
+<td>
+
+NGINX [[image](https://hub.docker.com/r/ubuntu/nginx)]
+</td>
+<td>
+
+Ubuntu : [[image](https://hub.docker.com/_/ubuntu)]</td>
+</tr>
+
+
+
+</table>
+
+
+
+
+
 DOCKER COMPOSE : In `docker-compose.yaml` :
 
 ```docker
