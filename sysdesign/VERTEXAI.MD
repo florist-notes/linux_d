@@ -1,3 +1,3 @@
 # Google Cloud : Vertx AI
 
-<img src="./img/v.png" width=80%>
+<img src="./img/vai.png" width=80%>

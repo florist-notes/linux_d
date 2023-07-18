@@ -55,7 +55,7 @@ Coding tests assess problem solving but theoretical knowledge is important and S
 <b>Polling and Streaming </b>: If data gets updated regularly and clients gonna see updates regularly, say temperature. This is where polling and streaming comes into play. Polling : Client issues a request following a set interval. For instant messaging, chat rooms, we work with streaming. If we do polling for every 0.1 s for instantaneous feeling, we overload the server, we issue 10 requests per second for 1 client just to get messages, thats where streaming comes into play. Streaming is done through socket, a file where computers can read write with another system, it is like a portal. In streaming, there's a continuos stream of data without having to issue requests repeatedly.
 
 
-<img src="algorithms/sys/pollstream.JPG" width=48%><a> </a><img src="algorithms/sys/ratelimit.JPG" width=48.5%>
+<img src="algorithms/sys/pollstream.JPG" width=51%><a> </a><img src="algorithms/sys/ratelimit.JPG" width=47.5%>
 
 <b>Configuration </b>: config files - config.json / config.yaml. Configuration is a set of parameters that our system is going to use, we configure them in an isolated manner either in JSON or YAML. Uber has config files in yaml. 2 primary types - static and dynamic. Static is bundled with application file and if we edit, we need to deploy the entire code package. Dynamic configuration completely separated from application package. It is more complex and has to be back by some db.
 
