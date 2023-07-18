@@ -1,9 +1,17 @@
 # Microservices
 
+Microservices architecture (often shortened to microservices) refers to an architectural style for developing applications. Microservices allow a large application to be separated into smaller independent parts, with each part having its own realm of responsibility. To serve a single user request, a microservices-based application can call on many internal microservices to compose its response.
+
+Containers are a well-suited microservices architecture example, since they let you focus on developing the services without worrying about the dependencies. Modern cloud-native applications are usually built as microservices using containers.
+
+
+Tools : [Google Microservices Stack](https://cloud.google.com/learn/what-is-microservices-architecture), AWS Containers - [Amazon Elastic Container Service](https://aws.amazon.com/ecs/) and Serverless - [AWS Lambda](https://aws.amazon.com/lambda/). Amazon Microservice Ecosystem [stack](https://aws.amazon.com/microservices/). To learn more about MLOps, go to my notes @[MLOPS](./MLOPS.MD) and @[VERTEX AI](./VERTEXAI.MD).
 
 <img src="img/mss.jpg" width=40%><a> </a><img src="img/ff.png" width=53.5%>
 
 Microservices are an application architecture style where independent, self-contained programs with a single purpose each can communicate with each other over a network. Typically, these microservices are able to be deployed independently because they have strong separation of responsibilities via a well-defined specification with significant backwards compatibility to avoid sudden dependency breakage. [[source](https://www.fullstackpython.com/microservices.html)]
+
+#### Microservice Example:
 
 We develop a video to mp3 conversion flask web application and learn microservices along the way.
 
