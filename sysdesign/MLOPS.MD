@@ -3,7 +3,21 @@
 
 MLOps stands for Machine Learning Operations. MLOps is a core function of Machine Learning engineering, focused on streamlining the process of taking machine learning models to production, and then maintaining and monitoring them.
 
+The necessity of MLOps can be summarized as follows:
+
++ ML models rely on a huge amount of data, difficult for a single person to keep track of.
++ Difficult to keep track of parameters we tweak in ML models. Small changes can lead to enormous differences in the results.
++ We have to keep track of the features the model works with, feature engineering is a separate task that contributes largely to model accuracy.
++ Monitoring an ML model isn’t like monitoring a deployed software or web app.
++ Debugging an ML model is an extremely complicated art
++ Models rely on real-world data for predicting, as real-world data changes, so should the model. This means we have to keep track of new data changes and make sure the model learns accordingly.
+
+## ML Project Lifecycle : Scoping > Data Engineering > Modelling > Deployment > Monitoring
+
 <img src="./img/mlp.png" width=100%>
+
+<img src="./img/mlinfra.webp" width=100%>
+
 
 
 <table style="width:100%" >
@@ -132,11 +146,15 @@ MLOps stands for Machine Learning Operations. MLOps is a core function of Machin
 <td>Make logging easier by choosing pre-integrated tools for ingest, analysis and reporting.</td>
 <td>
 
-[Elastic Search](https://www.elastic.co/), [Fluentd](https://www.fluentd.org/), [Kibana](https://www.elastic.co/kibana/)</td>
+[Elastic Search](https://www.elastic.co/), [Fluentd](https://www.fluentd.org/), [Kibana](https://www.elastic.co/kibana/), [graylog](https://www.graylog.org/)</td>
 </tr>
 
 
 </table>
+
+also check @github/[[awesome-production-ml](https://github.com/EthicalML/awesome-production-machine-learning)] and this lfai mlops landscape [chart](https://landscape.lfai.foundation/).
+
+### MLOps Level II :
 
 <img src="./img/mlops.svg" width=100%>
 
