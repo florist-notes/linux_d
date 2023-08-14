@@ -28,9 +28,10 @@ $ echo " * * * * * * * * * * * * * * * * * * * 🌸    "
 - LINUX SECURITY [NOTES](notes/SECURITY.MD) [[h4ck3r](notes/notes/intro.MD)]
 
 ## /projects_experiments :
-- Setting up a web and DNS server [project](proj/webdns.MD)
-- Build a NAS and file server [project](proj/nasfile.MD)
-- Data pipeline engineering with AirFlow and Kafka [project](proj/airkafka.MD)
+- Web app, design and maps : [project](./proj/maps.MD)
+- Setting up a web and DNS server : [project](proj/webdns.MD)
+- Build a NAS and file server : [project](proj/nasfile.MD)
+- Data pipeline engineering with AirFlow and Kafka : [project](proj/airkafka.MD)
 
 ## /system design and architecture:
 - Git, Docker and Kubernetes - [Git](sysdesign/GDK.MD) , [Docker](sysdesign/DKR.MD) & [Kubernetes](sysdesign/KBNTS.MD).
