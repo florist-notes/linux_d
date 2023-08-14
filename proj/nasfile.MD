@@ -1,6 +1,6 @@
 # 2 NAS / file server with [Ubuntu Server](https://ubuntu.com/download/server)
 
-<center><img src="us.png" width=15%><a></a><img src="nas2.png" width=30%></center><br />
+<img src="us.png" width=25%><a> </a><img src="nas2.png" width=40%>
 
 
 
