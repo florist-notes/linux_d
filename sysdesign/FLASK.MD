@@ -11,7 +11,7 @@ Rest API with Python and Flask : REST stands for REpresentational State Transfer
 
 ```
 
-I have some experience with Flask. I recently gave a workshop at AI-Makerspace, Digital Product School, Unternehmer Technische Universität München on flask, maps and ML. Tech Stack : [ Flask, JavaScript, Bootstrap, Mapbox, MongoDB, PyTorch ] and here is the code [repository](https://github.com/DigitalProductschool/AI-Makerspace/tree/master/FlaskGeoAI). 
+I have some experience with Flask and did few projects ([example-work](https://twitter.com/florist_notes/status/1640584066608123905)). I recently gave a workshop at AI-Makerspace, Digital Product School, Unternehmer Technische Universität München on flask, maps and ML. Tech Stack : [ Flask, JavaScript, Bootstrap, Mapbox, MongoDB, PyTorch ] and here is the code [repository](https://github.com/DigitalProductschool/AI-Makerspace/tree/master/FlaskGeoAI). 
 
 
 
