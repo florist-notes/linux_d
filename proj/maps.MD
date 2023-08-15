@@ -17,4 +17,4 @@ To develop web applications, I picked up HTML, CSS, JavaScript, BootStrap and Mo
 
 Add custom JavaScript charts to pop up when clicked in different data points in map fetched from MongoDb. This creates a rich display and visualization of geo data over time:
 
-<img src="map.png" width=100%> 
+<img src="mapc.png" width=100%> 
