@@ -2,6 +2,12 @@
 
 I have rich experience in design and quick prototyping of web applications. I have worked extensively with geo data / geo servers and developed mapping web applications. In design, I am comfortable with : { Adobe Illustrator : [work](https://twitter.com/florist_notes/status/1637611388569890820), Inskscape : [work](https://twitter.com/florist_notes/status/1637833666528149506), Adobe Dimension and Illustrator : [work 1](https://twitter.com/florist_notes/status/1640346604510015489), [work 2](https://twitter.com/florist_notes/status/1637608005876187139), Adobe Photoshop : [work 1](https://twitter.com/florist_notes/status/1638159705947160576), [work 2](https://twitter.com/florist_notes/status/1640153416109359104), Blender : [work 1](https://twitter.com/florist_notes/status/1640407861049081874), [work 2](https://twitter.com/florist_notes/status/1653265276178145281) , Adobe After Effects : [work](https://twitter.com/florist_notes/status/1652409719779106818) }
 
+I have been processing geo data with geopandas :
+
+<img src="./rl/ss5.png" width=100%>
+
+and using MapboxJS as my frontend mapping web application platform. Here is a map style I chose for my recent project:
+
 
 <img src="map3.png" width=100%>
 
@@ -23,3 +29,5 @@ Add custom JavaScript charts to pop up when clicked in different data points in 
 
 
 <img src="./globe.gif" width=100%> 
+
+<img src="./rl/ss.png" width=100%> 

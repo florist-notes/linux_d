@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov  3 12:03:20 2021
+
+@author: skk
+"""
+
+import json
+import itertools
+import numpy as np
+import geopandas as gpd
+
+with open('mitte.geojson', encoding='utf-8') as f:
+  mitte = json.load(f)
+  
+with open('mitte2.geojson', encoding='utf-8') as f:
+  mitte2 = json.load(f)

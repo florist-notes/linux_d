@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov  3 12:12:47 2021
+
+@author: skk
+"""
+
+import random
+import numpy as np
+import pandas as pd
+import geopandas as gpd
+import matplotlib.pyplot as plt
+from shapely.geometry import Point
+from shapely.geometry import Polygon
+from shapely.geometry import multilinestring
+
+#import data
+multil = multilinestring.MultiLineString
+
+altona = gpd.read_file('altona.geojson')
+bergedorf = gpd.read_file('bergedorf.geojson')
+eims = gpd.read_file('eims.geojson')
+mitte = gpd.read_file('mitte.geojson')
+mitte2 = gpd.read_file('mitte2.geojson')
+nord = gpd.read_file('nord.geojson')
+nord2 = gpd.read_file('nord2.geojson')
+wands = gpd.read_file('wands.geojson')
+
