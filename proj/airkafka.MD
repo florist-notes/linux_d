@@ -6,7 +6,7 @@ Goal: Create reliable and powerful data pipelines in a distributed environment w
 
 <img src="kafka.png" width=47%><a></a><img src="airflow.png" width=47%>
 
-Apache Airflow is a tool for authoring, scheduling, and monitoring pipelines. As a result, is an ideal solution for ETL and MLOps use cases. Example use cases include: @[doc.airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)
+Apache Airflow is a tool for authoring, scheduling, and monitoring pipelines. As a result, is an ideal solution for ETL and MLOps use cases. Example use cases include: @[doc.airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
 
 + Extracting data from many sources, aggregating them, transforming them, and store in a data warehouse.
 
@@ -14,10 +14,23 @@ Apache Airflow is a tool for authoring, scheduling, and monitoring pipelines. As
 
 + Train, validate, and deploy machine learning models
 
+Install Airflow in Docker:
+
 ```bash
 $ curl -LfO 'https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml'
 
 ```
+
+Setting the right Airflow user:
+
+```bash
+$ mkdir -p ./dags ./logs ./plugins ./config
+$ echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+```
+
+Initializing the database : ` $ docker compose up airflow-init`
+
 To instantiate a DAG, we can use the DAG function or with a context manager as follows:
 
 ```python
@@ -67,9 +80,27 @@ AIRFLOW : { Run AirFlow ub Python env & Docker; Airflow core concepts, task life
 
 To create airflow users: ` $ airflow users create --help`  > ` $ airflow users create --username admin --firstname Amartya --lastname Saikia --role Admin --email amartya@saikia.com` ans set the password. Start the webserver : ` $ airflow webserver -p 8080`.
 
-To start the scheduler : ` $ airflow scheduler`
+To start the scheduler : ` $ airflow scheduler` and now we can go configure the DAGs in the web server.
 
+<img src="sag.png" width=100%> 
 
+The possible states for a Task Instance are:
+  + none: The Task has not yet been queued for execution (its dependencies are not yet met)
+  + scheduled: The scheduler has determined the Task’s dependencies are met and it should run
+  + queued: The task has been assigned to an Executor and is awaiting a worker
+  + running: The task is running on a worker (or on a local/synchronous executor)
+  + success: The task finished running without errors
+  + shutdown: The task was externally requested to shut down when it was running
+  + restarting: The task was externally requested to restart when it was running
+  + failed: The task had an error during execution and failed to run
+  + skipped: The task was skipped due to branching, LatestOnly, or similar.
+  + upstream_failed: An upstream task failed and the Trigger Rule says we needed it
+  + up_for_retry: The task failed, but has retry attempts left and will be rescheduled.
+  + up_for_reschedule: The task is a Sensor that is in reschedule mode
+  + deferred: The task has been deferred to a trigger
+  + removed: The task has vanished from the DAG since the run started
+
+<img src="./task_lifecycle_diagram.png" width=100%> 
 
 
 resources : [Airflow tutorial](https://www.youtube.com/watch?v=K9AnJ9_ZAXE&list=PLwFJcsJ61oujAqYpMp1kdUBcPG0sE0QMT), [Master Airflow: Beginner to Advance with Project](https://www.udemy.com/course/master-airflow-beginner-to-advance-with-project/)
