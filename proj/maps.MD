@@ -25,6 +25,8 @@ Add custom JavaScript charts to pop up when clicked in different data points in 
 
 <img src="mapc.png" width=100%> 
 
+I also have remote sensing experience ( publication : [DOI:10.13140/RG.2.2.31237.68321](https://www.researchgate.net/publication/355196468_Characterizing_spatio-temporal_patterns_of_ground_subsidence_as_an_indicator_of_permafrost_thaw_in_Tso_Kar_valley_Ladakh_using_SAR_remote_sensing) ) with NRSC - ISRO, Department of Space, India, specifically with SAR satellite data. Here are some work samples : [ [work 1](https://twitter.com/florist_notes/status/1639684242853462017), [work 2](https://twitter.com/florist_notes/status/1641493303370690569), [work 3](https://twitter.com/florist_notes/status/1641501812753592320), [work 4](https://twitter.com/florist_notes/status/1641498598058651651) ]
+
 ### [MapboxJS](https://docs.mapbox.com/mapbox.js/api/v3.3.1/) : [Create interactive hover effects with Mapbox GL JS](https://docs.mapbox.com/help/tutorials/create-interactive-hover-effects-with-mapbox-gl-js/)
 
 
