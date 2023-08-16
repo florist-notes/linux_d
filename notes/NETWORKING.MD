@@ -2,6 +2,8 @@
 
 # Linux Networking
 
+In order to do networking with Linux, having computer network knowledge is imperative. 
+
 I studied networking (CCNA syllabus) (2015-2016) and did lot of packet tracking with [GNS 3](https://www.gns3.com/) (CISCO IOS).
 
 <img src="net/img/hat.jpg" width=38%><a></a><img src="net/img/lab1.PNG" width=51%>
@@ -88,3 +90,31 @@ I have some CISCO IOS [here](net/GNS3IOS) and CCNA [labs](net/Labs/).
 
 <img src="net/img/net.png" width=100%>
 
+## Socket Programming in Python :
+
+Sockets and the socket API are used to send messages across a network. They provide a form of inter-process communication (IPC). The network can be a logical, local network to the computer, or one that’s physically connected to an external network, with its own connections to other networks. The obvious example is the Internet, which we connect to via your ISP.
+
+```python
+
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+```
+Here we made a socket instance and passed it two parameters. The first parameter is AF_INET and the second one is SOCK_STREAM. AF_INET refers to the address-family ipv4. The SOCK_STREAM means connection-oriented TCP protocol. The primary socket API functions and methods in this module are:
+
+```
+
+socket()
+.bind()
+.listen()
+.accept()
+.connect()
+.connect_ex()
+.send()
+.recv()
+.close()
+
+```
+
+
+resources : [socket programming](https://realpython.com/python-sockets/), [Socket Programming HOWTO](https://docs.python.org/3/howto/sockets.html)

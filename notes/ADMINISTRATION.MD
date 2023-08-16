@@ -8,6 +8,22 @@
 
 ```
 
+Linux system administration is a process of setting up, configuring, and managing a computer system in a Linux environment. System administration involves creating a user account, taking reports, performing backup, updating configuration files, documentation, and performing recovery actions. The user who manages the server, fixes configuration issues, recommends new software updates, and updates document is the system administrator.
+
+### Components of Linux operating system:
+
+The Linux operating system contains the following components:
+
++ Bootloader: This is a software that manages the boot process of your computer.
++ Kernel: The kernel is also called the Linux kernel and is the system traffic controller that allocates system resources to the running application. Software applications request the kernel for hardware resources such as disc space, RAM, and CPU. Software applications use the API to work with the kernel on a high level of abstraction.
++ Init system: This is a subsystem that bootstraps the user space and controls daemons. The init system manages the boot process after it is handled by the bootloader.
++ Daemons: Daemons are programs or drivers that manage underground applications like printing sounds, network, etc.
++ Graphical server: The graphical server system supports the graphic display on the screen.
++ Desktop environment: The desktop environment allows the user to interface with the operating system. The Linux OS offers a variety of desktop environments with their own built-in applications to choose from.
++ Application: The desktop environment does not offer all of the applications a user might need, but Linux allows the user to install additional applications.
+The Linux operating system is used as a client-side (desktop) and server-side operating system.
+
+<img src="./img/linos.jpg" width=100%>
 
 <table style="width:100%" >
 
@@ -93,6 +109,4 @@
 
 </table>
 
-<img src="./img/linos.jpg" width=100%>
-
-resources: [linux administration notes](./THEORY.MD) - daemons & processes, [Linux System Administration](https://youtu.be/UCr04qIB7uc)
+resources: [linux administration notes](./THEORY.MD) - daemons & processes, [Linux System Administration](https://youtu.be/UCr04qIB7uc), [manual](https://www.tuxcademy.org/download/en/adm1/adm1-en-manual.pdf)
