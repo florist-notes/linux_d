@@ -2,9 +2,7 @@
 
 # Linux Networking
 
-In order to do networking with Linux, having computer network knowledge is imperative. 
-
-I studied networking (CCNA syllabus) (2015-2016) and did lot of packet tracking with [GNS 3](https://www.gns3.com/) (CISCO IOS).
+In order to do networking with linux, having computer networks knowledge is imperative.  I studied networking (CCNA syllabus) (2015-2016) and did lot of packet tracking with [GNS 3](https://www.gns3.com/) (CISCO IOS).
 
 <img src="net/img/hat.jpg" width=38%><a></a><img src="net/img/lab1.PNG" width=51%>
 
