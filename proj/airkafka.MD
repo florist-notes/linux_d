@@ -2,6 +2,8 @@
 
 Airflow™ is a platform created by the community to programmatically author, schedule and monitor workflows.
 
+Goal: Create reliable and powerful data pipelines in a distributed environment while monitoring our DAGs.
+
 <img src="kafka.png" width=47%><a></a><img src="airflow.png" width=47%>
 
 Apache Airflow is a tool for authoring, scheduling, and monitoring pipelines. As a result, is an ideal solution for ETL and MLOps use cases. Example use cases include: @[doc.airflow](https://airflow.apache.org/docs/apache-airflow/stable/installation/index.html)
@@ -54,6 +56,24 @@ with DAG(
     )
 ```
 To form the DAG’s structure, we need to define dependencies between each task. One way is to use the >> symbol as shown: `task1 >> task2 >> task3`, one task may have multiple dependencies: `task1 >> [task2, task3]`. The other way is through the set_downstream, set_upstream functions: `t1.set_downstream([t2, t3])`. XComs, or cross communications, are responsible for communication between tasks. XComs objects can push or pull data between tasks. [[source](https://theaisummer.com/apache-airflow-tutorial/)]
+
+
+AIRFLOW : { Run AirFlow ub Python env & Docker; Airflow core concepts, task lifecyle and basic architecture; Airflow DAG with BashOperator, PythonOperator; Data Sharing via Airflow XComs; Airflow TaskFlow API, Catchup and Backfill, scheduler with cron expression, Airflow Hooks }
+
+[Installing from PyPI](https://github.com/apache/airflow#installing-from-pypi) : `pip install 'apache-airflow[postgres,google]==2.6.3' \
+ --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.6.3/constraints-3.8.txt"`
+
+ Settings: ` $ export AIRFLOW_HOME=.` and ` $ airflow db init` creates config & log files along with sql database for the project. To start airflow web server: ` $ airflow webserver -p 8080`
+
+To create airflow users: ` $ airflow users create --help`  > ` $ airflow users create --username admin --firstname Amartya --lastname Saikia --role Admin --email amartya@saikia.com` ans set the password. Start the webserver : ` $ airflow webserver -p 8080`.
+
+To start the scheduler : ` $ airflow scheduler`
+
+
+
+
+resources : [Airflow tutorial](https://www.youtube.com/watch?v=K9AnJ9_ZAXE&list=PLwFJcsJ61oujAqYpMp1kdUBcPG0sE0QMT), [Master Airflow: Beginner to Advance with Project](https://www.udemy.com/course/master-airflow-beginner-to-advance-with-project/)
+
 
 # Kafka:
 
