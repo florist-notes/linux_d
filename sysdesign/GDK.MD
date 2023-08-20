@@ -3,8 +3,7 @@
 
 <img src="./img/github.png" height=150px><a> </a><img src="./img/git2.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
-
- [Git & Github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf), Github Actions : CI/CD - [example](https://youtu.be/J4EhgEskSZA) ('.yaml' config file in repository).
+Here is my mini guide on version control with git. Some useful resources : [git & github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf), github actions : CI/CD - [example](https://youtu.be/J4EhgEskSZA) ('.yaml' config file in repository).
 
 
 ### Internals of Git

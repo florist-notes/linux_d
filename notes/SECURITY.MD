@@ -1,6 +1,7 @@
 ## Linux Security :
 
-Linux servers are secure but desktops are vulnerable but some good rules for linux security hardening is essential. <br />
+Linux servers are secure but desktops are vulnerable but some good rules for linux security hardening is essential. I made a list of security situations and application areas along with possible solutions for security of the linux system. <br />
+
 Install a firewall `$ sudo install ufw` <br />
 ```
  $ sudo ufw limit 22/tcp 

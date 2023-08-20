@@ -17,6 +17,8 @@ $ echo " * * * * * * * * * * * * * * * * * 🌸 * *    "
 $ echo " * * * * * * * * * * * * * * * * * * * 🌸    "
 
 ```
+my systems notes for quick reference:
+
 ## /linux :
 - LINUX THEORY & REGEX [NOTES](notes/THEORY.MD) 
 - LINUX COMMAND PALLETE [NOTES](notes/COMMANDS.MD) 
