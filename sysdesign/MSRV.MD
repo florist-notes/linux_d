@@ -1,6 +1,6 @@
 # Microservices
 
-Microservices architecture (often shortened to microservices) refers to an architectural style for developing applications. Microservices allow a large application to be separated into smaller independent parts, with each part having its own realm of responsibility. To serve a single user request, a microservices-based application can call on many internal microservices to compose its response.
+Microservices architecture is a software design approach that structures an application as a collection of small, loosely coupled services. These services are independently deployable, scalable, and responsible for specific functionalities. Microservices architecture (often shortened to microservices) refers to an architectural style for developing applications. Microservices allow a large application to be separated into smaller independent parts, with each part having its own realm of responsibility. To serve a single user request, a microservices-based application can call on many internal microservices to compose its response.
 
 Containers are a well-suited microservices architecture example, since they let you focus on developing the services without worrying about the dependencies. Modern cloud-native applications are usually built as microservices using containers.
 
@@ -17,7 +17,7 @@ We develop a video to mp3 conversion flask web application and learn microservic
 
 Tech stack: [ Python, Flask, MongoDB, RabbitMQ, MySQL, Docker, Kubernetes (kubectl, minikube, [k9](https://k9scli.io/) ) ]
 
-<img src="img/flask.webp" width=100%>
+<img src="img/flask2.png" width=100%>
 
 code : @[microservices](microservices)
 

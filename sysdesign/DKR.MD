@@ -2,8 +2,7 @@
 
 <center><img src="img/dckr.webp" width=70%></center><br /><br />
 
-
-Container is an isolated environment for running an application. To learn about docker in detail, here is a [docker blog](https://docker-curriculum.com/). Docker works in a CLIENT - SERVER (DOCKER ENGINE) architecture using REST API and shares OS kernel resources.
+Docker is a powerful containerization platform that simplifies the process of developing, packaging, and deploying applications within lightweight, portable containers. Container is an isolated environment for running an application. To learn about docker in detail, here is a [docker blog](https://docker-curriculum.com/). Docker works in a CLIENT - SERVER (DOCKER ENGINE) architecture using REST API and shares OS kernel resources.
 
 Install docker from : @[docs.docker.com](https://docs.docker.com/engine/install/)
 ```docker

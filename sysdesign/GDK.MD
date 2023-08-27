@@ -3,6 +3,14 @@
 
 <img src="./img/github.png" height=150px><a> </a><img src="./img/git2.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
+Version control systems (VCS) are essential tools for tracking and managing changes to code and other files in software development. Git, one of the most popular VCS, provides powerful features for collaboration, history tracking, and code management. 
+
+```git
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "your.email@example.com"
+
+```
+
 Here is my mini guide on version control with git. Some useful resources : [git & github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf), github actions : CI/CD - [example](https://youtu.be/J4EhgEskSZA) ('.yaml' config file in repository).
 
 

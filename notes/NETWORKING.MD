@@ -82,6 +82,66 @@ Linux Networking Command Pallette🌸:
 <td>$ tcpdump<br /></td>
 </tr>
 
+<tr>
+<th>ip addr</th>
+<td>Show IP addresses and network interfaces (modern replacement for ifconfig).<br /></td>
+<td>$ ip addr<br /></td>
+</tr>
+
+<tr>
+<th>ip link</th>
+<td>Display and manage network device attributes.<br /></td>
+<td>$ ip link<br /></td>
+</tr>
+
+<tr>
+<th>traceroute <hostname or IP>	</th>
+<td>Trace the route packets take to reach a destination host.<br /></td>
+<td>$ traceroute &lt;hostname or IP&gt;<br /></td>
+</tr>
+
+<tr>
+<th>netstat -nr</th>
+<td>Show routing table (deprecated, use ip route instead).<br /></td>
+<td>$ netstat -nr<br /></td>
+</tr>
+
+<tr>
+<th>nslookup  &lt;hostname&gt;</th>
+<td>Query DNS servers for DNS information about a domain.<br /></td>
+<td>$ nslookup &lt;hostname&gt; <br /></td>
+</tr>
+
+<tr>
+<th>ss or netstat -tuln </th>
+<td>Display information about open network sockets.<br /></td>
+<td>$ ss or netstat -tuln <br /></td>
+</tr>
+
+<tr>
+<th>lsof -i</th>
+<td>List open files associated with network connections.<br /></td>
+<td>$ lsof -i <br /></td>
+</tr>
+
+<tr>
+<th>ifup &lt;interface&gt; <hostname></th>
+<td>Bring a network interface up.<br /></td>
+<td>$ ifup &lt;interface&gt; <br /></td>
+</tr>
+
+<tr>
+<th>ifdown &lt;interface&gt;</th>
+<td>Bring a network interface down.<br /></td>
+<td>$ ifdown &lt;interface&gt; <br /></td>
+</tr>
+
+<tr>
+<th>vnstat</th>
+<td>Monitor network traffic and bandwidth usage.<br /></td>
+<td>$ vnstat<br /></td>
+</tr>
+
 </table>
 
 I have some CISCO IOS [here](net/GNS3IOS) and CCNA [labs](net/Labs/).
@@ -113,6 +173,80 @@ socket()
 .close()
 
 ```
+
+<table width=100%>
+<tr>
+<th>Echo Server</th>
+<th>Echo Client</th>
+</tr>
+
+<tr>
+<td>
+
+```py
+
+import socket
+
+# Create a TCP/IP socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Bind the socket to a specific address and port
+server_address = ('localhost', 12345)
+server_socket.bind(server_address)
+
+# Listen for incoming connections
+server_socket.listen(1)
+print("Server is listening on port 12345")
+
+while True:
+    # Wait for a connection
+    print("Waiting for a connection...")
+    client_socket, client_address = server_socket.accept()
+
+    try:
+        print(f"Connection from {client_address}")
+        data = client_socket.recv(1024)
+        print(f"Received: {data.decode()}")
+
+        # Send the received data back to the client
+        client_socket.sendall(data)
+    finally:
+        # Clean up the connection
+        client_socket.close()
+
+
+```
+</td>
+<td>
+
+```py
+
+import socket
+
+# Create a TCP/IP socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect the socket to the server's address and port
+server_address = ('localhost', 12345)
+client_socket.connect(server_address)
+
+try:
+    # Send data to the server
+    message = "Hello, server!"
+    client_socket.sendall(message.encode())
+
+    # Receive the response from the server
+    data = client_socket.recv(1024)
+    print(f"Received: {data.decode()}")
+finally:
+    # Clean up the connection
+    client_socket.close()
+
+
+```
+</td>
+</tr>
+</table>
 
 
 resources : [socket programming](https://realpython.com/python-sockets/), [Socket Programming HOWTO](https://docs.python.org/3/howto/sockets.html)
