@@ -1,6 +1,6 @@
-## Linux Security :
+## Linux Security : 🌸
 
-Linux servers are secure but desktops are vulnerable but some good rules for linux security hardening is essential. I made a list of security situations and application areas along with possible solutions for security of the linux system. <br />
+Linux servers are secure but desktops are vulnerable, some good rules for linux security hardening is essential. I made a list of security situations and application areas along with possible solutions for security of the linux system. <br />
 
 Install a firewall `$ sudo install ufw` <br />
 ```
@@ -363,7 +363,7 @@ $ addrs (get all registered addresses for target photos) <br />
 
 <tr>
 <th>NMap for network vulnerabilities</th>
-<td>network vulnerabilities with nmap and nmap scripting engine - 
+<td>Network vulnerabilities with nmap and nmap scripting engine - 
 
 [NSE](https://nmap.org/book/man-nse.html). Can change speed of scanning to avoid detection.<br /></td>
 <td>
@@ -654,7 +654,7 @@ Spear Phishing Attack: use SET (Social Engineering Toolkit):<br />
 
 
 <tr>
-<th>put a DARK WEB website on a Raspberry Pi!!</th>
+<th>put a DARK WEB 🌸 website on a Raspberry Pi!!</th>
 <td>host a dark web website<br /></td>
 <td>
 overlay tor onion relays & routing helps keep anonymity to get to your dark web website, we meet in the middle. <br />
@@ -794,7 +794,7 @@ $ pip3 install .r requirements.txt  <br />
 <table style="width:100%" >
 
 <tr>
-<th>topic</th>
+<th>🌸 topic</th>
 <th>video_guide <br /></th>
 </tr>
 
