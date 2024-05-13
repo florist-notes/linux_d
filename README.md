@@ -39,6 +39,5 @@ my systems notes for quick reference:
 - Git, Docker and Kubernetes - [Git](sysdesign/GDK.MD) , [Docker](sysdesign/DKR.MD) & [Kubernetes](sysdesign/KBNTS.MD).
 - Microservices, API and Flask - [Microservices](sysdesign/MSRV.MD), [flask & API](sysdesign/FLASK.MD).
 - Machine Learning Operations : [MLOps and ML services](sysdesign/MLOPS.MD).
-- MLOps with Google Vertex AI : [MLOps - GCloud Vertex AI](sysdesign/VERTEXAI.MD)
 - System Design and Architecture - [Sysdesign Experiments](sysdesign/README.MD). 
 

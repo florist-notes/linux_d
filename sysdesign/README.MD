@@ -1,11 +1,13 @@
-# System Design and Architecture
+# System Design and Architecture 🌸
 
+Here are my notes from AlgoExpert : System Design class :)
 
 <div style="text-align: justify"> 
 Coding tests assess problem solving but theoretical knowledge is important and Systems Design interviews assess on theoretical knowledge. How to build robust, functional and scalable systems.
 
 <b>System Design Fundamentals </b>: System Design interviews are very intentionally vague. Say design "uber". It's your job to make the interviewer understand your solution, design choices and defend your solution.
 
+## THEORY:
 
 <b>Client Server Model </b>: Client speaks to the server, Server listens to clients and speaks back. Client requests data from a server and server sends back data. e.g user/client (browser) visits a website - algoexpert (server). Browser asks DNS for algoexpert's IP address and sends https request and then packet to algoexpert's IP address. A server usually listens to requests via ports. There re 16k ports usually. Specify the port you want to communicate using. HTTP request is port 80, HTTPS is port 443. 127.0.0.1 is your local IP address, always points to local machine. If you send a http request to an IP , you're trying to see the html of that IP address. Browser receives that response and renders the html.
 
