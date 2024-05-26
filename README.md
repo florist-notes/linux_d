@@ -31,13 +31,12 @@ my systems notes for quick reference:
 
 ## /projects_experiments :
 - Web application, design and maps : [project](./proj/maps.MD)
-- Setting up a web and DNS server : [project](proj/webdns.MD)
-- Build a NAS and file server : [project](proj/nasfile.MD)
+- Setting up a web and DNS server : [project](proj/webdns.MD) / Build a NAS and file server : [project](proj/nasfile.MD)
 - Data pipeline engineering with AirFlow and Kafka : [project](proj/airkafka.MD)
 
 ## /system design and architecture:
 - Git, Docker and Kubernetes - [Git](sysdesign/GDK.MD) , [Docker](sysdesign/DKR.MD) & [Kubernetes](sysdesign/KBNTS.MD).
-- Microservices, API and Flask - [Microservices](sysdesign/MSRV.MD), [flask & API](sysdesign/FLASK.MD).
+- Flask and API, Microservices - [Flask & API](sysdesign/FLASK.MD), [Microservices](sysdesign/MSRV.MD).
 - Machine Learning Operations : [MLOps and ML services](sysdesign/MLOPS.MD).
 - System Design and Architecture - [Sysdesign Experiments](sysdesign/README.MD). 
 
