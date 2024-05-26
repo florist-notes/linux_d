@@ -107,7 +107,7 @@ Apache Kafka is an open-source distributed streaming system used for stream proc
 
 <img src="IMG_20210907_114116.jpg" width=49%><a> </a><img src="IMG_20210907_143140.jpg" width=49%>
 
-<img src="kf.webp" width=43%><a> </a><img src="kf2.webp" width=49%>
+<img src="kf.webp" width=43%><a> </a><img src="kf2_r.png" width=49%>
 
 <b>`Topics`:</b> 
 Every message that is feed into the system must be part of some topic. The topic is nothing but a stream of records. The messages are stored in key-value format. Each message is assigned a sequence, called Offset. The output of one message could be an input of the other for further processing.

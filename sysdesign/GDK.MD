@@ -1,7 +1,7 @@
 # Git and Github :  Version Control
 <br />
 
-<img src="./img/github.png" height=150px><a> </a><img src="./img/git2.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
+<img src="./img/github.png" height=150px><a> </a><img src="./img/git4.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
 Version control systems (VCS) are essential tools for tracking and managing changes to code and other files in software development. Git, one of the most popular VCS, provides powerful features for collaboration, history tracking, and code management. 
 
