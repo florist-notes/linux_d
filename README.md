@@ -39,4 +39,5 @@ my systems notes for quick reference:
 - Flask and API, Microservices - [Flask & API](sysdesign/FLASK.MD), [Microservices](sysdesign/MSRV.MD).
 - Machine Learning Operations : [MLOps and ML services](sysdesign/MLOPS.MD).
 - System Design and Architecture - [Sysdesign Experiments](sysdesign/README.MD). 
+- Scalable Machine Learning - [[ScaleML&EdgeAI_Accelerators](https://github.com/florist-notes/iisc_research)]@IISc
 

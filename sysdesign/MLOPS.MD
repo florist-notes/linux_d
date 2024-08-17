@@ -617,6 +617,75 @@ While many of the concepts of MLOps still apply, there are other considerations 
 
 <b>Performance Metrics</b>: Traditional ML models have very clearly defined performance metrics, such as accuracy, AUC, F1 score, etc. These metrics are fairly straightforward to calculate. When it comes to evaluating LLMs, however, a whole different set of standard metrics and scoring apply — such as bilingual evaluation understudy (BLEU) and Recall-Oriented Understudy for Gisting Evaluation (ROGUE) that require some extra considering when implementing.
 
+## Distributed Machine Learning (DML) :
+
+Distributed Machine Learning (DML) involves training machine learning models across multiple machines or nodes to leverage distributed computing resources, reduce training time, and handle large-scale data. This approach is crucial in scenarios where the dataset is too large to fit into the memory of a single machine, or when model training requires substantial computational power.
+
+### Architectural Paradigms in DML :
+DML can be broadly categorized into two architectural paradigms:
+
++ `Data Parallelism`: The dataset is partitioned across different nodes, with each node independently training a model replica on its data subset. The gradients from each node are then averaged or summed to update the global model. Tools like Horovod and PyTorch Distributed excel in this paradigm.
+
++ `Model Parallelism`: The model itself is split across different nodes. Each node processes a part of the model, and the nodes collaborate to complete the forward and backward passes. This paradigm is beneficial for training extremely large models, such as GPT-3. Mesh-TensorFlow and DeepSpeed are popular in this space.
+
+### State-of-the-Art Tools and Frameworks :
+
+#### Horovod [[code](https://github.com/horovod/horovod)]
+
++ `Overview`: Developed by Uber, Horovod is a popular open-source library designed to make distributed deep learning fast and easy to use. It extends TensorFlow, Keras, PyTorch, and Apache MXNet with efficient inter-GPU and inter-node communication using the NCCL (NVIDIA Collective Communications Library) or MPI (Message Passing Interface).
+
+    + Key Features:
+
+        + `Ring-Allreduce`: Implements a ring-allreduce algorithm for gradient averaging, reducing communication overhead.
+        + `Elastic Training`: Supports dynamic scaling of worker processes, making it resilient to node failures and dynamic resource availability.
+        + `Mixed Precision Training`: Supports mixed precision training to accelerate computation and reduce memory footprint.
+
+#### PyTorch Distributed [[code](https://pytorch.org/tutorials/beginner/dist_overview.html)]
+
++ `Overview`: PyTorch Distributed provides native support for distributed training, including both data and model parallelism. It offers seamless integration with existing PyTorch codebases, making it highly versatile for research and production.
+
+    + Key Features:
+
+        + `Distributed Data Parallel (DDP)`: Optimized module that synchronizes gradients across multiple nodes, offering better performance compared to traditional data parallelism.
+        + `RPC-Based Parallelism`: Supports Remote Procedure Call (RPC) for model parallelism, enabling distributed execution of arbitrary PyTorch code.
+        + `Fully Sharded Data Parallel (FSDP)`: Efficient memory management for large-scale models, allowing layers to be sharded across GPUs.
+
+#### TensorFlow Distributed [[code](https://www.tensorflow.org/guide/distributed_training)]
++ `Overview`: TensorFlow Distributed is a comprehensive framework within TensorFlow for distributing training across multiple devices or machines. It supports a wide range of strategies, making it suitable for different scales of distributed training.
+
+    + Key Features:
+
+        + `MultiWorkerMirroredStrategy`: Distributes the dataset across multiple workers while keeping model replicas synchronized using all-reduce algorithms.
+        + `ParameterServerStrategy`: Useful for training large models by distributing the variables across parameter servers and the computation across workers.
+        + `TPU Support`: Native support for distributing training on Google's Tensor Processing Units (TPUs) for enhanced performance.
+
+#### DeepSpeed [[code](https://github.com/microsoft/DeepSpeed)]
++ `Overview`: DeepSpeed is an open-source deep learning optimization library that enables distributed training of large-scale models. Developed by Microsoft, it is specifically designed for training trillion-parameter models.
+
+    + Key Features:
+
+        + `ZeRO (Zero Redundancy Optimizer)`: A memory optimization technique that reduces the memory footprint by partitioning model states across data parallel processes.
+        + `Sparse Attention`: Optimizes memory and compute for models with attention mechanisms, enabling the training of extremely large transformers.
+        + `Hybrid Parallelism`: Combines data, pipeline, and model parallelism, offering flexibility in scaling models across different hardware configurations.
+
+#### Ray and Ray Train [[code](https://docs.ray.io/en/latest/train/train.html)]
++ `Overview`: Ray is a distributed execution framework that simplifies scaling Python workloads, including machine learning. Ray Train, built on top of Ray, is designed for distributed ML training.
+
+    + Key Features:
+
+        + `Fault Tolerance`: Automatically handles task failures and retries, ensuring robust distributed training.
+        + `Hyperparameter Tuning`: Integrates with Ray Tune for distributed hyperparameter search, optimizing model performance across multiple configurations.
+        + `Scalable Inference`: Ray Serve allows for scalable model serving, ensuring that models can be deployed and scaled efficiently.
+
+#### Mesh-TensorFlow [[code](https://github.com/tensorflow/mesh)]
++ `Overview`: Mesh-TensorFlow is an extension of TensorFlow designed to support model parallelism by splitting tensors and computations across a "mesh" of devices. It is particularly useful for training large-scale transformer models.
+
+    + Key Features:
+
+        + `Automatic Partitioning`: Automatically partitions the model and tensor operations across multiple devices, optimizing for communication and computation.
+        + `Scalability`: Scales efficiently across thousands of devices, making it suitable for training models with billions of parameters.
+        + `Flexibility`: Supports various parallelism strategies, including data parallelism, model parallelism, and pipeline parallelism.
+
 ## [MLOps with Google Vertex AI (GCloud)](./VERTEXAI.MD) 🌸
 
 resources : [ml-ops](https://ml-ops.org/), [gcloud-mlops](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning), [three levels of mlops](https://ml-ops.org/content/three-levels-of-ml-software), [state of mlops](https://ml-ops.org/content/state-of-mlops), [landscape.lfai.foundation/](https://landscape.lfai.foundation/), @github/[awesome-prodction-ml](https://github.com/EthicalML/awesome-production-machine-learning), [MLOps Landscape in 2023: Top Tools and Platforms](https://neptune.ai/blog/mlops-tools-platforms-landscape), [A Gentle Introduction to MLOps](https://towardsdatascience.com/a-gentle-introduction-to-mlops-7d64a3e890ff), [google cloud services for mlops](https://towardsdatascience.com/google-cloud-services-for-mlops-d1702cd9930e), book : [Practitioners guide to MLOps: A framework for continuous delivery and automation of machine learning.](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf), [mlops on vertex ai](https://www.cloudskillsboost.google/course_templates/158), [mlops on gcp](https://github.com/GoogleCloudPlatform/mlops-on-gcp), courses : [Machine Learning Engineering for Production (MLOps) Specialization](https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops), [Machine Learning Operations (MLOps): Getting Started](https://www.coursera.org/learn/mlops-fundamentals), [ML Operations with Vertex AI](https://www.youtube.com/watch?v=snUEwsft1wY&list=PLgxF613RsGoUuEjJJxJW2JYyZ8g1qOUou), [Guide to File Formats for Machine Learning: Columnar, Training, Inferencing, and the Feature Store](https://towardsdatascience.com/guide-to-file-formats-for-machine-learning-columnar-training-inferencing-and-the-feature-store-2e0c3d18d4f9), [MLOps Course (ZenML) – Build Machine Learning Production Grade Projects](https://youtu.be/-dJPoLm_gtE?si=Q3F2h7nD_zHHtD4j).
