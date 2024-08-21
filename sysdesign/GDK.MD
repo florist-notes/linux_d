@@ -3,22 +3,65 @@
 
 <img src="./img/github.png" height=150px><a> </a><img src="./img/git4.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
+<p style="text-align: justify;">
+Git is a version control system. Imagine you're working on a project, like writing a report, developing software, or designing something, and you need to keep track of all the changes you make over time. Git helps you do just that by recording snapshots of your work at different points. These snapshots are called "commits."
+</p>
+
+<p style="text-align: justify;">
 Version control systems (VCS) are essential tools for tracking and managing changes to code and other files in software development. Git, one of the most popular VCS, provides powerful features for collaboration, history tracking, and code management. 
+</p>
+
+<p style="text-align: justify;">
+Git was created by Linus Torvalds in 2005 to manage the development of the Linux kernel, and since then, it's become one of the most popular tools for managing changes in projects, especially in software development.
+</p>
+
+On Linux, you can install it using your package manager, like ` $ sudo apt-get install git` on Ubuntu.
+</p>
+
+## Set Up Git:
+
+After installing Git, you need to tell it who you are. Open your terminal or command prompt and type:
 
 ```git
     $ git config --global user.name "Your Name"
     $ git config --global user.email "your.email@example.com"
+```
+
+### Start a Project:
+
+Go to the folder where you want to keep your project and type: ` $ git init `.
+
+### Make Your First Commit:
+
+Create or add files to your project. For example, you might create a text file called README.md.
+To tell Git to start tracking the file, type: ` $ git add README.md `. Now, save a snapshot of your project by typing: ` $ git commit -m "Add README file" `. The `-m` flag lets you add a message describing what you did, like "Add README file."
+
+If you're working with others, you might want to share your code using a service like GitHub, GitLab, or Bitbucket. You can push your commits to a remote repository and allow others to clone, pull, and push changes.
+
+```bash
+$ git remote add origin https://github.com/yourusername/yourproject.git
+$ git push -u origin master
 
 ```
 
 Here is my mini guide on version control with git. Some useful resources : [git & github slide](gitngithub.pdf), [git_cheatsheet.pdf](git-cheat-sheet-education.pdf), [git_cheatsheet_2.pdf](gitngithub.pdf), github actions : CI/CD - [example](https://youtu.be/J4EhgEskSZA) ('.yaml' config file in repository).
 
 
-### Internals of Git
+### Internals of Git: Understanding How Git Models History
+
+<p style="text-align: justify;">
+Git is more than just a tool for version control; it's a sophisticated system that models project history using a data structure called a Directed Acyclic Graph (DAG). This structure allows Git to efficiently track changes and manage the state of your project over time. To understand Git's internals, let's dive into how it models history and stores data.
+</p>
+
+#### Git's Data Model: Objects and References
+At the core of Git's data model are three types of objects: blobs, trees, and commits. These objects represent the content of files, directories, and snapshots of the project, respectively.
+
 ---
 
-Git uses Directed Acyclic Graph (DAG) to model history. Commit = Snapshot! Git maintains set of objects as well as references.
+#### + Blob:
 
+A blob is essentially a file in Git. It stores the content of a file as a sequence of bytes.
+In code terms, you can think of it as: ` $ type blob = array<byte> `.
 ```git
 <root> (tree)
 |
@@ -28,6 +71,15 @@ Git uses Directed Acyclic Graph (DAG) to model history. Commit = Snapshot! Git m
 |
 +- baz.txt (blob, contents = "git is wonderful")
 ```
+#### Tree:
+
+A tree is a directory in Git. It maps filenames to either blobs (files) or other trees (subdirectories).
+It represents the hierarchical structure of your project.
+
+#### Commit:
+
+A commit is a snapshot of your project at a given point in time. It contains references to one or more parent commits (if the commit is part of a branch or merge), metadata (such as the author and commit message), and the top-level tree that represents the state of the project.
+
 How git models history:
 ```
 // a file is a bunch of bytes
@@ -44,6 +96,9 @@ type commit = struct {
     snapshot: tree
 }
 ```
+### Storing and Loading Objects in Git
+Git uses a unique identifier for each object, which is the SHA-1 hash of the object’s content. This ensures that every object is uniquely and immutably stored in Git's internal database.
+
 An “object” is a blob, tree, or commit:
 
 ```python
@@ -59,7 +114,10 @@ def load(id):
     return objects[id]
 ```
 
-References:
+When you store an object (whether it's a blob, tree, or commit), Git computes its SHA-1 hash and stores it in a map where the key is the hash and the value is the object.
+
+### References: Mapping Human-Friendly Names to Commits
+While objects in Git are stored using SHA-1 hashes, which are not human-friendly, Git also maintains references that map human-readable names (like branch names or tags) to these hashes.
 
 ```python
 references = map<string, string>
@@ -76,6 +134,13 @@ def load_reference(name_or_id):
     else:
         return load(name_or_id)
 ```
+When you create a new branch or tag, Git stores the associated commit hash in a map under the branch or tag name.
+
+To load the content of a branch or tag, Git checks if the name corresponds to a reference. If so, it retrieves the associated commit; otherwise, it assumes the input is already a hash and directly loads the object.
+
+<p style="text-align: justify;">
+In Git, everything ultimately boils down to storing and retrieving objects (blobs, trees, and commits) and managing references to these objects. When you make a commit, Git takes the current state of your project, stores it as a tree of blobs, creates a commit object that points to this tree and any parent commits, and then updates the reference for your current branch to point to this new commit.
+</p>
 
 All in all git stores references as a commit. references = "commit msg, sha1 hash"
 
