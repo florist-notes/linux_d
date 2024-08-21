@@ -292,6 +292,8 @@ Notice how the commits on `feature` (now `D'` and `E'`) have new hashes because 
 + Cleaner History: Rebasing results in a linear history, making it easier to follow the progression of changes.
 + No Merge Commits: Rebasing avoids creating merge commits, which can clutter the history.
 
+[ [Git MERGE vs REBASE](https://youtu.be/0chZFIZLR_0?si=749D5-kuX184EjvL), [GIT: Working with Branches](https://youtu.be/JTE2Fn_sCZs?si=lznCKIl8r25Q01y7) ]
+
 ```
 - git init
 - ls -a
@@ -312,7 +314,7 @@ Notice how the commits on `feature` (now `D'` and `E'`) have new hashes because 
 ```
 To merge these branches:
 
-<img src="./img/git_merge2.png" width=52%><a> </a><img src="./img/merged2.png" width=47%>
+<img src="./img/git_merge2.png" width=39%><a> </a><img src="./img/merged2.png" width=37%>
 
 ```
 - git merge cat
