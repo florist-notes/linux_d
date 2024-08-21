@@ -141,6 +141,8 @@ ros 2 : [[image](https://hub.docker.com/_/ros)]
 </table>
 
 
+## What is Docker Compose?
+Docker Compose is a tool that allows you to define and manage multi-container Docker applications. Instead of managing each container individually, Docker Compose lets you describe the entire environment in a single YAML file, making it easier to manage, scale, and orchestrate multiple containers that need to work together.
 
 
 
@@ -186,8 +188,6 @@ DOCKER Networking:
 
 To dockerize an application, we just add a `DOCKERFILE` to it and we get an `IMAGE`. Resources : [How to dockerize your Flask application](https://medium.com/geekculture/how-to-dockerize-your-flask-application-2d0487ecefb8), [Dockerizing Flask with Postgres, Gunicorn, and Nginx](https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/)
 
-## What is Docker Compose?
-Docker Compose is a tool that allows you to define and manage multi-container Docker applications. Instead of managing each container individually, Docker Compose lets you describe the entire environment in a single YAML file, making it easier to manage, scale, and orchestrate multiple containers that need to work together.
 
 <img src="img/ddd.png" width=50%><a> </a><img src="img/dcc.jpeg" width=47.5%>
 
