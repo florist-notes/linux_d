@@ -1,18 +1,22 @@
 # Git and Github :  Version Control
 <br />
 
-<img src="./img/github.png" height=150px><a> </a><img src="./img/git4.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
+<img src="./img/git_l.jpg" height=150px><a> </a><img src="./img/git4.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
-<div style="text-align: justify;">
+<p style='text-align: justify;'> 
 Git is a version control system. Imagine you're working on a project, like writing a report, developing software, or designing something, and you need to keep track of all the changes you make over time. Git helps you do just that by recording snapshots of your work at different points. These snapshots are called "commits."
+</p>
 
+<p style='text-align: justify;'> 
 Version control systems (VCS) are essential tools for tracking and managing changes to code and other files in software development. Git, one of the most popular VCS, provides powerful features for collaboration, history tracking, and code management. 
+</p>
 
 Git was created by Linus Torvalds in 2005 to manage the development of the Linux kernel, and since then, it's become one of the most popular tools for managing changes in projects, especially in software development.
 
 
 On Linux, you can install it using your package manager, like ` $ sudo apt-get install git` on Ubuntu.
-</div>
+
+
 
 ## Set Up Git:
 
@@ -185,6 +189,88 @@ same as git branch <name>; git checkout <name>
 - `git bisect:` binary search history (e.g. for regressions)
 - `.gitignore:` specify intentionally untracked files to ignore
 
+### What is a Branch?
+A branch in Git is simply a pointer to a specific commit in the project history. It allows you to diverge from the main line of development and continue to work on your code independently. Each branch represents an isolated line of development.
+
+Let’s say you have a project with a few commits on the `main` branch:
+
+```
+A---B---C   (main)
+```
+
+Here, `A`, `B`, and `C` represent commits, and the `main` branch points to commit `C`.
+
+Now, you want to add a new feature without affecting the `main` branch. You create a new branch called `feature`: ` $ git checkout -b feature`.
+
+This creates a new branch, `feature`, that also points to commit `C`:
+
+```
+A---B---C   (main, feature)
+```
+
+When you start making new commits on the `feature` branch, the history diverges:
+
+```
+A---B---C   (main)
+         \
+          D---E   (feature)
+```
+Now, `main` remains on commit `C`, while `feature` has advanced to commit `E`.
+
+### What is a Merge?
+Merging in Git is the process of integrating changes from one branch into another. The most common scenario is merging a `feature` branch into the main branch once the feature is complete.
+
+#### Types of Merges:
++ Fast-Forward Merge:
+
+    + Occurs when the main branch hasn't changed since the feature branch was created.
+    + Git simply moves the main branch pointer forward to the latest commit on the feature branch.
+
+```
+Before:
+A---B---C   (main)
+         \
+          D---E   (feature)
+
+After:
+A---B---C---D---E   (main)
+                  (feature)
+```
+
++ Three-Way Merge:
+
++ Occurs when both the `main` branch and the feature branch have made changes after the feature branch was created.
++ Git creates a new merge commit that has two parents, representing the history of both branches.
+
+```
+Before:
+A---B---C---F   (main)
+         \
+          D---E   (feature)
+
+After:
+A---B---C---F---G   (main)
+         \      /
+          D----E   (feature)
+```
+Here, `G` is the merge commit that combines changes from both `F` (on `main`) and `E` (on `feature`).
+
+To merge the feature branch into the main branch:
+
+```
+git checkout main
+git merge feature
+```
+
+### What is a Rebase?
+Rebasing in Git is an alternative to merging. It allows you to move or combine a sequence of commits from one branch onto another. Rebasing rewrites the commit history by applying your changes on top of another branch.
+
+### How Does Rebasing Work?
+When you rebase a branch onto another, Git essentially:
+
++ Finds the common ancestor between the branches.
++ Applies the commits from the current branch onto the target branch one by one.
++ Moves the branch pointer to the new commits.
 
 ```
 - git init
@@ -233,7 +319,7 @@ To merge these branches:
 - git rm '*.txt‘
 ```
 
-## Lessons:
+## Resources:
 [MIT Lecture 6: Version Control (git) (2020)](https://youtu.be/2sjqTHE0zok) | [git assignments](https://missing.csail.mit.edu/2020/version-control/), [Complete Git Guide: Understand and master Git and GitHub](https://www.udemy.com/course/git-and-github-complete-guide/),  [The Git & Github Bootcamp](https://www.udemy.com/course/git-and-github-bootcamp/), [So You Think You Know Git - FOSDEM 2024](https://youtu.be/aolI_Rz0ZqY?si=ab6Huf6geXe5bWWa), [Git & GitHub Tutorial for Beginners #8 - Branches](https://youtu.be/QV0kVNvkMxc?si=b1d9clEecPNfwZnS), [Git Branches Tutorial](https://youtu.be/e2IbNHi4uCI?si=mQ9tDEAisyyPJ89U), [So You Think You Know Git Part 2 - DevWorld 2024](https://youtu.be/Md44rcw13k4?si=WC3dfKME2jda29V3)
 
 resources : [ProGit Book](https://git-scm.com/book/en/v2) | [markdown-cs](https://www.markdownguide.org/cheat-sheet/), [cli/cli](https://github.com/cli/cli) | [cli.github](https://cli.github.com/manual/) | [git merge vs git rebase](https://youtu.be/KWAZl2QHC44), [Removing sensitive data from a repository](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/removing-sensitive-data-from-a-repository) | [GitHub Actions - Now with built-in CI/CD! Live from GitHub HQ](https://youtu.be/E1OunoCyuhY) | [Contributing to Open Source for the first time](https://youtu.be/c6b6B9oN4Vg), [Github Workflow](https://www.youtube.com/watch?v=MnUd31TvBoU&list=PL4cUxeGkcC9goXbgTDQ0n_4TBzOO0ocPR&index=11&ab_channel=TheNetNinja) | [Github Workflow 2](https://youtu.be/oFYyTZwMyAg) | [Github Actions](https://youtu.be/J4EhgEskSZA) | [Github Actions 2](https://youtu.be/eB0nUzAI7M8) | [Git and GitHub for Beginners Tutorial](https://youtu.be/tRZGeaHPoaw) | [Git Branches Tutorial](https://youtu.be/e2IbNHi4uCI) | [Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git](https://youtu.be/Uszj_k0DGsg) | [Advanced Git Tutorial - Interactive Rebase, Cherry-Picking, Reflog, Submodules and more](https://youtu.be/qsTthZi23VE) | [Complete Guide to Open Source - How to Contribute](https://youtu.be/yzeVMecydCE) | [Contributing to Open Source for the first time](https://youtu.be/c6b6B9oN4Vg)
