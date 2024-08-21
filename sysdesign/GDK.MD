@@ -272,6 +272,26 @@ When you rebase a branch onto another, Git essentially:
 + Applies the commits from the current branch onto the target branch one by one.
 + Moves the branch pointer to the new commits.
 
+If you rebase feature onto `main`:
+
+```bash
+$ git checkout feature
+$ git rebase main
+```
+
+The `feature` branch commits `D` and `E` are replayed on top of `main`:
+
+```
+A---B---C---F   (main)
+               \
+                D'---E'   (feature)
+```
+Notice how the commits on `feature` (now `D'` and `E'`) have new hashes because they are new commits.
+
+### Benefits of Rebasing:
++ Cleaner History: Rebasing results in a linear history, making it easier to follow the progression of changes.
++ No Merge Commits: Rebasing avoids creating merge commits, which can clutter the history.
+
 ```
 - git init
 - ls -a
