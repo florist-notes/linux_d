@@ -1,6 +1,8 @@
 #  Apache [Kafka](https://kafka.apache.org/) and [Airflow](https://airflow.apache.org/):
 
-Airflow™ is a platform created by the community to programmatically author, schedule and monitor workflows. Apache Airflow is a tool for authoring, scheduling, and monitoring pipelines. As a result, is an ideal solution for ETL and MLOps use cases. Example use cases include: @[doc.airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
+Apache Airflow is an open-source platform used to programmatically create, schedule, and monitor workflows, or "data pipelines." A workflow is a sequence of tasks or steps that need to be performed, often in a specific order, to achieve a goal, like processing data, generating reports, or automating complex processes. Airflow makes it easier to manage these workflows, ensuring that tasks run in the right order and can be monitored for success or failure.
+
+Airflow™ is a platform created by the community to programmatically author, schedule and monitor workflows. As a result, is an ideal solution for ETL and MLOps use cases. Example use cases include: @[doc.airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
 
 Goal: Create reliable and powerful data pipelines in a distributed environment while monitoring our DAGs.
 
@@ -11,6 +13,44 @@ Goal: Create reliable and powerful data pipelines in a distributed environment w
 + Extracting data from many sources, aggregating them, transforming them, and store in a data warehouse.
 + Extract insights from data and display them in an analytics dashboard
 + Train, validate, and deploy machine learning models
+
+```bash
+ $ pip install apache-airflow
+```
+
+After installation, you need to set up the Airflow environment. Airflow uses a metadata database to keep track of the status of your tasks. To initialize the database, run: ` $ airflow db init`.
+
+Next, you'll need to start the Airflow web server and scheduler:
+
+```bash
+$ airflow webserver -p 8080
+$ airflow scheduler
+```
+
+The webserver will allow you to access the Airflow UI through your web browser, usually at `http://localhost:8080`.
+
+### Creating a DAG (Directed Acyclic Graph):
+
+Workflows in Airflow are represented as DAGs. A DAG is a collection of all the tasks you want to run, organized in a way that shows their dependencies.
+You define a DAG using Python code. For example:
+
+```python
+from airflow import DAG
+from airflow.operators.dummy import DummyOperator
+from datetime import datetime
+
+# Define the DAG
+with DAG('simple_dag', start_date=datetime(2023, 1, 1), schedule_interval='@daily') as dag:
+    start = DummyOperator(task_id='start')
+    end = DummyOperator(task_id='end')
+
+    start >> end  # Defines the order of tasks
+```
+
+In this example, a simple DAG is created with two tasks (`start` and `end`). The `start >> end` line tells Airflow that the `end` task should run after the `start` task.
+
+Once you've created your DAG, you can monitor it in the Airflow UI, manually trigger it, or let it run according to its schedule.
+Airflow will handle running each task in the correct order and will alert you if any task fails.
 
 Install Airflow in Docker:
 
@@ -103,6 +143,10 @@ Resources : [Airflow tutorial](https://www.youtube.com/watch?v=K9AnJ9_ZAXE&list=
 
 # Kafka : 🌸
 
+Apache Kafka is an open-source platform designed to handle real-time data streams. It acts as a high-performance, distributed messaging system that allows different parts of an application or different applications to communicate with each other by sending and receiving messages.
+
+Think of Kafka as a middleman for data. It takes data from various sources, holds it temporarily, and then delivers it to different destinations in a reliable and efficient manner.
+
 Apache Kafka is an open-source distributed streaming system used for stream processing, real-time data pipelines, and data integration at scale. Kafka is designed to handle high-throughput, fault-tolerant, and real-time data streams. It is widely used for building real-time data pipelines and streaming applications due to its scalability, durability, and performance. Sneakpeak from my kafka architecture presentation at DgiLab:
 
 <img src="IMG_20210907_114116.jpg" width=49%><a> </a><img src="IMG_20210907_143140.jpg" width=49%>
@@ -151,6 +195,16 @@ Kafka is used in a wide range of use cases across various industries:
 + `Event sourcing`: Kafka is used as a foundation for event sourcing architectures, where changes to application state are captured as a series of immutable events.
 + `Messaging`: Kafka can be used as a high-performance messaging system for decoupling producers and consumers of data.
 + `Clickstream analysis`: Kafka is used for collecting and analyzing user clickstream data in real-time to understand user behavior and preferences.
+
+Kafka is typically installed alongside Apache ZooKeeper, which manages Kafka’s distributed system. The easiest way to get started is to use pre-built binaries or Docker containers.
+
++ Start ZooKeeper: Kafka requires ZooKeeper to manage distributed brokers. Start ZooKeeper first by running: ` $ bin/zookeeper-server-start.sh config/zookeeper.properties`.
+
++ Start Kafka: Once ZooKeeper is running, start Kafka by running: ` $ bin/kafka-server-start.sh config/server.properties`.
+
++ Creating Topics: In Kafka, data is organized into topics. A topic is like a channel where messages are sent. To create a topic, use the Kafka command line tool: ` $ bin/kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 `.
+
++ Consuming Messages: To read messages from a Kafka topic, you use a consumer. You can read messages using the Kafka command line tool: ` $ bin/kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --from-beginning`.
 
 Resources : [Apache Kafka Series - Kafka Streams for Data Processing](https://www.udemy.com/course/kafka-streams/), [Apache Kafka Series - Kafka Connect Hands-on Learning](https://www.udemy.com/course/kafka-connect/), [Apache Kafka Series - Confluent Schema Registry & REST Proxy](https://www.udemy.com/course/confluent-schema-registry/), [Apache Kafka Series - Kafka Monitoring & Operations](https://www.udemy.com/course/kafka-monitoring-and-operations/), [Apache Kafka Series - Learn Apache Kafka for Beginners v3](https://www.udemy.com/course/apache-kafka/), [Apache Kafka Series - Kafka Cluster Setup & Administration](https://www.udemy.com/course/kafka-cluster-setup/), [Apache Airflow: The Hands-On Guide](https://www.udemy.com/course/the-ultimate-hands-on-course-to-master-apache-airflow/), [Apache Airflow: The Operators Guide](https://www.udemy.com/course/apache-airflow-the-operators-guide/), [Master Airflow: Beginner to Advance with Project](https://www.udemy.com/course/master-airflow-beginner-to-advance-with-project/).
 

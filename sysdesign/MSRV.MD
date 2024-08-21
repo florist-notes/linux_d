@@ -1,5 +1,7 @@
 # Microservices
 
+Microservices are a way to design and build software applications by breaking them down into smaller, independent pieces called "services." Each service is responsible for a specific part of the application, like handling user authentication, processing payments, or managing inventory. These services communicate with each other over a network, usually using simple protocols like HTTP, to work together as a complete application.
+
 Microservices architecture is a software design approach that structures an application as a collection of small, loosely coupled services. These services are independently deployable, scalable, and responsible for specific functionalities. Microservices architecture (often shortened to microservices) refers to an architectural style for developing applications. Microservices allow a large application to be separated into smaller independent parts, with each part having its own realm of responsibility. To serve a single user request, a microservices-based application can call on many internal microservices to compose its response.
 
 Containers are a well-suited microservices architecture example, since they let you focus on developing the services without worrying about the dependencies. Modern cloud-native applications are usually built as microservices using containers.
@@ -11,7 +13,7 @@ Tools : [Google Microservices Stack](https://cloud.google.com/learn/what-is-micr
 
 Microservices are an application architecture style where independent, self-contained programs with a single purpose each can communicate with each other over a network. Typically, these microservices are able to be deployed independently because they have strong separation of responsibilities via a well-defined specification with significant backwards compatibility to avoid sudden dependency breakage. [[source](https://www.fullstackpython.com/microservices.html)]
 
-#### Microservice Example:
+### Microservice Example:
 
 We develop a video to mp3 conversion flask web application and learn microservices along the way.
 
@@ -25,7 +27,6 @@ code : @[microservices](microservices)
     $ docker --version
     $ kubectl
     $ minkube start
-
 ```
 
 AUTH SERVICE with JSON WEB TOKEN (JWT) → ( [code](microservices/auth/server.py) ) & ([mysql_db](https://github.com/florist-notes/linux_d/blob/main/sysdesign/microservices/auth/init.sql)) : ` $ mysql -uroot < init.sql`
