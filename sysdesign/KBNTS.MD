@@ -2,8 +2,18 @@
 
 <img src="img/kb.png" width=100%>
 
+Kubernetes, often abbreviated as K8s, is an open-source platform designed to manage and orchestrate containerized applications across a cluster of computers. Imagine you have several applications that need to run across many computers (or servers), each wrapped in its own container (a lightweight package that includes the application and everything it needs to run). Kubernetes is like the conductor of an orchestra, ensuring that all these containers work together smoothly, are always running where they should be, and can be easily scaled up or down based on demand.
+
 
 <img src="img/components-of-kubernetes.svg" width=100%>
+
++ `Pods`: The smallest and simplest Kubernetes object. A pod usually runs a single container.
++ `Nodes`: The machines (physical or virtual) that run your applications.
++ `Clusters`: A set of nodes managed by Kubernetes.
++ `Services`: Define how to access the application running in your pods.
++ `Deployments`: Help manage your application by defining the number of replicas (copies) and updates.
+
+Start small by deploying a simple application. Write a configuration file (usually in YAML format) that tells Kubernetes what to do, then use the `kubectl` command-line tool to apply it.
 
 Install `cubectl` to [command](https://kubernetes.io/docs/reference/kubectl/) master node in Kubernetes [[install](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)].
 
