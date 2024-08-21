@@ -3,20 +3,16 @@
 
 <img src="./img/github.png" height=150px><a> </a><img src="./img/git4.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
-<p style="text-align: justify;">
+<div style="text-align: justify;">
 Git is a version control system. Imagine you're working on a project, like writing a report, developing software, or designing something, and you need to keep track of all the changes you make over time. Git helps you do just that by recording snapshots of your work at different points. These snapshots are called "commits."
-</p>
 
-<p style="text-align: justify;">
 Version control systems (VCS) are essential tools for tracking and managing changes to code and other files in software development. Git, one of the most popular VCS, provides powerful features for collaboration, history tracking, and code management. 
-</p>
 
-<p style="text-align: justify;">
 Git was created by Linus Torvalds in 2005 to manage the development of the Linux kernel, and since then, it's become one of the most popular tools for managing changes in projects, especially in software development.
-</p>
+
 
 On Linux, you can install it using your package manager, like ` $ sudo apt-get install git` on Ubuntu.
-</p>
+</div>
 
 ## Set Up Git:
 
@@ -71,12 +67,12 @@ In code terms, you can think of it as: ` $ type blob = array<byte> `.
 |
 +- baz.txt (blob, contents = "git is wonderful")
 ```
-#### Tree:
+#### + Tree:
 
 A tree is a directory in Git. It maps filenames to either blobs (files) or other trees (subdirectories).
 It represents the hierarchical structure of your project.
 
-#### Commit:
+#### + Commit:
 
 A commit is a snapshot of your project at a given point in time. It contains references to one or more parent commits (if the commit is part of a branch or merge), metadata (such as the author and commit message), and the top-level tree that represents the state of the project.
 
