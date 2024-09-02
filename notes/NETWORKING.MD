@@ -41,6 +41,14 @@ This command provides detailed information about all network interfaces, similar
 + Deleting a Route: ` $ sudo route del -net 192.168.1.0/24` or using ip : ` $ sudo ip route del 192.168.1.0/24`.
 
 `Configuring DNS` : DNS (Domain Name System) translates domain names into IP addresses. DNS settings are typically configured in `/etc/resolv.conf`.
++ Viewing DNS Settings: ` $ cat /etc/resolv.conf`.
++ Adding a DNS Server: Edit the /etc/resolv.conf file and add the following line: ` nameserver 8.8.8.8`. This adds Google's DNS server.
+
+`Network Monitoring` : Linux provides several tools to monitor network traffic and performance.
++ Using netstat: ` $ netstat -tuln`, This shows all listening ports and their associated services.
++ Using ss: ` $ ss -tuln`, ss is a faster alternative to netstat for displaying detailed socket information.
++ Using tcpdump: ` $ sudo tcpdump -i eth0`, This command captures and displays packets transmitted over the network interface eth0.
+
 
 <table style="width:100%" >
 
