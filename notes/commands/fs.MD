@@ -1,5 +1,9 @@
 Linux File System Command Pallette 🌸:
 
+```
+    $ ls -lah
+```
+
 <table style="width:100%" >
 
 <tr>
@@ -39,14 +43,20 @@ Linux File System Command Pallette 🌸:
 </tr>
 
 <tr>
+<th>zip</th>
+<td>zip a folder recursively <br /></td>
+<td>$ zip -r new_zip.zip folder_tobezipped<br /></td>
+</tr>
+
+<tr>
 <th>chgrp -c -R</th>
 <td>change file group permission <br /></td>
 <td>$ chgrp -c -R<br /></td>
 </tr>
 
 <tr>
-<th>du -s</th>
-<td>disk usage <br /></td>
+<th>du -s / du -h</th>
+<td>disk usage (-h for human readable format) <br /></td>
 <td>$ du -s<br /></td>
 </tr>
 
