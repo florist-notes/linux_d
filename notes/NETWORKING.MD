@@ -1,12 +1,46 @@
 <table style="width:100%" >
 
-# Linux Networking
+# Linux Networking 🌐
 
-In order to do networking with linux, having computer networks knowledge is imperative.  I studied networking (CCNA syllabus) (2015-2016) and did lot of packet tracing with [GNS 3](https://www.gns3.com/) (CISCO IOS).
+In order to do networking with linux, having computer networks knowledge is imperative. Linux is widely used for networking due to its flexibility, robustness, and a wide range of built-in tools. Whether you're managing servers, setting up a home network, or troubleshooting connectivity issues, Linux provides powerful networking capabilities. I studied networking (CCNA syllabus) (2015-2016) and did lot of packet tracing with [GNS 3](https://www.gns3.com/) (CISCO IOS).
 
-<img src="net/img/hat.jpg" width=38%><a></a><img src="net/img/lab1.PNG" width=51%>
+<img src="net/img/hat.jpg" width=42%><a></a><img src="net/img/lab1.PNG" width=57%>
 
 Linux Networking Command Pallette🌸:
+
+`Viewing Network Interfaces` : Network interfaces are the connection points between your Linux machine and the network. Each interface is associated with a unique identifier like eth0, wlan0, or lo (loopback interface).
+
+```bash
+    $ ifconfig
+```
+This command shows detailed information about all active network interfaces, including IP address, MAC address, MTU, etc.
+
+```bash
+    $ ip addr show
+```
+This command provides detailed information about all network interfaces, similar to `ifconfig`.
+
+`Bringing Up/Down Network Interfaces` : We can enable or disable a network interface using the `ifconfig` or `ip` command.
+
++ Bringing an Interface Up: ` $ sudo ifconfig eth0 up ` or using ip: ` $ sudo ip link set eth0 up`.
++ Bringing an Interface Down: ` $ sudo ifconfig eth0 down` or using ip: ` $ sudo ip link set eth0 down`.
+
+`Configuring IP Addresses` : Assigning a static IP address to a network interface can be done using either ifconfig or ip.
+
++ Using ifconfig: ` $ sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0` or using ip: ` $ sudo ip addr add 192.168.1.100/24 dev eth0`.
++ To remove an IP address: ` $ sudo ip addr del 192.168.1.100/24 dev eth0`.
+
+`Checking Network Connectivity` : You can check whether your system can reach other systems or services on the network using several commands.
++ ` $ ping 8.8.8.8` : This sends ICMP echo requests to the specified IP address (Google DNS in this case) and shows the response time.
++ traceroute : ` $ traceroute www.example.com` : This command traces the path packets take to reach a remote host and shows each hop along the way.
++ Checking Port Connectivity with nc (Netcat): ` $ nc -zv www.example.com 80`.
+
+`Managing Routing Tables` : Routing tables determine the path data takes to reach a network. You can view and modify routing tables using the route or ip command.
++ Viewing the Routing Table: ` $ route -n` or using ip: ` $ ip route show`.
++ Adding a Route: ` $ sudo route add -net 192.168.1.0/24 gw 192.168.1.1` or using ip : ` $ sudo ip route add 192.168.1.0/24 via 192.168.1.1`.
++ Deleting a Route: ` $ sudo route del -net 192.168.1.0/24` or using ip : ` $ sudo ip route del 192.168.1.0/24`.
+
+`Configuring DNS` : DNS (Domain Name System) translates domain names into IP addresses. DNS settings are typically configured in `/etc/resolv.conf`.
 
 <table style="width:100%" >
 
