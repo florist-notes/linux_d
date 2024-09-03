@@ -4,6 +4,7 @@ Linux File System Command Pallette 🌸:
     $ ls -lah
 ```
 
+
 <table style="width:100%" >
 
 <tr>
@@ -22,6 +23,12 @@ Linux File System Command Pallette 🌸:
 <th>fg</th>
 <td>Bring the most recently suspended job to the foreground <br /></td>
 <td>$ fg<br /></td>
+</tr>
+
+<tr>
+<th>du -sh</th>
+<td>check directory/file size with -s (-h in human readable format) <br /></td>
+<td>$ du -sh exp_3090.zip <br /></td>
 </tr>
 
 <tr>
@@ -57,7 +64,7 @@ Linux File System Command Pallette 🌸:
 <tr>
 <th>du -s / du -h</th>
 <td>disk usage (-h for human readable format) <br /></td>
-<td>$ du -s<br /></td>
+<td>$ du -s directory<br /></td>
 </tr>
 
 <tr>

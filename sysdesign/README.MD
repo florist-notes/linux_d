@@ -1,5 +1,27 @@
 # System Design and Architecture 🌸
 
+[ [databases](./database.MD) ]
+
+## Introduction to System Design:
+System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specific requirements. It involves a combination of principles from software engineering, computer science, and business analysis. The goal is to create a blueprint for the system that ensures its scalability, reliability, efficiency, and maintainability.
+
+### Key Concepts in System Design
++ `Scalability`: The ability of the system to handle a growing amount of work or its potential to accommodate growth. Systems can scale vertically (upgrading hardware) or horizontally (adding more nodes).
+
+  + Example: Designing a web application that can handle increasing user traffic by adding more servers.
+
++ `Reliability`: The system's ability to function correctly and consistently under expected conditions. It involves aspects like fault tolerance, disaster recovery, and redundancy.
+
+  + Example: A payment processing system that ensures transactions are not lost or duplicated even if a server fails.
+
++ `Efficiency`: The system’s ability to make optimal use of resources like CPU, memory, and network bandwidth. Efficiency impacts the performance and cost-effectiveness of the system.
+
+  + Example: Optimizing database queries to reduce the load on the database server and speed up response times.
+
++ `Maintainability`: The ease with which the system can be modified to fix issues, improve performance, or adapt to new requirements. This often involves using modular design and clear documentation.
+
+  + Example: Using microservices architecture, where each service can be updated independently without affecting the entire system.
+
 Here are my notes from AlgoExpert : System Design class :)
 
 <div style="text-align: justify"> 
@@ -81,7 +103,7 @@ Coding tests assess problem solving but theoretical knowledge is important and S
 
 
 
-Data Structures: Manipulating Data = Structuring Data , Every Engineer moves data around on a day to day basis. Data Structures are ways to organize and manage data. e.g 1→2→4→5. or
+<b>Data Structures</b>: Manipulating Data = Structuring Data , Every Engineer moves data around on a day to day basis. Data Structures are ways to organize and manage data. e.g 1→2→4→5. or
 
 ```
 
@@ -94,9 +116,9 @@ Data Structures: Manipulating Data = Structuring Data , Every Engineer moves dat
 
 
 
-Complexity Analysis: Time Complexity and Space Complexity = Space Time Complexity. Different Data Structures have different space time ramifications.
+<b>Complexity Analysis</b>: Time Complexity and Space Complexity = Space Time Complexity. Different Data Structures have different space time ramifications.
 
-Memory: 1 memory slot can hold 8 bits = 1 byte. So to store a variable 1, we store 0000 0001 in memory or for 3 , 0000 0011. We have 2^8 = 256 potential data values in 1 byte to store in each memory slot.
+<b>Memory</b>: 1 memory slot can hold 8 bits = 1 byte. So to store a variable 1, we store 0000 0001 in memory or for 3 , 0000 0011. We have 2^8 = 256 potential data values in 1 byte to store in each memory slot.
 So how do we store a number bigger than 256 ? We increase the number of bits, say 32 or 64. We store in back to back free contiguos memory slots. int is 32 bits and long is 64 bits, so, int takes = 32/8 = 4 bytes = 4 back to back memory cell to store as each cell store 1 byte. To store int a=1; in memory, we do it as:
 
 </p>
@@ -105,7 +127,7 @@ So how do we store a number bigger than 256 ? We increase the number of bits, sa
 
 Why put 0000 0001 to the left of all 4 cells and not right? Due to [Endianness](https://en.wikipedia.org/wiki/Endianness)!
 
-Second figure is to store a list [1,2], 8 cells or 64 bits in total, 32 bits each i.e 4 byte and 4 byte. It needs a contiguos fixed width space/memory to store the list. Now, how to store strings? ASCII mapping. Each leter is mapped to a number and it is same thereafter. For pointers, we can store in a memory address , the memory address of another cell. Our computers can access these memory addresses directly, very quickly!
+Second figure is to store a list `[1,2]`, 8 cells or 64 bits in total, 32 bits each i.e 4 byte and 4 byte. It needs a contiguos fixed width space/memory to store the list. Now, how to store strings? ASCII mapping. Each leter is mapped to a number and it is same thereafter. For pointers, we can store in a memory address , the memory address of another cell. Our computers can access these memory addresses directly, very quickly!
 
 <b>Big O Notation:</b> In the worst case scenario. Let's take 3 different algorithms:
 (1) f_1(a) => 1 + a[0]
@@ -273,4 +295,4 @@ Download file would be to read the KV, find the blobs and download it. IF we are
 
 </div>
 
-Resources : book : [System Design Interview](https://www.amazon.de/-/en/Alex-Xu/dp/B08CMF2CQF), [pdf](https://github.com/G33kzD3n/Catalogue/blob/master/System%20Design%20Interview%20An%20Insider%E2%80%99s%20Guide%20by%20Alex%20Xu%20(z-lib.org).pdf), [Designing Distributed Systems](https://www.oreilly.com/library/view/designing-distributed-systems/9781491983638/), [Mastering the System Design Interview](https://www.udemy.com/course/system-design-interview-prep/), [Software Architecture & Technology of Large-Scale Systems](https://www.udemy.com/course/developer-to-architect/), [Software Architecture & Design of Modern Large Scale Systems](https://www.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/), [Design Microservices Architecture with Patterns & Principles](https://www.udemy.com/course/design-microservices-architecture-with-patterns-principles/), [System Design for Beginners Course](https://youtu.be/m8Icp_Cid5o), [How to "think" (and design) like a Software Architect](https://youtu.be/mCM6QVHD08c), [20 System Design Concepts Explained](https://youtu.be/i53Gi_K3o7I), video playlist: [sdprimer](https://www.youtube.com/watch?v=FSR1s2b-l_I&list=PLTCrU9sGyburBw9wNOHebv9SjlE4Elv5a), [sd1](https://www.youtube.com/watch?v=R_agd5qZ26Y&list=PLPkuArhPxxQGkbl-_STo8FFxBBB4ri-tl), [sd2](https://www.youtube.com/watch?v=mhUQe4BKZXs&list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV), [sd3](https://www.youtube.com/watch?v=8UryASGBiR4&list=PLLhBy6YSIT0ANaihpjwDBSBju0qUZ82SK), [papers worth reading](https://interviewready.io/blog/white-papers-worth-reading-for-software-engineers).
+Resources : book : [System Design Interview](https://www.amazon.de/-/en/Alex-Xu/dp/B08CMF2CQF), [pdf](https://github.com/G33kzD3n/Catalogue/blob/master/System%20Design%20Interview%20An%20Insider%E2%80%99s%20Guide%20by%20Alex%20Xu%20(z-lib.org).pdf), [Designing Distributed Systems](https://www.oreilly.com/library/view/designing-distributed-systems/9781491983638/), [Mastering the System Design Interview](https://www.udemy.com/course/system-design-interview-prep/), [Software Architecture & Technology of Large-Scale Systems](https://www.udemy.com/course/developer-to-architect/), [Software Architecture & Design of Modern Large Scale Systems](https://www.udemy.com/course/software-architecture-design-of-modern-large-scale-systems/), [Design Microservices Architecture with Patterns & Principles](https://www.udemy.com/course/design-microservices-architecture-with-patterns-principles/), [System Design for Beginners Course](https://youtu.be/m8Icp_Cid5o), [How to "think" (and design) like a Software Architect](https://youtu.be/mCM6QVHD08c), [20 System Design Concepts Explained](https://youtu.be/i53Gi_K3o7I), video playlist: [sdprimer](https://www.youtube.com/watch?v=FSR1s2b-l_I&list=PLTCrU9sGyburBw9wNOHebv9SjlE4Elv5a), [sd1](https://www.youtube.com/watch?v=R_agd5qZ26Y&list=PLPkuArhPxxQGkbl-_STo8FFxBBB4ri-tl), [sd2](https://www.youtube.com/watch?v=mhUQe4BKZXs&list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV), [sd3](https://www.youtube.com/watch?v=8UryASGBiR4&list=PLLhBy6YSIT0ANaihpjwDBSBju0qUZ82SK), [papers worth reading](https://interviewready.io/blog/white-papers-worth-reading-for-software-engineers), @[github/system-design](https://github.com/karanpratapsingh/system-design), [complete guide to system design](https://www.educative.io/blog/complete-guide-to-system-design).
