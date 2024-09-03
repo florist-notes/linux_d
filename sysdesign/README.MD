@@ -1,6 +1,6 @@
 # System Design and Architecture 🌸
 
-[ [databases](./database.MD) ]
+[ [databases](./database.MD) ] [ [system-design-patterns](./sysd_patterns.MD) ]
 
 ## Introduction to System Design:
 System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specific requirements. It involves a combination of principles from software engineering, computer science, and business analysis. The goal is to create a blueprint for the system that ensures its scalability, reliability, efficiency, and maintainability.

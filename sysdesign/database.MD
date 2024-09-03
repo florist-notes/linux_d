@@ -1,6 +1,9 @@
 # Introduction to Databases in System Design
 Databases are critical components in system design, serving as the backbone for data storage, retrieval, and management. Understanding how to design and use databases effectively is essential for building scalable, reliable, and efficient systems. In system design, databases are chosen and architected based on the specific requirements of the application, such as the nature of the data, the access patterns, scalability needs, and performance considerations.
 
+
+<img src="img/cap.png" width=100%>
+
 ### Types of Databases
 + `Relational Databases (RDBMS)`:
 
@@ -75,3 +78,40 @@ Databases are critical components in system design, serving as the backbone for 
         + Causal Consistency: Ensures that causally related updates are seen by all nodes in the same order.
             + Example: In a social media platform, ensuring that replies to a post are seen only after the original post.
     + `Use Case`: The choice of consistency model depends on the application’s tolerance for stale data and the need for high availability and partition tolerance.
+
+## Database Examples in System Design
+
+### Example 1: Designing a Social Media Platform Database
+`Requirements`:
+
++ Store user profiles, posts, comments, likes, and followers.
++ Handle millions of users with frequent updates and high read/write throughput.
++ Ensure data availability and partition tolerance, with relaxed consistency for some operations.
+
+Database Choice: NoSQL (Document Store like MongoDB)
+
+`Schema Design`:
+
++ User Profiles: Store as documents in a Users collection.
++ Fields: `user_id`, `username`, `email`, `bio`, `profile_picture`, `follower_count`.
++ Posts: Store as documents in a Posts collection.
++ Fields: `post_id`, `user_id`, `content`, `media_url`, `timestamp`, `like_count`.
++ Comments: Store as sub-documents within Posts to avoid frequent joins.
++ Fields: `comment_id`, `user_id`, `comment_text`, `timestamp`.
++ Followers: Use a separate collection for storing follower relationships.
++ Fields: `user_id`, `follower_id`.
+
+`Partitioning`:
+
++ Sharding: Shard the `Posts` collection by `user_id` to distribute the load across multiple nodes.
++ Vertical Partitioning: Store frequently accessed user profile information separately from less accessed metadata.
+
+`Replication`:
+
++ Master-Slave Replication: Use master-slave replication to scale read operations. The master handles all writes, and slaves handle most of the read traffic.
++ Eventual Consistency: Adopt an eventual consistency model for likes and comments, allowing for high availability and low latency.
+
+`Indexing`:
+
++ Index the `user_id` field in the `Posts` collection to speed up user-specific feed generation.
++ Create a compound index on `user_id` and `timestamp` to optimize queries for recent posts by a user.
