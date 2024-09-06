@@ -1,6 +1,8 @@
 # Git and Github :  Version Control
 <br />
 
+[ [git ssh setup](./GITSSH.MD) ]
+
 <img src="./img/git_l.jpg" height=150px><a> </a><img src="./img/git4.png" height=140px><a> </a><img src="./img/git3.png" height=150px>
 
 <p style='text-align: justify;'> 
