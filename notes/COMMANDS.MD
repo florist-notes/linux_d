@@ -1,5 +1,9 @@
 ## Linux Command Pallette: $ 🌸
 
+```bash
+    $ find . -type d -iname "*linux*" -o -type f -iname "*linux*"
+```
+
 <img src="../img/termkali.png" width=100%>
 
 <table style="width:100%" >
