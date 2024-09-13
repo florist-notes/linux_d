@@ -18,21 +18,21 @@ Goal: Create reliable and powerful data pipelines in a distributed environment w
  $ pip install apache-airflow
 ```
 
-After installation, you need to set up the Airflow environment. Airflow uses a metadata database to keep track of the status of your tasks. To initialize the database, run: ` $ airflow db init`.
+After installation, we need to set up the Airflow environment. Airflow uses a metadata database to keep track of the status of your tasks. To initialize the database, run: ` $ airflow db init`.
 
-Next, you'll need to start the Airflow web server and scheduler:
+Next, we'll need to start the Airflow web server and scheduler:
 
 ```bash
 $ airflow webserver -p 8080
 $ airflow scheduler
 ```
 
-The webserver will allow you to access the Airflow UI through your web browser, usually at `http://localhost:8080`.
+The webserver will allow us to access the Airflow UI through your web browser, usually at `http://localhost:8080`.
 
 ### Creating a DAG (Directed Acyclic Graph):
 
-Workflows in Airflow are represented as DAGs. A DAG is a collection of all the tasks you want to run, organized in a way that shows their dependencies.
-You define a DAG using Python code. For example:
+Workflows in Airflow are represented as DAGs. A DAG is a collection of all the tasks we want to run, organized in a way that shows their dependencies.
+We define a DAG using Python code. For example:
 
 ```python
 from airflow import DAG
@@ -49,7 +49,7 @@ with DAG('simple_dag', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 
 In this example, a simple DAG is created with two tasks (`start` and `end`). The `start >> end` line tells Airflow that the `end` task should run after the `start` task.
 
-Once you've created your DAG, you can monitor it in the Airflow UI, manually trigger it, or let it run according to its schedule.
+Once we've created our DAG, we can monitor it in the Airflow UI, manually trigger it, or let it run according to its schedule.
 Airflow will handle running each task in the correct order and will alert you if any task fails.
 
 Install Airflow in Docker:
@@ -147,7 +147,7 @@ Apache Kafka is an open-source platform designed to handle real-time data stream
 
 Think of Kafka as a middleman for data. It takes data from various sources, holds it temporarily, and then delivers it to different destinations in a reliable and efficient manner.
 
-Apache Kafka is an open-source distributed streaming system used for stream processing, real-time data pipelines, and data integration at scale. Kafka is designed to handle high-throughput, fault-tolerant, and real-time data streams. It is widely used for building real-time data pipelines and streaming applications due to its scalability, durability, and performance. Sneakpeak from my kafka architecture presentation at DgiLab:
+Specifically, Apache Kafka is an open-source distributed streaming system used for stream processing, real-time data pipelines, and data integration at scale. Kafka is designed to handle high-throughput, fault-tolerant, and real-time data streams. It is widely used for building real-time data pipelines and streaming applications due to its scalability, durability, and performance. Sneakpeak from my kafka architecture presentation at DigiLab, LSBG:
 
 <img src="IMG_20210907_114116.jpg" width=49%><a> </a><img src="IMG_20210907_143140.jpg" width=49%>
 
