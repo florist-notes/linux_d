@@ -6,8 +6,54 @@
 
 NGINX is a high-performance web server, reverse proxy server, and load balancer known for its speed, scalability, and low resource consumption. It is widely used in both small-scale websites and large-scale enterprise environments.
 
-+ `Main Configuration File`: Located at `/etc/nginx/nginx.conf`. This file contains the global settings for NGINX.
-+ `Site-Specific Configuration`: Located in `/etc/nginx/sites-available/` and `/etc/nginx/sites-enabled/`. By default, NGINX serves sites from `/var/www/html`.
+```bash
+    $ sudo apt install nginx
+```
+
+Once NGINX is installed, you need to start the service and enable it to start automatically at boot.
+
+```bash
+    $ sudo systemctl start nginx
+    $ sudo systemctl status nginx
+```
+
++ Configure the Firewall : If you have a firewall enabled, you’ll need to allow HTTP and HTTPS traffic to pass through. ` $ sudo ufw allow 'Nginx Full'`.
+
+At this point, NGINX is running. You can verify it by visiting your server's IP address in a browser (e.g., `http://your-server-ip`). You should see the default NGINX welcome page.
+
+Configure NGINX Server Block (Virtual Host) : NGINX uses server blocks to host multiple websites on the same server. Here's how to create a new server block.
++ Create a directory for your website content: ` $ sudo mkdir -p /var/www/example.com/html`.
++ Set ownership of the directory to your user: ` $ sudo chown -R $USER:$USER /var/www/example.com/html`.
++ Set appropriate permissions: ` $ sudo chmod -R 755 /var/www/example.com`.
++ Create a sample index.html file: ` $ nano /var/www/example.com/html/index.html`.
++ Create a new server block configuration file: ` $ sudo nano /etc/nginx/sites-available/example.com`.
+
+```
+server {
+    listen 80;
+    server_name example.com www.example.com;
+
+    root /var/www/example.com/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
++ Enable the server block: ` $ sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/`.
++ Test the configuration for syntax errors: ` $ sudo nginx -t`.
++ Reload NGINX to apply the changes: ` $ sudo systemctl reload nginx`.
+
+`Main Configuration File`: Located at `/etc/nginx/nginx.conf`. This file contains the global settings for NGINX.
+
+`Site-Specific Configuration`: Located in `/etc/nginx/sites-available/` and `/etc/nginx/sites-enabled/`. By default, NGINX serves sites from `/var/www/html`.
+
++ To secure your website with HTTPS, you can use Let's Encrypt for free SSL certificates. Install CertBlock : ` $ sudo apt install certbot python3-certbot-nginx`.
++ Obtain an SSL certificate: ` $ sudo certbot --nginx -d example.com -d www.example.com`.
++ Test automatic renewal: ` $ sudo certbot renew --dry-run`.
++ Access logs: ` $ sudo tail -f /var/log/nginx/access.log`.
++ Error logs: ` $ sudo tail -f /var/log/nginx/error.log `.
 
 
 Resources : [Install a webserver on Linux in 15 minutes
