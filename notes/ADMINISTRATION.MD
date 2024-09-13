@@ -14,14 +14,36 @@ Linux system administration is a process of setting up, configuring, and managin
 
 The Linux operating system contains the following components:
 
-+ Bootloader: This is a software that manages the boot process of your computer.
-+ Kernel: The kernel is also called the Linux kernel and is the system traffic controller that allocates system resources to the running application. Software applications request the kernel for hardware resources such as disc space, RAM, and CPU. Software applications use the API to work with the kernel on a high level of abstraction.
-+ Init system: This is a subsystem that bootstraps the user space and controls daemons. The init system manages the boot process after it is handled by the bootloader.
-+ Daemons: Daemons are programs or drivers that manage underground applications like printing sounds, network, etc.
-+ Graphical server: The graphical server system supports the graphic display on the screen.
-+ Desktop environment: The desktop environment allows the user to interface with the operating system. The Linux OS offers a variety of desktop environments with their own built-in applications to choose from.
-+ Application: The desktop environment does not offer all of the applications a user might need, but Linux allows the user to install additional applications.
++ `Bootloader`: This is a software that manages the boot process of your computer.
++ `Kernel`: The kernel is also called the Linux kernel and is the system traffic controller that allocates system resources to the running application. Software applications request the kernel for hardware resources such as disc space, RAM, and CPU. Software applications use the API to work with the kernel on a high level of abstraction.
++ `Init system`: This is a subsystem that bootstraps the user space and controls daemons. The init system manages the boot process after it is handled by the bootloader.
++ `Daemons`: Daemons are programs or drivers that manage underground applications like printing sounds, network, etc.
++ `Graphical server`: The graphical server system supports the graphic display on the screen.
++ `Desktop environment`: The desktop environment allows the user to interface with the operating system. The Linux OS offers a variety of desktop environments with their own built-in applications to choose from.
++ `Application`: The desktop environment does not offer all of the applications a user might need, but Linux allows the user to install additional applications.
 The Linux operating system is used as a client-side (desktop) and server-side operating system.
+
+#### Login Shell:
++ `Definition`: A login shell is the first shell session you start after logging into the system. It typically happens when you log in to your system from the terminal or remotely via SSH.
++ `Usage`: When you start a new session (e.g., by logging in to the system), a login shell is created.
++ `Purpose`:
+  + Sets up the environment for the user.
+  + It loads system-wide and user-specific configuration files, which define environment variables and startup settings.
++ `Initialization Files`:
+  + Reads configuration files like `/etc/profile`, `~/.bash_profile`, `~/.bash_login`, or `~/.profile` (in Bash shell).
+  + These files are primarily used for setting up environment variables like $PATH, $USER, etc.
++ `How to start`: Can be started directly by logging in via a terminal or SSH, or by running a shell with a -l option, e.g., bash -l.
+
+####  Non-Login Shell:
++ `Definition`: A non-login shell is usually any shell you start after the login shell. It is generally created when you open a new terminal window or run a script.
++ `Usage`: For executing scripts or starting a shell from within a running terminal session.
++ `Purpose`:
+  + It inherits environment variables and settings from the login shell but doesn't read the same configuration files.
+  + Used for day-to-day commands, running shell scripts, or interactive shell usage within a session.
++ `Initialization Files`:
+  + Reads shell-specific configuration files like `~/.bashrc` in Bash (or other equivalents like `~/.zshrc` for Zsh).
+  + These files usually contain aliases, shell options, or prompt customizations.
++ `How to start`: Automatically started when you open a new terminal window, or manually with commands like bash or sh without the -l option.
 
 <img src="./img/linos.jpg" width=100%>
 

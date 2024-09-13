@@ -451,24 +451,24 @@ Everything in linux is a "file" - "On a UNIX system, everything is a file; if so
 sudo = superuser do
 
   ```bash
-  $ adduser saikia (ain't gonna work without sudo access)
+  $ adduser saikia # (ain't gonna work without sudo access)
   $ sudo adduser saikia
-  $ cat /etc/passwd (find all users)
+  $ cat /etc/passwd # (find all users)
 
-  $ sudo useradd skk (useradd is lazy - no bash & no home)
+  $ sudo useradd skk # (useradd is lazy - no bash & no home)
 
-  $ sudo passwd skk  (add password)
+  $ sudo passwd skk  # (add password)
   $ cd /home
-  $ ls               (skk doesn't has a /home but skk does)
+  $ ls              # (skk doesn't has a /home but skk does)
 
   $ usermod -h
-  $ sudo usermod skk --shell /bin/bash (now skk has a bash shell)
+  $ sudo usermod skk --shell /bin/bash # (now skk has a bash shell)
 
-  $ sudo usermod -l ranjan skk (ranjan is the new name for skk)
-  $ sudo useradd amartya -m (-m will create a home directory)
+  $ sudo usermod -l ranjan skk # (ranjan is the new name for skk)
+  $ sudo useradd amartya -m # (-m will create a home directory)
 
   $ su saikia
-  $ su - (switch to root user)
+  $ su - # (switch to root user)
   $ sudo su -
 
 
@@ -481,8 +481,8 @@ sudo = superuser do
   $ cat /etc/group
   $ groups
 
-  $ sudo usermod -aG digi55 amartya (add user to group, -a equals append)
-  $ sudo gpasswd -d amartya digi55 (remove user from group)
+  $ sudo usermod -aG digi55 amartya # (add user to group, -a equals append)
+  $ sudo gpasswd -d amartya digi55 # (remove user from group)
   $ sudo groupdel digi55 
 
  ```
@@ -492,20 +492,20 @@ dpkg doesn't install dependencies but apt (advanced package tool) does :) snap i
  ```bash
   $ sudo apt update
   $ sudo apt install packagename
-  $ sudo apt edit-sources (list of sources to pull packages from)
+  $ sudo apt edit-sources # (list of sources to pull packages from)
   $ sudo apt -h
   $ sudp apt list
-  $ apt list --installed (find installed packages)
+  $ apt list --installed # (find installed packages)
   $ apt list --installed > grep ^nmap
   $ sudo apt show nmap
   $ sudo apt search nmap
-  $ sudo apt remove packagename (config files remains)
-  $ sudo apt purge packagename (removes everything)
-  $ sudo apt upgrade (update packages)
-  $ sudo apt update && full-upgrade (removes old files and does fresh updates)
+  $ sudo apt remove packagename # (config files remains)
+  $ sudo apt purge packagename # (removes everything)
+  $ sudo apt upgrade # (update packages)
+  $ sudo apt update && full-upgrade # (removes old files and does fresh updates)
   $ sudo aptitude
 
-  $ sudo snap install --classic code (install vscode with snap)
+  $ sudo snap install --classic code # (install vscode with snap)
 
   ```
 
@@ -513,23 +513,23 @@ dpkg doesn't install dependencies but apt (advanced package tool) does :) snap i
 
 Daemons are system services/ processes in linux. All daemons have a 'd' at the end. Master Daemon - 'systemd' with PID 1 and systemctl is used to control daemons. systemd refers other daemons as units.
 
-```
+```bash
     $ ps -aux
-    $ ps -aux | grep nano (check processes for nano)
+    $ ps -aux | grep nano # (check processes for nano)
     $ pstree
 
     $ sudo systemctl stop sshd
     $ sudo systemctl status sshd
     $ sudo systemctl start sshd
     $ sudo systemctl restart sshd
-    $ sudo systemctl reload-or-restart sshd (restart if not reload)
+    $ sudo systemctl reload-or-restart sshd # (restart if not reload)
     $ sudo systemctl disable ntp
     $ sudo systemctl enable ntp
     $ sudo systemctl is-active ntp
     $ sudo systemctl is-enabled ntp
-    $ sudo systemctl list-units (list all daemons that systemd knows)
+    $ sudo systemctl list-units # (list all daemons that systemd knows)
     $ sudo systemctl list-units --all
-    $ sudo systemctl list-units -t service (active services)
+    $ sudo systemctl list-units -t service # (active services)
 
     $ sudo systemctl list-unit-files | grep nginx
     $ sudo systemctl list-units | grep journal
@@ -540,41 +540,41 @@ Daemons are system services/ processes in linux. All daemons have a 'd' at the e
 ### Manage processes in linux:
 
 
-```
-    $ ps -u username (check all processes for a particular user)
+```bash
+    $ ps -u username # (check all processes for a particular user)
     $ ps -u username | grep firefox
-    $ pgrep firefox (returns PID of firefox)
+    $ pgrep firefox # (returns PID of firefox)
     $ kill PID
     $ ps --help simple
-    $ top (running processes on linux)
-    $ htop (cooler top)
+    $ top # (running processes on linux)
+    $ htop # (cooler top)
     $ jobs
-    $ bg 1 (make job 1 a bg process)
-    $ fg 1 (make job 1 a fg process)
-    $ kill -l (list kill signals, SIGTERM is default kill signal)
-    $ kill -9 ((9)SIGKILL is ultimate boss)
+    $ bg 1 # (make job 1 a bg process)
+    $ fg 1 # (make job 1 a fg process)
+    $ kill -l # (list kill signals, SIGTERM is default kill signal)
+    $ kill -9 # ((9)SIGKILL is ultimate boss)
 
-    $ sleep 900 & (sleep and send to bg)
-    $ kill -9 PID (kill no matter what)
-    $ pkill -9 ping (pkill kills multiple processes by name)
+    $ sleep 900 & # (sleep and send to bg)
+    $ kill -9 PID # (kill no matter what)
+    $ pkill -9 ping # (pkill kills multiple processes by name)
 
 
 ```
 
 ### Webserver
 127.0.0.1 = localhost (no place like 127.0.0.1)
-```
-     $ python -m http.server 7600 (launches a web server from dir)
+```bash
+     $ python -m http.server 7600 # (launches a web server from dir)
      $ php -S 127.0.0.1
      $ npx http-server -p 8086
-     $ sudo nano /etc/apache2/ports.conf (to change port)
+     $ sudo nano /etc/apache2/ports.conf # (to change port)
      $ systemctl start apache2
 
      $ curl localhost:8086
-     $ curl -o dirfoldername localhost:8086 (download website to dirfoldername)
-     $ cat dirfoldername (to check the downloaded website)
-     $ curl -I localhost:8086 (getting response header)
-     $ curl -v localhost:8086 (verbose - chatty req)
+     $ curl -o dirfoldername localhost:8086 # (download website to dirfoldername)
+     $ cat dirfoldername # (to check the downloaded website)
+     $ curl -I localhost:8086 # (getting response header)
+     $ curl -v localhost:8086 # (verbose - chatty req)
      $ wget localhost:8086
 ```
 
@@ -595,47 +595,47 @@ Regular Expressions is nothing but a pattern to match for each input line. A pat
 - /b = It will match the empty character or string at the edge.
 - /B = It will match the empty character or string at the non-edge.
 
-```
+```bash
 
 s grep 'saikia' /etc/passwd
-s grep -i -w 'saikia' /etc/passwd (case insensitive search)
-$ grep -E -i -w 'skk|ranjan' /etc/passwd (extended reg exp to find 'skk' or 'ranjan')
+s grep -i -w 'saikia' /etc/passwd # (case insensitive search)
+$ grep -E -i -w 'skk|ranjan' /etc/passwd # (extended reg exp to find 'skk' or 'ranjan')
 $ egrep -i '^(linux|unix)' filename
-$ grep -E -i '^(linux|unix)' filename (same as above egrep with -E)
+$ grep -E -i '^(linux|unix)' filename # (same as above egrep with -E)
 $ grep 'word1\|word2' filename
 
-$ grep 'purchase' demo.txt ( find all filenames starting with purchase )
-$ grep 'purchase.db' demo.txt (  find all filenames starting with purchase and followed by another character )
-$ grep 'purchase..db' demo.txt ( find all filenames starting with purchase but ending with db )
+$ grep 'purchase' demo.txt # ( find all filenames starting with purchase )
+$ grep 'purchase.db' demo.txt # ( find all filenames starting with purchase and followed by another character )
+$ grep 'purchase..db' demo.txt # ( find all filenames starting with purchase but ending with db )
 
 $ grep ^saikia /etc/passwd
-$ grep -w ^saikia /etc/passwd (only saikia and no followup characters)
+$ grep -w ^saikia /etc/passwd # (only saikia and no followup characters)
 
-$ grep 'foo$' filename (find lines ending with word foo)
-$ grep '^foo$' filename (Match line only containing foo)
-$ grep '^$' filename (search for blank lines)
+$ grep 'foo$' filename # (find lines ending with word foo)
+$ grep '^foo$' filename # (Match line only containing foo)
+$ grep '^$' filename # (search for blank lines)
 
-$ grep '[sS][aA][iI][kK][iI][aA]' filename (match both saikia or Saikia)
-$ grep -w '[sS]aiikia[0-9]' filename (match saikia1, Saikia2 ...)
-$ grep '[A-Za-z]' filename (match at least one letter)
-$ grep [wn] filename (Display all the lines containing either a “w” or “n” character)
+$ grep '[sS][aA][iI][kK][iI][aA]' filename # (match both saikia or Saikia)
+$ grep -w '[sS]aiikia[0-9]' filename # (match saikia1, Saikia2 ...)
+$ grep '[A-Za-z]' filename # (match at least one letter)
+$ grep [wn] filename # (Display all the lines containing either a “w” or “n” character)
 $ grep '[:upper:]' filename 
 
 [[:alnum:]] , [[:alpha:]], [[:blank:]], [[:digit:]], [[:lower:]], [[:space:]], [[:upper:]]
 
-$ grep '[sS]aikia[^0-9]' test (The ^ negates all ranges in a set)
+$ grep '[sS]aikia[^0-9]' test # (The ^ negates all ranges in a set)
 
-$ grep '^..$' filename (Print all lines with exactly two characters)
-$ grep '^\.[0-9]' filename (Display any lines starting with a dot and digit)
+$ grep '^..$' filename # (print all lines with exactly two characters)
+$ grep '^\.[0-9]' filename # (Display any lines starting with a dot and digit)
 
-$ egrep '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' file (will only match an IP address)
+$ egrep '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' file # (will only match an IP address)
 
-$ egrep "v{2}" filename (match a character “v” two times)
-$ egrep 'co{1,2}l' filename (match both “col” and “cool” words)
-$ egrep 'c{3,}' filename ( match any row of at least three letters ‘c’)
-$ grep "[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}" filename (match mobile number format 91-1234567890 (i.e TwoDigit-TenDigit))
-$ cat file.txt | grep -E e\{2} (sequence of character “e” coming two times in the string. e.g - three)
-$ cat file.txt | grep "n\+e" (the string from starting character as “n” and adjacent character as “e” - eg : one, nine)
-$ grep '\bfive\b' file.txt (find the exact matching string from the input file)
+$ egrep "v{2}" filename # (match a character “v” two times)
+$ egrep 'co{1,2}l' filename # (match both “col” and “cool” words)
+$ egrep 'c{3,}' filename # ( match any row of at least three letters ‘c’)
+$ grep "[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}" filename # (match mobile number format 91-1234567890 (i.e TwoDigit-TenDigit))
+$ cat file.txt | grep -E e\{2} # (sequence of character “e” coming two times in the string. e.g - three)
+$ cat file.txt | grep "n\+e" # (string from starting character as “n” and adjacent character as “e” - eg : one, nine)
+$ grep '\bfive\b' file.txt # (find the exact matching string from the input file)
 
 ```

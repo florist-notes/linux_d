@@ -483,6 +483,11 @@ $ j .config <br /></td>
 
 </table>
 
+```bash
+    $ sudo chown user dir/
+    $ sudo chmod u+r+w dir/
+```
+
 <table style="width:100%" >
 <tr>
 <th>COMMAND 🔗</th>
