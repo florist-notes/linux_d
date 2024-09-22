@@ -486,6 +486,7 @@ $ j .config <br /></td>
 ```bash
     $ sudo chown user dir/
     $ sudo chmod u+r+w dir/
+    $ du -hs * | sort -rh | head -n 10
 ```
 
 <table style="width:100%" >

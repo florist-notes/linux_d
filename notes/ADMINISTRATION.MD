@@ -131,4 +131,21 @@ The Linux operating system is used as a client-side (desktop) and server-side op
 
 </table>
 
-resources: [linux administration notes](./THEORY.MD) - daemons & processes, [Linux System Administration](https://youtu.be/UCr04qIB7uc), [manual](https://www.tuxcademy.org/download/en/adm1/adm1-en-manual.pdf)
+```bash
+  $ sudo apt-get install tmux
+```
+
+C-b : CTRL + b
+
+```bash
+  $ tmux new -s <orin4>
+  $ C-b % #create new panes (horizontal)
+  $ C-b " #create new panes (vertical)
+  $ C-b <arrow> #switch between panes
+  $ C-b d - detach
+  $ tmux attach-session -t
+  $ tmux rename-session -t 0 database
+  $ C-b z #make a pane go full screen. Hit 
+```
+
+resources: [linux administration notes](./THEORY.MD) - daemons & processes, [Linux System Administration](https://youtu.be/UCr04qIB7uc), [manual](https://www.tuxcademy.org/download/en/adm1/adm1-en-manual.pdf), [tmux-guide](https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/).
