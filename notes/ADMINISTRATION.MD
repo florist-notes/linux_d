@@ -45,6 +45,17 @@ The Linux operating system is used as a client-side (desktop) and server-side op
   + These files usually contain aliases, shell options, or prompt customizations.
 + `How to start`: Automatically started when you open a new terminal window, or manually with commands like bash or sh without the -l option.
 
+find number of directories:
+```bash
+  $ find . -mindepth 1 -type d | wc -l
+```
+
+find number of files with '*tegrastats*' name in it:
+
+```bash
+  $ find . -type f -name '*tegrastats*' | wc -l
+```
+
 <img src="./img/linos.jpg" width=100%>
 
 <table style="width:100%" >
