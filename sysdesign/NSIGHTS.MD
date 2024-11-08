@@ -1,4 +1,4 @@
-# NVIDIA NSIGHTS:
+# NVIDIA NSIGHT:
 
 <center><img src="../img/nsight.png" width=100%></center>
 
@@ -79,9 +79,11 @@ Given a kernel’s operational intensity, the roofline model indicates the maxim
 ### Resources:
 + [gitlab/roofline-hackathon-2020](https://gitlab.com/NERSC/roofline-on-nvidia-gpus/-/tree/roofline-hackathon-2020/)
 + [NVTX annotations for layer-wise latency](https://developer.nvidia.com/blog/nvidia-tools-extension-api-nvtx-annotation-tool-for-profiling-code-in-python-and-c-c/)
-+ [Operating System Basics](https://youtu.be/9GDX-IyZ_C8?si=_pBO_gkkRkHveHmt)
++ [Operating System Basics](https://youtu.be/9GDX-IyZ_C8?si=_pBO_gkkRkHveHmt) | [Intro to NVIDIA Nsight Compute](https://youtu.be/Iuy_RAvguBM?si=D_ANR4-hI4lRocxF)
 + [Roofline and NVIDIA Ampere GPU Architecture Analysis](https://youtu.be/VtkxhygfNsY?si=xwGHq477AhmdFUr7)
 + [CUDA Developer Tools | Memory Analysis with NVIDIA Nsight Compute](https://youtu.be/GCkdiHk6fUY?si=BiUR5XHjxfwZhfIP)
 + [Introduction to Kernel Performance Analysis with NVIDIA Nsight Compute](https://youtu.be/fsC3QeZHM1U?si=LHIQuLSVd7UpsqJE)
 + [Profiling Deep Learning Applications with NVIDIA NSight](https://youtu.be/K27rLXkOiqo?si=GetLfXGCWsrKgYx3)
-+ [NVIDIA Nsight Compute Kernel Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html)
++ [NVIDIA Nsight Compute Kernel Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html) 
++ [[Optimizing CUDA Memory Transfers with NVIDIA Nsight Systems](https://developer.nvidia.com/blog/optimizing-cuda-memory-transfers-with-nsight-systems/)]
++ [Accelerating HPC Applications with NVIDIA Nsight Compute Roofline Analysis](https://developer.nvidia.com/blog/accelerating-hpc-applications-with-nsight-compute-roofline-analysis/)
