@@ -699,3 +699,180 @@ This method performs the actual roofline analysis:
     + Computes the maximum FLOPS and memory bandwidth achieved.
     + Prints the roofline results (GFLOPS and GB/s).
     + Suggests running a ResNet-34 model for further Conv layer analysis.
+
+## `ModelContext` class :
+
+```python
+class ModelContext():
+    def __init__(self, subjects: list, collected_data: CollectedData, model_backend: _BaseBackend, onnx_model: str, batch_size_list: list, repeat_count: int, backend_options: str, data_width: Tuple[int, int], llc_reuse_size: float, inputs_shape_override: Dict[str, List[Union[int, None]]]) -> None:
+        self.subjects = subjects
+        self.collected_data = collected_data
+        self.onnx_model = onnx_model
+        self.batch_size_list = batch_size_list
+        self.repeat_count = repeat_count
+        self.data_width_onnx = data_width[0]
+        self.data_width_backend = data_width[1]
+        log.info("data_width in onnx and backend is %s bit, change it if not correct", data_width)
+
+        self.collected_data.model = ModelData()
+        self.collected_data.model.name = Path(onnx_model).name
+        self.collected_data.model.path = onnx_model
+        self.collected_data.model.backend = model_backend.__name__
+        self.collected_data.model.backend_options = backend_options
+        self.collected_data.model.data_width_onnx = data_width[0]
+        self.collected_data.model.data_width_backend = data_width[1]
+        self.collected_data.model.llc_reuse_size = llc_reuse_size
+        self.collected_data.model.inputs_shape_override = inputs_shape_override
+
+        if inputs_shape_override:
+            log.info("inputs_shape_override is set, will save the modified model to tmpdir as a copy")
+            import onnx
+            m = onnx.load(self.onnx_model)
+            for t in m.graph.input:
+                if t.name in inputs_shape_override:
+                    for i, dim in enumerate(inputs_shape_override[t.name]):
+                        if dim:
+                            t.type.tensor_type.shape.dim[i].dim_value = dim
+            self.onnx_model = str(TMPDIR / 'inputs_shape_override_model.onnx')
+            if os.path.isfile(str(TMPDIR / 'model_external_data.pb')):
+                os.unlink(str(TMPDIR / 'model_external_data.pb'))
+            onnx.save(m, self.onnx_model, save_as_external_data=True, location="model_external_data.pb")
+
+        if 'model.bench' in self.subjects:
+            self.model_backend_env: _BaseBackend = model_backend(self, self.onnx_model, self.batch_size_list, backend_options)
+            self.collected_data.model.backend_version_info = self.model_backend_env.version_info()
+            print(self.collected_data.model.backend_version_info)
+            self.model_backend_env.prepare()
+
+    def run(self) -> None:
+
+        if 'model.analyze' in self.subjects:
+            self.analyze = model.analyze.Analyze(self.onnx_model)
+            self.collected_data.model.analyze = self.analyze.export_data()
+
+            # max fused memory
+            effort_fused = get_effort_fused_model(self.analyze)
+            self.collected_data.model.analyze.total_memory_effort_fused = effort_fused.get_memory()
+            log.info("total memory %.3f M (vars) (approximate, effort fused)", effort_fused.get_memory() / 1e6)
+
+
+        if 'model.bench' in self.subjects:
+            self.collected_data.model.bench = ModelBenchData()
+            self.collected_data.model.bench.batch_size_list = self.batch_size_list
+            self.collected_data.model.bench.results = {}
+            log.debug("batch_size_list: %s", self.batch_size_list)
+            for batch_size in self.batch_size_list:
+                batch_data = ModelBenchBatchData()
+                batch_data.batch_size = batch_size
+
+                print("="*60)
+                print("batch_size: %s" % batch_size)
+
+                self.model_backend_env.pre_batch_run(batch_size)
+                if 'model.bench.layer_prof' in self.subjects:
+                    if 'layer_prof' not in self.model_backend_env.supported:
+                        log.error("layer_prof is not support in %s, skip", self.model_backend_env.__class__)
+                    else:
+                        batch_data.layer_prof = self.model_backend_env.layer_prof(batch_size)
+                        batch_data.better_total_flops = sum(l.flops for l in batch_data.layer_prof)
+                        batch_data.better_total_memory = sum(l.memory for l in batch_data.layer_prof)
+
+                        DUMP_TO_DEBUG = False
+                        DUMP_TO_DEBUG = True   # TODO_tmp: dev only
+                        if DUMP_TO_DEBUG:
+                            for layer in batch_data.layer_prof:
+                                log.debug("[layer_prof dump] avg: %s ms, %s GFLOPS, %s GB/s, name: %s - %s",
+                                    '{:8.4f}'.format(layer.median_time * 1000),
+                                    '{:12.4f}'.format(layer.flops / layer.median_time / 1e9),
+                                    '{:12.4f}'.format(layer.memory / layer.median_time / 1e9),
+                                    '{:<64}'.format(layer.name),
+                                    layer.extra)
+                            log.debug("[layer_prof dump] GB/s is approximate memory bandwidth")
+                            log.debug("[layer_prof dump] total_flops %.3f MFLOPs (%.3f * %d)",
+                                batch_data.better_total_flops / 1e6,
+                                batch_data.better_total_flops / 1e6 / batch_size,
+                                batch_size)
+                            log.debug("[layer_prof dump] total_memory %.3f MB (%.3f * %d)",
+                                batch_data.better_total_memory / 1e6,
+                                batch_data.better_total_memory / 1e6 / batch_size,
+                                batch_size)
+                            max_flops_layer = max(batch_data.layer_prof, key=lambda x: x.flops / x.median_time)
+                            log.info(f"max flops node: {max_flops_layer.flops / max_flops_layer.median_time / 1e12:.3f} TFLOPS, ({max_flops_layer.median_time*1e3:.3f} ms)")
+
+
+                if 'model.bench.e2e_prof' in self.subjects:
+                    if 'e2e_prof' not in self.model_backend_env.supported:
+                        log.error("e2e_prof is not support in %s, skip", self.model_backend_env.__class__)
+                    else:
+                        times = self.model_backend_env.e2e_prof(batch_size, self.repeat_count)
+
+                        if isinstance(times, np.ndarray):
+                            batch_data.times = list(times)
+                            log.debug(times)
+
+                            batch_data.time_avg = np.average(times)
+                            batch_data.time_min = np.min(times)
+                            batch_data.time_std = np.std(times)
+                        elif isinstance(times, dict):
+                            batch_data.time_avg = times['avg']
+                            batch_data.time_min = times['min']
+                            batch_data.time_std = times['std']
+
+                        print("TIME:   average: {:12.4f} ms,        min: {:12.4f} ms,        std: {:8.4f} ms".format(
+                            batch_data.time_avg * 1000, batch_data.time_min * 1000, batch_data.time_std * 1000))
+
+                        if batch_data.better_total_flops and not os.getenv('PROOF_E2E_NOT_USE_LAYER_DATA'):
+                            model_flops = batch_data.better_total_flops
+                        else:
+                            model_flops = float(self.collected_data.model.analyze.total_flops) * batch_size
+                        batch_data.flops_avg = model_flops / batch_data.time_avg
+                        batch_data.flops_max = model_flops / batch_data.time_min
+                        batch_data.flops_std = np.std(model_flops / times) if isinstance(times, np.ndarray) else -1
+                        print("GFLOPS: average: {:12.4f} GFLOPS,    max: {:12.4f} GFLOPS,    std: {:8.4f} GFLOPS".format(
+                            batch_data.flops_avg / 1e9, batch_data.flops_max / 1e9, batch_data.flops_std / 1e9))
+
+                        if batch_data.better_total_memory and not os.getenv('PROOF_E2E_NOT_USE_LAYER_DATA'):
+                            accurate = "approximate"
+                            model_memory_access = batch_data.better_total_memory
+                        else:
+                            accurate = "inaccurate"
+                            model_memory_access = float(self.collected_data.model.analyze.total_memory) * batch_size
+                        batch_data.memory_avg = model_memory_access / batch_data.time_avg
+                        batch_data.memory_max = model_memory_access / batch_data.time_min
+                        batch_data.memory_std = np.std(model_memory_access / times) if isinstance(times, np.ndarray) else -1
+                        print("Memory: average: {:12.4f} GB/s,      max: {:12.4f} GB/s,      std: {:8.4f} GB/s \t({})".format(
+                            batch_data.memory_avg / 1e9, batch_data.memory_max / 1e9, batch_data.memory_std / 1e9, accurate))
+
+
+                self.collected_data.model.bench.results[str(batch_size)] = batch_data  # JSON format need a str for the key (batch_size)
+                log.debug("run() model batch_size=%s done", batch_size)
+
+            log.debug("run() model all batch_size done")
+
+        log.debug("run() all done")
+```
+
+The `ModelContext class` is a comprehensive framework for managing and executing machine learning model benchmarking and analysis workflows. Here is a breakdown of its key components:
+
+The `__init__` method initializes the environment and data structures required for benchmarking and analysis:
+
++ Initializes collected_data with model metadata.
++ Applies input shape overrides to the ONNX model if specified, saving the modified model to a temporary directory.
++ Prepares the model backend environment if benchmarking (model.bench) is part of the workflow.
+
+### run() :
+Handles the execution of tasks specified in `subjects`. The following workflows are supported:
+
++ Model Analysis (`model.analyze`):
+
+    + Uses an analysis tool to extract model metadata, such as FLOPS and memory requirements.
+    + Computes total memory effort for fused memory scenarios.
+
++ Model Benchmarking (`model.bench`):
+
+    + Benchmarks the model across specified batch sizes.
+    + Profiles layers (`layer_prof`) if supported by the backend:
+        + Computes per-layer metrics such as FLOPS, memory bandwidth, and execution time.
+    + Profiles end-to-end performance (`e2e_prof`):
+        + Measures execution times and calculates throughput (FLOPS) and memory bandwidth.
+        + Provides detailed statistics (average, minimum, and standard deviation).
