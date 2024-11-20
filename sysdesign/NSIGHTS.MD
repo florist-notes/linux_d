@@ -77,7 +77,14 @@ Given a kernel’s operational intensity, the roofline model indicates the maxim
     + `For compute-bound kernels`: Increasing instruction-level parallelism, using efficient algorithms, or exploiting GPU-specific parallel computation capabilities can yield gains.
 
 ### Resources:
++ [ [PRoof: A Comprehensive Hierarchical Profiling Framework for Deep Neural Networks with Roofline Analysis](https://dl.acm.org/doi/pdf/10.1145/3673038.3673116) : [code](https://github.com/PRoof-framework/PRoof) ]
++ [[ What’s the backward-forward FLOP ratio for Neural Networks? ](https://www.lesswrong.com/posts/fnjKpBoWJXcSDwhZk/what-s-the-backward-forward-flop-ratio-for-neural-networks)]
++ [ [ LLM Inference Unveiled: Survey and Roofline Model Insights ](https://arxiv.org/pdf/2402.16363v3) ]
++ [[ Federated Fine-Tuning of LLMs on the Very Edge: The Good, the Bad, the Ugly ](https://dl.acm.org/doi/10.1145/3650203.3663331)]
++ [ [Roofline Performance Model for HPC and Deep-Learning Applications](https://developer.nvidia.com/gtc/2020/video/s21565-vid) ]
 + [gitlab/roofline-hackathon-2020](https://gitlab.com/NERSC/roofline-on-nvidia-gpus/-/tree/roofline-hackathon-2020/)
++ $ [conda install](https://anaconda.org/nvidia/nsight-compute) | [nsight-compute cli](https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#quick-start?ncid=em-prod-821317%23cid=dev02_em-prod_en-us)
++ [Introduction to NVIDIA Nsight Compute - A CUDA Kernel Profiler](https://youtu.be/nYSdsJE2zMs?si=xf1cqpGx7UtanVwW)
 + [NVTX annotations for layer-wise latency](https://developer.nvidia.com/blog/nvidia-tools-extension-api-nvtx-annotation-tool-for-profiling-code-in-python-and-c-c/)
 + [Operating System Basics](https://youtu.be/9GDX-IyZ_C8?si=_pBO_gkkRkHveHmt) | [Intro to NVIDIA Nsight Compute](https://youtu.be/Iuy_RAvguBM?si=D_ANR4-hI4lRocxF)
 + [Roofline and NVIDIA Ampere GPU Architecture Analysis](https://youtu.be/VtkxhygfNsY?si=xwGHq477AhmdFUr7)
@@ -85,5 +92,6 @@ Given a kernel’s operational intensity, the roofline model indicates the maxim
 + [Introduction to Kernel Performance Analysis with NVIDIA Nsight Compute](https://youtu.be/fsC3QeZHM1U?si=LHIQuLSVd7UpsqJE)
 + [Profiling Deep Learning Applications with NVIDIA NSight](https://youtu.be/K27rLXkOiqo?si=GetLfXGCWsrKgYx3)
 + [NVIDIA Nsight Compute Kernel Profiling Guide](https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html) 
-+ [[Optimizing CUDA Memory Transfers with NVIDIA Nsight Systems](https://developer.nvidia.com/blog/optimizing-cuda-memory-transfers-with-nsight-systems/)]
++ [[ Optimizing CUDA Memory Transfers with NVIDIA Nsight Systems ](https://developer.nvidia.com/blog/optimizing-cuda-memory-transfers-with-nsight-systems/)]
 + [Accelerating HPC Applications with NVIDIA Nsight Compute Roofline Analysis](https://developer.nvidia.com/blog/accelerating-hpc-applications-with-nsight-compute-roofline-analysis/)
++ [ [Nsight Compute Feature Spotlight: Roofline Analysis, Asynchronous Copy, Sparse Data Compression](https://youtu.be/DnwZ6ZTLw50?si=1EbQ2AQkeYvCv4Mc) ]
