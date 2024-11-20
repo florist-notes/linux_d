@@ -1032,3 +1032,47 @@ This code defines a set of data structures using Python's dataclasses module, de
     + Holds detailed information about a model, including:
         + Path, backend details, data widths, and LLC reuse size.
         + Subsections for deeper analysis: analyze and bench.
+
+## `backend/roofline.py` 🌸 : 
+
+The provided function generate_roofline_test_model dynamically generates an ONNX model for testing hardware's maximum FLOPS and memory bandwidth. Here's a breakdown of its functionality and key elements:
+
++ Purpose :
+
+    + Creates an ONNX model that includes repeated MatMul, Relu, and Transpose operations.
+    + Expands the matrix size in powers of two, starting from an initial size (n_start) and iterating through a specified number of expansion steps (expands).
+    + Allows additional expansions (expands_memory) focusing on memory-heavy operations.
+
++ Model Definition :
+
+    + `Inputs`: A single input tensor with a dynamic batch size and square matrix dimensions ([batch_size, N, N]).
+    + `Nodes`: Layers are added iteratively to perform operations (Transpose, Relu, MatMul, Concat, Add).
+    + `Outputs`: Final output tensor reflects the expanded size after all operations.
+
++ Layers Used
+
+    + Transpose: Rearranges tensor dimensions.
+    + Relu: Adds non-linearity.
+    + MatMul: Performs matrix multiplication.
+    + Concat: Concatenates tensors along specified dimensions.
+    + Add: Element-wise addition (used during expands_memory).
+
++ Dynamic Expansion
+
+    + The function doubles the matrix size with each iteration of expands.
+    + After expands iterations, additional iterations (expands_memory) use memory-intensive operations like Add and Concat.
+
++ ONNX Model
+
+    + A graph is built using onnx.helper with the defined operations and initializer.
+    + The model is validated using onnx.checker.check_model.
+
++ Return
+
+    + Returns an onnx.ModelProto object, which can be serialized and tested on hardware.
+
+
++ Parameters
+    + n_start (int): Initial matrix dimension (N x N).
+    + expands (int): Number of expansion steps for FLOPS-heavy layers.
+    + expands_memory (int, default=0): Number of additional memory-intensive layers.
