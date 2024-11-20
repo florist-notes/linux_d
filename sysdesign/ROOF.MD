@@ -2,7 +2,7 @@
 
 [ code ] Walkthrough : [[ PRoof ](https://github.com/PRoof-framework/PRoof)]
 
-### main.py :
+### main.py 🌸 :
 
 ```python
 from typing import List
@@ -221,7 +221,7 @@ Create Context : Initializes a `PerfContext` object with the parsed arguments.
 
 Run tests : Executes the test via `ctx.run()`, capturing and logging any exceptions.
 
-### util.py :
+### util.py 🌸 :
 
 ```python
 import os
@@ -257,7 +257,7 @@ except Exception as e:
 
     - The `os.access` function checks if the TMPDIR is writable (`os.W_OK`).
 
-### context.py :
+### context.py 🌸 :
 
 ```python
 from __future__ import annotations
@@ -595,3 +595,107 @@ class ModelContext():
 
         log.debug("run() all done")
 ```
+
+The `PerfContext` class is the core component of the PRoof performance analysis package. It manages the setup, dependencies, and execution of performance analysis tasks such as roofline analysis and model benchmarking.
+
+## `PerfContext` Class :
+This is the primary class for handling performance analysis contexts.
+
++ Attributes:
+
+    + `_all_subjects`: Defines the structure of all available performance analysis subjects (roofline analysis, model analysis, and model benchmarks).
+    
+    + `_all_subjects_depends`: Defines dependencies between test subjects. For example, `model.bench` depends on `model.analyze`.
+
++ Methods:
+
+    + list_subjects:
+
+        + Recursively lists all subjects in the _all_subjects tree.
+        + Returns a flat list of strings representing subjects and sub-subjects (e.g., 'model.bench.e2e_prof').
+
+    + _process_subjects:
+
+        + Processes a list of subjects (e.g., [`'model.bench'`]) into a structured set of subjects while resolving dependencies.
+        + If a subject is invalid, logs an error and exits.
+        + Also includes child subjects of each resolved subject.
+
+    + `__init__`:
+
+        + Initializes the context with provided subjects, a backend model, and various configuration options.
+        Sets up attributes for roofline and model-specific contexts (`roofline_ctx` and `model_ctx`).
+        + Example configurable parameters:
+            + `onnx_model`: Path to the ONNX model file.
+            + `batch_size_list`: List of batch sizes for benchmarking.
+            + `repeat_count`: Number of iterations for performance tests.
+            + `inputs_shape_override`: A dictionary for input shape adjustments.
+            + `llc_reuse_size`: Last-level cache reuse size, likely used in benchmarking.
+
+        ```python
+        if 'roofline' in self.subjects:
+            self.roofline_ctx = RooflineContext()
+
+        if 'model' in self.subjects:
+            self.model_ctx = ModelContext()
+        ```
+    + run:
+        + Executes the performance analysis for the requested subjects.
+        + Delegates execution to roofline_ctx or model_ctx as appropriate.
+
+## `RooflineContext` class  :
+
+This `RooflineContext` class is designed to evaluate the performance of a backend using the "roofline model," which measures computational FLOPS (Floating Point Operations per Second) and memory bandwidth. Here's a breakdown of its structure and functionality:
+
+The constructor initializes the class and prepares the testing environment:
+
++ Inputs:
+    + `subjects`: List of test subjects to include (e.g., roofline, layer_prof).
+    + `collected_data`: Object to store results (RooflineData).
+    + `model_backend`: Backend to test (e.g., PyTorch, TensorRT).
+    + `backend_options`: Configuration for the backend.
+    + `data_width`: Tuple representing data widths for ONNX and backend processing.
+    + `small_model`: Boolean indicating whether to use a smaller model for constrained environments.
+
+    ```python
+    from model.roofline import generate_roofline_test_model
+    ```
+
+
++ Processes:
+    + Generate ONNX Test Model:
+
+        + Uses `generate_roofline_test_model` to create a benchmark model with sizes tailored for the environment:
+            + Default size: 128×8, ideal for high-performance GPUs.
+            + Small size: 32×7, suitable for CPUs or edge devices.
+        + Saves the model to a temporary file.
+        
+    + Initialize Backend:
+
+        + Creates a backend environment (model_backend_env) using the given model, batch size, and options.
+        + Prepares the backend and stores version information.
+
+### `run()` Method
+This method performs the actual roofline analysis:
+
++ Checks for Compatibility:
+
+    + Verifies if the backend supports layer_prof profiling.
+    + Logs an error if the feature is unsupported.
+
++ Execution:
+
+    + Initializes an analyzer (model.analyze.Analyze) for the ONNX model.
+    + Runs the layer_prof method of the backend to collect profiling data.
+
++ Analysis of Layer Profiling Data:
+
+    + Extracts performance metrics for specific operations:
+        + FLOPS for MatMul (Matrix Multiplication) layers.
+        + Memory Bandwidth for Relu, Transpose, and Concat layers.
+    + Warns if ONNX nodes are fused, as this could affect accuracy.
+    + Logs performance metrics for each operation.
++ Results:
+
+    + Computes the maximum FLOPS and memory bandwidth achieved.
+    + Prints the roofline results (GFLOPS and GB/s).
+    + Suggests running a ResNet-34 model for further Conv layer analysis.
