@@ -2,7 +2,7 @@
 
 [ code ] Walkthrough : [[ PRoof ](https://github.com/PRoof-framework/PRoof)]
 
-### main.py 🌸 :
+## main.py 🌸 :
 
 ```python
 from typing import List
@@ -221,7 +221,7 @@ Create Context : Initializes a `PerfContext` object with the parsed arguments.
 
 Run tests : Executes the test via `ctx.run()`, capturing and logging any exceptions.
 
-### util.py 🌸 :
+## util.py 🌸 :
 
 ```python
 import os
@@ -257,7 +257,7 @@ except Exception as e:
 
     - The `os.access` function checks if the TMPDIR is writable (`os.W_OK`).
 
-### context.py 🌸 :
+## context.py 🌸 :
 
 ```python
 from __future__ import annotations
@@ -598,7 +598,7 @@ class ModelContext():
 
 The `PerfContext` class is the core component of the PRoof performance analysis package. It manages the setup, dependencies, and execution of performance analysis tasks such as roofline analysis and model benchmarking.
 
-## `PerfContext` Class :
+### `PerfContext` Class :
 This is the primary class for handling performance analysis contexts.
 
 + Attributes:
@@ -642,7 +642,7 @@ This is the primary class for handling performance analysis contexts.
         + Executes the performance analysis for the requested subjects.
         + Delegates execution to roofline_ctx or model_ctx as appropriate.
 
-## `RooflineContext` class  :
+### `RooflineContext` class  :
 
 This `RooflineContext` class is designed to evaluate the performance of a backend using the "roofline model," which measures computational FLOPS (Floating Point Operations per Second) and memory bandwidth. Here's a breakdown of its structure and functionality:
 
@@ -700,7 +700,7 @@ This method performs the actual roofline analysis:
     + Prints the roofline results (GFLOPS and GB/s).
     + Suggests running a ResNet-34 model for further Conv layer analysis.
 
-## `ModelContext` class :
+### `ModelContext` class :
 
 ```python
 class ModelContext():
@@ -876,3 +876,159 @@ Handles the execution of tasks specified in `subjects`. The following workflows 
     + Profiles end-to-end performance (`e2e_prof`):
         + Measures execution times and calculates throughput (FLOPS) and memory bandwidth.
         + Provides detailed statistics (average, minimum, and standard deviation).
+
+
+## datatype.py 🌸 :
+
+```python
+from __future__ import annotations
+from copy import copy
+from math import prod
+
+from typing import Any, List, Dict, Union, Optional
+from dataclasses import dataclass
+import logging
+
+log = logging.getLogger(__name__)
+
+
+# provide obj['xxx'] as obj.xxx for dataclassed
+class _MixedAccess():
+    def __contains__(self, v):
+        return hasattr(self, v)
+    def __getitem__(self, *a, **k):
+        log.debug("DEPRECATED: _MixedAccess %s is getting attr by dict like access (*%s, **%s)", self, a, k)
+        return self.__getattribute__(*a, **k)
+    def __setitem__(self, *a, **k):
+        log.debug("DEPRECATED: _MixedAccess %s is setting attr by dict like access (*%s, **%s)", self, a, k)
+        return self.__setattr__(*a, **k)
+
+
+@dataclass
+class CollectedData(_MixedAccess):
+    subjects: List[str] = None
+    roofline: Optional[RooflineData] = None
+    model: Optional[ModelData] = None
+
+
+@dataclass
+class RooflineData(_MixedAccess):
+    model_type: str = None
+    backend: str = None
+    backend_options: Optional[str] = None
+    backend_version_info: Optional[str] = None
+    data_width_onnx: Optional[int] = None
+    data_width_backend: Optional[int] = None
+
+    flops: float = None
+    memory_bandwidth: float = None
+
+
+@dataclass
+class ModelData(_MixedAccess):
+    name: str = None
+    path: str = None
+    backend: Optional[str] = None
+    backend_options: Optional[str] = None
+    backend_version_info: Optional[str] = None
+    data_width_onnx: Optional[int] = None
+    data_width_backend: Optional[int] = None
+    llc_reuse_size: Optional[float] = None
+    inputs_shape_override: Optional[Dict[str, Union[int, None]]] = None
+
+    analyze: Optional[AnalyzeData] = None
+    bench: Optional[ModelBenchData] = None
+
+
+### model.analyze ###
+TensorsShape = Dict[str, List[int]]
+
+@dataclass
+class AnalyzeData(_MixedAccess):
+    inputs: TensorsShape = None
+    nodes: Dict[str, NodeData] = None
+    total_flops: int = None
+    total_memory: int = None
+    total_memory_effort_fused: int = None
+    total_params: int = None
+
+
+@dataclass
+class NodeData(_MixedAccess):
+    name: str = None
+    type: str = None
+    flops: int = None
+    memory: int = None
+    params: int = None
+    inputs: List[TensorShape] = None
+    outputs: List[TensorShape] = None
+
+
+@dataclass
+class TensorShape(_MixedAccess):
+    name: str
+    shape: List[int]
+
+    def size(self):
+        return prod(self.shape)
+
+### model.banch ###
+@dataclass
+class ModelBenchData(_MixedAccess):
+    batch_size_list: list = None
+    results: Dict[str, ModelBenchBatchData] = None  # key: batch_size
+
+
+@dataclass
+class ModelBenchBatchData(_MixedAccess):
+    batch_size: int = None
+    times: List[float] = None
+    time_avg: float = None
+    time_min: float = None
+    time_std: float = None
+    flops_avg: float = None
+    flops_max: float = None
+    flops_std: float = None
+    memory_avg: float = None
+    memory_max: float = None
+    memory_std: float = None
+    layer_prof: Optional[List[ModelBenchBatchLayerData]] = None
+    better_total_flops: Optional[int] = None
+    better_total_memory: Optional[int] = None
+
+
+@dataclass
+class ModelBenchBatchLayerData(_MixedAccess):
+    name: str = None
+    median_time: float = None
+    time_percentage: float = None
+    flops: int = None
+    memory: int = None
+    extra: Dict[str, Any] = None
+```
+
+This code defines a set of data structures using Python's dataclasses module, designed to handle and organize collected performance data for machine learning models. The dataclasses are organized hierarchically to represent different aspects of performance analysis, including model details, analysis results, and benchmarking data.
+
++ `_MixedAccess Class`:
+
+    + Provides dictionary-like access (obj['attr']) for objects while still supporting attribute-style access (obj.attr).
+    + Includes deprecation warnings via the logging module when dictionary-like access is used.
+
++ CollectedData Class:
+
+    + A container for various types of performance data, including:
+    + `subjects`: A list of subjects related to the data (e.g., model names or experiment tags).
+    + `roofline`: Data related to the Roofline model of performance.
+    + `model`: Data specific to the model being analyzed.
+
++ RooflineData Class:
+
+    + Captures performance metrics and details related to the Roofline model, such as:
+        + Model type, backend, and version information.
+        + Key metrics: FLOPs and memory bandwidth.
+
++ ModelData Class:
+
+    + Holds detailed information about a model, including:
+        + Path, backend details, data widths, and LLC reuse size.
+        + Subsections for deeper analysis: analyze and bench.
