@@ -557,7 +557,7 @@ $ j .config <br /></td>
 </tr>
 </table>
 
-Available CPU, GPU and mem frequencies:
+Available CPU, GPU and mem frequencies [[j3tsonDream](https://github.com/florist-notes/aicore_s/blob/main/notes/robotics_ee_hardware/jetson.MD)]:
 ```bash
 dream-orin@ubuntu:~$ sudo cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 115200 192000 268800 345600 422400 499200 576000 652800 729600 806400 883200 960000 1036800 1113600 1190400 1267200 1344000 1420800 1497600 1574400 1651200 1728000 1804800 1881600 1958400 2035200 2112000 2188800 2201600
