@@ -34,7 +34,7 @@ Add custom JavaScript charts to pop up when clicked in different data points in 
 
 <img src="mapc.png" width=100%> 
 
-I also have remote sensing experience ( publication : [DOI:10.13140/RG.2.2.31237.68321](https://www.researchgate.net/publication/355196468_Characterizing_spatio-temporal_patterns_of_ground_subsidence_as_an_indicator_of_permafrost_thaw_in_Tso_Kar_valley_Ladakh_using_SAR_remote_sensing) ) with NRSC - ISRO, Department of Space, India, specifically with SAR satellite data. Here are some work samples : [ [work 1](https://twitter.com/florist_notes/status/1639684242853462017), [work 2](https://twitter.com/florist_notes/status/1641493303370690569), [work 3](https://twitter.com/florist_notes/status/1641501812753592320), [work 4](https://twitter.com/florist_notes/status/1641498598058651651) ]
+I also have remote sensing experience ( publication : [DOI:10.13140/RG.2.2.31237.68321](https://www.researchgate.net/publication/355196468_Characterizing_spatio-temporal_patterns_of_ground_subsidence_as_an_indicator_of_permafrost_thaw_in_Tso_Kar_valley_Ladakh_using_SAR_remote_sensing) ) with NRSC - ISRO, Department of Space, India, specifically with SAR satellite data. Here are some work samples : [ [4D POT](https://youtu.be/HOvaLXQuH6g), [work 1](https://twitter.com/florist_notes/status/1639684242853462017), [work 2](https://twitter.com/florist_notes/status/1641493303370690569), [work 3](https://twitter.com/florist_notes/status/1641501812753592320), [work 4](https://twitter.com/florist_notes/status/1641498598058651651) ]
 
 
 
@@ -47,3 +47,13 @@ I also have remote sensing experience ( publication : [DOI:10.13140/RG.2.2.31237
 Here is a quick plot of analysed geo data over Kepler:
 
 <img src="./rl/ss.png" width=100%> 
+
+
+Lately, I have worked on generating 3D DEMs, Orthophotos [[work example](https://youtu.be/Tbats9nMhSA?si=e3VpScEWUt10mDv9)], Orthomosaics, Polarization Processing, Optical Stereo 3D and more:
+
+
+<img src="../img/im1.png" width=100%> 
+
+<img src="../img/im2.png" width=100%> 
+
+<img src="../img/im3.png" width=100%> 

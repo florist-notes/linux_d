@@ -143,7 +143,7 @@ find number of files with '*tegrastats*' name in it:
 
 </table>
 
-Bash scripts help automate scraping of data, here is an example of NVIDIA Jetson Tegrastats energy data along with batch information while training deep learning model at the edge:
+Bash scripts help automate scraping of data, here is an example of NVIDIA Jetson Tegrastats energy data I scraped at IISc, along with batch information while training the deep learning models at the edge:
 
 <center><img src="../img/sleep_log.png" width=100%></center>
 
