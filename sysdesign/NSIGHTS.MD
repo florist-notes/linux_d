@@ -2,7 +2,10 @@
 
 <center><img src="../img/nsight.png" width=100%></center>
 
-NVIDIA's Nsight Systems and Nsight Compute are performance analysis tools specifically designed for GPU-accelerated applications. Each has distinct uses:
+NVIDIA's Nsight Systems and Nsight Compute are performance analysis tools specifically designed for GPU-accelerated applications. Here is a screenshot of Register level + Kernel level breakdown of deep learning workload from my experiments at IISc.
+
+
+<img src="../img/ncu_register2.png" width=49%> <img src="../img/ncu_register.png" width=50%> 
 
 ## Nsight Systems [[web](https://developer.nvidia.com/nsight-systems) : [gs](https://developer.nvidia.com/nsight-systems/get-started)]:
 
@@ -75,6 +78,12 @@ Given a kernel’s operational intensity, the roofline model indicates the maxim
 + Optimization Strategies:
     + `For memory-bound kernels`: Improving data locality, using shared memory, or optimizing memory access patterns may increase performance.
     + `For compute-bound kernels`: Increasing instruction-level parallelism, using efficient algorithms, or exploiting GPU-specific parallel computation capabilities can yield gains.
+
+Some plots I made while working at minibatch level of deep learning workloads in NVIDIA Jetson Orin AGX:
+
+<img src="../img/intconc.png" width=100%> 
+
+<img src="../img/mbs2.png" width=100%> 
 
 ### Resources:
 + [ [PRoof: A Comprehensive Hierarchical Profiling Framework for Deep Neural Networks with Roofline Analysis](https://dl.acm.org/doi/pdf/10.1145/3673038.3673116) : [code](https://github.com/PRoof-framework/PRoof) ]
