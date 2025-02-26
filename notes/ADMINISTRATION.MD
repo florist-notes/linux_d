@@ -143,7 +143,7 @@ find number of files with '*tegrastats*' name in it:
 
 </table>
 
-Bash scripts help automate scraping of data, here is an example of NVIDIA Jetson Tegrastats energy data:
+Bash scripts help automate scraping of data, here is an example of NVIDIA Jetson Tegrastats energy data along with batch information while training deep learning model at the edge:
 
 <center><img src="../img/sleep_log.png" width=100%></center>
 
@@ -151,10 +151,14 @@ Bash scripts help automate scraping of data, here is an example of NVIDIA Jetson
 
 <center>
 
-<img src="../img/oo1.png" width=50%>
-<img src="../img/oo2.png" width=42%>
+<img src="../img/oo1.png" width=100%>
+<img src="../img/oo2.png" width=100%>
 
 </center>
+
+
+# t-mux:
+[ [you need to learn tmux RIGHT NOW!!](https://youtu.be/nTqu6w2wc68?si=PrcTEK2fw1_9yWML), [Complete tmux Tutorial](https://youtu.be/Yl7NFenTgIo?si=Wrzs41pJOCH3Gg5a) ]
 
 ```bash
   $ sudo apt-get install tmux
