@@ -4,6 +4,8 @@
 
 The Bourne Again Shell - wraps around the linux kernel and is a command-line interpreter or unix shell widely used in GNU/Linux Operating System written by Brian Jhan Fox. It is used as a default login shell for most Linux distributions. Scripting is used to automate the execution of the tasks so that humans do not need to perform them individually.
 
+<center><img src="../img/shell.png" width=100%></center>
+
 `#!/bin/bash` tells the system to use Bash for execution. You can also check with : `$ which $SHELL` (/bin/bash/) and to write a bash script, start with : ` $ nano file.sh`. To run the script after writing the script : ` $ bash file.sh` ( run the bash script) or  `$ chmod +x file.sh` and  `$ ./file.sh`:
  
 ```bash

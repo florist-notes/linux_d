@@ -5,7 +5,8 @@
 ```bash
   $ sudo adduser saikia
   $ cat /etc/passwd 
-
+  $ sudo ssh user@ip
+  $ sudo scp -r user@ip:/path/ . 
 ```
 
 Linux system administration is a process of setting up, configuring, and managing a computer system in a Linux environment. System administration involves creating a user account, taking reports, performing backup, updating configuration files, documentation, and performing recovery actions. The user who manages the server, fixes configuration issues, recommends new software updates, and updates document is the system administrator.
@@ -141,6 +142,19 @@ find number of files with '*tegrastats*' name in it:
 </tr>
 
 </table>
+
+Bash scripts help automate scraping of data, here is an example of NVIDIA Jetson Tegrastats energy data:
+
+<center><img src="../img/sleep_log.png" width=100%></center>
+
+3D visualzation of the data:
+
+<center>
+
+<img src="../img/oo1.png" width=50%>
+<img src="../img/oo2.png" width=42%>
+
+</center>
 
 ```bash
   $ sudo apt-get install tmux
